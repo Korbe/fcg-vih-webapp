@@ -1,0 +1,16 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
+    "/android-chrome-192x192.png": "/android-chrome-192x192.png",
+    "/apple-touch-icon.png": "/apple-touch-icon.png",
+    "/browserconfig.xml": "/browserconfig.xml",
+    "/favicon-16x16.png": "/favicon-16x16.png",
+    "/favicon-32x32.png": "/favicon-32x32.png",
+    "/favicon.ico": "/favicon.ico",
+    "/index.php": "/index.php",
+    "/mstile-150x150.png": "/mstile-150x150.png",
+    "/robots.txt": "/robots.txt",
+    "/safari-pinned-tab.svg": "/safari-pinned-tab.svg",
+    "/web.config": "/web.config",
+    "/webmanifest.json": "/webmanifest.json"
+}
