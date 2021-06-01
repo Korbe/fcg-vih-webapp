@@ -6,6 +6,7 @@
 
 <script>
     export default {
+        name:"JetButton",
         props: {
             type: {
                 type: String,
