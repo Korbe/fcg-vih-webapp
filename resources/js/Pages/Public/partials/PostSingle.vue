@@ -29,6 +29,9 @@
               </div>
               <hr class="w-16 h-px pt-px mx-auto bg-gray-200 border-0 mb-6"/>
 
+              <audio controls v-if="post.audio">
+                <source :src="post.audio">
+              </audio>
 
               <!-- Article body -->
               <div class="prose prose-sm sm:prose lg:prose-lg xl:prose-2xl mx-auto text-gray-600">

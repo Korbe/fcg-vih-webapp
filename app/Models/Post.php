@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Str;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Post extends Model
+class Post extends Model implements HasMedia
 {
     use HasFactory;
+    use InteractsWithMedia;
 
     /**
      * The attributes that are mass assignable.
@@ -38,16 +40,6 @@ class Post extends Model
         $this->attributes['title'] = $value;
         $this->attributes['slug'] = str::slug($value);
     }
-
-/*    public function getCreatedAtAttribute($date): string
-    {
-        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d.m.Y');
-    }*/
-    /*
-        public function getUpdatedAtAttribute($date): string
-        {
-            return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d.m.Y');
-        }*/
 
     /**
      * Get the page this model belongs to

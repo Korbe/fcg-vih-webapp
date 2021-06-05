@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
@@ -61,9 +62,15 @@ class PostController extends Controller
         $validated = $request->validate([
             'title' => ['required', 'string', 'max:50'],
             'content' => ['required', 'string'],
+            'audio' => ['nullable', 'mimes:application/octet-stream,audio/mpeg,mpga,mp3,wav', 'max:1024'],
         ]);
 
-        Auth::user()->posts()->create($validated);
+        /** @var Post $post */
+        $post = Auth::user()->posts()->create(Arr::except($validated, 'audio'));
+
+        if($validated['audio']){
+            $post->addMedia($validated['audio'])->toMediaCollection('audio');
+        }
 
         return Redirect::route('posts.index')->with('success', 'Post created.');
 
@@ -95,6 +102,7 @@ class PostController extends Controller
                 'title' => $post->title,
                 'url' => route('posts.show', $post->slug),
                 'content' => $post->content,
+                'audio' => $post->getFirstMediaUrl('audio'),
                 'created_at' => $post->created_at->format('m.d.Y'),
                 'updated_at' => $post->updated_at->format('m.d.Y'),
                 'author' => $post->user->only('name', 'profile_photo_url'),

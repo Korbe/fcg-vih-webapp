@@ -21,6 +21,12 @@
                 </div>
 
                 <div class="col-span-6">
+                  <jet-label for="audio" value="Audio"/>
+                  <file-input v-model="form.audio" :error="form.errors.audio" class="" type="file" accept="audio/mp3,audio/*;capture=microphone" />
+                  <jet-input-error :message="form.errors.audio" class="mt-2"/>
+                </div>
+
+                <div class="col-span-6">
                   <jet-label for="content" value="Text"/>
                   <tip-tap-editor v-model="form.content"/>
                   <jet-input-error :message="form.errors.content" class="mt-2"/>
@@ -52,16 +58,18 @@ import JetInputError from "../../Jetstream/InputError";
 import JetInput from "../../Jetstream/Input";
 import TipTapEditor from "../../Shared/TipTapEditor";
 import JetButton from "../../Jetstream/Button";
+import FileInput from "../../Shared/FileInput";
 
 
 export default {
   metaInfo: {title: 'Create Post'},
-  components: {JetButton, TipTapEditor, JetInput, JetInputError, JetLabel, AppLayout},
+  components: {FileInput, JetButton, TipTapEditor, JetInput, JetInputError, JetLabel, AppLayout},
   data() {
     return {
       form: this.$inertia.form({
         title: null,
         content: null,
+        audio: null,
       }),
     }
   },
