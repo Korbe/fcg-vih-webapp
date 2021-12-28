@@ -1,5 +1,5 @@
 <template>
     <inertia-link :href="'/'">
-        <img src="/images/logo.png" alt="FCG Villach" />
+        <img alt="FCG Villach" src="/images/logo.png"/>
     </inertia-link>
 </template>

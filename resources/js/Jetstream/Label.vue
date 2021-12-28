@@ -6,8 +6,8 @@
 </template>
 
 <script>
-    export default {
-        name:"JetLabel",
-        props: ['value']
-    }
+export default {
+    name: "JetLabel",
+    props: ['value']
+}
 </script>

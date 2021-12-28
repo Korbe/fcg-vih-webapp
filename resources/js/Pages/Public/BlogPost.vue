@@ -1,21 +1,21 @@
 <template>
-  <div class="flex flex-col min-h-screen overflow-hidden">
+    <div class="flex flex-col min-h-screen overflow-hidden">
 
-    <!-- Site header -->
-    <Header />
+        <!-- Site header -->
+        <Header/>
 
-    <!-- Page content -->
-    <main class="flex-grow">
+        <!-- Page content -->
+        <main class="flex-grow">
 
-      <!-- Page sections -->
-      <PostSingle :post="post"/>
+            <!-- Page sections -->
+            <PostSingle :post="post"/>
 
-    </main>
+        </main>
 
-    <!-- Site footer -->
-    <Footer />
+        <!-- Site footer -->
+        <Footer/>
 
-  </div>
+    </div>
 </template>
 
 <script>
@@ -25,14 +25,14 @@ import Footer from './partials/Footer'
 import Header from "./partials/Header";
 
 export default {
-  name: 'BlogPost',
-  components: {
-    Header,
-    PostSingle,
-    Footer,
-  },
-  props: {
-    post: Object,
-  },
+    name: 'BlogPost',
+    components: {
+        Header,
+        PostSingle,
+        Footer,
+    },
+    props: {
+        post: Object,
+    },
 }
 </script>

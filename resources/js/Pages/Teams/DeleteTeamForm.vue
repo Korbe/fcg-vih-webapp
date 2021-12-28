@@ -10,7 +10,8 @@
 
         <template #content>
             <div class="max-w-xl text-sm text-gray-600">
-                Once a team is deleted, all of its resources and data will be permanently deleted. Before deleting this team, please download any data or information regarding this team that you wish to retain.
+                Once a team is deleted, all of its resources and data will be permanently deleted. Before deleting this team, please download any data or information regarding this team that you wish
+                to retain.
             </div>
 
             <div class="mt-5">
@@ -34,7 +35,7 @@
                         Cancel
                     </jet-secondary-button>
 
-                    <jet-danger-button class="ml-2" @click="deleteTeam" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                    <jet-danger-button :class="{ 'opacity-25': form.processing }" :disabled="form.processing" class="ml-2" @click="deleteTeam">
                         Delete Team
                     </jet-danger-button>
                 </template>
@@ -44,40 +45,40 @@
 </template>
 
 <script>
-    import JetActionSection from '@/Jetstream/ActionSection'
-    import JetConfirmationModal from '@/Jetstream/ConfirmationModal'
-    import JetDangerButton from '@/Jetstream/DangerButton'
-    import JetSecondaryButton from '@/Jetstream/SecondaryButton'
+import JetActionSection from '@/Jetstream/ActionSection'
+import JetConfirmationModal from '@/Jetstream/ConfirmationModal'
+import JetDangerButton from '@/Jetstream/DangerButton'
+import JetSecondaryButton from '@/Jetstream/SecondaryButton'
 
-    export default {
-        props: ['team'],
+export default {
+    props: ['team'],
 
-        components: {
-            JetActionSection,
-            JetConfirmationModal,
-            JetDangerButton,
-            JetSecondaryButton,
+    components: {
+        JetActionSection,
+        JetConfirmationModal,
+        JetDangerButton,
+        JetSecondaryButton,
+    },
+
+    data() {
+        return {
+            confirmingTeamDeletion: false,
+            deleting: false,
+
+            form: this.$inertia.form()
+        }
+    },
+
+    methods: {
+        confirmTeamDeletion() {
+            this.confirmingTeamDeletion = true
         },
 
-        data() {
-            return {
-                confirmingTeamDeletion: false,
-                deleting: false,
-
-                form: this.$inertia.form()
-            }
+        deleteTeam() {
+            this.form.delete(route('teams.destroy', this.team), {
+                errorBag: 'deleteTeam'
+            });
         },
-
-        methods: {
-            confirmTeamDeletion() {
-                this.confirmingTeamDeletion = true
-            },
-
-            deleteTeam() {
-                this.form.delete(route('teams.destroy', this.team), {
-                    errorBag: 'deleteTeam'
-                });
-            },
-        },
-    }
+    },
+}
 </script>

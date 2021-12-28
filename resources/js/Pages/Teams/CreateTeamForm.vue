@@ -10,10 +10,10 @@
 
         <template #form>
             <div class="col-span-6">
-                <jet-label value="Team Owner" />
+                <jet-label value="Team Owner"/>
 
                 <div class="flex items-center mt-2">
-                    <img class="w-12 h-12 rounded-full object-cover" :src="$page.props.user.profile_photo_url" :alt="$page.props.user.name">
+                    <img :alt="$page.props.user.name" :src="$page.props.user.profile_photo_url" class="w-12 h-12 rounded-full object-cover">
 
                     <div class="ml-4 leading-tight">
                         <div>{{ $page.props.user.name }}</div>
@@ -23,9 +23,9 @@
             </div>
 
             <div class="col-span-6 sm:col-span-4">
-                <jet-label for="name" value="Team Name" />
-                <jet-input id="name" type="text" class="mt-1 block w-full" v-model="form.name" autofocus />
-                <jet-input-error :message="form.errors.name" class="mt-2" />
+                <jet-label for="name" value="Team Name"/>
+                <jet-input id="name" v-model="form.name" autofocus class="mt-1 block w-full" type="text"/>
+                <jet-input-error :message="form.errors.name" class="mt-2"/>
             </div>
         </template>
 
@@ -38,36 +38,36 @@
 </template>
 
 <script>
-    import JetButton from '@/Jetstream/Button'
-    import JetFormSection from '@/Jetstream/FormSection'
-    import JetInput from '@/Jetstream/Input'
-    import JetInputError from '@/Jetstream/InputError'
-    import JetLabel from '@/Jetstream/Label'
+import JetButton from '@/Jetstream/Button'
+import JetFormSection from '@/Jetstream/FormSection'
+import JetInput from '@/Jetstream/Input'
+import JetInputError from '@/Jetstream/InputError'
+import JetLabel from '@/Jetstream/Label'
 
-    export default {
-        components: {
-            JetButton,
-            JetFormSection,
-            JetInput,
-            JetInputError,
-            JetLabel,
-        },
+export default {
+    components: {
+        JetButton,
+        JetFormSection,
+        JetInput,
+        JetInputError,
+        JetLabel,
+    },
 
-        data() {
-            return {
-                form: this.$inertia.form({
-                    name: '',
-                })
-            }
-        },
+    data() {
+        return {
+            form: this.$inertia.form({
+                name: '',
+            })
+        }
+    },
 
-        methods: {
-            createTeam() {
-                this.form.post(route('teams.store'), {
-                    errorBag: 'createTeam',
-                    preserveScroll: true
-                });
-            },
+    methods: {
+        createTeam() {
+            this.form.post(route('teams.store'), {
+                errorBag: 'createTeam',
+                preserveScroll: true
+            });
         },
-    }
+    },
+}
 </script>

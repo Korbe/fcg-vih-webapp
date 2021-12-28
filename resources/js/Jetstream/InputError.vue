@@ -7,8 +7,8 @@
 </template>
 
 <script>
-    export default {
-        name:"JetInputError",
-        props: ['message']
-    }
+export default {
+    name: "JetInputError",
+    props: ['message']
+}
 </script>

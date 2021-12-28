@@ -1,24 +1,24 @@
 <template>
-  <div class="flex flex-col min-h-screen overflow-hidden">
+    <div class="flex flex-col min-h-screen overflow-hidden">
 
-    <!-- Site header -->
-    <Header />
+        <!-- Site header -->
+        <Header/>
 
-    <!-- Page content -->
-    <main class="flex-grow">
+        <!-- Page content -->
+        <main class="flex-grow">
 
-      <!-- Page sections -->
-      <HeroHome />
-      <EventsHome />
-      <News />
-      <Cta />
+            <!-- Page sections -->
+            <HeroHome/>
+            <EventsHome/>
+            <News/>
+            <Cta/>
 
-    </main>
+        </main>
 
-    <!-- Site footer -->
-    <Footer />
+        <!-- Site footer -->
+        <Footer/>
 
-  </div>
+    </div>
 </template>
 
 <script>
@@ -30,14 +30,14 @@ import Footer from './partials/Footer.vue'
 import EventsHome from './partials/EventsHome.vue'
 
 export default {
-  name: 'Home',
-  components: {
-    Header,
-    HeroHome,
-    EventsHome,
-    News,
-    Cta,
-    Footer,
-  },
+    name: 'Home',
+    components: {
+        Header,
+        HeroHome,
+        EventsHome,
+        News,
+        Cta,
+        Footer,
+    },
 }
 </script>

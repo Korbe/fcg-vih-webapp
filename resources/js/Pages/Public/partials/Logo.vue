@@ -1,9 +1,9 @@
 <template>
-    <img src="/images/logo.png" alt="FCG Villach" />
+    <img alt="FCG Villach" src="/images/logo.png"/>
 </template>
 
 <script>
 export default {
-  name: 'Logo',
+    name: 'Logo',
 }
 </script>
