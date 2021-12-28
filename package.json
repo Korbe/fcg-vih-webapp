@@ -15,6 +15,7 @@
         "@inertiajs/inertia": "^0.8.4",
         "@inertiajs/inertia-vue3": "^0.3.5",
         "@inertiajs/progress": "^0.2.4",
+        "@tailwindcss/custom-forms": "^0.2.1",
         "@tailwindcss/forms": "^0.2.1",
         "@tailwindcss/typography": "^0.3.0",
         "@vue/compiler-sfc": "^3.0.5",
@@ -33,6 +34,7 @@
     "dependencies": {
         "@tiptap/extension-link": "^2.0.0-beta.17",
         "@tiptap/starter-kit": "^2.0.0-beta.71",
-        "@tiptap/vue-3": "^2.0.0-beta.40"
+        "@tiptap/vue-3": "^2.0.0-beta.40",
+        "aos": "^2.3.4"
     }
 }
