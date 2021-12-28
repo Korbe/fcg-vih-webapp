@@ -16,40 +16,42 @@
 
           <!-- Desktop menu links -->
           <ul class="flex flex-grow justify-end flex-wrap items-center">
+              <Dropdown title="Über uns" :to="route('pubic.about')">
+                  <li>
+                      <inertia-link :href="route('pubic.about')" class="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">Was wir glauben</inertia-link>
+                  </li>
+                  <li>
+                      <inertia-link :href="route('pubic.about')" class="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">Freie Christengemeinde</inertia-link>
+                  </li>
+                  <li>
+                      <inertia-link :href="route('pubic.about')" class="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">Was ist eine Freikirche</inertia-link>
+                  </li>
+                  <li>
+                      <inertia-link :href="route('pubic.about')" class="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">Geschichte der FCG</inertia-link>
+                  </li>
+              </Dropdown>
             <li>
-              <inertia-link href="/about" class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Über uns</inertia-link>
-            </li>
-            <li>
-              <inertia-link href="/pcing" class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Über uns</inertia-link>
+              <inertia-link :href="route('pubic.termine')" class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Termine</inertia-link>
             </li>
 
             <li>
-              <inertia-link href="/tutorials" class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Blog</inertia-link>
+              <inertia-link :href="route('pubic.predigten')" class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Predigten</inertia-link>
             </li>
             <li>
-              <inertia-link href="/blog" class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Blog</inertia-link>
-            </li>            
-            <!-- 1st level: hover -->
-            <Dropdown title="Resources">
+              <inertia-link :href="route('pubic.kontakt')" class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Kontakt</inertia-link>
+            </li>
               <li>
-                <inertia-link href="/documentation" class="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">Documentation</inertia-link>
+                  <inertia-link :href="route('pubic.kontakt')" class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Spenden</inertia-link>
               </li>
-              <li>
-                <inertia-link href="/support" class="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">Support center</inertia-link>
-              </li>
-              <li>
-                <inertia-link href="/404" class="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">404</inertia-link>
-              </li>
-            </Dropdown>
           </ul>
 
           <!-- Desktop sign in links -->
           <ul class="flex flex-grow justify-end flex-wrap items-center">
             <li>
-              <inertia-link href="/signin" class="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">Sign in</inertia-link>
+              <inertia-link :href="route('pubic.signin')" class="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">Sign in</inertia-link>
             </li>
             <li>
-              <inertia-link href="/signup" class="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3">
+              <inertia-link :href="route('pubic.signup')" class="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3">
                 <span>Sign up</span>
                 <svg class="w-3 h-3 fill-current text-gray-400 flex-shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                   <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fill-rule="nonzero" />
@@ -81,7 +83,7 @@
             leave-active-class="transition ease-out duration-200"
             leave-class="opacity-100"
             leave-to-class="opacity-0"
-          >          
+          >
             <nav
               id="mobile-nav"
               ref="mobileNav"
@@ -90,40 +92,40 @@
             >
               <ul class="px-5 py-2">
                 <li>
-                  <inertia-link href="/pricing" class="flex text-gray-600 hover:text-gray-900 py-2">Pricing</inertia-link>
+                  <inertia-link :href="route('pubic.pricing')" class="flex text-gray-600 hover:text-gray-900 py-2">Pricing</inertia-link>
                 </li>
                 <li>
-                  <inertia-link href="/about" class="flex text-gray-600 hover:text-gray-900 py-2">About us</inertia-link>
+                  <inertia-link :href="route('pubic.about')" class="flex text-gray-600 hover:text-gray-900 py-2">About us</inertia-link>
                 </li>
                 <li>
-                  <inertia-link href="/tutorials" class="flex text-gray-600 hover:text-gray-900 py-2">Tutorials</inertia-link>
+                  <inertia-link :href="route('pubic.tutorials')" class="flex text-gray-600 hover:text-gray-900 py-2">Tutorials</inertia-link>
                 </li>
                 <li>
-                  <inertia-link href="/blog" class="flex text-gray-600 hover:text-gray-900 py-2">Blog</inertia-link>
-                </li>                
+                  <inertia-link :href="route('pubic.blog')" class="flex text-gray-600 hover:text-gray-900 py-2">Blog</inertia-link>
+                </li>
                 <li class="py-2 my-2 border-t border-b border-gray-200">
                   <span class="flex text-gray-600 hover:text-gray-900 py-2">Resources</span>
                   <ul class="pl-4">
                     <li>
-                      <inertia-link href="/documentation" class="text-sm flex font-medium text-gray-600 hover:text-gray-900 py-2">Documentation</inertia-link>
+                      <inertia-link :href="route('pubic.documentation')" class="text-sm flex font-medium text-gray-600 hover:text-gray-900 py-2">Documentation</inertia-link>
                     </li>
                     <li>
-                      <inertia-link href="/support" class="text-sm flex font-medium text-gray-600 hover:text-gray-900 py-2">Support center</inertia-link>
+                      <inertia-link :href="route('pubic.support')" class="text-sm flex font-medium text-gray-600 hover:text-gray-900 py-2">Support center</inertia-link>
                     </li>
                     <li>
-                      <inertia-link href="/404" class="text-sm flex font-medium text-gray-600 hover:text-gray-900 py-2">404</inertia-link>
+                      <inertia-link :href="route('pubic.404')" class="text-sm flex font-medium text-gray-600 hover:text-gray-900 py-2">404</inertia-link>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <inertia-link href="/signin" class="flex font-medium w-full text-gray-600 hover:text-gray-900 py-2 justify-center">Sign in</inertia-link>
+                  <inertia-link :href="route('pubic.signin')" class="flex font-medium w-full text-gray-600 hover:text-gray-900 py-2 justify-center">Sign in</inertia-link>
                 </li>
                 <li>
-                  <inertia-link href="/signup" class="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 w-full my-2">
+                  <inertia-link :href="route('pubic.signup')" class="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 w-full my-2">
                     <span>Sign up</span>
                     <svg class="w-3 h-3 fill-current text-gray-400 flex-shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                         <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fill="#999" fill-rule="nonzero" />
-                    </svg>                
+                    </svg>
                   </inertia-link>
                 </li>
               </ul>
@@ -165,9 +167,9 @@ export default {
     handleScroll() {
       this.top = window.pageYOffset > 10 ? false : true
     }
-  },  
+  },
   mounted() {
-    document.addEventListener('click', this.clickOutside)    
+    document.addEventListener('click', this.clickOutside)
     document.addEventListener('keydown', this.keyPress)
     document.addEventListener('scroll', this.handleScroll)
   },
