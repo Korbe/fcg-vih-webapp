@@ -62,7 +62,7 @@ class PostController extends Controller
         $validated = $request->validate([
             'title' => ['required', 'string', 'max:50'],
             'content' => ['required', 'string'],
-            'audio' => ['nullable', 'mimes:application/octet-stream,audio/mpeg,mpga,mp3,wav', 'max:1024'],
+            'audio' => ['nullable', 'mimes:application/octet-stream,audio/mpeg,mpga,mp3,wav'],
         ]);
 
         /** @var Post $post */
@@ -100,7 +100,7 @@ class PostController extends Controller
         return Inertia::render('Public/BlogPost', [
             "post" => [
                 'title' => $post->title,
-                'url' => route('posts.show', $post->slug),
+                'url' => route('public.posts.show', $post->slug),
                 'content' => $post->content,
                 'audio' => $post->getFirstMediaUrl('audio'),
                 'created_at' => $post->created_at->format('m.d.Y'),

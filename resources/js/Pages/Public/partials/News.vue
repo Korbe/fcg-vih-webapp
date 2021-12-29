@@ -5,7 +5,7 @@
 
                 <!-- Section header -->
                 <div class="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-                    <h2 class="h2">The most innovative businesses choose Simple</h2>
+                    <h2>The most innovative businesses choose Simple</h2>
                 </div>
 
                 <!-- Categories -->

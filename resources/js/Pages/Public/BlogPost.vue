@@ -1,35 +1,19 @@
 <template>
-    <div class="flex flex-col min-h-screen overflow-hidden">
-
-        <!-- Site header -->
-        <Header/>
-
-        <!-- Page content -->
-        <main class="flex-grow">
-
-            <!-- Page sections -->
-            <PostSingle :post="post"/>
-
-        </main>
-
-        <!-- Site footer -->
-        <Footer/>
-
-    </div>
+    <public-layout>
+        <PostSingle :post="post"/>
+    </public-layout>
 </template>
 
 <script>
 
 import PostSingle from './partials/PostSingle'
-import Footer from './partials/Footer'
-import Header from "./partials/Header";
+import PublicLayout from "@/Layouts/PublicLayout";
 
 export default {
     name: 'BlogPost',
     components: {
-        Header,
+        PublicLayout,
         PostSingle,
-        Footer,
     },
     props: {
         post: Object,

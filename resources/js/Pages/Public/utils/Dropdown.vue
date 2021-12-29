@@ -7,7 +7,7 @@
         @mouseleave="dropdownOpen = false"
     >
         <inertia-link
-            :href="to ?? '#0'"
+            :href="to ?? '#'"
             aria-expanded={dropdownOpen}
             aria-haspopup="true"
             class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
@@ -38,9 +38,11 @@ export default {
     props: {
         title: {
             type: String,
-            to: null,
-            default: null,
             required: true
+        },
+        to: {
+            default: null,
+            type: String
         },
     },
     data: function () {

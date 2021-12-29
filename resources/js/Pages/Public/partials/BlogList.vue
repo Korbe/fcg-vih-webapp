@@ -4,9 +4,9 @@
             <div class="pt-32 pb-12 md:pt-40 md:pb-20">
 
                 <!-- Page header -->
-                <div class="max-w-3xl pb-12 md:pb-20 text-center md:text-left">
-                    <h1 class="h1 mb-4">Type the way you talk</h1>
-                    <p class="text-xl text-gray-600">Stay up to date on the latest from Simple and best news from the Dev world.</p>
+                <div class="max-w-3xl pb-8 md:pb-20 text-center md:text-left">
+                    <h1 class="h1 mb-4">Hören Sie sich unsere Predigten ganz bequem an</h1>
+                    <p class="text-xl text-gray-600">Bleiben Sie auf dem Laufenden über die neuesten Predigten von FCG Villach.</p>
                 </div>
 
                 <!-- Main content -->
@@ -15,17 +15,15 @@
                     <!-- Articles container -->
                     <div class="md:flex-grow ">
 
-                        <article v-for="post in posts" class="flex items-center py-4 border-b border-gray-200">
+                        <article v-for="post in posts" class="flex items-center py-4 mb-6 border-b border-gray-200">
                             <div>
                                 <header>
                                     <h2 class="h4 mb-2">
                                         <inertia-link :href="post.url" class="hover:underline">{{ post.title }}</inertia-link>
                                     </h2>
                                 </header>
-                                <div class="text-lg text-gray-600 mb-4">
-                                    <p class="">{{ post.content }}</p>
-                                    <!--                  <p class="truncate overflow-hidden">{{post.content}}</p>-->
-
+                                <div class="my-4">
+                                    <audio v-if="post.audio" controls :src="post.audio"></audio>
                                 </div>
                                 <footer class="text-sm">
                                     <div class="flex items-center">
@@ -43,14 +41,14 @@
                                     </div>
                                 </footer>
                             </div>
-                            <inertia-link :href="post.url" class="block flex-shrink-0 ml-6">
-                                <span class="sr-only">Mehr lesen</span>
-                                <svg class="w-4 h-4 fill-current text-blue-600" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z"/>
-                                </svg>
-                            </inertia-link>
-                        </article>
 
+                        </article>
+                        <!--                            <inertia-link :href="post.url" class="block flex-shrink-0 ml-6">
+                                                        <span class="sr-only">Mehr lesen</span>
+                                                        <svg class="w-4 h-4 fill-current text-blue-600" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z"/>
+                                                        </svg>
+                                                    </inertia-link>-->
                     </div>
 
                     <!-- Sidebar -->
@@ -58,7 +56,7 @@
 
                         <!-- Popular posts -->
                         <div class="mb-8">
-                            <h4 class="text-lg font-bold leading-snug tracking-tight mb-4">Popular on Simple</h4>
+                            <h4 class="text-lg font-bold leading-snug tracking-tight mb-4">Hören Sie auch</h4>
                             <ul class="-my-2">
                                 <li class="flex py-2 border-b border-gray-200">
                                     <svg class="w-4 h-4 flex-shrink-0 fill-current text-gray-400 mt-1 mr-3" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
@@ -150,7 +148,7 @@
 
                         <!-- Topics -->
                         <div>
-                            <h4 class="text-lg font-bold leading-snug tracking-tight mb-4">Topics</h4>
+                            <h4 class="text-lg font-bold leading-snug tracking-tight mb-4">Themen</h4>
                             <ul class="-my-2">
                                 <li class="flex py-2 border-b border-gray-200">
                                     <svg class="w-4 h-4 flex-shrink-0 fill-current text-gray-400 mt-1 mr-3" xmlns="http://www.w3.org/2000/svg">

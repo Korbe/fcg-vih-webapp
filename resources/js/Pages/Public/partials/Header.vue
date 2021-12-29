@@ -16,56 +16,61 @@
 
                     <!-- Desktop menu links -->
                     <ul class="flex flex-grow justify-end flex-wrap items-center">
-                        <Dropdown :to="route('pubic.about')" title="Über uns">
+                        <Dropdown :to="route('public.about')" title="Über uns">
                             <li>
-                                <inertia-link :href="route('pubic.about')" class="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">Was wir glauben</inertia-link>
+                                <inertia-link :href="route('public.about') + '#was-wir-glauben'" class="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">Was wir
+                                    glauben</inertia-link>
                             </li>
                             <li>
-                                <inertia-link :href="route('pubic.about')" class="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">Freie Christengemeinde
+                                <inertia-link :href="route('public.about') + '#freie-christengemeinde'" class="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">Freie Christengemeinde
                                 </inertia-link>
                             </li>
                             <li>
-                                <inertia-link :href="route('pubic.about')" class="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">Was ist eine Freikirche
+                                <inertia-link :href="route('public.about') + '#was-ist-eine-freikirche'"
+                                              class="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">Was ist eine Freikirche
                                 </inertia-link>
                             </li>
                             <li>
-                                <inertia-link :href="route('pubic.about')" class="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">Geschichte der FCG</inertia-link>
+                                <inertia-link :href="route('public.about') + '#geschichte-der-fcg'"
+                                              class="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight">Geschichte der
+                                    FCG</inertia-link>
                             </li>
                         </Dropdown>
                         <li>
-                            <inertia-link :href="route('pubic.termine')" class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Termine
+                            <inertia-link :href="route('public.events')"
+                                          class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Veranstaltungen
                             </inertia-link>
                         </li>
 
                         <li>
-                            <inertia-link :href="route('pubic.predigten')" class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Predigten
+                            <inertia-link :href="route('public.blog')" class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Predigten
                             </inertia-link>
                         </li>
                         <li>
-                            <inertia-link :href="route('pubic.kontakt')" class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Kontakt
+                            <inertia-link :href="route('public.contact')" class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Kontakt
                             </inertia-link>
                         </li>
                         <li>
-                            <inertia-link :href="route('pubic.kontakt')" class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Spenden
+                            <inertia-link :href="route('public.donate')" class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Spenden
                             </inertia-link>
                         </li>
                     </ul>
 
                     <!-- Desktop sign in links -->
-                    <ul class="flex flex-grow justify-end flex-wrap items-center">
+<!--                    <ul class="flex flex-grow justify-end flex-wrap items-center">
                         <li>
-                            <inertia-link :href="route('pubic.signin')" class="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">Sign in
+                            <inertia-link :href="route('public.signin')" class="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">Sign in
                             </inertia-link>
                         </li>
                         <li>
-                            <inertia-link :href="route('pubic.signup')" class="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3">
+                            <inertia-link :href="route('public.signup')" class="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3">
                                 <span>Sign up</span>
                                 <svg class="w-3 h-3 fill-current text-gray-400 flex-shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fill-rule="nonzero"/>
                                 </svg>
                             </inertia-link>
                         </li>
-                    </ul>
+                    </ul>-->
 
                 </nav>
 
@@ -98,38 +103,37 @@
                             class="absolute top-full h-screen pb-16 z-20 left-0 w-full overflow-scroll bg-white transition-all duration-300 ease-in-out"
                         >
                             <ul class="px-5 py-2">
-                                <li>
-                                    <inertia-link :href="route('pubic.pricing')" class="flex text-gray-600 hover:text-gray-900 py-2">Pricing</inertia-link>
-                                </li>
-                                <li>
-                                    <inertia-link :href="route('pubic.about')" class="flex text-gray-600 hover:text-gray-900 py-2">About us</inertia-link>
-                                </li>
-                                <li>
-                                    <inertia-link :href="route('pubic.tutorials')" class="flex text-gray-600 hover:text-gray-900 py-2">Tutorials</inertia-link>
-                                </li>
-                                <li>
-                                    <inertia-link :href="route('pubic.blog')" class="flex text-gray-600 hover:text-gray-900 py-2">Blog</inertia-link>
-                                </li>
                                 <li class="py-2 my-2 border-t border-b border-gray-200">
-                                    <span class="flex text-gray-600 hover:text-gray-900 py-2">Resources</span>
+                                    <span class="flex text-gray-600 hover:text-gray-900 py-2">Über uns</span>
                                     <ul class="pl-4">
                                         <li>
-                                            <inertia-link :href="route('pubic.documentation')" class="text-sm flex font-medium text-gray-600 hover:text-gray-900 py-2">Documentation</inertia-link>
+                                            <inertia-link :href="route('public.about')" class="text-sm flex font-medium text-gray-600 hover:text-gray-900 py-2">Was wir glauben</inertia-link>
                                         </li>
                                         <li>
-                                            <inertia-link :href="route('pubic.support')" class="text-sm flex font-medium text-gray-600 hover:text-gray-900 py-2">Support center</inertia-link>
+                                            <inertia-link :href="route('public.about')" class="text-sm flex font-medium text-gray-600 hover:text-gray-900 py-2">Freie Christengemeinde</inertia-link>
                                         </li>
                                         <li>
-                                            <inertia-link :href="route('pubic.404')" class="text-sm flex font-medium text-gray-600 hover:text-gray-900 py-2">404</inertia-link>
+                                            <inertia-link :href="route('public.about')" class="text-sm flex font-medium text-gray-600 hover:text-gray-900 py-2">Was ist eine Freikirche</inertia-link>
+                                        </li>
+                                        <li>
+                                            <inertia-link :href="route('public.about')" class="text-sm flex font-medium text-gray-600 hover:text-gray-900 py-2">Geschichte der FCG</inertia-link>
                                         </li>
                                     </ul>
                                 </li>
+
+
                                 <li>
-                                    <inertia-link :href="route('pubic.signin')" class="flex font-medium w-full text-gray-600 hover:text-gray-900 py-2 justify-center">Sign in</inertia-link>
+                                    <inertia-link :href="route('public.events')" class="flex text-gray-600 hover:text-gray-900 py-2">Veranstaltungen</inertia-link>
                                 </li>
                                 <li>
-                                    <inertia-link :href="route('pubic.signup')" class="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 w-full my-2">
-                                        <span>Sign up</span>
+                                    <inertia-link :href="route('public.blog')" class="flex text-gray-600 hover:text-gray-900 py-2">Predigten</inertia-link>
+                                </li>
+                                <li>
+                                    <inertia-link :href="route('public.donate')" class="flex text-gray-600 hover:text-gray-900 py-2">Spenden</inertia-link>
+                                </li>
+                                <li>
+                                    <inertia-link :href="route('public.contact')" class="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 w-full my-2">
+                                        <span>Kontakt</span>
                                         <svg class="w-3 h-3 fill-current text-gray-400 flex-shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fill="#999" fill-rule="nonzero"/>
                                         </svg>
@@ -180,7 +184,7 @@ export default {
         document.addEventListener('keydown', this.keyPress)
         document.addEventListener('scroll', this.handleScroll)
     },
-    beforeDestroy() {
+    beforeUnmount() {
         document.removeEventListener('click', this.clickOutside)
         document.removeEventListener('keydown', this.keyPress)
         document.removeEventListener('scroll', this.handleScroll)

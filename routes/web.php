@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PublicController;
 use Illuminate\Foundation\Application;
@@ -17,19 +18,24 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', [PublicController::class, 'home'])->name('home');
-Route::get('/blog', [PublicController::class, 'blog'])->name('blog');
-Route::get('/blog/{post:slug}', [PostController::class, 'show'])->name('posts.show');
+Route::name('public.')->group(function () {
+
+    Route::get('/', [HomeController::class, 'home'])->name('home');
+    Route::get('/about', [HomeController::class, 'about'])->name('about');
+    Route::get('/events', [HomeController::class, 'events'])->name('events');
+    Route::get('/donate', [HomeController::class, 'donate'])->name('donate');
+    Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+    Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
+
+    Route::get('/impressum', [HomeController::class, 'impressum'])->name('impressum');
+    Route::get('/datenschutz', [HomeController::class, 'datenschutz'])->name('datenschutz');
 
 
-Route::get('/laravel', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+
+    Route::get('/blog/{post:slug}', [PostController::class, 'show'])->name('posts.show');
+
 });
+
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
@@ -39,10 +45,10 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::resource("posts", PostController::class)->except("show");
 
+});
 
+Route::fallback(function () {
+    return Inertia::render('PageNotFound');
 });
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->name('dashboard');

@@ -21,20 +21,27 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
             <!-- Hero content -->
-            <div class="pt-32 pb-12 md:pt-40 md:pb-20">
+            <div class="pt-32 pb-12 md:pt-44 md:pb-20">
+
+
 
                 <!-- Section header -->
                 <div class="text-center pb-12 md:pb-16">
-                    <h1 class="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">Freie Christengemeinde Villach</h1>
+
+                    <logo class="mx-auto pb-10"></logo>
+
+                    <h1 class="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4">Freie Christengemeinde Villach</h1>
                     <div class="max-w-3xl mx-auto">
-                        <p class="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">Herzlich Willkommen, wir sind eine Gruppe Christus-gläubiger Menschen. Es erwartet Sie ein
+                        <p class="text-xl text-gray-600 my-10">Herzlich Willkommen, wir sind eine Gruppe Christus-gläubiger Menschen. Es erwartet Sie ein
                             buntes Gemisch von Menschen, die nie beisammen wären, wenn Sie nicht Christus kennengelernt hätten.</p>
-                        <div class="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300">
+                        <div class="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
                             <div>
-                                <a class="btn text-white bg-brand-primary hover:bg-brand-primary-light w-full mb-4 sm:w-auto sm:mb-0" href="#0">Mehr erfahren</a>
+                                <inertia-link :href="route('public.about')" class="btn text-white bg-brand-primary-default hover:bg-brand-primary-light w-full mb-4 sm:w-auto sm:mb-0" href="#0">Mehr
+                                    erfahren</inertia-link>
                             </div>
                             <div>
-                                <a class="btn text-white bg-brand-secondary hover:bg-brand-secondary-light w-full sm:w-auto sm:ml-4" href="#0">Um Gebet bitten</a>
+                                <inertia-link :href="route('public.contact') + '#form'" class="btn text-white bg-brand-secondary-default hover:bg-brand-secondary-light w-full sm:w-auto sm:ml-4">Um Gebet
+                                    bitten</inertia-link>
                             </div>
                         </div>
                     </div>
@@ -42,11 +49,14 @@
             </div>
 
         </div>
+
     </section>
 </template>
 
 <script>
+import Logo from "@/Pages/Public/partials/Logo";
 export default {
     name: 'HeroHome',
+    components: {Logo},
 }
 </script>

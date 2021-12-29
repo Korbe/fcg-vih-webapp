@@ -1,27 +1,12 @@
 <template>
-    <div class="flex flex-col min-h-screen overflow-hidden">
-
-        <!-- Site header -->
-        <Header/>
-
-        <!-- Page content -->
-        <main class="flex-grow">
-
-            <!-- Page sections -->
-            <BlogList :posts="posts"/>
-
-        </main>
-
-        <!-- Site footer -->
-        <Footer/>
-
-    </div>
+    <public-layout>
+        <BlogList :posts="posts"/>
+    </public-layout>
 </template>
 
 <script>
-import Header from './partials/Header'
 import BlogList from './partials/BlogList'
-import Footer from './partials/Footer'
+import PublicLayout from "@/Layouts/PublicLayout";
 
 export default {
     name: 'Blog',
@@ -29,9 +14,8 @@ export default {
         posts: Object,
     },
     components: {
-        Header,
+        PublicLayout,
         BlogList,
-        Footer,
     },
 }
 </script>

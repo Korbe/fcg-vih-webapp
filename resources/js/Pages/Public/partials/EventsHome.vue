@@ -1,64 +1,53 @@
 <template>
-    <section>
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="py-12 md:py-20 border-t border-gray-200">
-                <!-- Section header -->
-                <div class="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-                    <h1 class="h2 mb-4">
-                        Wir sind nicht nur eine Kirche <br/>Wir sind Gemeinschaft
-                    </h1>
-                    <p class="text-xl text-gray-600">
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur excepteur sint occaecat
-                        cupidatat.
-                    </p>
+    <div class="max-w-4xl mx-auto pt-32 border-t border-gray-200">
+        <h1 class="h1 mb-5 text-center">Veranstaltungen</h1>
+        <p class="text-xl text-gray-600 text-center">
+            Wir sind nicht nur eine Kirche, wir sind Gemeinschaft. <br> Sie sind herzlich eingeladen zu unseren Veranstaltungen zu kommen.
+        </p>
+    </div>
+
+
+    <div class="py-12">
+
+        <div class="max-w-sm mx-auto grid gap-8 md:gap-16 md:grid-cols-2 lg:grid-cols-3 md:max-w-2xl lg:max-w-5xl pt-8 md:pt-10">
+            <div class="text-center">
+                <div class="h3 mb-1 text-">Gottesdienst</div>
+                <div class="text-gray-600">
+                    <p>Sonntags um 10 Uhr</p>
+                    <p>Infos unter <a class="underline" href="069911848920">0699 11848920</a></p>
                 </div>
+            </div>
 
-                <!-- Items -->
-                <div
-                    class="max-w-sm mx-auto grid gap-8 md:gap-16 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-5xl pt-8 md:pt-10"
-                >
-                    <!-- 1st item -->
-                    <div class="text-center">
-                        <div class="h3 mb-1">Gottesdienst</div>
-                        <div class="text-gray-600">
-                            Lorem ipsum is placeholder text commonly used tristique senectus
-                            et.
-                        </div>
-                    </div>
-
-                    <!-- 2nd item -->
-                    <div class="text-center">
-                        <div class="h3 mb-1">Gemeindegebet</div>
-                        <div class="text-gray-600">
-                            Lorem ipsum is placeholder text commonly used tristique senectus
-                            et.
-                        </div>
-                    </div>
-
-                    <!-- 3rd item -->
-                    <div class="text-center">
-                        <div class="h3 mb-1">Hefel Café</div>
-                        <div class="text-gray-600">
-                            Lorem ipsum is placeholder text commonly used tristique senectus
-                            et.
-                        </div>
-                    </div>
+            <div class="text-center">
+                <div class="h3 mb-1">Gemeindegebet</div>
+                <div class="text-gray-600">
+                    <p>Montags um 10:00 Uhr</p>
+                    <p>Infos unter <a class="underline" href="tel:069981907805">0699 81907805</a></p>
                 </div>
+            </div>
 
-                <div class="text-center my-16">
-                    <a
-                        class="btn text-white bg-brand-primary hover:bg-brand-primary-light w-full mb-4 sm:w-auto sm:mb-0"
-                        href="#0"
-                    >Alle Veranstaltungen ansehen</a
-                    >
+            <div class="text-center">
+                <div class="h3 mb-1">Hefel Café</div>
+                <div class="text-gray-600">
+                    <p>Jeden ersten Samstag im Monat von 09:00 bis 14:00 Uhr</p>
                 </div>
             </div>
         </div>
-    </section>
+
+        <div class="text-center mt-20">
+            <inertia-link :href="route('public.events')" class="btn text-white bg-brand-secondary-default hover:bg-brand-secondary-light w-full mb-4 sm:w-auto sm:mb-0" href="#0">
+                Alle Veranstaltungen ansehen
+            </inertia-link>
+        </div>
+    </div>
 </template>
+
 <script>
 export default {
-    name: "EventsHome",
-};
+    name: "EventsHome"
+}
 </script>
+
+<style scoped>
+
+</style>
