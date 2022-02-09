@@ -7,7 +7,7 @@
         </p>
     </div>
 
-    <div class="mx-auto max-w-2xl text-center mt-10">
+    <div class="container flex justify-center mx-auto max-w-lg text-center mt-10">
         <div class="py-4 mb-6">
             <h2 class="h4 mb-2">
                 <inertia-link :href="$page.props.post.url" class="hover:underline">{{ $page.props.post.title }}</inertia-link>
@@ -31,8 +31,6 @@
                 </div>
             </footer>
         </div>
-
-
     </div>
     <div class="text-center mb-20">
         <inertia-link :href="route('public.blog')" class="btn text-white bg-brand-primary-default hover:bg-brand-primary-light w-full mb-4 sm:w-auto sm:mb-0" href="#0">
@@ -47,7 +45,3 @@ export default {
     name: "BlogHome"
 }
 </script>
-
-<style scoped>
-
-</style>

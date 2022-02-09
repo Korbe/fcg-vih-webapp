@@ -28,7 +28,8 @@
                 <!-- Section header -->
                 <div class="text-center pb-12 md:pb-16">
 
-                    <logo class="mx-auto pb-10"></logo>
+
+                    <img class="mx-auto h-64 mb-10" alt="FCG Villach" src="/images/Logo-fcg-villach.png"/>
 
                     <h1 class="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4">Freie Christengemeinde Villach</h1>
                     <div class="max-w-3xl mx-auto">

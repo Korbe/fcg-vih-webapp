@@ -4,11 +4,12 @@
             <div class="flex items-center justify-between h-16 md:h-20">
 
                 <!-- Site branding -->
-                <div class="flex-shrink-0 mr-2">
+                <div class="flex items-center mr-2">
                     <!-- Logo -->
                     <inertia-link aria-label="FCG Villach" href="/">
                         <Logo class="h-12 text-center md:h-16"/>
                     </inertia-link>
+                    <span class="ml-3 text-gray-600 text-xl hover:text-gray-900 transition duration-150 ease-in-out">FCG Villach</span>
                 </div>
 
                 <!-- Desktop navigation -->
