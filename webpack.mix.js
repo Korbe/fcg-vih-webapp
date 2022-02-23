@@ -12,16 +12,22 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js').vue()
-    .copy("resources/public", "public/")
+    .postCss('resources/css/app.css', 'public/css', [
+        require('postcss-import'),
+        require('tailwindcss'),
+    ])
+    .webpackConfig(require('./webpack.config'));
+/*    .copy("resources/favicons/", "public/")
+    .copy("resources/public-config/", "public/")
     .copy("resources/images/", "public/images/")
-    .sass('resources/css/app.scss', 'public/css')
-    .options({
-        postCss: [
-            require('postcss-import'),
-            require('tailwindcss'),
-        ]
-    })
-    .sourceMaps(false, 'eval')
-    .disableSuccessNotifications()
-    .webpackConfig(require('./webpack.config'))
-    .version();
+    */
+
+if (mix.inProduction()) {
+    mix.version();
+}else{
+    mix.browserSync({
+        proxy: 'fcg-villach-local.test',
+        host: 'fcg-villach-local.test',
+        open: 'external'
+    });
+}

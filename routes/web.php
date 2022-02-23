@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\PublicController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -30,12 +29,7 @@ Route::name('public.')->group(function () {
     Route::get('/impressum', [HomeController::class, 'impressum'])->name('impressum');
     Route::get('/datenschutz', [HomeController::class, 'datenschutz'])->name('datenschutz');
 
-
-
-    Route::get('/blog/{post:slug}', [PostController::class, 'show'])->name('posts.show');
-
 });
-
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
@@ -50,5 +44,4 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 Route::fallback(function () {
     return Inertia::render('PageNotFound');
 });
-
 

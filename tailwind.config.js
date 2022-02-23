@@ -1,37 +1,54 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors')
 
 module.exports = {
-    purge: [
+    content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './vendor/laravel/jetstream/**/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
         './resources/js/**/*.vue',
+        './resources/js/Pages/**/*.vue',
+        './resources/js/Pages/**/**/*.vue',
     ],
 
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                sans: ['Inter var', ...defaultTheme.fontFamily.sans],
             },
             colors: {
                 'brand-primary': {
-                    default: '#0DB3E9',
-                    light: '#3DC2ED',
+                    DEFAULT: '#0DB3E9',
+                    '50': '#C9EFFC',
+                    '100': '#B3E9FB',
+                    '200': '#87DDF8',
+                    '300': '#5CD0F6',
+                    '400': '#30C4F3',
+                    '500': '#0DB3E9',
+                    '600': '#0B92BE',
+                    '700': '#087092',
+                    '800': '#064F67',
+                    '900': '#032D3B'
                 },
                 'brand-secondary': {
-                    default: '#FDA813',
-                    light: '#FDB942',
+                    DEFAULT: '#FDA813',
+                    '50': '#FFEBC9',
+                    '100': '#FEE4B5',
+                    '200': '#FED58C',
+                    '300': '#FEC664',
+                    '400': '#FDB73B',
+                    '500': '#FDA813',
+                    '600': '#E59302',
+                    '700': '#BD7902',
+                    '800': '#945F01',
+                    '900': '#6C4501'
                 },
             },
         },
     },
-
-    variants: {
-        extend: {
-            opacity: ['disabled'],
-        },
-    },
-
-    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+    plugins: [
+        require('@tailwindcss/forms'),
+        require('@tailwindcss/typography')
+    ],
 };
