@@ -6,8 +6,9 @@
 </template>
 
 <script>
-export default {
-    name: "JetLabel",
-    props: ['value']
-}
+    import { defineComponent } from 'vue'
+
+    export default defineComponent({
+        props: ['value']
+    })
 </script>

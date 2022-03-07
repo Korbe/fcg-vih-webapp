@@ -1,17 +1,17 @@
 <template>
     <div class="border border-gray-300 rounded-md shadow-sm p-2">
 
-
-        <!--   focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50  -->
-
         <input ref="file" :accept="accept" class="hidden" type="file" @change="change">
         <div v-if="!modelValue">
-            <button class="px-4 py-1 bg-gray-800 hover:bg-gray-700 rounded-md font-semibold text-xs text-white uppercase" type="button" @click="browse">
-                Browse
+            <button class="flex px-4 p-2 bg-gray-800 hover:bg-gray-700 rounded-md font-semibold text-xs text-white uppercase" type="button" @click="browse">
+                <PaperClipIcon class="h-4 text-gray-400 mr-2" aria-hidden="true" />
+                <span>Durchsuchen</span>
             </button>
         </div>
         <div v-else class="flex items-center justify-between">
-            <div class="flex-1 pr-1">{{ modelValue.name }} <span class="text-gray-500 text-xs">({{ filesize(modelValue.size) }})</span></div>
+            <PaperClipIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
+            <div class="flex-1 ml-2 pr-1">{{ modelValue.name }}
+                <span class="text-gray-500 text-xs">({{ filesize(modelValue.size) }})</span></div>
             <button class="px-4 py-1 bg-gray-800 hover:bg-gray-700 rounded-md font-semibold text-xs text-white uppercase" type="button" @click="remove">
                 Remove
             </button>
@@ -20,11 +20,16 @@
 </template>
 
 <script>
+import {PaperClipIcon} from "@heroicons/vue/outline";
+
 export default {
     name: "FileInput",
     props: {
-        modelValue: File,
+        modelValue: [File, Object],
         accept: String,
+    },
+    components: {
+        PaperClipIcon
     },
     emits: ['update:modelValue'],
     watch: {

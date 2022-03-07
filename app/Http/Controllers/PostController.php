@@ -3,48 +3,61 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Carbon\Carbon;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Str;
-use Illuminate\Validation\Rule;
 use Inertia\Inertia;
-use MongoDB\Driver\Session;
+use Inertia\Response;
+use Spatie\MediaLibrary\MediaCollections\Exceptions\MediaCannotBeDeleted;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Inertia\Response
+     * @return Response
      */
     public function index()
     {
+        $posts = Post::where('published_at', '<=', Carbon::now())->orderBy('published_at', 'DESC')->paginate(8);
+
+        $unpublishedPosts = Post::where(function ($query) {
+            $query->where('published_at', '>=', Carbon::now())
+                ->orWhereNull('published_at');
+        })->orderBy('published_at', 'ASC')->get();
+
+
+        /** @var Post $post */
+        foreach ($posts->getCollection() as $post) {
+
+            $media = $post->getFirstMedia('audio');
+            if ($media) {
+                $post['audio_name'] = $media->file_name;
+                $post['audio_size'] = $media->getHumanReadableSizeAttribute();
+            }
+        }
+
+        /** @var Post $post */
+        foreach ($unpublishedPosts as $post) {
+            $media = $post->getFirstMedia('audio');
+            if ($media) {
+                $post['audio_name'] = $media->file_name;
+                $post['audio_size'] = $media->getHumanReadableSizeAttribute();
+            }
+        }
+
         return Inertia::render('Posts/Index', [
-            /*'filters' => Request::all('search', 'trashed'),*/
-            'posts' => Post::all()
-            /*->orderByName()*/
-            /*->filter(Request::only('search', 'trashed'))*/
-            /*->paginate()*/
-            /*                ->transform(function ($contact) {
-                                return [
-                                    'id' => $contact->id,
-                                    'name' => $contact->name,
-                                    'phone' => $contact->phone,
-                                    'city' => $contact->city,
-                                    'deleted_at' => $contact->deleted_at,
-                                    'organization' => $contact->organization ? $contact->organization->only('name') : null,
-                                ];
-                            }),*/
+            'unpublished' => $unpublishedPosts,
+            'posts' => $posts
         ]);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Inertia\Response
+     * @return Response
      */
     public function create()
     {
@@ -54,104 +67,127 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @param Request $request
+     * @return RedirectResponse
      */
     public function store(Request $request)
     {
         $validated = $request->validate([
             'title' => ['required', 'string', 'max:50'],
-            'content' => ['required', 'string'],
+            'author' => ['required', 'string'],
+            'published_at' => ['nullable', 'date'],
             'audio' => ['nullable', 'mimes:application/octet-stream,audio/mpeg,mpga,mp3,wav'],
         ]);
 
         /** @var Post $post */
-        $post = Auth::user()->posts()->create(Arr::except($validated, 'audio'));
+        $post = Post::create(Arr::except($validated, 'audio'));
 
-        if($validated['audio']){
+        if ($validated['audio']) {
             $post->addMedia($validated['audio'])->toMediaCollection('audio');
         }
 
-        return Redirect::route('posts.index')->with('success', 'Post created.');
-
-        /* Validator::make($input, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
-            'photo' => ['nullable', 'mimes:jpg,jpeg,png', 'max:1024'],
-        ])->validateWithBag('updateProfileInformation');*/
-
-        /*
-           'organization_id' => ['nullable', Rule::exists('organizations', 'id')->where(function ($query) {
-               $query->where('account_id', Auth::user()->account_id);
-           })],
-        */
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param \App\Models\Post $post
-     * @return \Inertia\Response
-     */
-    public function show(Post $post)
-    {
-        $post->load('user');
-
-        return Inertia::render('Public/BlogPost', [
-            "post" => [
-                'title' => $post->title,
-                'url' => route('public.posts.show', $post->slug),
-                'content' => $post->content,
-                'audio' => $post->getFirstMediaUrl('audio'),
-                'created_at' => $post->created_at->format('m.d.Y'),
-                'updated_at' => $post->updated_at->format('m.d.Y'),
-                'author' => $post->user->only('name', 'profile_photo_url'),
-            ]
+        return redirect()->route('dashboard.posts.index')->with('flash', [
+            'bannerStyle' => 'success',
+            'banner' => 'Predigt erstellt.',
         ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Models\Post $post
-     * @return \Inertia\Response
+     * @param Post $post
+     * @return Response
      */
     public function edit(Post $post)
     {
+        /** @var Media $media */
+        $media = $post->getFirstMedia('audio');
+
         return Inertia::render('Posts/Edit', [
-            "post" => $post
+            "post" => [
+                'id' => $post->id,
+                'title' => $post->title,
+                'author' => $post->author,
+                'published_at' => $post->published_at?->format('Y-m-d\TH:i'),
+                'audio' => $media,
+                'created_at' => $post->created_at?->format('Y-m-d\TH:i'),
+                'updated_at' => $post->updated_at?->format('Y-m-d\TH:i'),
+            ]
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Models\Post $post
-     * @return \Illuminate\Http\RedirectResponse
+     * @param Request $request
+     * @param Post $post
+     * @return RedirectResponse
      */
     public function update(Request $request, Post $post)
     {
         $validated = $request->validate([
             'title' => ['required', 'string', 'max:50'],
-            'content' => ['required', 'string'],
+            'author' => ['required', 'string'],
+            'published_at' => ['nullable', 'date'],
         ]);
 
         $post->update($validated);
 
-        return Redirect::route('posts.index')->with('success', 'Post updated.');
+        return redirect()->route('dashboard.posts.index')->with('flash', [
+            'bannerStyle' => 'success',
+            'banner' => 'Predigt aktualisiert.',
+        ]);
+    }
+
+    /**
+     * Update or Deletes the resource audio in storage.
+     * @param Request $request
+     * @param Post $post
+     * @return RedirectResponse
+     * @throws MediaCannotBeDeleted
+     */
+    public function updateAudio(Request $request, Post $post)
+    {
+        $validated = $request->validate([
+            'audio' => ['nullable', 'mimes:application/octet-stream,audio/mpeg,mpga,mp3,wav'],
+        ]);
+
+        $media = $post->getFirstMedia('audio');
+
+        if ($media)
+            $media->delete();
+
+        if ($validated['audio']) {
+            $post->addMedia($validated['audio'])->toMediaCollection('audio');
+            $message = "Aufnahme aktualisiert";
+        } else {
+            $message = 'Aufnahme gelöscht.';
+        }
+
+        return back()->with('flash', [
+            'bannerStyle' => 'success',
+            'banner' => $message,
+        ]);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\Post $post
-     * @return \Illuminate\Http\RedirectResponse
+     * @param Post $post
+     * @return RedirectResponse
      */
     public function destroy(Post $post)
     {
+        $media = $post->getFirstMedia('audio');
+
+        if ($media)
+            $media->delete();
+
         $post->delete();
 
-        return Redirect::route('posts.index')->with('success', 'Post gelöscht.');
+        return redirect()->route('dashboard.posts.index')->with('flash', [
+            'bannerStyle' => 'success',
+            'banner' => 'Predigt gelöscht',
+        ]);
     }
 }

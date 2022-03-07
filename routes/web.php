@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\PublicController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -30,25 +30,21 @@ Route::name('public.')->group(function () {
     Route::get('/impressum', [HomeController::class, 'impressum'])->name('impressum');
     Route::get('/datenschutz', [HomeController::class, 'datenschutz'])->name('datenschutz');
 
-
-
-    Route::get('/blog/{post:slug}', [PostController::class, 'show'])->name('posts.show');
-
 });
 
+Route::name('dashboard.')->middleware(['auth:sanctum', 'verified'])->group(function () {
 
-Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
-    Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
-    })->name('dashboard');
+    Route::get("dashboard", [DashboardController::class, 'index'])->name('home');
+
 
     Route::resource("posts", PostController::class)->except("show");
+    Route::post("posts/{post}/audio", [PostController::class, 'updateAudio'])->name('posts.audio');
 
 });
+
 
 Route::fallback(function () {
     return Inertia::render('PageNotFound');
 });
-
 

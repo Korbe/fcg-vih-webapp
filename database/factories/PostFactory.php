@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Post;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PostFactory extends Factory
@@ -21,8 +22,13 @@ class PostFactory extends Factory
      */
     public function definition()
     {
+        $rand = rand(-2, 10);
+        $rand2 = rand(5, 50);
+
         return [
-            //
+            'title' => $this->faker->text($rand2),
+            'author' => $this->faker->name,
+            'published_at' => Carbon::now()->subDays($rand),
         ];
     }
 }

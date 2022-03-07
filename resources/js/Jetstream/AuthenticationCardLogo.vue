@@ -1,5 +1,11 @@
 <template>
-    <inertia-link :href="'/'">
+    <Link :href="'/'">
         <img alt="FCG Villach" src="/images/logo.png"/>
-    </inertia-link>
+    </Link>
 </template>
+
+<script>
+    export default{
+
+    }
+</script>

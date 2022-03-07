@@ -1,141 +1,166 @@
 <template>
-    <public-layout>
-
-        <section class="bg-gradient-to-b from-white to-gray-100">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 py-32 md:pt-40 mt-8 md:pb-20">
-
-                <!-- Section header -->
-                <div class="max-w-3xl mx-auto text-center pb-10">
-                    <h1 class="h1 mb-4">Kontakt</h1>
-                    <p class="text-xl text-gray-600">Sie erreichen uns per Telefon, E-Mail oder bequem über unser Kontaktformular.</p>
+    <public-layout title="Kontakt">
+        <div class="bg-white">
+            <header class="relative pb-36 bg-gray-900">
+                <div class="absolute inset-0">
+                    <img class="w-full h-full object-cover"
+                         src="https://images.unsplash.com/photo-1497333558196-daaff02b56d0?auto=format&fit=crop&h=800&w=1920&q=60&sat=-100" alt=""/>
+                    <div class="absolute inset-0 bg-gray-900 mix-blend-multiply" aria-hidden="true"/>
                 </div>
 
-                <div class="max-w-sm mx-auto text-center grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none" data-aos-id-blocks>
+                <Nav hasBackground/>
 
-                    <a href="tel:+436505893093">
-                        <div class="relative flex flex-col p-6 bg-white rounded shadow-xl">
-                            <svg class="mx-auto w-12 h-12 mb-3" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                                <g fill="none" fill-rule="evenodd">
-                                    <circle class="fill-current text-brand-primary-default" cx="24" cy="24" r="24"/>
-                                    <g stroke-width="2">
-                                        <path class="stroke-current text-blue-300"
-                                              d="M19.799 29.601C21.092 31.61 23.826 33 27 33c.59 0 1.163-.051 1.716-.142L33 35v-4.04c1.241-1.057 2-2.44 2-3.96 0-1.552-.792-2.961-2.081-4.027"/>
-                                        <path class="stroke-current text-white"
-                                              d="M23 14c-5.523 0-10 3.582-10 8 0 1.797.75 3.45 2 4.785V32l4.833-2.416c.996.266 2.059.416 3.167.416 5.523 0 10-3.582 10-8s-4.477-8-10-8z"/>
-                                    </g>
-                                </g>
-                            </svg>
-                            <h4 class="text-xl font-bold leading-snug tracking-tight mb-1">Telefon</h4>
-                            <p class="text-gray-600">+43 650 5893093</p>
+                <div class="relative mt-24 max-w-md mx-auto px-4 pb-32 sm:max-w-3xl sm:px-6 md:mt-32 lg:max-w-7xl lg:px-8">
+                    <h1 class="text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
+                        <span class="block xl:inline">Wir freuen uns auf</span>
+                        {{ ' ' }}
+                        <span class="block text-brand-primary xl:inline">Sie</span>
+
+                    </h1>
+                    <p class="mt-6 max-w-3xl text-xl text-gray-300">Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus,
+                        fames. Dui, amet, nec sit pulvinar.</p>
+                </div>
+            </header>
+
+
+            <main>
+
+
+                <div class="bg-gray-50">
+                    <!-- Cards -->
+                    <section class="-mt-32 max-w-md mx-auto relative z-10 px-4 sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8" aria-labelledby="contact-heading">
+                        <h2 class="sr-only">Kontaktieren Sie uns</h2>
+                        <div class="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8">
+                            <div v-for="link in supportLinks" :key="link.name" class="flex flex-col bg-white rounded-2xl shadow-xl">
+                                <div class="flex-1 relative pt-16 px-6 pb-8 md:px-8">
+                                    <div class="absolute top-0 p-5 inline-block bg-brand-primary-600 rounded-xl shadow-lg transform -translate-y-1/2">
+                                        <component :is="link.icon" class="h-6 w-6 text-white" aria-hidden="true"/>
+                                    </div>
+                                    <h3 class="text-xl font-medium text-gray-900">{{ link.name }}</h3>
+                                    <p class="mt-2 text-base text-brand-primary-700">{{ link.detail }}</p>
+                                    <p class="mt-4 text-base text-gray-500">{{ link.description }}</p>
+                                </div>
+                                <div class="p-6 bg-gray-50 rounded-bl-2xl rounded-br-2xl md:px-8">
+                                    <a :href="link.href" target="_blank" rel="noopener noreferrer" class="text-base font-medium text-brand-primary-700 hover:text-brand-primary-600">{{
+                                        link.ctaText
+                                        }}<span
+                                            aria-hidden="true"> &rarr;</span></a>
+                                </div>
+                            </div>
                         </div>
-                    </a>
-
-                    <a href="mailto:office@fcg-villach.at">
-                        <div class="relative flex flex-col p-6 bg-white rounded shadow-xl">
-                            <svg class="mx-auto w-12 h-12 mb-3" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                                <g fill="none" fill-rule="evenodd">
-                                    <circle class="fill-current text-brand-primary-default" cx="24" cy="24" r="24"/>
-                                    <g stroke-width="2">
-                                        <path class="stroke-current text-blue-300" d="M29 22h6v11H13V22h5"/>
-                                        <path class="stroke-current text-white" d="M21 25h-3v-3l9-9 3 3z"/>
-                                    </g>
-                                </g>
-                            </svg>
-                            <h4 class="text-xl font-bold leading-snug tracking-tight mb-1">E-Mail</h4>
-                            <p class="text-gray-600">office@fcg-villach.at</p>
-                        </div>
-                    </a>
-
-                    <a href="https://goo.gl/maps/VvnP1685sz4f5BMh8" target="_blank">
-                        <div class="relative flex flex-col p-6 bg-white rounded shadow-xl">
-                            <svg class="mx-auto w-12 h-12 mb-3" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                                <g fill="none" fill-rule="evenodd">
-                                    <circle class="fill-current text-brand-primary-default" cx="24" cy="24" r="24"/>
-                                    <g stroke-width="2">
-                                        <path class="stroke-current text-blue-300" d="M33 16L22 27"/>
-                                        <path class="stroke-current text-white" d="M33 16l-7 19-4-8-8-4z"/>
-                                    </g>
-                                </g>
-                            </svg>
-                            <h4 class="text-xl font-bold leading-snug tracking-tight mb-1">Adresse</h4>
-                            <p class="text-gray-600">Vassacherstraße 28, 9500 Villach</p>
-                        </div>
-                    </a>
-
+                    </section>
                 </div>
 
-                <div class="p-3 bg-white rounded shadow-xl mt-6">
-                    <iframe class="rounded" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d685.0079251500073!2d13.84518089062679!3d46.6261358426406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477081c082b8e4f7%3A0xce20ee88b28b7a1!2sFreie%20Christengemeinde%20%2F%20Pfingstgemeinde!5e0!3m2!1sde!2sat!4v1640735612012!5m2!1sde!2sat"/>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Contact section -->
-        <section id="form">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6">
-                <div class="pt-32 pb-12 md:pt-40 md:pb-20">
-
-                    <!-- Section header -->
-                    <div class="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-                        <h2 class="h2">Wir freuen uns über Ihre Nachricht</h2>
+                <div class="bg-gray-50">
+                    <div class="max-w-7xl mx-auto py-12 px-4 sm:py-24 sm:px-6 lg:px-8">
+                        <div class="max-w-3xl mx-auto divide-y-2 divide-gray-200">
+                            <h2 class="text-center text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                                Häufig gestellte Fragen
+                            </h2>
+                            <dl class="mt-6 space-y-6 divide-y divide-gray-200">
+                                <Disclosure as="div" v-for="faq in faqs" :key="faq.question" class="pt-6" v-slot="{ open }">
+                                    <dt class="text-lg">
+                                        <DisclosureButton class="text-left w-full flex justify-between items-start text-gray-400">
+                                        <span class="font-medium text-gray-900">
+                                          {{ faq.question }}
+                                        </span>
+                                            <span class="ml-6 h-7 flex items-center text-brand-primary">
+                                            <ChevronDownIcon :class="[open ? '-rotate-180' : 'rotate-0', 'h-6 w-6 transform']" aria-hidden="true"/>
+                                        </span>
+                                        </DisclosureButton>
+                                    </dt>
+                                    <DisclosurePanel as="dd" class="mt-2 pr-12">
+                                        <p class="text-base text-gray-500">
+                                            {{ faq.answer }}
+                                        </p>
+                                    </DisclosurePanel>
+                                </Disclosure>
+                            </dl>
+                        </div>
                     </div>
-
-                    <!-- Contact form -->
-                    <form class="max-w-xl mx-auto">
-                        <div class="flex flex-wrap -mx-3 mb-4">
-                            <div class="w-full px-3">
-                                <jet-label for="name" value="Name"/>
-                                <jet-input id="name" autocomplete="name" class="mt-1 w-full" placeholder="Name" type="text"/>
-                                <jet-input-error class="mt-2"/><!--:message="form.error"-->
-                            </div>
-                        </div>
-                        <div class="flex flex-wrap -mx-3 mb-4">
-                            <div class="w-full px-3">
-                                <jet-label for="email" value="E-Mail"/>
-                                <jet-input id="email" autocomplete="email" class="mt-1 w-full" placeholder="E-Mail" type="text"/>
-                                <jet-input-error class="mt-2"/><!--:message="form.error"-->
-                            </div>
-                        </div>
-
-                        <div class="flex flex-wrap -mx-3 mb-4">
-                            <div class="w-full px-3">
-                                <jet-label for="message" value="Nachricht"/>
-                                <textarea rows="4"
-                                          class="w-full no-resize border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-                                          id="message"></textarea>
-                                <jet-input-error class="mt-2"/><!--:message="form.error"-->
-                            </div>
-                        </div>
-                        <div class="flex flex-wrap -mx-3 mt-4">
-                            <div class="w-full px-3">
-                                <button class="btn text-white bg-brand-primary-default hover:bg-brand-primary-light w-full">Senden</button>
-                            </div>
-                        </div>
-                        <div class="text-sm text-gray-600 mt-4">
-                            Indem Sie auf "Senden" klicken, stimmen Sie zu, dass FCG Villach die oben angegebenen personenbezogenen Daten in Form von E-Mails speichert und sind mit unserer
-                            Datenschutzrichtlinie einverstanden.
-                        </div>
-                    </form>
-
                 </div>
-            </div>
-        </section>
 
+            </main>
+
+            <Footer></Footer>
+
+        </div>
     </public-layout>
 </template>
 
 <script>
-import PublicLayout from "@/Layouts/PublicLayout";
-import JetInput from "@/Jetstream/Input";
-import JetInputError from "@/Jetstream/InputError";
-import JetLabel from "@/Jetstream/Label";
-import JetButton from "@/Jetstream/Button";
+import {Disclosure, DisclosureButton, DisclosurePanel} from '@headlessui/vue'
+import {LocationMarkerIcon, MailIcon, PhoneIcon, ChevronDownIcon} from "@heroicons/vue/outline";
+import Nav from "@/Partials/Nav";
+import Footer from "@/Partials/Footer";
+import PublicLayout from "../../Layouts/PublicLayout";
 
 export default {
     name: "Contact",
-    components: {JetButton, JetLabel, JetInputError, JetInput, PublicLayout}
+    components: {
+        PublicLayout,
+        Footer,
+        Nav,
+        Disclosure,
+        DisclosureButton,
+        DisclosurePanel,
+        ChevronDownIcon,
+        LocationMarkerIcon,
+        MailIcon,
+        PhoneIcon,
+    },
+    data() {
+        return {
+            supportLinks: [
+                {
+                    name: 'Rufen Sie uns an',
+                    detail: '+43 650 58 93 0 93',
+                    href: 'tel:+436505893093',
+                    description: 'Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.',
+                    icon: PhoneIcon,
+                    ctaText: 'Anrufen',
+                },
+                {
+                    name: 'Schreiben Sie uns',
+                    detail: 'office@fcg-villach.at',
+                    href: 'mailto:office@fcg-villach.at',
+                    description: 'Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.',
+                    icon: MailIcon,
+                    ctaText: 'Schreiben',
+                },
+                {
+                    name: 'Besuchen Sie uns',
+                    detail: 'Vassacherstraße 28, 9500 Villach',
+                    href: 'https://goo.gl/maps/fDxswRLhh9dfKHUZ8',
+                    description: 'Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.',
+                    icon: LocationMarkerIcon,
+                    ctaText: 'Finden',
+                },
+            ],
+            faqs: [
+                {
+                    question: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr?",
+                    answer: "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam",
+                },
+                {
+                    question: "sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam?",
+                    answer: "Aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+                },
+                {
+                    question: "Et accusam et justo duo dolores et ea rebum. Stet no sea takimata sanctus est Lorem?",
+                    answer: "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet",
+                },
+                {
+                    question: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr?",
+                    answer: "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam",
+                },
+                {
+                    question: "sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam?",
+                    answer: "Aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+                },
+            ],
+        }
+    }
 }
 </script>
 

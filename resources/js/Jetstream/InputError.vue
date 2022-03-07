@@ -7,8 +7,9 @@
 </template>
 
 <script>
-export default {
-    name: "JetInputError",
-    props: ['message']
-}
+    import { defineComponent } from 'vue'
+
+    export default defineComponent({
+        props: ['message']
+    })
 </script>

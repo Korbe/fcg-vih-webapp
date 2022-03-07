@@ -4,8 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Support\Str;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
@@ -21,8 +19,8 @@ class Post extends Model implements HasMedia
      */
     protected $fillable = [
         'title',
-        'content',
-        'user_id',
+        'author',
+        'published_at'
     ];
 
     /**
@@ -31,22 +29,8 @@ class Post extends Model implements HasMedia
      * @var array
      */
     protected $casts = [
-        'created_at' => 'datetime:m.d.Y H:i:s',
-        'updated_at' => 'datetime:m.d.Y H:i:s',
+        'published_at' => 'datetime:d.m.Y H:i:s',
+        'created_at' => 'datetime:d.m.Y H:i:s',
+        'updated_at' => 'datetime:d.m.Y H:i:s',
     ];
-
-    public function setTitleAttribute($value)
-    {
-        $this->attributes['title'] = $value;
-        $this->attributes['slug'] = str::slug($value);
-    }
-
-    /**
-     * Get the page this model belongs to
-     *
-     * @return BelongsTo|User
-     */
-    public function user() {
-        return $this->belongsTo( User::class );
-    }
 }
