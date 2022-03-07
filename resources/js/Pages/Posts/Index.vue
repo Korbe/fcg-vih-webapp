@@ -1,63 +1,215 @@
 <template>
-    <AppLayout>
+    <AppLayout title="Predigten">
 
         <template #header>
             <div class="flex flex items-center">
                 <h2 class="flex-1 font-semibold text-xl text-gray-800 leading-tight">
-                    Posts
+                    Predigten
                 </h2>
-                <inertia-button :to="route('posts.create')">Create Post</inertia-button>
+                <inertia-button :to="route('dashboard.posts.create')">Neue Predigt</inertia-button>
             </div>
 
         </template>
 
+        <!-- Unpublished posts -->
+        <div class="pt-12">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="px-1 pb-6">
+                    <h3 class="text-lg font-medium text-gray-900">Unveröffentlichte Predigten</h3>
+                    <p class="mt-1 text-sm text-gray-600">Hier werden alle Predigten angezeigt welche entweder noch kein Veröffentlichungsdatum haben oder erst veröffentlicht werden.</p>
+                </div>
+                <div class="flex flex-col">
+                    <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                        <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-md">
+                                <table class="bg-white min-w-full divide-y divide-gray-200">
+                                    <thead class=" py-10">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Author</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Title</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Audio</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Veröffentlicht</th>
+                                        <th scope="col" class="relative px-6 py-3">
+                                            <span class="sr-only">Bearbeiten</span>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr v-for="post in unpublished" :key="post.id">
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="flex items-center">
+                                                <div class="flex-shrink-0 h-10 w-10">
+                                                    <img class="h-10 w-10 rounded-full" :src="'https://ui-avatars.com/api/?name=' + post.author + '&color=0DB3E9&background=edfbff'" alt=""/>
+                                                </div>
+                                                <div class="ml-4">
+                                                    <div class="text-sm font-medium text-gray-500">
+                                                        {{ post.author }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            {{ post.title }}
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            <template v-if="post.audio_name">
+                                                {{ post.audio_name }} ({{ post.audio_size }})
+                                            </template>
+                                            <template v-else>
+                                                Keine Aufnahme
+                                            </template>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            {{ post.published_at ?? 'kein Datum festgelegt' }}
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                            <Link :href="route('dashboard.posts.edit', post.id)" class="flex text-brand-primary-600 hover:text-brand-primary-900">
+                                                Bearbeiten
+                                                <ArrowSmRightIcon class="h-5 w-5"/>
+                                            </Link>
+                                        </td>
+                                    </tr>
+                                    <tr v-if="unpublished.length === 0">
+                                        <td colspan="5" class="text-center px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            Keine unveröffentlichten Predigten
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- all published posts -->
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <table class="w-full whitespace-no-wrap">
-                        <tr class="text-left font-bold">
-                            <th class="px-6 pt-6 pb-4">Name</th>
-                            <th class="px-6 pt-6 pb-4">Kategorie</th>
-                            <th class="px-6 pt-6 pb-4">Erstellt</th>
-                            <th class="px-6 pt-6 pb-4" colspan="2">Aktualisiert</th>
-                        </tr>
 
+                <div class="flex flex-col">
+                    <div class="px-1 pb-6">
+                        <h3 class="text-lg font-medium text-gray-900">Veröffentlichte Predigten</h3>
+                        <p class="mt-1 text-sm text-gray-600">Hier werden alle veröffentlichte Predigten angezeigt. Unter Bearbeiten können weitere Aktionen durchführen.</p>
+                    </div>
 
-                        <tr v-for="post in posts" :key="post.id" class="hover:bg-gray-100 focus-within:bg-gray-100">
-                            <td class="border-t">
-                                <inertia-link :href="route('posts.edit', post.id)" class="px-6 py-4 flex items-center focus:text-indigo-500">
-                                    {{ post.title }}
-                                    <i v-if="post.deleted_at" class="fas fa-trash flex-shrink-0 w-3 h-3 fill-gray-400 ml-2"/>
-                                </inertia-link>
-                            </td>
-                            <td class="border-t">
-                                <inertia-link :href="route('posts.edit', post.id)" class="px-6 py-4 flex items-center" tabindex="-1">
-                                    <div>
-                                        Kat
+                    <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                        <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-md">
+                                <table class="min-w-full divide-y divide-gray-200">
+                                    <thead class="bg-white py-10">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Author</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Title</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Audio</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Veröffentlicht</th>
+                                        <th scope="col" class="relative px-6 py-3">
+                                            <span class="sr-only">Bearbeiten</span>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr v-for="post in posts.data" :key="post.id">
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="flex items-center">
+                                                <div class="flex-shrink-0 h-10 w-10">
+                                                    <img class="h-10 w-10 rounded-full" :src="'https://ui-avatars.com/api/?name=' + post.author + '&color=0DB3E9&background=edfbff'" alt=""/>
+                                                </div>
+                                                <div class="ml-4">
+                                                    <div class="text-sm font-medium text-gray-900">
+                                                        {{ post.author }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            {{ post.title }}
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            <template v-if="post.audio_name">
+                                                {{ post.audio_name }} ({{ post.audio_size }})
+                                            </template>
+                                            <template v-else>
+                                                Keine Aufnahme
+                                            </template>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            {{ post.published_at }}
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                            <Link :href="route('dashboard.posts.edit', post.id)" class="flex text-brand-primary-600 hover:text-brand-primary-900">Bearbeiten
+                                                <ArrowSmRightIcon class="h-5 w-5"></ArrowSmRightIcon>
+                                            </Link>
+                                        </td>
+                                    </tr>
+                                    <tr v-if="posts.total === 0">
+                                        <td colspan="5" class="text-center px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            Keine veröffentlichten Predigten
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                                <div v-if="posts.total > 0" class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
+                                    <div class="flex-1 flex justify-between sm:hidden">
+                                        <Link preserve-scroll :disabled="posts.prev_page_url" :href="posts.prev_page_url"
+                                              class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                                            Zurück
+                                        </Link>
+                                        <Link preserve-scroll :disabled="posts.next_page_url" :href="posts.next_page_url"
+                                              class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                                            Weiter
+                                        </Link>
                                     </div>
-                                </inertia-link>
-                            </td>
-                            <td class="border-t">
-                                <inertia-link :href="route('posts.edit', post.id)" class="px-6 py-4 flex items-center" tabindex="-1">
-                                    {{ post.created_at }}
-                                </inertia-link>
-                            </td>
-                            <td class="border-t">
-                                <inertia-link :href="route('posts.edit', post.id)" class="px-6 py-4 flex items-center" tabindex="-1">
-                                    {{ post.updated_at }}
-                                </inertia-link>
-                            </td>
+                                    <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                                        <div>
+                                            <p class="text-sm text-gray-700">
+                                                Ergebnisse
+                                                <span class="font-medium">{{ posts.from }}</span>
+                                                {{ ' ' }}
+                                                bis
+                                                {{ ' ' }}
+                                                <span class="font-medium">{{ posts.to }}</span>
+                                                {{ ' ' }}
+                                                von
+                                                {{ ' ' }}
+                                                <span class="font-medium">{{ posts.total }}</span>
+                                                {{ ' ' }}
+                                                gesamt
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
 
-                            <td class="border-t w-px">
-                                <inertia-link :href="route('posts.edit', post.id)" class="px-4 flex items-center" tabindex="-1">
-                                    <i class="fas fa-chevron-right w-6 h-6 fill-gray-400"></i>
-                                </inertia-link>
-                            </td>
-                        </tr>
-                        <tr v-if="posts.length === 0">
-                            <td class="border-t px-6 py-4 text-center" colspan="5">Keine Beiträge gefunden</td>
-                        </tr>
-                    </table>
+                                                    <Link preserve-scroll :disabled="posts.prev_page_url" :href="posts.prev_page_url"
+                                                          class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                                        <span class="sr-only">Zurück</span>
+                                                        <ChevronLeftIcon class="h-5 w-5" aria-hidden="true"/>
+                                                    </Link>
+
+                                                    <template v-for="link in posts.links">
+                                                        <Link preserve-scroll :disabled="!link.url" :href="link.url" v-if="!isNaN(link.label)" :key="link.url + link.label"
+                                                              :class="[link.active ? 'z-10 bg-brand-primary-50 border-brand-primary-500 text-brand-primary-600' : 'bg-white border-gray-300 text-gray-500 hover:bg-gray-50', 'text-base font-medium ']"
+
+                                                              class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50  relative items-center px-4 py-2 border text-sm font-medium">
+                                                            {{ link.label }}
+                                                        </Link>
+                                                    </template>
+
+                                                    <Link preserve-scroll :disabled="posts.next_page_url" :href="posts.next_page_url"
+                                                          class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                                        <span class="sr-only">Weiter</span>
+                                                        <ChevronRightIcon class="h-5 w-5" aria-hidden="true"/>
+                                                    </Link>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -67,15 +219,18 @@
 <script>
 import AppLayout from "../../Layouts/AppLayout";
 import InertiaButton from "../../Shared/InertiaButton";
+import {ArrowSmRightIcon} from "@heroicons/vue/outline";
+import {ChevronLeftIcon, ChevronRightIcon} from '@heroicons/vue/solid'
 
 export default {
-    components: {InertiaButton, AppLayout},
-    props: {
-        posts: Object,
-        filters: Object,
+    components: {
+        InertiaButton, AppLayout, ArrowSmRightIcon,
+        ChevronLeftIcon,
+        ChevronRightIcon
     },
-    data() {
-        return {}
-    }
+    props: {
+        unpublished: Array,
+        posts: Object,
+    },
 }
 </script>

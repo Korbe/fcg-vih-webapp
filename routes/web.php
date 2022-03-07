@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use Illuminate\Foundation\Application;
@@ -31,15 +32,17 @@ Route::name('public.')->group(function () {
 
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+Route::name('dashboard.')->middleware(['auth:sanctum', 'verified'])->group(function () {
 
-    Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
-    })->name('dashboard');
+
+    Route::get("dashboard", [DashboardController::class, 'index'])->name('home');
+
 
     Route::resource("posts", PostController::class)->except("show");
+    Route::post("posts/{post}/audio", [PostController::class, 'updateAudio'])->name('posts.audio');
 
 });
+
 
 Route::fallback(function () {
     return Inertia::render('PageNotFound');
