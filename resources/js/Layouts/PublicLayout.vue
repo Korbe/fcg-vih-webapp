@@ -1,32 +1,25 @@
 <template>
-    <div class="flex flex-col min-h-screen overflow-hidden">
 
-        <!-- Site header -->
-        <Header/>
+    <Head :title="title" />
 
-        <!-- Page content -->
-        <main class="flex-grow">
+    <jet-banner />
 
-            <!-- Page sections -->
-            <slot/>
+    <slot/>
 
-        </main>
-
-        <!-- Site footer -->
-        <Footer/>
-
-    </div>
 </template>
 
 <script>
-import Header from "@/Pages/Public/partials/Header";
-import Footer from "@/Pages/Public/partials/Footer";
+import JetBanner from '@/Jetstream/Banner.vue'
+import Header from "@/Partials/Header";
+import Footer from "@/Partials/Footer";
+import Nav from "@/Partials/Nav";
+import { Head } from '@inertiajs/inertia-vue3';
+
 export default {
     name: "PublicLayout",
-    components: {Footer, Header}
+    components: {Nav, Footer, Head, JetBanner},
+    props: {
+        title: String,
+    },
 }
 </script>
-
-<style scoped>
-
-</style>

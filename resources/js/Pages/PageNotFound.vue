@@ -1,39 +1,45 @@
 <template>
-    <div class="flex flex-col min-h-screen overflow-hidden">
+    <public-layout title="404 - Seite konnte nicht gefunden werden">
+        <Nav />
 
-        <!-- Site header -->
-        <Header/>
+        <div class="min-h-full pt-16 pb-12 flex flex-col bg-white">
+            <main class="flex-grow flex flex-col justify-center max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex-shrink-0 flex justify-center">
+                    <Link href="/" class="inline-flex">
+                        <logo-text class="h-48 mx-auto mt-5"></logo-text>
+                    </Link>
 
-        <!-- Page content -->
-        <main class="flex-grow">
-
-            <div class="max-w-6xl mx-auto px-4 sm:px-6">
-                <div class="pt-32 pb-12 md:pt-40 md:pb-20">
-                    <div class="max-w-3xl mx-auto text-center">
-                        <!-- 404 content -->
-                        <h1 class="h1 mb-4">Oh nein! <br>Du bist über eine Rarität gestolpert.</h1>
-                        <h2 class="h2 ">Unter dieser Adresse gibt es hier nichts..</h2>
-                        <div class="mt-8">
-                            <inertia-link class="btn text-white bg-blue-600 hover:bg-blue-700" href="/">Zur Startseite</inertia-link>
+                </div>
+                <div class="py-16">
+                    <div class="text-center">
+                        <p class="text-sm font-semibold text-brand-primary-600 uppercase tracking-wide">404 Error</p>
+                        <h1 class="mt-2 text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">Seite nicht gefunden.</h1>
+                        <p class="mt-2 text-base text-gray-500">Entschuldigung, wir konnten die gesuchte Seite nicht finden, überprüfen Sie gegebenenfalls die Adresszeile.</p>
+                        <div class="mt-6">
+                            <Link href="/" class="text-base font-medium text-brand-primary-600 hover:text-brand-primary-500">Zurück zur Startseite<span aria-hidden="true"> &rarr;</span></Link>
                         </div>
                     </div>
                 </div>
-            </div>
-        </main>
+            </main>
+        </div>
 
-        <!-- Site footer -->
-        <Footer/>
-
-    </div>
+        <Footer />
+    </public-layout>
 </template>
 
 <script>
-import Header from './Public/partials/Header.vue'
-import Footer from './Public/partials/Footer.vue'
+import Header from '../Partials/Header.vue'
+import Footer from '../Partials/Footer.vue'
+import PublicLayout from "../Layouts/PublicLayout";
+import Nav from "../Partials/Nav";
+import LogoText from "../Partials/LogoText";
 
 export default {
     name: 'PageNotFound',
     components: {
+        LogoText,
+        Nav,
+        PublicLayout,
         Header,
         Footer,
     },
