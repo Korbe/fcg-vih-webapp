@@ -5,7 +5,7 @@
         </template>
 
         <template #description>
-            Update your account's profile information and email address.
+            Aktualisieren Sie die Profilinformationen und die E-Mail-Adresse Ihres Kontos.
         </template>
 
         <template #form>

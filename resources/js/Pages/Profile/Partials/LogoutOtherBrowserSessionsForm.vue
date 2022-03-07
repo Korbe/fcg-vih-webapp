@@ -5,12 +5,12 @@
         </template>
 
         <template #description>
-            Manage and log out your active sessions on other browsers and devices.
+            Verwalten und melden Sie Ihre aktiven Sitzungen auf anderen Browsern und Geräten ab.
         </template>
 
         <template #content>
             <div class="max-w-xl text-sm text-gray-600">
-                If necessary, you may log out of all of your other browser sessions across all of your devices. Some of your recent sessions are listed below; however, this list may not be exhaustive. If you feel your account has been compromised, you should also update your password.
+                Bei Bedarf können Sie sich auf allen Ihren Geräten von allen anderen Browsersitzungen abmelden. Einige Ihrer letzten Sitzungen sind unten aufgeführt; diese Liste ist jedoch möglicherweise nicht vollständig. Wenn Sie der Meinung sind, dass Ihr Konto kompromittiert wurde, sollten Sie auch Ihr Passwort aktualisieren.
             </div>
 
             <!-- Other Browser Sessions -->

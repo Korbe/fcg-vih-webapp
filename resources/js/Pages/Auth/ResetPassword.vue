@@ -1,6 +1,8 @@
 <template>
     <Head title="Reset Password" />
 
+    <jet-banner />
+
     <jet-authentication-card>
         <template #logo>
             <jet-authentication-card-logo />
@@ -42,6 +44,7 @@
     import JetInput from '@/Jetstream/Input.vue'
     import JetLabel from '@/Jetstream/Label.vue'
     import JetValidationErrors from '@/Jetstream/ValidationErrors.vue'
+    import JetBanner from '@/Jetstream/Banner.vue'
 
     export default defineComponent({
         components: {
@@ -51,7 +54,8 @@
             JetButton,
             JetInput,
             JetLabel,
-            JetValidationErrors
+            JetValidationErrors,
+            JetBanner
         },
 
         props: {

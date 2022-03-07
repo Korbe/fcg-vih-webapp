@@ -1,6 +1,8 @@
 <template>
     <Head title="Register" />
 
+    <jet-banner />
+
     <jet-authentication-card>
         <template #logo>
             <jet-authentication-card-logo />
@@ -63,6 +65,7 @@
     import JetCheckbox from '@/Jetstream/Checkbox.vue'
     import JetLabel from '@/Jetstream/Label.vue'
     import JetValidationErrors from '@/Jetstream/ValidationErrors.vue'
+    import JetBanner from '@/Jetstream/Banner.vue'
     import { Head, Link } from '@inertiajs/inertia-vue3';
 
     export default defineComponent({
@@ -76,6 +79,7 @@
             JetLabel,
             JetValidationErrors,
             Link,
+            JetBanner
         },
 
         data() {

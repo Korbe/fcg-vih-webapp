@@ -5,7 +5,7 @@
         </template>
 
         <template #description>
-            Add additional security to your account using two factor authentication.
+            Fügen Sie Ihrem Konto mithilfe der Zwei-Faktor-Authentifizierung zusätzliche Sicherheit hinzu.
         </template>
 
         <template #content>
@@ -14,7 +14,7 @@
             </h3>
 
             <h3 class="text-lg font-medium text-gray-900" v-else>
-                You have not enabled two factor authentication.
+                Sie haben die Zwei-Faktor-Authentifizierung nicht aktiviert.
             </h3>
 
             <div class="mt-3 max-w-xl text-sm text-gray-600">

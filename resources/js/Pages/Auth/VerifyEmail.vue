@@ -1,6 +1,8 @@
 <template>
     <Head title="Email Verification" />
 
+    <jet-banner />
+
     <jet-authentication-card>
         <template #logo>
             <jet-authentication-card-logo />
@@ -32,6 +34,7 @@
     import JetAuthenticationCardLogo from '@/Jetstream/AuthenticationCardLogo.vue'
     import JetButton from '@/Jetstream/Button.vue'
     import { Head, Link } from '@inertiajs/inertia-vue3';
+    import JetBanner from '@/Jetstream/Banner.vue'
 
     export default defineComponent({
         components: {
@@ -40,6 +43,7 @@
             JetAuthenticationCardLogo,
             JetButton,
             Link,
+            JetBanner
         },
 
         props: {

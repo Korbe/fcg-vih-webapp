@@ -5,7 +5,7 @@
         </template>
 
         <template #description>
-            Ensure your account is using a long, random password to stay secure.
+            Stellen Sie sicher, dass Ihr Konto ein langes, zufälliges Passwort verwendet, um sicher zu bleiben.
         </template>
 
         <template #form>
