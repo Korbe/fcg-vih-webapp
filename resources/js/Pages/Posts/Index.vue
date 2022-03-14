@@ -12,7 +12,7 @@
         <!-- Unpublished posts -->
         <div class="pt-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="px-1 pb-6">
+                <div class="px-2 pb-6">
                     <h3 class="text-lg font-medium text-gray-900">Unveröffentlichte Predigten</h3>
                     <p class="mt-1 text-sm text-gray-600">Hier werden alle Predigten angezeigt welche entweder noch kein Veröffentlichungsdatum haben oder erst veröffentlicht werden.</p>
                 </div>
@@ -86,14 +86,14 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
                 <div class="flex flex-col">
-                    <div class="px-1 pb-6">
+                    <div class="px-2 pb-6">
                         <h3 class="text-lg font-medium text-gray-900">Veröffentlichte Predigten</h3>
                         <p class="mt-1 text-sm text-gray-600">Hier werden alle veröffentlichte Predigten angezeigt. Unter Bearbeiten können weitere Aktionen durchführen.</p>
                     </div>
 
-                    <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                        <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-md">
+                    <div class="overflow-x-auto bg-white sm:rounded-md"> <!--sm:-mx-6 lg:-mx-8-->
+                        <div class="align-middle inline-block min-w-full"> <!--  sm:px-6 lg:px-8 -->
+                            <div class="shadow overflow-hidden border-b border-gray-200">
                                 <table class="min-w-full divide-y divide-gray-200">
                                     <thead class="bg-white py-10">
                                     <tr>
@@ -148,62 +148,63 @@
                                     </tbody>
                                 </table>
 
-                                <div v-if="posts.total > 0" class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
-                                    <div class="flex-1 flex justify-between sm:hidden">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div v-if="posts.total > 0" class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
+                        <div class="flex-1 flex justify-between sm:hidden">
+                            <Link preserve-scroll :disabled="posts.prev_page_url" :href="posts.prev_page_url"
+                                  class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                                Zurück
+                            </Link>
+                            <Link preserve-scroll :disabled="posts.next_page_url" :href="posts.next_page_url"
+                                  class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                                Weiter
+                            </Link>
+                        </div>
+                        <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                            <div>
+                                <p class="text-sm text-gray-700">
+                                    Ergebnisse
+                                    <span class="font-medium">{{ posts.from }}</span>
+                                    {{ ' ' }}
+                                    bis
+                                    {{ ' ' }}
+                                    <span class="font-medium">{{ posts.to }}</span>
+                                    {{ ' ' }}
+                                    von
+                                    {{ ' ' }}
+                                    <span class="font-medium">{{ posts.total }}</span>
+                                    {{ ' ' }}
+                                    gesamt
+                                </p>
+                            </div>
+                            <div>
+                                <div>
+                                    <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+
                                         <Link preserve-scroll :disabled="posts.prev_page_url" :href="posts.prev_page_url"
-                                              class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
-                                            Zurück
+                                              class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                            <span class="sr-only">Zurück</span>
+                                            <ChevronLeftIcon class="h-5 w-5" aria-hidden="true"/>
                                         </Link>
+
+                                        <template v-for="link in posts.links">
+                                            <Link preserve-scroll :disabled="!link.url" :href="link.url" v-if="!isNaN(link.label)" :key="link.url + link.label"
+                                                  :class="[link.active ? 'z-10 bg-brand-primary-50 border-brand-primary-500 text-brand-primary-600' : 'bg-white border-gray-300 text-gray-500 hover:bg-gray-50', 'text-base font-medium ']"
+
+                                                  class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50  relative items-center px-4 py-2 border text-sm font-medium">
+                                                {{ link.label }}
+                                            </Link>
+                                        </template>
+
                                         <Link preserve-scroll :disabled="posts.next_page_url" :href="posts.next_page_url"
-                                              class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
-                                            Weiter
+                                              class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                            <span class="sr-only">Weiter</span>
+                                            <ChevronRightIcon class="h-5 w-5" aria-hidden="true"/>
                                         </Link>
-                                    </div>
-                                    <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
-                                        <div>
-                                            <p class="text-sm text-gray-700">
-                                                Ergebnisse
-                                                <span class="font-medium">{{ posts.from }}</span>
-                                                {{ ' ' }}
-                                                bis
-                                                {{ ' ' }}
-                                                <span class="font-medium">{{ posts.to }}</span>
-                                                {{ ' ' }}
-                                                von
-                                                {{ ' ' }}
-                                                <span class="font-medium">{{ posts.total }}</span>
-                                                {{ ' ' }}
-                                                gesamt
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <div>
-                                                <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
-
-                                                    <Link preserve-scroll :disabled="posts.prev_page_url" :href="posts.prev_page_url"
-                                                          class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
-                                                        <span class="sr-only">Zurück</span>
-                                                        <ChevronLeftIcon class="h-5 w-5" aria-hidden="true"/>
-                                                    </Link>
-
-                                                    <template v-for="link in posts.links">
-                                                        <Link preserve-scroll :disabled="!link.url" :href="link.url" v-if="!isNaN(link.label)" :key="link.url + link.label"
-                                                              :class="[link.active ? 'z-10 bg-brand-primary-50 border-brand-primary-500 text-brand-primary-600' : 'bg-white border-gray-300 text-gray-500 hover:bg-gray-50', 'text-base font-medium ']"
-
-                                                              class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50  relative items-center px-4 py-2 border text-sm font-medium">
-                                                            {{ link.label }}
-                                                        </Link>
-                                                    </template>
-
-                                                    <Link preserve-scroll :disabled="posts.next_page_url" :href="posts.next_page_url"
-                                                          class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
-                                                        <span class="sr-only">Weiter</span>
-                                                        <ChevronRightIcon class="h-5 w-5" aria-hidden="true"/>
-                                                    </Link>
-                                                </nav>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    </nav>
                                 </div>
                             </div>
                         </div>
