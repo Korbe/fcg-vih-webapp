@@ -88,14 +88,14 @@ export default {
                     interval: "Montags",
                     time: '10 Uhr',
                     description: "",
-                    responsible: "Jasmina Blagojevic",
-                    phone: "0699 81907805",
+                    responsible: "Erika Korbitsch",
+                    phone: "069911848920",
                     mail: "office@fcg-villach.at"
                 },
                 {
                     name: "Hefel Café",
-                    interval: "Jeden ersten Samstag im Monat",
-                    time: "9 bis 14 Uhr",
+                    interval: "Jeden ersten Freitag im Monat",
+                    time: "14 - 18 Uhr",
                     description: "Unterhaltung, Austausch und Vernetzung bei Kuchen und Kaffee",
                     responsible: "Erika Korbitsch",
                     phone: "069911848920",
@@ -112,11 +112,11 @@ export default {
                 },
                 {
                     name: "Hauskreis",
-                    interval: "Ungerade Wochen, Mittwoch und Freitag",
-                    time: "19 bzw. 9 Uhr",
+                    interval: "Ungerade Wochen, Freitag",
+                    time: "9 Uhr",
                     description: "",
-                    responsible: "Andrea Kirisits",
-                    phone: "067761019425",
+                    responsible: "Bettina Morgan",
+                    phone: "065022200404",
                     mail: "office@fcg-villach.at"
                 },
                 {
@@ -125,7 +125,7 @@ export default {
                     time: "Jederzeit",
                     description: "",
                     responsible: "Christian Korbitsch",
-                    phone: "0650 5893093",
+                    phone: "06505893093",
                     mail: "office@fcg-villach.at"
                 },
             ]

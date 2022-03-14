@@ -16,11 +16,11 @@ mix.js('resources/js/app.js', 'public/js').vue()
         require('postcss-import'),
         require('tailwindcss'),
     ])
-    .webpackConfig(require('./webpack.config'));
-/*    .copy("resources/favicons/", "public/")
+    .webpackConfig(require('./webpack.config'))
+    .copy("resources/favicons/", "public/")
     .copy("resources/public-config/", "public/")
-    .copy("resources/images/", "public/images/")
-    */
+    .copy("resources/images/", "public/images/");
+
 
 if (mix.inProduction()) {
     mix.version();
