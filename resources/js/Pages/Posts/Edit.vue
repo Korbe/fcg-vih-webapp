@@ -1,6 +1,5 @@
 <template>
-    <AppLayout title="Predigt bearbeiten">
-
+    <app-layout title="Predigt bearbeiten">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Predigt ändern
@@ -114,9 +113,7 @@
                 </div>
             </div>
         </div>
-
-    </AppLayout>
-
+    </app-layout>
 </template>
 
 <script>

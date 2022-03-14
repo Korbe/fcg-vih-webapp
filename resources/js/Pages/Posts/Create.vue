@@ -1,6 +1,5 @@
 <template>
-    <AppLayout title="Neue Predigt">
-
+    <app-layout title="Neue Predigt">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Neue Predigt
@@ -69,9 +68,7 @@
                 </div>
             </div>
         </div>
-
-    </AppLayout>
-
+    </app-layout>
 </template>
 
 <script>

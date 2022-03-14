@@ -22,11 +22,11 @@
                                 <jet-nav-link :href="route('dashboard.home')" :active="route().current('dashboard.home')">
                                     Dashboard
                                 </jet-nav-link>
-                                <jet-nav-link :href="route('dashboard.posts.create')" :active="route().current('dashboard.posts.create')">
-                                    Neue Predigt
-                                </jet-nav-link>
                                 <jet-nav-link :href="route('dashboard.posts.index')" :active="route().current('dashboard.posts.index')">
                                     Predigten
+                                </jet-nav-link>
+                                <jet-nav-link :href="route('dashboard.posts.create')" :active="route().current('dashboard.posts.create')">
+                                    Neue Predigt
                                 </jet-nav-link>
                             </div>
                         </div>
@@ -125,7 +125,7 @@
                                         <!-- Authentication -->
                                         <form @submit.prevent="logout">
                                             <jet-dropdown-link as="button">
-                                                Log Out
+                                                Abmelden
                                             </jet-dropdown-link>
                                         </form>
                                     </template>
@@ -148,8 +148,14 @@
                 <!-- Responsive Navigation Menu -->
                 <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}" class="sm:hidden">
                     <div class="pt-2 pb-3 space-y-1">
-                        <jet-responsive-nav-link :href="route('dashboard.home')" :active="route().current('dashboard')">
+                        <jet-responsive-nav-link :href="route('dashboard.home')" :active="route().current('dashboard.home')">
                             Dashboard
+                        </jet-responsive-nav-link>
+                        <jet-responsive-nav-link :href="route('dashboard.posts.index')" :active="route().current('dashboard.posts.index')">
+                            Predigten
+                        </jet-responsive-nav-link>
+                        <jet-responsive-nav-link :href="route('dashboard.posts.create')" :active="route().current('dashboard.posts.create')">
+                            Neue Predigt
                         </jet-responsive-nav-link>
                     </div>
 
@@ -178,7 +184,7 @@
                             <!-- Authentication -->
                             <form method="POST" @submit.prevent="logout">
                                 <jet-responsive-nav-link as="button">
-                                    Log Out
+                                    Abmelden
                                 </jet-responsive-nav-link>
                             </form>
 

@@ -1,6 +1,5 @@
 <template>
-    <AppLayout title="Predigten">
-
+    <app-layout title="Predigten">
         <template #header>
             <div class="flex flex items-center">
                 <h2 class="flex-1 font-semibold text-xl text-gray-800 leading-tight">
@@ -8,7 +7,6 @@
                 </h2>
                 <inertia-button :to="route('dashboard.posts.create')">Neue Predigt</inertia-button>
             </div>
-
         </template>
 
         <!-- Unpublished posts -->
@@ -109,7 +107,7 @@
                                     </tr>
                                     </thead>
                                     <tbody class="bg-white divide-y divide-gray-200">
-                                    <tr v-for="post in posts.data" :key="post.id">
+                                    <tr v-for="(post, postIndex) in posts.data" :key="post.id" :class="postIndex % 2 === 0 ? undefined : 'bg-gray-50'">
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             <div class="flex items-center">
                                                 <div class="flex-shrink-0 h-10 w-10">
@@ -213,7 +211,7 @@
                 </div>
             </div>
         </div>
-    </AppLayout>
+    </app-layout>
 </template>
 
 <script>
