@@ -11,13 +11,13 @@
                 <Nav hasBackground/>
 
                 <div class="relative mt-24 max-w-md mx-auto px-4 pb-32 sm:max-w-3xl sm:px-6 md:mt-32 lg:max-w-7xl lg:px-8">
-                    <h1 class="text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
+                    <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
                         <span class="block xl:inline">Wir freuen uns auf</span>
                         {{ ' ' }}
                         <span class="block text-brand-primary xl:inline">Sie</span>
 
                     </h1>
-                    <p class="mt-6 max-w-3xl text-xl text-gray-300">Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus,
+                    <p class="mt-3 md:mt-5 max-w-3xl text-xl text-gray-300">Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus,
                         fames. Dui, amet, nec sit pulvinar.</p>
                 </div>
             </header>

@@ -7,20 +7,24 @@
                 <div class="mx-auto max-w-7xl w-full pt-16 pb-24 lg:py-48 lg:text-left">
                     <div class="px-4 lg:w-1/2 sm:px-8 xl:pr-16">
 
-                        <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
+                        <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
                             <span class="block ">Ihre Spende</span>
                             {{ ' ' }}
                             <span class="block text-brand-primary xl:inline">hilft</span>
                         </h1>
-                        <p class="mt-3 max-w-md  text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
+                        <p class="mt-3 max-w-md text-xl text-gray-500 md:mt-5 md:max-w-3xl">
                             Die Freie Christengemeinde Villach wird ausschließlich aus Spendenmitteln finanziert.
                         </p>
-                        <p class="mt-3 max-w-md  text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">Wenn Sie uns unterstützen
+
+
+
+
+                        <p class="max-w-md text-medium text-gray-500 md:mt-5 md:max-w-3xl">Wenn Sie uns unterstützen
                             möchten, bitten wir Sie auf folgendes
                             Konto zu spenden.</p>
 
 
-                        <div class="mt-8 grid md:grid-cols-2 gap-4">
+                        <div class="py-4 grid md:grid-cols-2 gap-4">
 
                             <div>
                                 <label for="card_holder" class="block text-medium font-medium text-gray-700">Kontoinhaber</label>
@@ -58,6 +62,15 @@
                                 </div>
                             </div>
                         </div>
+
+                        <p class="py-3 text-medium text-gray-500">Mit den Einnahmen unterstützen wir auch andere Institutionen:</p>
+                        <ul class="py-2 list-disc pl-5 text-medium text-gray-500 space-y-2">
+                            <li><a target="_blank" href="https://avc-at.org/de/">AVC - Aktion verfolgter Christen</a></li>
+                            <li><a target="_blank" href="https://austria.impactgeneration.org/">Impact Austria - Organisation für Wachstum und Multiplikation</a></li>
+                            <li><a target="_blank" href="https://ampuls.or.at/">AMPuls – Verein für Entwicklungszusammenarbeit und soziale Dienste</a></li>
+                            <li><a target="_blank" href="https://prolifeeurope.org/">Prolife Europe - Hilfe und Beratung für werdende Mütter</a></li>
+                            <li><a target="_blank" href="http://soziale-tagestaette-raphael.at">Soziale Tagesstätte Raphael - Einrichtung für psychisch kranke Frauen und Mütter</a></li>
+                        </ul>
 
                         <div class="px-3 py-5 text-center">
                             <figure class="prose lg:prose-lg ">
@@ -101,7 +114,7 @@ export default {
         return {
             card_holder: 'FCG Villach',
             copyHolderText: null,
-            card_iban: 'AT78 1700 0001 5300 0387',
+            card_iban: 'AT60 1700 0001 5300 0905',
             copyIbanText: null,
         }
     },

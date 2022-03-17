@@ -28,7 +28,6 @@
 </template>
 
 <script>
-import Header from '../Partials/Header.vue'
 import Footer from '../Partials/Footer.vue'
 import PublicLayout from "../Layouts/PublicLayout";
 import Nav from "../Partials/Nav";
@@ -40,7 +39,6 @@ export default {
         LogoText,
         Nav,
         PublicLayout,
-        Header,
         Footer,
     },
 }

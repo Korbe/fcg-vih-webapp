@@ -8,8 +8,6 @@
                         <Logo class="h-12 w-auto lg:h-12"></Logo>
                     </Link>
 
-<!--                    <Link href="/" :class="[hasBackground ? 'text-white hover:text-brand-primary-300' : 'text-gray-500 hover:text-gray-900', 'lg:visible invisible lg:ml-10 text-lg font-medium']">FCG Villach</Link>-->
-
                     <div class="-mr-2 flex items-center lg:hidden">
                         <PopoverButton
                             :class="[hasBackground ? 'text-white focus:ring-white' : 'text-gray-500',

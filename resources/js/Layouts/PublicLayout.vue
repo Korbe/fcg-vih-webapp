@@ -10,7 +10,6 @@
 
 <script>
 import JetBanner from '@/Jetstream/Banner.vue'
-import Header from "@/Partials/Header";
 import Footer from "@/Partials/Footer";
 import Nav from "@/Partials/Nav";
 import { Head } from '@inertiajs/inertia-vue3';

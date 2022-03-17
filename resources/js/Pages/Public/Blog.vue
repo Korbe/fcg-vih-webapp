@@ -18,7 +18,7 @@
                                 <span class="block text-brand-primary xl:inline">anhören</span>
 
                             </h1>
-                            <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                            <p class="mt-3 text-xl text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                                 Hören Sie sich unsere Predigten ganz bequem an. Bleiben Sie auf dem Laufenden über die neuesten Predigten von FCG Villach.
                             </p>
                             <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
