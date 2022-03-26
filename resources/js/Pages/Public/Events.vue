@@ -2,7 +2,7 @@
     <public-layout title="Events">
         <Nav/>
 
-        <div class="text-center pt-32 pb-20 px-5 bg-gradient-to-b from-white to-gray-100">
+        <div class="text-center mt-10 sm:mt-12 md:mt-16 lg:mt-20 xl:mt-28 pb-20 px-5 bg-gradient-to-b from-white to-gray-100">
             <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
                 Sie sind <span class="text-brand-primary">willkommen</span>
             </h1>

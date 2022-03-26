@@ -1,95 +1,200 @@
 <template>
     <public-layout title="Spenden">
-        <div class="relative">
             <Nav/>
 
-            <main class="lg:relative">
-                <div class="mx-auto max-w-7xl w-full pt-16 pb-24 lg:py-48 lg:text-left">
-                    <div class="px-4 lg:w-1/2 sm:px-8 xl:pr-16">
+            <div class="mt-10 sm:mt-12 md:mt-16 lg:mt-20 xl:mt-28 bg-white text-center px-5">
+                <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                    Ihre Spende <span class="text-brand-primary">hilft</span>
+                </h1>
+                <p class="mt-3 text-xl text-gray-500 max-w-5xl  mx-auto sm:text-lg md:mt-5 md:text-xl">
+                    Wir finanziern uns ausschließlich aus Spendenmitteln. Wenn Sie uns unterstützen möchten, bitten wir Sie auf folgendes Konto zu spenden.
+                </p>
+            </div>
 
-                        <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                            <span class="block ">Ihre Spende</span>
-                            {{ ' ' }}
-                            <span class="block text-brand-primary xl:inline">hilft</span>
-                        </h1>
-                        <p class="mt-3 max-w-md text-xl text-gray-500 md:mt-5 md:max-w-3xl">
-                            Die Freie Christengemeinde Villach wird ausschließlich aus Spendenmitteln finanziert.
-                        </p>
-
-
-
-
-                        <p class="max-w-md text-medium text-gray-500 md:mt-5 md:max-w-3xl">Wenn Sie uns unterstützen
-                            möchten, bitten wir Sie auf folgendes
-                            Konto zu spenden.</p>
-
-
-                        <div class="py-4 grid md:grid-cols-2 gap-4">
-
-                            <div>
-                                <label for="card_holder" class="block text-medium font-medium text-gray-700">Kontoinhaber</label>
-                                <div class="mt-1 relative rounded-md shadow-sm">
-                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                        <CreditCardIcon class="h-5 w-5 text-brand-primary" aria-hidden="true"/>
-                                    </div>
-
-                                    <input id="card_holder" @click="copyHolder($event, card_holder)" type="text" readonly
-                                           class="focus:ring-brand-primary focus:border-brand-primary block w-full pl-10 pr-10 text-medium border-gray-300 rounded-md"
-                                           :value="card_holder"/>
-                                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                                        <span class="inline-block bg-gray-900 text-white rounded px-2 mr-2">{{ copyHolderText }}</span>
-                                        <DocumentDuplicateIcon class="h-5 w-5 text-gray-400" aria-hidden="true"/>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div>
-                                <label for="card_iban" class="block text-medium font-medium text-gray-700">IBAN</label>
-                                <div class="mt-1 relative rounded-md shadow-sm">
-                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                        <CreditCardIcon class="h-5 w-5 text-brand-secondary" aria-hidden="true"/>
-                                    </div>
-
-                                    <input id="card_iban" @click="copyIban($event, card_iban)" type="text" readonly
-                                           class="focus:ring-brand-secondary focus:border-brand-secondary block w-full pl-10 pr-10 text-medium border-gray-300 rounded-md"
-                                           :value="card_iban"/>
-                                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                                        <span class="inline-block bg-gray-900 text-white rounded px-2 mr-2">{{ copyIbanText }}</span>
-                                        <DocumentDuplicateIcon class="h-5 w-5 text-gray-400" aria-hidden="true"/>
-                                    </div>
-
-                                </div>
-                            </div>
+            <div class="max-w-3xl mx-auto px-5 my-16 grid md:grid-cols-2 gap-4">
+                <div>
+                    <label for="card_holder" class="block text-medium font-medium text-gray-700">Kontoinhaber</label>
+                    <div class="mt-1 relative rounded-md shadow-sm">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <CreditCardIcon class="h-5 w-5 text-brand-primary" aria-hidden="true"/>
                         </div>
 
-                        <p class="py-3 text-medium text-gray-500">Mit den Einnahmen unterstützen wir auch andere Institutionen:</p>
-                        <ul class="py-2 list-disc pl-5 text-medium text-gray-500 space-y-2">
-                            <li><a target="_blank" href="https://avc-at.org/de/">AVC - Aktion verfolgter Christen</a></li>
-                            <li><a target="_blank" href="https://austria.impactgeneration.org/">Impact Austria - Organisation für Wachstum und Multiplikation</a></li>
-                            <li><a target="_blank" href="https://ampuls.or.at/">AMPuls – Verein für Entwicklungszusammenarbeit und soziale Dienste</a></li>
-                            <li><a target="_blank" href="https://prolifeeurope.org/">Prolife Europe - Hilfe und Beratung für werdende Mütter</a></li>
-                            <li><a target="_blank" href="http://soziale-tagestaette-raphael.at">Soziale Tagesstätte Raphael - Einrichtung für psychisch kranke Frauen und Mütter</a></li>
-                        </ul>
-
-                        <div class="px-3 py-5 text-center">
-                            <figure class="prose lg:prose-lg ">
-                                <blockquote>
-                                    <p>Jeder gebe, wie er sich in seinem Herzen vorgenommen hat - nicht mit Verdruss oder aus Zwang, denn einen <b>fröhlichen</b> Geber liebt Gott.</p>
-                                </blockquote>
-                                <figcaption class="">2. Korinther 9, 7</figcaption>
-                            </figure>
+                        <input id="card_holder" @click="copyHolder($event, card_holder)" type="text" readonly
+                               class="focus:ring-brand-primary focus:border-brand-primary block w-full pl-10 pr-10 text-medium border-gray-300 rounded-md"
+                               :value="card_holder"/>
+                        <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                            <span class="inline-block bg-gray-900 text-white rounded px-2 mr-2">{{ copyHolderText }}</span>
+                            <DocumentDuplicateIcon class="h-5 w-5 text-gray-400" aria-hidden="true"/>
                         </div>
-
-                        <h2 class="mt-5 text-center text-gray-900 text-2xl font-extrabold">Vielen Dank, Gott segne Sie.</h2>
                     </div>
                 </div>
-                <div class="relative w-full h-64 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
-                    <img class="absolute inset-0 w-full h-full object-cover"
-                         src="https://images.unsplash.com/photo-1574607383476-f517f260d30b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2148&q=80" alt=""/>
+
+                <div>
+                <label for="card_iban" class="block text-medium font-medium text-gray-700">IBAN</label>
+                <div class="mt-1 relative rounded-md shadow-sm">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <CreditCardIcon class="h-5 w-5 text-brand-secondary" aria-hidden="true"/>
+                    </div>
+
+                    <input id="card_iban" @click="copyIban($event, card_iban)" type="text" readonly
+                           class="focus:ring-brand-secondary focus:border-brand-secondary block w-full pl-10 pr-10 text-medium border-gray-300 rounded-md"
+                           :value="card_iban"/>
+                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                        <span class="inline-block bg-gray-900 text-white rounded px-2 mr-2">{{ copyIbanText }}</span>
+                        <DocumentDuplicateIcon class="h-5 w-5 text-gray-400" aria-hidden="true"/>
+                    </div>
+
                 </div>
-            </main>
-        </div>
+            </div>
+            </div>
+
+        <h2 class="mt-5 text-center text-gray-900 text-2xl font-extrabold">Vielen Dank, Gott segne Sie.</h2>
+
+
+
+
+            <div class="max-w-6xl mx-auto pb-12 px-5 sm:px-6 lg:pb-16 lg:px-8">
+                    <div class="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Ihrer Spende erreicht auch <span class="text-brand-primary">andere</span></h2>
+                            <div class="pt-3">
+                                <figure class="prose lg:prose-lg ">
+                                    <blockquote>
+                                        <p>Jeder gebe, wie er sich in seinem Herzen vorgenommen hat. Nicht mit Verdruss oder aus Zwang, denn einen <b>fröhlichen</b> Geber liebt Gott.</p>
+                                    </blockquote>
+                                    <figcaption class="">2. Korinther 9, 7</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="mt-8 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
+                            <div class="col-span-1 flex justify-center py-8 px-8 ">
+                                <img class="max-h-12 grayscale hover:grayscale-0" src="/images/partner/ampuls.png" alt="ampuls"/>
+                            </div>
+                            <div class="col-span-1 flex justify-center py-8 px-8 ">
+                                <img class="max-h-12 grayscale hover:grayscale-0" src="/images/partner/impact-at.png" alt="impact-at"/>
+                            </div>
+                            <div class="col-span-1 flex justify-center py-8 px-8 ">
+                                <img class="max-h-12 grayscale hover:grayscale-0" src="/images/partner/prolife-eu.png" alt="Tuple"/>
+                            </div>
+                            <div class="col-span-1 flex justify-center py-8 px-8 ">
+                                <img class="max-h-12 grayscale hover:grayscale-0" src="/images/partner/sozialetagesstaetteraphael.png" alt="Laravel"/>
+                            </div>
+                            <div class="col-span-1 flex justify-center py-8 px-8 ">
+                                <img class="max-h-12 grayscale hover:grayscale-0" src="/images/partner/avc.png" alt="StaticKit"/>
+                            </div>
+                            <div class="col-span-1 flex justify-center py-8 px-8 ">
+                                <img class="max-h-12 grayscale hover:grayscale-0" src="/images/partner/statamic-logo-gray-400.svg" alt="Statamic"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            <div class="mt-50 mx-auto max-w-7xl w-full pt-16 pb-24 lg:py-48">
+                <div class="px-4 sm:px-8 xl:pr-16">
+
+                    <!--
+                                            <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                                                <span class="block ">Ihre Spende</span>
+                                                {{ ' ' }}
+                                                <span class="block text-brand-primary xl:inline">hilft</span>
+                                            </h1>
+                                            <p class="mt-3 max-w-5xl text-xl text-gray-500 md:mt-5 md:max-w-3xl max-w-5xl mx-auto">
+                                                Die Freie Christengemeinde Villach wird ausschließlich aus Spendenmitteln finanziert.
+                                            </p>
+                    -->
+
+
+                    <!--            <div class="max-w-7xl mx-auto py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-extrabold text-gray-900">Ihrer Spende erreicht auch <span class="text-brand-primary">andere</span></h2>
+                <div class="flow-root mt-8 lg:mt-10">
+                    <div class="-mt-4 -ml-8 flex flex-wrap justify-between lg:-ml-4">
+                        <div class="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
+                            <img class="h-12 grayscale hover:grayscale-0" src="/images/partner/ampuls.png" alt="ampuls"/>
+                        </div>
+                        <div class="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
+                            <img class="h-12 grayscale hover:grayscale-0" src="/images/partner/impact-at.png" alt="impact-at"/>
+                        </div>
+                        <div class="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
+                            <img class="h-12 grayscale hover:grayscale-0" src="/images/partner/prolife-eu.png" alt="Tuple"/>
+                        </div>
+                        <div class="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
+                            <img class="h-12 grayscale hover:grayscale-0" src="/images/partner/sozialetagesstaetteraphael.png" alt="Laravel"/>
+                        </div>
+                        <div class="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
+                            <img class="h-12 grayscale hover:grayscale-0" src="/images/partner/avc.png" alt="StaticKit"/>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+
+
+
+                    <p class="max-w-md text-medium text-gray-500 md:mt-5 md:max-w-3xl">Wenn Sie uns unterstützen möchten, bitten wir Sie auf folgendes Konto zu spenden.</p>
+
+
+<!--                    <div class="py-4 grid md:grid-cols-2 gap-4">
+
+                        <div>
+                            <label for="card_holder" class="block text-medium font-medium text-gray-700">Kontoinhaber</label>
+                            <div class="mt-1 relative rounded-md shadow-sm">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <CreditCardIcon class="h-5 w-5 text-brand-primary" aria-hidden="true"/>
+                                </div>
+
+                                <input id="card_holder" @click="copyHolder($event, card_holder)" type="text" readonly
+                                       class="focus:ring-brand-primary focus:border-brand-primary block w-full pl-10 pr-10 text-medium border-gray-300 rounded-md"
+                                       :value="card_holder"/>
+                                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                    <span class="inline-block bg-gray-900 text-white rounded px-2 mr-2">{{ copyHolderText }}</span>
+                                    <DocumentDuplicateIcon class="h-5 w-5 text-gray-400" aria-hidden="true"/>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div>
+                            <label for="card_iban" class="block text-medium font-medium text-gray-700">IBAN</label>
+                            <div class="mt-1 relative rounded-md shadow-sm">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <CreditCardIcon class="h-5 w-5 text-brand-secondary" aria-hidden="true"/>
+                                </div>
+
+                                <input id="card_iban" @click="copyIban($event, card_iban)" type="text" readonly
+                                       class="focus:ring-brand-secondary focus:border-brand-secondary block w-full pl-10 pr-10 text-medium border-gray-300 rounded-md"
+                                       :value="card_iban"/>
+                                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                    <span class="inline-block bg-gray-900 text-white rounded px-2 mr-2">{{ copyIbanText }}</span>
+                                    <DocumentDuplicateIcon class="h-5 w-5 text-gray-400" aria-hidden="true"/>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>-->
+
+                    <p class="py-3 text-medium text-gray-500">Mit den Einnahmen unterstützen wir auch andere Institutionen:</p>
+                    <ul class="py-2 list-disc pl-5 text-medium text-gray-500 space-y-2">
+                        <li><a target="_blank" href="https://avc-at.org/de/">AVC - Aktion verfolgter Christen</a></li>
+                        <li><a target="_blank" href="https://austria.impactgeneration.org/">Impact Austria - Organisation für Wachstum und Multiplikation</a></li>
+                        <li><a target="_blank" href="https://ampuls.or.at/">AMPuls – Verein für Entwicklungszusammenarbeit und soziale Dienste</a></li>
+                        <li><a target="_blank" href="https://prolifeeurope.org/">Prolife Europe - Hilfe und Beratung für werdende Mütter</a></li>
+                        <li><a target="_blank" href="http://soziale-tagestaette-raphael.at">Soziale Tagesstätte Raphael - Einrichtung für psychisch kranke Frauen und Mütter</a></li>
+                    </ul>
+
+                    <div class="px-3 py-5 text-center">
+                        <figure class="prose lg:prose-lg ">
+                            <blockquote>
+                                <p>Jeder gebe, wie er sich in seinem Herzen vorgenommen hat - nicht mit Verdruss oder aus Zwang, denn einen <b>fröhlichen</b> Geber liebt Gott.</p>
+                            </blockquote>
+                            <figcaption class="">2. Korinther 9, 7</figcaption>
+                        </figure>
+                    </div>
+
+                    <h2 class="mt-5 text-center text-gray-900 text-2xl font-extrabold">Vielen Dank, Gott segne Sie.</h2>
+                </div>
+            </div>
+
+
         <Footer/>
     </public-layout>
 </template>
