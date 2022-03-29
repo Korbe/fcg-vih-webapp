@@ -79,7 +79,7 @@ export default {
                     interval: "Sonntags",
                     time: "10 Uhr",
                     description: "",
-                    responsible: "Erika Korbitsch",
+                    responsible: "Christian Korbitsch",
                     phone: "069911848920",
                     mail: "office@fcg-villach.at"
                 },

@@ -5,7 +5,7 @@
                 <div class="flex items-center justify-between w-full lg:w-auto">
                     <Link href="/">
                         <span class="sr-only">FCG Villach</span>
-                        <Logo class="h-12 w-auto lg:h-12"></Logo>
+                        <LogoText class="h-12 w-auto lg:h-12"></LogoText>
                     </Link>
 
                     <div class="-mr-2 flex items-center lg:hidden">
@@ -77,10 +77,12 @@
 import {Popover, PopoverButton, PopoverPanel} from '@headlessui/vue'
 import {MenuIcon, XIcon, UserGroupIcon, ChatAlt2Icon, NewspaperIcon, CalendarIcon, CashIcon} from "@heroicons/vue/outline";
 import Logo from "@/Partials/Logo";
+import LogoText from "@/Partials/LogoText";
 
 export default {
     name: "Nav",
     components: {
+        LogoText,
         Logo,
         Popover, PopoverButton, PopoverPanel, MenuIcon, XIcon
     },

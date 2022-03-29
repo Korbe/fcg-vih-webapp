@@ -18,8 +18,8 @@
                         </Link>
                     </div>
                 </div>
-                <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
-                    <div class="md:grid md:grid-cols-2 md:gap-8">
+                <div class="mt-12 grid md:grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
+                    <div class="grid grid-cols-2 md:gap-8">
                         <div>
                             <h3 class="text-sm font-semibold text-gray-500 tracking-wider uppercase">
                                 FCG Villach
@@ -32,7 +32,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="mt-12 md:mt-0">
+                        <div class="mt-0">
                             <h3 class="text-sm font-semibold text-gray-500 tracking-wider uppercase">
                                 Rechtliches
                             </h3>
@@ -45,13 +45,13 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="md:grid md:grid-cols-2 md:gap-10">
+                    <div class="hidden md:block md:grid md:grid-cols-2 md:gap-10">
                         <div>
                             <h3 class="text-sm font-semibold text-gray-500 tracking-wider uppercase">
                                 Besuchen Sie auch
                             </h3>
                             <ul role="list" class="mt-4 space-y-4">
-                                <li v-for="item in navigation.links.splice(0, 6)" :key="item.name">
+                                <li v-for="item in navigation.links.splice(0, 5)" :key="item.name">
                                     <a :href="item.href" target="_blank" referrerpolicy="no-referrer" class="text-base text-gray-500 hover:text-gray-900">
                                         {{ item.name }}
                                     </a>
@@ -102,7 +102,6 @@ export default {
                 links: [
                     {name: 'Pfingstbewegung Österreich', href: 'https://fcgoe.at/'},
                     {name: 'Freikirchen in Österreich', href: 'https://freikirchen.at/29082013Nr1.php'},
-                    {name: 'Hilfe die ankommt', href: 'https://www.hilfedieankommt.at/de/home'},
                     {name: 'Impact Innenmission', href: 'https://austria.impactgeneration.org/'},
                     {name: 'AmPuls Außenmission', href: 'https://ampuls.or.at/'},
                     {name: 'Soziale Tagesstätte Raphael', href: 'https://soziale-tagestaette-raphael.at/'},
