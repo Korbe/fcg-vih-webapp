@@ -1,4 +1,11 @@
 <template>
+    <div class="mx-auto">
+        <button @click="switchOriginal" class="focus:outline-none focus:ring focus:ring-brand-primary-600 bg-brand-primary hover:bg-brand-primary-600 text-white py-1 px-2 mx-1 rounded">No edit/Original</button>
+        <button @click="switchIndividualFilter_Filter1" class="focus:outline-none focus:ring focus:ring-brand-primary-400 bg-brand-primary hover:bg-brand-primary-600 text-white py-1 px-2 mx-1 rounded">Filter 1</button>
+        <button @click="switchSchatten_Filter2" class="focus:outline-none focus:ring focus:ring-brand-primary-400 bg-brand-primary hover:bg-brand-primary-600 text-white py-1 px-2 mx-1 rounded">Filter 2</button>
+        <button @click="switchBlurry" class="focus:outline-none focus:ring focus:ring-brand-primary-400 bg-brand-primary hover:bg-brand-primary-600 text-white py-1 px-2 mx-1 rounded">Blurry</button>
+        <button @click="switchGray" class="focus:outline-none focus:ring focus:ring-brand-primary-400 bg-brand-primary hover:bg-brand-primary-600 text-white py-1 px-2 mx-1 rounded">Gray</button>
+    </div>
 
     <div class="pb-16 bg-gradient-to-b from-white to-gray-50">
         <div class="max-w-7xl mx-auto py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
@@ -19,11 +26,38 @@
             </div>
         </div>
     </div>
+
 </template>
 
 <script>
 export default {
     name: "Team",
+    methods: {
+        replaceImages(path){
+            this.team.forEach((teamItem) => {
+                let endIndex = teamItem.imageUrl.lastIndexOf("/");
+                teamItem.imageUrl = path + teamItem.imageUrl.substring(endIndex);
+            });
+        },
+        switchGray(){
+            this.replaceImages("images/portraits/gray/");
+        },
+        switchBlurry(){
+            this.replaceImages("images/portraits/blurry/");
+        },
+        switchOriginal(){
+            this.replaceImages("images/portraits/original/");
+        },
+        switchIndividualFilter_Filter1(){
+            this.replaceImages("images/portraits/filter1/");
+        },
+        switchSchatten_Filter2(){
+            this.replaceImages("images/portraits/filter2/");
+        }
+    },
+    created() {
+      this.switchOriginal();
+    },
     data() {
         return {
             team: [
@@ -55,9 +89,8 @@ export default {
                 {
                     name: 'Bettina Morgan',
                     role: 'Moderation',
-                    imageUrl: '/images/portraits/Bettina Morgan.jpg',
+                    imageUrl: '/images/portraits/Bettina-Morgan.jpg',
                 },
-
             ]
         }
     }
