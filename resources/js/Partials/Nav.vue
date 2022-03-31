@@ -21,12 +21,14 @@
                 <div class="hidden space-x-10 lg:flex lg:ml-10">
 
                     <Link v-if="$page.props.user" :href="route('dashboard.home')"
-                          :class="[hasBackground ? 'text-white hover:text-brand-primary-300' : 'text-gray-500 hover:text-gray-900', 'text-base font-medium ']">Dashboard</Link>
+
+                          :class="[hasBackground ? 'text-white hover:text-brand-primary-300' : 'text-gray-500 hover:text-brand-primary-300', 'text-base font-medium ']">Dashboard</Link>
 
                     <Link v-for="item in navigation" :key="item.name" :href="item.href"
-                                  :class="[hasBackground ? 'text-white hover:text-brand-primary-300' : 'text-gray-500 hover:text-gray-900', 'text-base font-medium ']"
-
-                                  >{{ item.name }}</Link>
+                          :class="[hasBackground ? 'text-white hover:text-brand-primary-300' : 'text-gray-500 hover:text-brand-primary-300',
+                               currentRoute === item.href ? 'text-brand-primary-600' : '',
+                               'text-base font-medium ']"
+                    >{{ item.name }}</Link>
                 </div>
             </div>
         </nav>
@@ -56,11 +58,15 @@
 
                         <div class="mt-6">
                             <nav class="grid gap-y-8">
-                                <Link v-for="item in navigation" :key="item.name" :href="item.href" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                                <Link v-for="item in navigation" :key="item.name" :href="item.href"
+                                      :class="{ 'bg-gray-100': currentRoute === item.href }"
+                                      class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                                     <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-brand-primary text-white sm:h-12 sm:w-12">
                                         <component :is="item.icon" class="h-6 w-6" aria-hidden="true" />
                                     </div>
-                                    <span class="ml-3 text-base font-medium text-gray-500">
+                                    <span class="ml-3 text-base font-medium text-gray-500"
+                                        :class="{ 'font-bold': currentRoute === item.href }"
+                                        >
                                     {{ item.name }}
                                 </span>
                                 </Link>
@@ -91,8 +97,15 @@ export default {
           type: Boolean,
       }
     },
+    beforeMount () {
+        ////window.addEventListener('scroll', this.handleScroll);
+    },
+    beforeUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    },
     data() {
         return {
+            atTopOfPage: true,
             navigation: [
                 {name: 'Über uns', href: route('public.about'), icon: UserGroupIcon},
                 {name: 'Events', href: route('public.events'), icon: CalendarIcon},
@@ -102,5 +115,23 @@ export default {
             ]
         }
     },
+    methods: {
+        /*:class="{ 'fixed top-0 left-0 right-0 bg-white': !atTopOfPage }"*/
+        handleScroll(){
+            // when the user scrolls, check the pageYOffset
+            if(window.pageYOffset>0){
+                // user is scrolled
+                if(this.atTopOfPage) this.atTopOfPage = false
+            }else{
+                // user is at top of page
+                if(!this.atTopOfPage) this.atTopOfPage = true
+            }
+        }
+    },
+    computed: {
+        currentRoute(){
+            return window.location.href;
+        }
+    }
 }
 </script>
