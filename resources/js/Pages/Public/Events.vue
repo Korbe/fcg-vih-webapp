@@ -2,22 +2,26 @@
     <public-layout title="Events">
         <Nav/>
 
-        <div class="text-center mt-10 sm:mt-12 md:mt-16 lg:mt-20 xl:mt-28 pb-20 px-5 bg-gradient-to-b from-white to-gray-100">
+        <div class="bg-gradient-to-b from-white to-gray-100">
+            <div class="text-center mt-10 sm:mt-12 md:mt-16 lg:mt-20 xl:mt-28 pb-20 px-5">
             <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
                 Sie sind <span class="text-brand-primary">willkommen</span>
             </h1>
-            <p class="mt-3 max-w-5xl text-gray-500 mx-auto text-xl sm:text-lg md:mt-5 lg:max-w-3xl md:text-xl">
+            <p class="mt-3 max-w-5xl lg:max-w-4xl text-gray-500 mx-auto text-xl sm:text-lg md:mt-5 lg:max-w-3xl md:text-xl">
                 Wir sind nicht nur eine Kirche, wir sind Gemeinschaft. Sie sind herzlich willkommen unsere Veranstaltungen zu besuchen.
             </p>
         </div>
 
-        <div class="bg-gray-100">
+            <div class="">
             <div class="pb-28 max-w-7xl mx-auto">
                 <ul role="list" class="px-4 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 text-base text-gray-500">
                     <li v-for="event in events" :key="event.email"
                         class="col-span-1 flex flex-col bg-white rounded-lg shadow hover:shadow-lg divide-y divide-gray-200">
                         <div class="w-full p-6">
-                            <h1 class="text-gray-900 text-xl font-medium ">{{ event.name }}</h1>
+                            <div class="flex justify-between">
+                                <h1 class="text-gray-900 text-xl font-medium ">{{ event.name }}</h1>
+                                <ArrowRightIcon class="w-5 h-5 text-gray-400" />
+                            </div>
                             <p class="mt-1 text-sm text-gray-500"></p>
                             <div class="mt-4 space-y-2 align-items-center">
                                 <div class="flex">
@@ -37,16 +41,16 @@
                         </div>
                         <div>
                             <div class="-mt-px flex divide-x divide-gray-200">
-                                <div class="w-0 flex-1 flex">
+                                <div class="w-0 flex-1 flex text-gray-700 hover:bg-gray-100">
                                     <a :href="`mailto:office@`"
-                                       class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
+                                       class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm font-medium border border-transparent rounded-bl-lg">
                                         <MailIcon class="w-5 h-5 text-gray-400" aria-hidden="true"/>
                                         <span class="ml-3">Schreiben</span>
                                     </a>
                                 </div>
-                                <div class="-ml-px w-0 flex-1 flex">
+                                <div class="-ml-px w-0 flex-1 flex text-gray-700 hover:bg-gray-100">
                                     <a :href="`tel:${event.phone}`"
-                                       class="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-br-lg hover:text-gray-500">
+                                       class="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm font-medium border border-transparent rounded-br-lg">
                                         <PhoneIcon class="w-5 h-5 text-gray-400" aria-hidden="true"/>
                                         <span class="ml-3">Anrufen</span>
                                     </a>
@@ -57,6 +61,7 @@
                 </ul>
             </div>
         </div>
+        </div>
 
         <Footer/>
     </public-layout>
@@ -64,13 +69,13 @@
 
 <script>
 import PublicLayout from "@/Layouts/PublicLayout";
-import {CalendarIcon, ClockIcon, MailIcon, PhoneIcon, UserCircleIcon, UserIcon} from "@heroicons/vue/outline";
+import {CalendarIcon, ClockIcon, MailIcon, PhoneIcon, UserCircleIcon, UserIcon, ArrowRightIcon} from "@heroicons/vue/outline";
 import Nav from "@/Partials/Nav";
 import Footer from "@/Partials/Footer";
 
 export default {
     name: "Events",
-    components: {Footer, Nav, PublicLayout, PhoneIcon, CalendarIcon, ClockIcon, MailIcon, UserIcon, UserCircleIcon},
+    components: {Footer, Nav, PublicLayout, PhoneIcon, CalendarIcon, ClockIcon, MailIcon, UserIcon, UserCircleIcon, ArrowRightIcon},
     data() {
         return {
             events: [
@@ -93,7 +98,7 @@ export default {
                     mail: "office@fcg-villach.at"
                 },
                 {
-                    name: "Hefel Café",
+                    name: "Heferl Café",
                     interval: "Jeden ersten Freitag im Monat",
                     time: "14 - 18 Uhr",
                     description: "Unterhaltung, Austausch und Vernetzung bei Kuchen und Kaffee",

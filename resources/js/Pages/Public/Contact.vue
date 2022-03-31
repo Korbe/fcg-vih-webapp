@@ -1,11 +1,11 @@
 <template>
     <public-layout title="Kontakt">
-        <div class="bg-white">
-            <header class="relative pb-36 bg-gray-900">
+        <div class="bg-gradient-to-b from-white to-gray-10">
+            <header class="relative pb-36 bg-brand-secondary">
                 <div class="absolute inset-0">
                     <img class="w-full h-full object-cover"
                          src="https://images.unsplash.com/photo-1497333558196-daaff02b56d0?auto=format&fit=crop&h=800&w=1920&q=60&sat=-100" alt=""/>
-                    <div class="absolute inset-0 bg-gray-900 mix-blend-multiply" aria-hidden="true"/>
+                    <div class="absolute inset-0 bg-brand-primary-1000 mix-blend-multiply" aria-hidden="true"/>
                 </div>
 
                 <Nav hasBackground/>
@@ -22,27 +22,26 @@
                 </div>
             </header>
 
+            <main class="">
 
-            <main>
 
-
-                <div class="bg-gray-50">
+                <div class="">
                     <!-- Cards -->
                     <section class="-mt-32 max-w-md mx-auto relative z-10 px-4 sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8" aria-labelledby="contact-heading">
                         <h2 class="sr-only">Kontaktieren Sie uns</h2>
                         <div class="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8">
-                            <div v-for="link in supportLinks" :key="link.name" class="flex flex-col bg-white rounded-2xl shadow-xl">
+                            <div v-for="contactDetail in contactDetails" :key="contactDetail.name" class="flex flex-col bg-white rounded-2xl shadow-xl">
                                 <div class="flex-1 relative pt-16 px-6 pb-8 md:px-8">
                                     <div class="absolute top-0 p-5 inline-block bg-brand-primary-600 rounded-xl shadow-lg transform -translate-y-1/2">
-                                        <component :is="link.icon" class="h-6 w-6 text-white" aria-hidden="true"/>
+                                        <component :is="contactDetail.icon" class="h-6 w-6 text-white" aria-hidden="true"/>
                                     </div>
-                                    <h3 class="text-xl font-medium text-gray-900">{{ link.name }}</h3>
-                                    <p class="mt-2 text-base text-brand-primary-700">{{ link.detail }}</p>
-                                    <p class="mt-4 text-base text-gray-500">{{ link.description }}</p>
+                                    <h3 class="text-xl font-medium text-gray-900">{{ contactDetail.name }}</h3>
+                                    <p class="mt-2 text-base text-brand-primary-700">{{ contactDetail.detail }}</p>
+                                    <p class="mt-4 text-base text-gray-500">{{ contactDetail.description }}</p>
                                 </div>
                                 <div class="p-6 bg-gray-50 rounded-bl-2xl rounded-br-2xl md:px-8">
-                                    <a :href="link.href" target="_blank" rel="noopener noreferrer" class="text-base font-medium text-brand-primary-700 hover:text-brand-primary-600">{{
-                                        link.ctaText
+                                    <a :href="contactDetail.href" target="_blank" rel="noopener noreferrer" class="text-base font-medium text-brand-primary-700 hover:text-brand-primary-600">{{
+                                        contactDetail.ctaText
                                         }}<span
                                             aria-hidden="true"> &rarr;</span></a>
                                 </div>
@@ -79,12 +78,10 @@
                         </div>
                     </div>
                 </div>
-
             </main>
-
-            <Footer></Footer>
-
         </div>
+
+        <Footer></Footer>
     </public-layout>
 </template>
 
@@ -111,7 +108,7 @@ export default {
     },
     data() {
         return {
-            supportLinks: [
+            contactDetails: [
                 {
                     name: 'Rufen Sie uns an',
                     detail: '+43 650 58 93 0 93',
