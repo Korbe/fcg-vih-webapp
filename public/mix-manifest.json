@@ -1,6 +1,6 @@
 {
-    "/js/app.js": "/js/app.js?id=c431d0fb9fa54b1c76161c1c57473f65",
-    "/css/app.css": "/css/app.css?id=4f0d086194d0ac3a9cc4a1c5540003f5",
+    "/js/app.js": "/js/app.js?id=26eeed0440b55cb7edb476986e4a3a84",
+    "/css/app.css": "/css/app.css?id=75d739a6bfbc9d6951fea9631da40e03",
     "/android-chrome-192x192.png": "/android-chrome-192x192.png?id=1e48a4598f2380c878c83181cca37f1c",
     "/apple-touch-icon.png": "/apple-touch-icon.png?id=3b29920aaf9293e5e46a0cb3c93a4614",
     "/browserconfig.xml": "/browserconfig.xml?id=bb86fed7db56dfaefc64976040ed47b7",
@@ -15,8 +15,7 @@
     "/web.config": "/web.config?id=ab5508ed3caf17b6314319df40d453f6",
     "/webmanifest.json": "/webmanifest.json?id=fc1224cef6581c70016420184ad64207",
     "/images/aboutus_prayers.jpg": "/images/aboutus_prayers.jpg?id=ecb616bdec4f7125136c8de7970df90f",
-    "/images/Logo-fcg-villach.png": "/images/Logo-fcg-villach.png?id=e1e34bf06e19e4b7967071b9e9711a10",
-    "/images/logo-text.png": "/images/logo-text.png?id=92539232b499e68bc36e697732be9e85",
-    "/images/logo.png": "/images/logo.png?id=7a609fd39c513aba99365a347612be93",
+    "/images/fcg-villach-logo-minimal.png": "/images/fcg-villach-logo-minimal.png?id=7a609fd39c513aba99365a347612be93",
+    "/images/fcg-villach-logo.png": "/images/fcg-villach-logo.png?id=597ee70324a25b4e48805dca710b2bc4",
     "/images/predigt.jpg": "/images/predigt.jpg?id=948b684640c308d8bc24d51fee6b4bdb"
 }

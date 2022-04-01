@@ -2,9 +2,9 @@
     <div class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="lg:text-center">
-                <h2 class="text-base text-brand-primary-600 font-semibold tracking-wide uppercase">Loremius</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">Just another blind text</p>
-                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">I dont know what to write here lorem ipusm dollarius mopelus, perferendis suscipit eaque iste dolor.</p>
+                <h2 class="text-base text-brand-primary-600 font-semibold tracking-wide uppercase">freie christengemeinde villach</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">Freie Christengemeinde</p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">Als Freie Christengemeinde – Pfingstgemeinde ist es uns ein Anliegen, den Menschen in Österreich und unserem Land zu dienen, indem wir die gute Nachricht von Jesus Christus gesellschaftsrelevant verkündigen und praktizieren.</p>
             </div>
 
             <div class="mt-16">

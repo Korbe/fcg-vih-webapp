@@ -1,5 +1,5 @@
 <template>
-    <div class="mx-auto">
+    <div class="my-3 max-w-7xl flex justify-center">
         <button @click="switchOriginal" class="focus:outline-none focus:ring focus:ring-brand-primary-600 bg-brand-primary hover:bg-brand-primary-600 text-white py-1 px-2 mx-1 rounded">No edit/Original</button>
         <button @click="switchIndividualFilter_Filter1" class="focus:outline-none focus:ring focus:ring-brand-primary-400 bg-brand-primary hover:bg-brand-primary-600 text-white py-1 px-2 mx-1 rounded">Filter 1</button>
         <button @click="switchSchatten_Filter2" class="focus:outline-none focus:ring focus:ring-brand-primary-400 bg-brand-primary hover:bg-brand-primary-600 text-white py-1 px-2 mx-1 rounded">Filter 2</button>

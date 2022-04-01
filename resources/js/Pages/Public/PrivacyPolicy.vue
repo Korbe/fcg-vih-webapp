@@ -14,8 +14,7 @@
 
         <section class="px-4 sm:px-6 max-w-5xl prose mx-auto  lg:prose-lg pb-24">
             <p>
-                Wir sind eine Freie Christengemeinde in Villach. Diese Homepage dient nur dem Informativen Zweck, wir nehmen die Predigten in unseren Gottesdiensten auf um sie anschließend im Internet
-                für Interessenten zugänglich zu machen.
+                Als Freie Christengemeinde Villach sind wir verpflichtet alle uns zukommenden Daten sicher und unzugänglich zu verwahren. Wir geben also keine Daten an dritten Personen weiter. Predigten werden vorerst nur in Audio aufgenommen und wenn Fotos gemacht werden, wird jede Person gefragt, ob sie öffentlich gezeigt werden will.
             </p>
 
 
@@ -31,7 +30,7 @@
             <h3>Ihre Rechte</h3>
             <p>Ihnen stehen bezüglich Ihrer bei uns gespeicherten Daten grundsätzlich die Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerruf und Widerspruch zu.
                 Wenn Sie glauben, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht verstößt oder Ihre datenschutzrechtlichen Ansprüche sonst in einer Weise verletzt worden sind, können Sie
-                sich unter datenschutz@fcg-villach.at beschweren.</p>
+                sich unter <a href="mailto:datenschutz@fcg-villach.at">datenschutz@fcg-villach.at</a> beschweren.</p>
 
 
         </section>

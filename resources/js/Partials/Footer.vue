@@ -9,7 +9,8 @@
                     <LogoText class="w-52 mx-auto" />
 
                     <p class="text-gray-500 text-base">
-                        Making the world a better place through constructing elegant hierarchies.
+                        Daran werden alle erkennen, dass ihr meine Jünger seid,
+                        wenn ihr Liebe untereinander habt (Johannes 13,35)
                     </p>
                     <div class="flex space-x-6">
                         <Link v-for="item in navigation.social" :key="item.name" :href="item.href" class="text-gray-500 hover:text-gray-500">
@@ -51,8 +52,8 @@
                                 Besuchen Sie auch
                             </h3>
                             <ul role="list" class="mt-4 space-y-4">
-                                <li v-for="item in navigation.links.splice(0, 5)" :key="item.name">
-                                    <a :href="item.href" target="_blank" referrerpolicy="no-referrer" class="text-base text-gray-500 hover:text-gray-900">
+                                <li v-for="item in navigation.links.splice(0, 3)" :key="item.name">
+                                    <a :href="item.href" target="_blank" class="text-base text-gray-500 hover:text-gray-900">
                                         {{ item.name }}
                                     </a>
                                 </li>
@@ -61,7 +62,7 @@
                         <div class="mt-12 md:mt-5">
                             <ul role="list" class="mt-4 space-y-4">
                                 <li v-for="item in navigation.links" :key="item.name">
-                                    <a :href="item.href" class="text-base text-gray-500 hover:text-gray-900">
+                                    <a :href="item.href" target="_blank" class="text-base text-gray-500 hover:text-gray-900">
                                         {{ item.name }}
                                     </a>
                                 </li>
@@ -105,8 +106,6 @@ export default {
                     {name: 'Impact Innenmission', href: 'https://austria.impactgeneration.org/'},
                     {name: 'AmPuls Außenmission', href: 'https://ampuls.or.at/'},
                     {name: 'Soziale Tagesstätte Raphael', href: 'https://soziale-tagestaette-raphael.at/'},
-                    {name: '4M Charakter-Wochenende Österreich', href: 'https://4mde.org/der-4te-musketier/charakterwochenende/'},
-                    {name: 'Frauenfrühstücks-Treffen', href: 'https://www.fruehstuecks-treffen.at/'},
                     {name: 'AVC „Aktion für verfolgte Christen und Notleidende“', href: 'https://avc-at.org/de/'},
                 ],
             }
