@@ -10,7 +10,7 @@
 
                 <Nav />
 
-                <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                <main class="py-32 mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
                     <div class="sm:text-center lg:text-left">
 
                         <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
@@ -19,10 +19,7 @@
                             <span class="block text-brand-primary xl:inline">Villach</span>
                         </h1>
                         <p class="mt-3 sm:mt-5 text-2xl text-gray-500 sm:max-w-2xl">Wir sind eine Gruppe christusgläubiger Menschen, die aus Freude an Jesus Christus und an ihrem neuen Leben vereint sind.</p>
-                        <p class="mt-2 text-xl text-gray-500 sm:text-lg sm:max-w-2xl sm:mx-auto md:text-xl lg:mx-0">
-                            Wir wissen, dass uns Gott zusammengeführt hat, denn ohne ihn hätten wir uns wohl nie kennengelernt. Wir sind also ein buntes Gemisch von Menschen, die Villach und Umgebung mit dem Evangelium erreichen wollen.
-                        </p>
-                            <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                             <div class="rounded-md shadow">
                                 <Link :href="route('public.blog')"
                                               class="border-transparent w-full flex items-center justify-center px-8 py-3 border-2 text-base font-medium rounded-md bg-brand-primary hover:bg-brand-primary-400 text-white md:py-4 md:text-lg md:px-10">

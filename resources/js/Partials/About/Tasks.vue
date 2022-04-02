@@ -1,8 +1,6 @@
 <template>
-    <div class="relative bg-white py-16 sm:py-24 lg:py-24">
+    <div class="relative bg-white py-16 sm:py-24 lg:pb-32 lg:pt-2">
         <div class="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
-<!--            <h2 class="text-base font-semibold uppercase tracking-wider text-brand-primary">freie christengemeinde villach</h2>-->
-            <h2 class="my-2 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">Unsere gemeinsamen Aufgaben sind</h2>
             <div class="mt-16">
                 <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2">
                     <div v-for="task in tasks" :key="task.name" class="pt-6">

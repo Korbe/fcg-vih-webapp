@@ -51,7 +51,7 @@
                 <div class="max-w-6xl mx-auto px-5 sm:px-6 pb-16 lg:px-8">
                     <div class="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
                         <div>
-                            <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Ihrer Spende erreicht auch <span class="text-brand-primary">andere</span></h2>
+                            <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Ihre Spende erreicht auch <span class="text-brand-primary">andere</span></h2>
                             <div class="pt-3">
                                 <figure class="prose lg:prose-lg ">
                                     <blockquote>

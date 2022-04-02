@@ -2,7 +2,7 @@
     <Popover as="div" class="relative z-10">
         <nav class="relative max-w-7xl mx-auto flex items-center justify-between pt-6 pb-2 px-4 sm:px-6 lg:px-8" aria-label="Global">
             <div class="flex items-center flex-1">
-                <div class="flex items-center justify-around lg:justify-between w-full lg:w-auto">
+                <div class="flex items-center justify-around space-x-10 lg:justify-between w-full lg:w-auto">
                     <Link href="/">
                         <span class="sr-only">FCG Villach</span>
                         <LogoText class="h-24 mx-auto w-auto lg:h-24"></LogoText>
@@ -43,7 +43,7 @@
             <PopoverPanel focus class="absolute top-0 inset-x-0 px-2 pt-2 transition transform origin-top lg:hidden">
                 <div class="rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
                     <div class="pt-4 pb-6 px-2">
-                        <div class="flex items-center justify-around lg:justify-between w-full lg:w-auto">
+                        <div class="flex items-center justify-around space-x-8 lg:justify-between w-full lg:w-auto">
                             <Link class="grow" href="/">
                                 <span class="sr-only">FCG Villach</span>
                                 <LogoText class="h-24 mx-auto w-auto lg:h-24"></LogoText>

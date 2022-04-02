@@ -2,17 +2,6 @@
     <public-layout title="Über uns">
         <Nav/>
 
-<!--        <div class="bg-white text-center mt-10 sm:mt-12 md:mt-16 lg:mt-20 xl:mt-28 px-5">
-            <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                Über <span class="text-brand-primary">uns</span>
-            </h1>
-            <p class="mt-3 text-xl text-gray-500 max-w-5xl lg:max-w-4xl mx-auto sm:text-lg md:mt-5 md:text-xl">
-                Wir wissen, dass uns Gott zusammengeführt hat, denn ohne ihn hätten wir uns wohl nie kennengelernt. Wir sind ein buntes Gemisch von Menschen, die Villach und Umgebung mit dem Evangelium erreichen wollen.
-            </p>
-        </div>
-
-        <tasks />
--->
         <div class="bg-white text-center mt-10 sm:mt-12 md:mt-16 lg:mt-20 xl:mt-28 px-5">
             <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
                 Das sind <span class="text-brand-primary">wir</span>
@@ -23,6 +12,17 @@
         </div>
 
         <team/>
+
+        <div class="bg-white text-center mt-10 sm:mt-12 md:mt-16 lg:mt-20 xl:mt-28 px-5">
+            <h1 class="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-4xl">
+                Gemeinsame <span class="text-brand-primary">Aufgaben</span>
+            </h1>
+            <p class="mt-3 text-xl text-gray-500 max-w-5xl lg:max-w-4xl mx-auto sm:text-lg md:mt-5 md:text-xl">
+                Wir wissen, dass uns Gott zusammengeführt hat, denn ohne ihn hätten wir uns wohl nie kennengelernt. Wir sind ein buntes Gemisch von Menschen, die Villach und Umgebung mit dem Evangelium erreichen wollen.
+            </p>
+        </div>
+
+        <tasks />
 
 
         <div class="relative bg-white">
