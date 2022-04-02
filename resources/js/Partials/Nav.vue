@@ -8,7 +8,7 @@
                         <LogoText class="h-24 mx-auto w-auto lg:h-24"></LogoText>
                     </Link>
 
-                    <div class="-mr-2 lg:hidden">
+                    <div class="lg:hidden">
                         <PopoverButton
                             :class="[hasBackground ? 'text-white focus:ring-white' : 'text-gray-500',
                             'bg-opacity-0 rounded-md p-2 inline-flex items-center justify-center hover:text-white hover:bg-opacity-100 focus:outline-none']"
@@ -42,14 +42,14 @@
                     leave-to-class="opacity-0 scale-95">
             <PopoverPanel focus class="absolute top-0 inset-x-0 px-2 pt-2 transition transform origin-top lg:hidden">
                 <div class="rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
-                    <div class="pt-4 pb-6 px-2">
-                        <div class="flex items-center justify-around space-x-8 lg:justify-between w-full lg:w-auto">
-                            <Link class="grow" href="/">
+                    <div class="pt-4 pb-6 ">
+                        <div class="flex items-center justify-around space-x-10 lg:justify-between w-full lg:w-auto">
+                            <Link href="/">
                                 <span class="sr-only">FCG Villach</span>
                                 <LogoText class="h-24 mx-auto w-auto lg:h-24"></LogoText>
                             </Link>
 
-                            <div class="shrink -ml-4">
+                            <div class="shrink">
                                 <PopoverButton
                                     class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-primary">
                                     <span class="sr-only">Close menu</span>

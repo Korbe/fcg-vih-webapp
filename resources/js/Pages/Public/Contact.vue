@@ -10,7 +10,7 @@
 
                 <Nav hasBackground/>
 
-                <div class="relative mt-10 sm:mt-12 md:mt-16 lg:mt-20 xl:mt-28 max-w-md mx-auto px-4 pb-32 sm:max-w-3xl sm:px-6  lg:max-w-7xl lg:px-8">
+                <div class="relative mt-16 sm:mt-12 md:mt-16 lg:mt-20 xl:mt-28 max-w-md mx-auto px-4 pb-32 sm:max-w-3xl sm:px-6  lg:max-w-7xl lg:px-8">
                     <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
                         <span class="block xl:inline">Wir freuen uns auf</span>
                         {{ ' ' }}
