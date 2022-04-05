@@ -1,5 +1,5 @@
 <template>
-    <Popover as="div" class="relative z-10">
+    <Popover as="div" class="relative z-50">
         <nav class="relative max-w-7xl mx-auto flex items-center justify-between pt-6 pb-2 px-4 sm:px-6 lg:px-8" aria-label="Global">
             <div class="flex items-center flex-1">
                 <div class="flex items-center justify-around space-x-10 lg:justify-between w-full lg:w-auto">
@@ -102,8 +102,8 @@
                 leave-from-class="opacity-100 scale-100"
                 leave-to-class="opacity-0 scale-95">
     <Disclosure v-if="!atTopOfPage"
-        as="nav" class="fixed z-10 inset-x-0 top-0 py-2 bg-white " v-slot="{ open }">
-        <div class="shadow-lg relative max-w-7xl mx-auto text-center px-2 sm:px-6 lg:px-8 relative h-16 flex items-center justify-between">
+        as="nav" class="fixed z-50 inset-x-0 top-0 py-1 bg-white shadow-lg" v-slot="{ open }">
+        <div class=" relative max-w-7xl mx-auto text-center px-2 sm:px-6 lg:px-8 relative h-16 flex items-center justify-between">
 
                 <div class="flex items-center justify-around space-x-10 lg:hidden w-full">
                     <Link href="/">
