@@ -103,23 +103,42 @@
                 leave-to-class="opacity-0 scale-95">
     <Disclosure v-if="!atTopOfPage"
         as="nav" class="fixed z-50 inset-x-0 top-0 py-1 bg-white shadow-lg" v-slot="{ open }">
-        <div class=" relative max-w-7xl mx-auto text-center px-2 sm:px-6 lg:px-8 relative h-16 flex items-center justify-between">
+        <div class="relative max-w-7xl mx-auto text-center px-2 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
 
-                <div class="flex items-center justify-around space-x-10 lg:hidden w-full">
+                <div class="flex items-center justify-around lg:justify-center space-x-10 w-full">
                     <Link href="/">
                         <span class="sr-only">FCG Villach</span>
                         <Logo class="h-12"></Logo>
                     </Link>
 
-                    <div class="flex items-center justify-between space-x-4">
+                    <div class="lg:hidden flex items-center justify-between space-x-4">
 
                         <span class="font-medium text-gray-500">{{currentPageName}}</span>
 
-                        <DisclosureButton class="text-gray-500 rounded-md p-2 inline-flex items-center justify-center">
+                        <DisclosureButton v-if="!open" class="text-gray-500 rounded-md p-2 inline-flex items-center justify-center">
                             <span class="sr-only">Open main menu</span>
                             <MenuAlt3Icon class="h-6 w-6" aria-hidden="true"/>
                         </DisclosureButton>
 
+                        <DisclosureButton v-if="open" class="text-gray-500 rounded-md p-2 inline-flex items-center justify-center">
+                            <span class="sr-only">Close main menu</span>
+                            <XIcon class="h-6 w-6" aria-hidden="true"/>
+                        </DisclosureButton>
+
+
+
+                    </div>
+
+                    <div class="hidden space-x-10 lg:flex">
+
+                        <Link v-if="$page.props.user" :href="route('dashboard.home')"
+                              :class="[hasBackground ? 'text-white hover:text-brand-primary-300' : 'text-gray-500 hover:text-brand-primary-300', 'text-base font-medium ']">Dashboard</Link>
+
+                        <Link v-for="item in navigation" :key="item.name" :href="item.href"
+                              :class="[hasBackground ? 'text-white hover:text-brand-primary-300' : 'text-gray-500 hover:text-brand-primary-300',
+                               currentRoute === item.href ? 'text-brand-primary-600' : '',
+                               'text-base font-medium ']"
+                        >{{ item.name }}</Link>
                     </div>
                 </div>
 
