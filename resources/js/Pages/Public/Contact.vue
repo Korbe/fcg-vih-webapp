@@ -136,24 +136,28 @@ export default {
             ],
             faqs: [
                 {
-                    question: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr?",
-                    answer: "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam",
+                    question: "Wie lange dauert ein Gottesdienst?",
+                    answer: "Der Gottesdienst dauert durchschnittlich 90 Minuten.",
                 },
                 {
-                    question: "sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam?",
-                    answer: "Aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+                    question: "Muss ich für den Gottesdienst etwas bezahlen oder werde ich während des Gottesdienstes nach Deld gefragt?",
+                    answer: "Jeder ist willkommen, den Gottesdienst zu besuchen und es ist absolut kostenlos. Wir sammeln eine Kollekte ein, das Teil des Gottesdienstes ist. Jedoch ist niemand gezwungen, etwas zu geben und du darfst es gerne an dir vorbeigehen lassen.",
                 },
                 {
-                    question: "Et accusam et justo duo dolores et ea rebum. Stet no sea takimata sanctus est Lorem?",
-                    answer: "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet",
+                    question: "Was soll ich anziehen bzw. gibt es einen Dress Code?",
+                    answer: "Jeder kann so kommen, wie er sich wohl fühlt und es für angemessen hält.",
                 },
                 {
-                    question: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr?",
-                    answer: "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam",
+                    question: "Gibt es ein extra Kinderprogramm?",
+                    answer: "Ja, bei jedem Gottesdienst gibt es parallel eine Kinderstunde und einen Raum für Eltern mit kleinen Kindern, wo sie auch den Gottesdienst mithören können.",
                 },
                 {
-                    question: "sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam?",
-                    answer: "Aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+                    question: "Muss ich Mitglied werden?",
+                    answer: "Nein. Zu unseren Gottesdiensten kommen die verschiedensten Menschen. Wir sehen es als unsere Aufgabe, ein Segen für alle Menschen zu sein, auch für die, die nicht aktiv in unserer Gemeinde involviert sind!",
+                },
+                {
+                    question: "Was läuft unter der Woche?",
+                    answer: "Unter der Woche finden Gebetsstunden, Hauskreise und Bibelstunden in Raum Villach statt. Dort liest man gemeinsam in der Bibel, tauscht sich über das Gelesene aus, betet miteinander und unterstützt sich gegenseitig.",
                 },
             ],
         }

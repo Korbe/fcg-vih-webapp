@@ -125,17 +125,15 @@
                             <XIcon class="h-6 w-6" aria-hidden="true"/>
                         </DisclosureButton>
 
-
-
                     </div>
 
                     <div class="hidden space-x-10 lg:flex">
 
                         <Link v-if="$page.props.user" :href="route('dashboard.home')"
-                              :class="[hasBackground ? 'text-white hover:text-brand-primary-300' : 'text-gray-500 hover:text-brand-primary-300', 'text-base font-medium ']">Dashboard</Link>
+                              class="text-gray-500 hover:text-brand-primary-300 text-base font-medium">Dashboard</Link>
 
                         <Link v-for="item in navigation" :key="item.name" :href="item.href"
-                              :class="[hasBackground ? 'text-white hover:text-brand-primary-300' : 'text-gray-500 hover:text-brand-primary-300',
+                              :class="['text-gray-500 hover:text-brand-primary-300',
                                currentRoute === item.href ? 'text-brand-primary-600' : '',
                                'text-base font-medium ']"
                         >{{ item.name }}</Link>
