@@ -35,12 +35,7 @@
                 <div class="lg:col-start-2 lg:pl-8">
                     <div class="text-base max-w-prose mx-auto lg:max-w-lg lg:ml-auto lg:mr-0">
                         <h2 class="leading-6 text-brand-primary font-semibold tracking-wide uppercase">Freie Christengemeinde Villach</h2>
-                        <h3 class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">Was wir glauben</h3>
-
-                        <p class="mt-8 text-lg text-gray-500">Besonders wichtig ist für uns, das Zentrum unseres Glaubens, unseren Herrn Jesus Christus näher und inniger kennenzulernen. </p>
-                        <p class="mt-2 text-lg text-gray-500">Schließlich hat er uns durch seinen Tod am Kreuz gerettet und uns durch seine Auferstehung neues Leben gegeben.</p>
-                        <p class="mt-2 text-lg text-gray-500">Er ist immer bei uns und hilft uns jetzt durch seinen Heiligen Geist ein völlig verwandeltes Leben zu leben, ein Leben, das immer mehr
-                            bestimmt wird von innerer Ruhe, Frieden, Freude und Gelassenheit, als Geschenke eines liebenden Vaters an seine Kinder.</p>
+                        <h3 class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">Das glauben wir</h3>
 
                         <div class="mt-5 prose prose-lg prose-a:text-brand-primary text-gray-500">
 
