@@ -102,8 +102,8 @@
                 leave-from-class="opacity-100 scale-100"
                 leave-to-class="opacity-0 scale-95">
     <Disclosure v-if="!atTopOfPage"
-        as="nav" class="fixed z-50 inset-x-0 top-0 py-1 bg-white shadow-lg" v-slot="{ open }">
-        <div class="relative max-w-7xl mx-auto text-center px-2 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        as="nav" class="fixed z-50 inset-x-0 top-0 bg-white shadow-lg" v-slot="{ open }">
+        <div class="relative max-w-7xl mx-auto text-center py-1 px-2 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
 
                 <div class="flex items-center justify-around lg:justify-center space-x-10 w-full">
                     <Link href="/">
