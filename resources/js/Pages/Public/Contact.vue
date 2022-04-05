@@ -140,7 +140,7 @@ export default {
                     answer: "Der Gottesdienst dauert durchschnittlich 90 Minuten.",
                 },
                 {
-                    question: "Muss ich für den Gottesdienst etwas bezahlen oder werde ich während des Gottesdienstes nach Deld gefragt?",
+                    question: "Muss ich für den Gottesdienst etwas bezahlen oder werde ich während des Gottesdienstes nach Geld gefragt?",
                     answer: "Jeder ist willkommen, den Gottesdienst zu besuchen und es ist absolut kostenlos. Wir sammeln eine Kollekte ein, das Teil des Gottesdienstes ist. Jedoch ist niemand gezwungen, etwas zu geben und du darfst es gerne an dir vorbeigehen lassen.",
                 },
                 {
