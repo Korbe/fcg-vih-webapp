@@ -156,7 +156,7 @@
 
 <script>
 import PublicLayout from "@/Layouts/PublicLayout";
-import Team from "@/Partials/Team";
+import Team from "@/Partials/Team/Team";
 import Footer from "@/Partials/Footer";
 import Nav from "@/Partials/Nav";
 import Tasks from "@/Partials/About/Tasks";

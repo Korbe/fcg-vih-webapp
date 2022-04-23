@@ -42,7 +42,7 @@
                         <div>
                             <div class="-mt-px flex divide-x divide-gray-200">
                                 <div class="w-0 flex-1 flex text-gray-700 hover:bg-gray-100">
-                                    <a :href="`mailto:office@`"
+                                    <a :href="`mailto:${event.mail}`"
                                        class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm font-medium border border-transparent rounded-bl-lg">
                                         <MailIcon class="w-5 h-5 text-gray-400" aria-hidden="true"/>
                                         <span class="ml-3">Schreiben</span>
@@ -85,8 +85,8 @@ export default {
                     time: "10 Uhr",
                     description: "",
                     responsible: "Christian Korbitsch",
-                    phone: "069911848920",
-                    mail: "office@fcg-villach.at"
+                    phone: "06505893093",
+                    mail: "chritian.korbitsch@fcg-villach.at"
                 },
                 {
                     name: "Gemeindegebet",
@@ -95,7 +95,7 @@ export default {
                     description: "",
                     responsible: "Erika Korbitsch",
                     phone: "069911848920",
-                    mail: "office@fcg-villach.at"
+                    mail: "erika.korbitsch@fcg-villach.at"
                 },
                 {
                     name: "Heferl Café",
@@ -104,7 +104,7 @@ export default {
                     description: "Unterhaltung, Austausch und Vernetzung bei Kuchen und Kaffee",
                     responsible: "Erika Korbitsch",
                     phone: "069911848920",
-                    mail: "office@fcg-villach.at"
+                    mail: "erika.korbitsch@fcg-villach.at"
                 },
                 {
                     name: "Bibelstunde",
@@ -113,7 +113,7 @@ export default {
                     description: "",
                     responsible: "Christian Korbitsch",
                     phone: "06505893093",
-                    mail: "office@fcg-villach.at"
+                    mail: "chritian.korbitsch@fcg-villach.at"
                 },
                 {
                     name: "Hauskreis",
@@ -122,7 +122,7 @@ export default {
                     description: "",
                     responsible: "Bettina Morgan",
                     phone: "065022200404",
-                    mail: "office@fcg-villach.at"
+                    mail: "bettina.morgan@fcg-villach.at"
                 },
                 {
                     name: "Gebet & Seelsorge",
@@ -131,7 +131,7 @@ export default {
                     description: "",
                     responsible: "Christian Korbitsch",
                     phone: "06505893093",
-                    mail: "office@fcg-villach.at"
+                    mail: "chritian.korbitsch@fcg-villach.at"
                 },
             ]
         }

@@ -113,7 +113,7 @@
 
                     <div class="lg:hidden flex items-center justify-between space-x-4">
 
-                        <span class="font-medium text-gray-500">{{currentPageName}}</span>
+                        <span  class="font-medium text-gray-500">{{currentPageName}}</span>
 
                         <DisclosureButton v-if="!open" class="text-gray-500 rounded-md p-2 inline-flex items-center justify-center">
                             <span class="sr-only">Open main menu</span>
@@ -253,7 +253,7 @@ export default {
                 return "Home"
             }
 
-            return this.navigation.find(item => item.href === this.currentRoute).name;
+            return this.navigation.find(item => item.href === this.currentRoute)?.name;
         },
         currentRoute(){
             return window.location.href;
