@@ -26,7 +26,7 @@
                                     <button @click="playFirstPost"
                                             class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-primary hover:bg-brand-primary-400 md:py-4 md:text-lg md:px-10">
                                         <PlayIcon class="h-7 mr-1"/>
-                                        <span>Neueste Predigt anhören</span>
+                                        <span>Predigt anhören</span>
                                     </button>
                                 </div>
                                 <div class="mt-3 sm:mt-0 sm:ml-3">

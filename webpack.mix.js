@@ -24,10 +24,11 @@ mix.js('resources/js/app.js', 'public/js').vue()
 
 if (mix.inProduction()) {
     mix.version();
-}else{
+}
+/*else{
     mix.browserSync({
         proxy: 'fcg-villach-local.test',
         host: 'fcg-villach-local.test',
         open: 'external'
     });
-}
+}*/
