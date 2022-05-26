@@ -22,9 +22,9 @@ mix.js('resources/js/app.js', 'public/js').vue()
     .copy("resources/images/", "public/images/");
 
 
-if (mix.inProduction()) {
+/*if (mix.inProduction()) {*/
     mix.version();
-}
+/*}*/
 /*else{
     mix.browserSync({
         proxy: 'fcg-villach-local.test',

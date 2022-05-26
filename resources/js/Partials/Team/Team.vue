@@ -1,56 +1,28 @@
 <template>
     <div class="bg-gradient-to-b from-white to-gray-100">
-        <div class="mx-auto py-12 px-10 max-w-5xl sm:px-4 lg:px-8 lg:py-24">
-            <div class="space-y-12">
-                <ul role="list" class="space-y-6 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-3 lg:gap-8">
-                    <li v-for="person in team" :key="person.name" class="pb-5 rounded-lg text-left bg-white shadow hover:shadow-lg divide-y divide-gray-200">
-                        <Link :href="route('public.about.team', slugify(person.name))">
-                            <div class="space-y-6">
-
-                                <div class="aspect-w-1 aspect-h-1">
-                                    <img class="object-cover shadow-lg rounded-t-lg" :src="person.imageUrl" :alt="person.name"/>
+        <div class="mx-auto py-12 px-10 max-w-lg sm:max-w-3xl lg:max-w-5xl lg:px-8 lg:py-24">
+            <ul role="list" class="space-y-12 sm:space-y-0 sm:space-x-0 sm:grid sm:grid-cols-2 sm:gap-6  lg:grid-cols-3 lg:gap-12">
+                <li v-for="person in team" :key="person.name" class="rounded-lg text-left bg-white shadow hover:shadow-lg divide-y divide-gray-200">
+                    <Link :href="route('public.about.team', slugify(person.name))">
+                        <div>
+                            <div class="aspect-w-1 aspect-h-1">
+                                <img class="object-cover shadow-lg rounded-t-lg" :src="person.imageUrl" :alt="person.name"/>
+                            </div>
+                            <div class="p-5 flex items-center justify-between">
+                                <div class="font-medium text-lg leading-6 space-y-1">
+                                    <h3 class="text-gray-900">{{ person.name }}</h3>
+                                    <p class="text-brand-primary">{{ person.role }}</p>
                                 </div>
-
-                                <div class="px-5 space-y-2 flex items-center justify-between">
-                                    <div class="font-medium text-lg leading-6 space-y-1">
-                                        <h3 class="text-gray-900">{{ person.name }}</h3>
-                                        <p class="text-brand-primary">{{ person.role }}</p>
-                                    </div>
-
-                                    <div>
-                                        <ArrowRightIcon class="w-6 h-6 text-gray-400"/>
-                                    </div>
+                                <div>
+                                    <ArrowRightIcon class="w-6 h-6 text-gray-400"/>
                                 </div>
                             </div>
-                        </Link>
-                    </li>
-                </ul>
-            </div>
+                        </div>
+                    </Link>
+                </li>
+            </ul>
         </div>
     </div>
-
-    <!--
-        <div class="pb-16 bg-gradient-to-b from-white to-gray-50">
-            <div class="max-w-7xl mx-auto py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
-                <div class="space-y-12">
-                    <ul role="list" class="mx-auto space-y-16 sm:grid sm:grid-cols-2 sm:gap-16 sm:space-y-0 lg:grid-cols-3 lg:max-w-5xl">
-                        <li v-for="person in team" :key="person.name">
-                            <div class="space-y-6">
-                                <img class="mx-auto h-40 w-40 rounded-full xl:w-64 xl:h-64" :src="person.imageUrl" alt=""/>
-                                <div class="space-y-2">
-                                    <div class="text-lg leading-6 font-medium space-y-1">
-                                        <h3>{{ person.name }}</h3>
-                                        <p class="text-brand-primary-600">{{ person.role }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    -->
-
 </template>
 
 <script>

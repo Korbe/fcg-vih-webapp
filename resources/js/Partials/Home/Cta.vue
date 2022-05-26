@@ -22,8 +22,8 @@
                     <div class="relative">
                         <div class="sm:text-center">
                             <h2 class="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">Machen Sie gerade eine Schwere Zeit durch?</h2>
-                            <p class="mt-6 mx-auto max-w-2xl text-lg text-brand-primary-50">Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque
-                                tristique pellentesque.</p>
+                            <p class="mt-6 mx-auto max-w-2xl text-lg text-brand-primary-50">Befinden Sie sich gerade in einer Lebenskrise oder treiben Sie schlechte Gedanken in die Irre? Haben Sie
+                            Fragen oder wollen Sie einfach nur mehr erfahren. Wir sind jederzeit für Sie da!</p>
                         </div>
                         <div class="mt-12 mx-auto max-w-sm">
                             <Link :href="route('public.contact')"
