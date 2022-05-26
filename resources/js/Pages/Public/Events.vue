@@ -20,7 +20,7 @@
                         <div class="w-full p-6">
                             <div class="flex justify-between">
                                 <h1 class="text-gray-900 text-xl font-medium ">{{ event.name }}</h1>
-                                <ArrowRightIcon class="w-5 h-5 text-gray-400" />
+<!--                                <ArrowRightIcon class="w-5 h-5 text-gray-400" />-->
                             </div>
                             <p class="mt-1 text-sm text-gray-500"></p>
                             <div class="mt-4 space-y-2 align-items-center">
@@ -85,7 +85,7 @@ export default {
                     time: "10 Uhr",
                     description: "",
                     responsible: "Christian Korbitsch",
-                    phone: "06505893093",
+                    phone: "+436505893093",
                     mail: "chritian.korbitsch@fcg-villach.at"
                 },
                 {
@@ -94,7 +94,7 @@ export default {
                     time: '10 Uhr',
                     description: "",
                     responsible: "Erika Korbitsch",
-                    phone: "069911848920",
+                    phone: "+4369911848920",
                     mail: "erika.korbitsch@fcg-villach.at"
                 },
                 {
@@ -103,7 +103,7 @@ export default {
                     time: "14 - 18 Uhr",
                     description: "Unterhaltung, Austausch und Vernetzung bei Kuchen und Kaffee",
                     responsible: "Erika Korbitsch",
-                    phone: "069911848920",
+                    phone: "+4369911848920",
                     mail: "erika.korbitsch@fcg-villach.at"
                 },
                 {
@@ -112,7 +112,7 @@ export default {
                     time: "17 Uhr",
                     description: "",
                     responsible: "Christian Korbitsch",
-                    phone: "06505893093",
+                    phone: "+436505893093",
                     mail: "chritian.korbitsch@fcg-villach.at"
                 },
                 {
@@ -121,7 +121,7 @@ export default {
                     time: "9 Uhr",
                     description: "",
                     responsible: "Bettina Morgan",
-                    phone: "065022200404",
+                    phone: "+4365022200404",
                     mail: "bettina.morgan@fcg-villach.at"
                 },
                 {
@@ -130,7 +130,7 @@ export default {
                     time: "Jederzeit",
                     description: "",
                     responsible: "Christian Korbitsch",
-                    phone: "06505893093",
+                    phone: "+436505893093",
                     mail: "chritian.korbitsch@fcg-villach.at"
                 },
             ]

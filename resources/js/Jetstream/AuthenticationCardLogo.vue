@@ -1,6 +1,6 @@
 <template>
     <Link :href="'/'">
-        <img alt="FCG Villach" src="/images/logo.png"/>
+        <img alt="FCG Villach" class="w-60" src="/images/fcg-villach-logo.png"/>
     </Link>
 </template>
 
