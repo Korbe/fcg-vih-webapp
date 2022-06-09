@@ -24,7 +24,7 @@ return [
         'role' => 'Kindergottesdienste',
         'imageUrl' => '/images/portraits/Andrea-Kirisits.jpeg',
         'lead' => 'Hallo Kinder kommt zu mir! ',
-        'bio' => 'Wir werden eine schöne und lustige Zeit mit Jesus verbringen. Singen, spielen, Geschichten zuhören und oft auch ein YouTube-Abenteuer wartet auf euch. Darum liebe Kinder kommt - Jesus ist schon da! Wenn nicht in der Kinderstunde, findet man mich als Assistenz beim "Heferl- Cafe", beim Dekorieren und beim Büchertisch.',
+        'bio' => 'Wir werden eine schöne und lustige Zeit mit Jesus verbringen. Singen, spielen, Geschichten zuhören und oft auch ein YouTube-Abenteuer wartet auf euch. Darum liebe Kinder kommt - Jesus ist schon da! Wenn nicht in der Kinderstunde, findet man mich beim "Heferl Café", beim Dekorieren und beim Büchertisch.',
         'phone' => '+4367761019425',
         'mail' => 'andrea.kirisits@fcg-villach.at',
     ],

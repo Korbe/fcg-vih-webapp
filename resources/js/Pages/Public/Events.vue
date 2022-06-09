@@ -129,9 +129,9 @@ export default {
                     interval: "Auf Anfrage",
                     time: "Jederzeit",
                     description: "",
-                    responsible: "Christian Korbitsch",
-                    phone: "+436505893093",
-                    mail: "chritian.korbitsch@fcg-villach.at"
+                    responsible: "Erika Korbitsch",
+                    phone: "+4369911848920",
+                    mail: "erika.korbitsch@fcg-villach.at"
                 },
             ]
         }

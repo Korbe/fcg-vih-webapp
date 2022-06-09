@@ -91,7 +91,7 @@ export default {
             navigation: {
                 site: [
                     {name: 'Über uns', href: route('public.about')},
-                    {name: 'Veranstaltungen', href: route('public.events')},
+                    {name: 'Events', href: route('public.events')},
                     {name: 'Predigten', href: route('public.blog')},
                     {name: 'Kontakt', href: route('public.contact')},
                     {name: 'Spenden', href: route('public.donate')},

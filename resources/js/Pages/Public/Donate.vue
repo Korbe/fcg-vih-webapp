@@ -63,7 +63,9 @@
                         </div>
                         <div class="mt-8 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
                             <div v-for="org in organizations" :key="org.name" class="col-span-1 flex justify-center py-8 px-8">
-                                <img class="max-h-12 grayscale hover:grayscale-0" :src="org.logo" :alt="org.name"/>
+                                <a :href="org.link" target="_blank">
+                                    <img class="max-h-12" :src="org.logo" :alt="org.name"/>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -99,27 +101,23 @@ export default {
             organizations: [
                 {
                     name: 'ampuls',
-                    logo: '/images/partner/ampuls.png'
+                    logo: '/images/partner/ampuls.png',
+                    link: 'https://ampuls.or.at',
                 },
                 {
                     name: 'impact-at',
-                    logo: '/images/partner/impact-at.png'
-                },
-                {
-                    name: 'prolife-eu',
-                    logo: '/images/partner/prolife-eu.png'
+                    logo: '/images/partner/impact-at.png',
+                    link: 'http://impact-austria.at',
                 },
                 {
                     name: 'sozialetagesstaetteraphael',
-                    logo: '/images/partner/sozialetagesstaetteraphael.png'
+                    logo: '/images/partner/sozialetagesstaetteraphael.png',
+                    link: 'http://soziale-tagestaette-raphael.at',
                 },
                 {
-                    name: '',
-                    logo: '/images/partner/avc.png'
-                },
-                {
-                    name: 'Hier Fehlt eines',
-                    logo: '/images/partner/HierFehltEines.jpg'
+                    name: 'aktion verfolgter christen',
+                    logo: '/images/partner/avc.png',
+                    link: 'http://avc-at.org/de',
                 },
             ]
         }

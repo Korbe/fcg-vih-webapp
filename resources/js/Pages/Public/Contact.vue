@@ -17,8 +17,7 @@
                         <span class="block text-brand-primary xl:inline">Sie</span>
 
                     </h1>
-                    <p class="mt-3 md:mt-5 max-w-3xl text-xl text-gray-300">Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus,
-                        fames. Dui, amet, nec sit pulvinar.</p>
+                    <p class="mt-3 md:mt-5 max-w-3xl text-xl text-gray-300">Sie können mit uns über Telefon, E-Mail oder auch persönlich in Kontakt treten. Wir werden uns bemühen ihre Fragen, Anregungen oder auch Beschwerden so schnell wie möglich zu beantwoten.</p>
                 </div>
             </header>
 
@@ -84,9 +83,9 @@ export default {
             contactDetails: [
                 {
                     name: 'Rufen Sie uns an',
-                    detail: '+43 650 58 93 0 93',
+                    detail: '+43 650 5893093',
                     href: 'tel:+436505893093',
-                    description: 'Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.',
+                    description: 'Wir freuen uns auf Ihren Anruf und nehmen uns Zeit für Sie.',
                     icon: PhoneIcon,
                     ctaText: 'Anrufen',
                 },
@@ -94,7 +93,7 @@ export default {
                     name: 'Schreiben Sie uns',
                     detail: 'office@fcg-villach.at',
                     href: 'mailto:office@fcg-villach.at',
-                    description: 'Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.',
+                    description: 'Sollten Sie Fragen, Anliegen oder Wünsche haben, beantworten wir gern alle Ihre Fragen.',
                     icon: MailIcon,
                     ctaText: 'Schreiben',
                 },
@@ -102,7 +101,7 @@ export default {
                     name: 'Besuchen Sie uns',
                     detail: 'Vassacherstraße 28, 9500 Villach',
                     href: 'https://goo.gl/maps/fDxswRLhh9dfKHUZ8',
-                    description: 'Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.',
+                    description: 'Wir freuen uns Sie kennenzulernen. Es entsteht keinerlei Verpflichtung. Sie können kommen, schauen, bleiben oder wieder gehen.',
                     icon: LocationMarkerIcon,
                     ctaText: 'Finden',
                 },
