@@ -17,9 +17,8 @@ class NewsController extends Controller
 
         $media = $user->getMedia('news')
             ->sortByDesc('updated_at')
-            ->paginate(5);/*
             ->values()
-            ->all();*/
+            ->all();
 
         return Inertia::render('News/Index', [
             'news' => $media,
