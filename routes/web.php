@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Foundation\Application;
@@ -44,6 +45,8 @@ Route::name('dashboard.')->middleware(['auth:sanctum', 'verified'])->group(funct
 
     Route::resource("posts", PostController::class)->except("show");
     Route::post("posts/{post}/audio", [PostController::class, 'updateAudio'])->name('posts.audio');
+
+    Route::resource("news", NewsController::class)->except("show");
 
 });
 

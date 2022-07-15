@@ -25,8 +25,8 @@
                                 <jet-nav-link :href="route('dashboard.posts.index')" :active="route().current('dashboard.posts.index')">
                                     Predigten
                                 </jet-nav-link>
-                                <jet-nav-link :href="route('dashboard.posts.create')" :active="route().current('dashboard.posts.create')">
-                                    Neue Predigt
+                                <jet-nav-link :href="route('dashboard.news.index')" :active="route().current('dashboard.news.index')">
+                                    Neuigkeiten
                                 </jet-nav-link>
                             </div>
                         </div>
@@ -154,8 +154,8 @@
                         <jet-responsive-nav-link :href="route('dashboard.posts.index')" :active="route().current('dashboard.posts.index')">
                             Predigten
                         </jet-responsive-nav-link>
-                        <jet-responsive-nav-link :href="route('dashboard.posts.create')" :active="route().current('dashboard.posts.create')">
-                            Neue Predigt
+                        <jet-responsive-nav-link :href="route('dashboard.news.index')" :active="route().current('dashboard.news.index')">
+                            Neuigkeiten
                         </jet-responsive-nav-link>
                     </div>
 
