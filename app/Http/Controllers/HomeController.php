@@ -7,12 +7,15 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Inertia\Inertia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class HomeController extends Controller
 {
     public function home(Request $request)
     {
-        return Inertia::render('Public/Home');
+        return Inertia::render('Public/Home', [
+            'news' => Media::where(['collection_name' => 'news'])->latest()->take(5)->get(),
+        ]);
     }
 
     public function about(Request $request)

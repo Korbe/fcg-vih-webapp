@@ -24,9 +24,9 @@
 
         <carousel wrap-around class="mt-5" :items-to-show="1" :autoplay="4000">
 
-            <slide class="p-5" :key="index" v-for="(image,index) in images">
+            <slide class="p-5" :key="index" v-for="(media,index) in items">
 
-                <img class="object-contain w-full rounded" :src="image.src" :alt="image.text"/>
+                <img class="object-contain w-full rounded" :src="media.original_url" :alt="media.custom_properties.alt"/>
 
             </slide>
 
@@ -52,31 +52,12 @@ export default {
         Pagination,
         Navigation,
     },
+    props: {
+        items: Array,
+    },
     data() {
         return {
             innerWidth: window.innerWidth,
-            images: [
-                {
-                    text: "Alternativer Text und so weiter",
-                    src: "/images/news/ali.png"
-                },
-                {
-                    text: "Alternativer Text und so weiter",
-                    src: "/images/news/ali.png"
-                }, {
-                    text: "Alternativer Text und so weiter",
-                    src: "/images/news/ali.png"
-                }, {
-                    text: "Alternativer Text und so weiter",
-                    src: "/images/news/ali.png"
-                }, {
-                    text: "Alternativer Text und so weiter",
-                    src: "/images/news/ali.png"
-                }, {
-                    text: "Alternativer Text und so weiter",
-                    src: "/images/news/ali.png"
-                },
-            ]
         };
     },
 }

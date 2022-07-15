@@ -59,7 +59,7 @@
             </div>
         </div>
 
-        <news />
+        <news :items="news" />
 
 
         <!--        <stats/>-->
@@ -103,6 +103,9 @@ export default {
         PublicLayout,
         Hero,
         LocationMarkerIcon, ClockIcon
+    },
+    props: {
+        news: Array,
     },
     data() {
         return {
