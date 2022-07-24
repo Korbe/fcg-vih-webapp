@@ -7,9 +7,9 @@
             </h1>
         </div>
 
-        <carousel wrap-around class="mt-5" :items-to-show="1" :autoplay="4000">
+        <carousel :autoplay="6000" :items-to-show="1" class="mt-5" wrap-around>
 
-            <slide class="py-5" v-for="testimonial in testimonials" :key="testimonial.name">
+            <slide v-for="testimonial in testimonials" :key="testimonial.name" class="md:p-5">
 
                 <blockquote>
                     <div class="text-center text-xl md:text-2xl leading-9 text-gray-900">
@@ -44,7 +44,7 @@
 
 <script>
 
-import {Carousel, Slide, Pagination, Navigation} from 'vue3-carousel';
+import {Carousel, Navigation, Pagination, Slide} from 'vue3-carousel';
 
 export default {
     name: "Testimonials",

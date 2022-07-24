@@ -14,7 +14,7 @@
 
         <div class="bg-white text-center">
             <h1 class="text-3xl sm:text-5xl md:text-4xl tracking-tight font-extrabold text-gray-900">
-                Aktuelles über <span class="text-brand-primary">uns</span>
+                Besuchen Sie <span class="text-brand-primary">auch..</span>
             </h1>
 
             <p class="mt-3 max-w-5xl lg:max-w-4xl text-gray-500 mx-auto text-xl sm:text-lg md:mt-5 lg:max-w-3xl md:text-xl">
@@ -26,7 +26,7 @@
 
             <slide class="p-5" :key="index" v-for="(media,index) in items">
 
-                <img class="object-contain w-full rounded" :src="media.original_url" :alt="media.custom_properties.alt"/>
+                <img class="object-contain w-full rounded-md" :src="media.original_url" :alt="media.custom_properties.alt"/>
 
             </slide>
 

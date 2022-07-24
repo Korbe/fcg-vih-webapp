@@ -1,7 +1,7 @@
 <template>
     <public-layout title="Kontakt">
-        <div class="bg-gradient-to-b from-white to-gray-10">
-            <header class="relative pb-36 bg-brand-secondary">
+        <div>
+            <header class="relative pb-32">
                 <div class="absolute inset-0">
                     <img class="w-full h-full object-cover"
                          src="https://images.unsplash.com/photo-1497333558196-daaff02b56d0?auto=format&fit=crop&h=800&w=1920&q=60&sat=-100" alt=""/>
@@ -24,7 +24,7 @@
             <main class="">
 
 
-                <div class="">
+                <div class="bg-gray-50">
                     <!-- Cards -->
                     <section class="-mt-32 max-w-md mx-auto relative z-10 px-4 sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8" aria-labelledby="contact-heading">
                         <h2 class="sr-only">Kontaktieren Sie uns</h2>

@@ -1,47 +1,28 @@
 <template>
 
-    <div class="relative bg-white overflow-hidden">
-        <div class="max-w-7xl mx-auto ">
-            <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-3xl lg:w-full lg:pb-28 xl:pb-32">
-                <svg class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none"
-                     aria-hidden="true">
-                    <polygon points="50,0 100,0 50,100 0,100"/>
-                </svg>
-
-                <Nav />
-
-                <main class="mt-16 mx-auto max-w-7xl px-4 sm:px-6 lg:my-32 lg:px-8">
-                    <div class="sm:text-center lg:text-left">
-
-                        <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                            <span class="block xl:inline">Freie Christengemeinde</span>
-                            {{ ' ' }}
-                            <span class="block text-brand-primary xl:inline">Villach</span>
-                        </h1>
-                        <p class="mt-3 sm:mt-5 text-2xl text-gray-500 sm:max-w-2xl">Wir sind eine Gruppe christusgläubiger Menschen, die aus Freude an Jesus Christus und an ihrem neuen Leben vereint sind.</p>
-                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                            <div class="rounded-md shadow">
-                                <Link :href="route('public.blog')"
-                                              class="border-transparent w-full flex items-center justify-center px-8 py-3 border-2 text-base font-medium rounded-md bg-brand-primary hover:bg-brand-primary-400 text-white md:py-4 md:text-lg md:px-10">
-                                    <PlayIcon class="h-7 mr-1"/>
-                                    <span>Predigten anhören</span>
-                                </Link>
-                            </div>
-                            <div class="mt-3 sm:mt-0 sm:ml-3">
-                                <Link :href="route('public.about')"
-                                              class="border-transparent w-full flex items-center justify-center px-8 py-3 border-2 text-base font-medium rounded-md bg-white text-brand-secondary-700 bg-brand-secondary-200 hover:bg-brand-secondary-300 hover:text-white md:py-4 md:text-lg md:px-10">
-                                    Mehr über uns
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </main>
+        <header class="relative h-screen">
+            <div class="absolute inset-0 ">
+                <img class="w-full h-full object-cover" src="/images/hero.jpg" alt=""/>
             </div>
-        </div>
-        <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:block hidden">
-            <img class="h-56 w-full object-cover sm:h-72  lg:w-full lg:h-full" src="https://images.unsplash.com/photo-1574896051681-c48fb85b6280?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2224&q=80" alt=""/>
-        </div>
-    </div>
+
+            <Nav hasBackground/>
+
+            <div class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
+                <h1 class="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+                    <span class="block text-white">Freie Christengemeinde</span>
+                    {{ ' ' }}
+                    <span class="block text-brand-primary">Villach</span>
+                </h1>
+                <p class="mt-6 max-w-lg mx-auto text-center text-xl text-white sm:max-w-3xl">Wir sind eine Gruppe christusgläubiger Menschen, die aus Freude an Jesus Christus und an ihrem neuen Leben vereint sind.</p>
+
+                <div class="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
+                    <div class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
+                        <Link :href="route('public.blog')" class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-primary hover:bg-brand-primary-400 sm:px-8"><PlayIcon class="h-7 mr-1"/><span>Predigten anhören</span></Link>
+                        <Link :href="route('public.about')" class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm bg-white text-brand-secondary-700 bg-brand-secondary-200 hover:bg-brand-secondary-300 hover:text-white sm:px-8"> Mehr über uns </Link>
+                    </div>
+                </div>
+            </div>
+        </header>
 </template>
 
 <script>

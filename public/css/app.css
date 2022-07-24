@@ -1632,12 +1632,12 @@ select{
   height: 50%;
 }
 
-.h-80{
-  height: 20rem;
+.h-screen{
+  height: 100vh;
 }
 
-.h-52{
-  height: 13rem;
+.h-80{
+  height: 20rem;
 }
 
 .max-h-12{
@@ -2332,11 +2332,6 @@ select{
   background-color: rgb(254 213 140 / var(--tw-bg-opacity));
 }
 
-.bg-brand-secondary{
-  --tw-bg-opacity: 1;
-  background-color: rgb(253 168 19 / var(--tw-bg-opacity));
-}
-
 .bg-brand-primary-1000{
   --tw-bg-opacity: 1;
   background-color: rgb(2 34 44 / var(--tw-bg-opacity));
@@ -2359,6 +2354,11 @@ select{
 .bg-brand-primary-500{
   --tw-bg-opacity: 1;
   background-color: rgb(13 179 233 / var(--tw-bg-opacity));
+}
+
+.bg-brand-primary-100{
+  --tw-bg-opacity: 1;
+  background-color: rgb(179 233 251 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-25{
@@ -2621,10 +2621,6 @@ select{
 
 .pb-8{
   padding-bottom: 2rem;
-}
-
-.pb-36{
-  padding-bottom: 9rem;
 }
 
 .pb-32{
@@ -3032,6 +3028,21 @@ select{
 
 .ring-opacity-5{
   --tw-ring-opacity: 0.05;
+}
+
+.blur-sm{
+  --tw-blur: blur(4px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.blur{
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.blur-\[2px\]{
+  --tw-blur: blur(2px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .filter{
@@ -3675,6 +3686,10 @@ select{
     display: grid;
   }
 
+  .sm\:inline-grid{
+    display: inline-grid;
+  }
+
   .sm\:hidden{
     display: none;
   }
@@ -3731,6 +3746,10 @@ select{
     max-width: 48rem;
   }
 
+  .sm\:max-w-none{
+    max-width: none;
+  }
+
   .sm\:flex-1{
     flex: 1 1 0%;
   }
@@ -3782,6 +3801,10 @@ select{
 
   .sm\:gap-4{
     gap: 1rem;
+  }
+
+  .sm\:gap-5{
+    gap: 1.25rem;
   }
 
   .sm\:gap-6{
@@ -3887,6 +3910,11 @@ select{
   .sm\:px-10{
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+  }
+
+  .sm\:px-8{
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .sm\:pt-0{
@@ -4081,6 +4109,10 @@ select{
 
   .md\:border-l{
     border-left-width: 1px;
+  }
+
+  .md\:p-5{
+    padding: 1.25rem;
   }
 
   .md\:py-4{
@@ -4621,6 +4653,11 @@ select{
   .lg\:py-28{
     padding-top: 7rem;
     padding-bottom: 7rem;
+  }
+
+  .lg\:py-32{
+    padding-top: 8rem;
+    padding-bottom: 8rem;
   }
 
   .lg\:py-24{

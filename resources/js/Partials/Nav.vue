@@ -1,6 +1,9 @@
 <template>
-    <Popover as="div" class="relative z-50">
-        <nav class="relative max-w-7xl mx-auto flex items-center justify-between pt-6 pb-2 px-4 sm:px-6 lg:px-8" aria-label="Global">
+    <Popover as="div" class="relative z-50 mx-auto">
+
+        <div class="flex justify-center">
+
+            <nav class="relative mx-auto flex items-center justify-between pt-6 pb-2 px-4 sm:px-6 lg:px-8" aria-label="Global">
             <div class="flex items-center flex-1">
                 <div class="flex items-center justify-around space-x-10 lg:justify-between w-full lg:w-auto">
                     <Link href="/">
@@ -31,6 +34,8 @@
             </div>
         </nav>
 
+        </div>
+
         <transition enter-active-class="duration-150 ease-out"
                     enter-from-class="opacity-0 scale-95"
                     enter-to-class="opacity-100 scale-100"
@@ -40,18 +45,20 @@
             <PopoverPanel focus class="absolute top-0 inset-x-0 transition transform origin-top lg:hidden">
                 <div class="shadow-lg bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
                     <div class="pt-6">
-                        <div class="flex items-center justify-around space-x-10 px-4 lg:justify-between w-full lg:w-auto">
-                            <Link href="/">
-                                <span class="sr-only">FCG Villach</span>
-                                <LogoText class="h-24 mx-auto w-auto lg:h-24"></LogoText>
-                            </Link>
+                        <div class="flex items-center flex-1">
+                            <div class="flex items-center justify-center space-x-10 lg:justify-between w-full lg:w-auto">
+                                <Link href="/">
+                                    <span class="sr-only">FCG Villach</span>
+                                    <LogoText class="h-24 mx-auto w-auto lg:h-24"></LogoText>
+                                </Link>
 
-                            <div class="shrink">
-                                <PopoverButton
-                                    class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-primary">
-                                    <span class="sr-only">Close menu</span>
-                                    <XIcon class="h-6 w-6" aria-hidden="true"/>
-                                </PopoverButton>
+                                <div class="shrink">
+                                    <PopoverButton
+                                        class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-primary">
+                                        <span class="sr-only">Close menu</span>
+                                        <XIcon class="h-6 w-6" aria-hidden="true"/>
+                                    </PopoverButton>
+                                </div>
                             </div>
                         </div>
 
