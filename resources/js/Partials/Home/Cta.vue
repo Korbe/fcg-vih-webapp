@@ -23,21 +23,12 @@
                         <div class="sm:text-center">
                             <h2 class="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">Machen Sie gerade eine Schwere Zeit durch?</h2>
                             <p class="mt-6 mx-auto max-w-2xl text-lg text-brand-primary-50">Befinden Sie sich gerade in einer Lebenskrise oder treiben Sie schlechte Gedanken in die Irre? Haben Sie
-                            Fragen oder wollen Sie einfach nur mehr erfahren. Wir sind jederzeit für Sie da!</p>
+                            Fragen oder wollen einfach nur mehr erfahren. Wir sind jederzeit für Sie da!</p>
                         </div>
-                        <div class="mt-12 mx-auto max-w-sm">
+                        <div class="mt-14 mx-auto max-w-sm">
                             <Link :href="route('public.contact')"
                                           class="block text-center w-full rounded-md border border-transparent px-5 py-3 bg-brand-primary-500 text-base font-medium text-white shadow hover:bg-brand-primary-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-brand-primary-600 sm:px-10">Kontaktieren Sie uns</Link>
                         </div>
-                        <!--                            <form action="#" class="mt-12 sm:mx-auto sm:max-w-lg sm:flex">
-                                                        <div class="min-w-0 flex-1">
-                                                            <label for="cta-email" class="sr-only">Email address</label>
-                                                            <input id="cta-email" type="email" class="block w-full border border-transparent rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-brand-primary-600" placeholder="Enter your email" />
-                                                        </div>
-                                                        <div class="mt-4 sm:mt-0 sm:ml-3">
-                                                            <button type="submit" class="block w-full rounded-md border border-transparent px-5 py-3 bg-brand-primary-500 text-base font-medium text-white shadow hover:bg-brand-primary-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-brand-primary-600 sm:px-10">Notify me</button>
-                                                        </div>
-                                                    </form>-->
                     </div>
                 </div>
             </div>
@@ -47,6 +38,6 @@
 
 <script>
 export default {
-    name: "Cta"
+    name: "cta"
 }
 </script>

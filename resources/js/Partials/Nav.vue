@@ -1,5 +1,5 @@
 <template>
-    <Popover as="div" class="relative z-50 mx-auto">
+    <Popover as="div" class="w-full relative z-50 mx-auto">
 
         <div class="flex justify-center">
 
@@ -17,7 +17,7 @@
                             'bg-opacity-0 rounded-md p-2 inline-flex items-center justify-center hover:text-white hover:bg-opacity-100 focus:outline-none']"
                             class="">
                             <span class="sr-only">Open main menu</span>
-                            <MenuAlt3Icon class="h-6 w-6" aria-hidden="true"/>
+                            <MenuAlt3Icon :class="[blueMobileButton ? 'text-brand-primary' : '', 'h-6 w-6']" class="h-6 w-6" aria-hidden="true"/>
                         </PopoverButton>
                     </div>
                 </div>
@@ -220,7 +220,10 @@ export default {
     props: {
         hasBackground: {
             type: Boolean,
-        }
+        },
+        blueMobileButton: {
+            type: Boolean,
+        },
     },
     beforeMount() {
         window.addEventListener('scroll', this.handleScroll);

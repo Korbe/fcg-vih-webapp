@@ -4,3 +4,11 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import url(carousel.css);
+@import "scrollDownAnimation.scss";
+
+/*https://benborgers.com/posts/tailwind-h-screen*/
+@supports (-webkit-touch-callout: none) {
+    .h-screen {
+        height: -webkit-fill-available;
+    }
+}
