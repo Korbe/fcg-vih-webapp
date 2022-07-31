@@ -35,16 +35,19 @@
 
         </section>
 
+        <Footer></Footer>
+
     </public-layout>
 </template>
 
 <script>
 import PublicLayout from "@/Layouts/PublicLayout";
 import Nav from "../../Partials/Nav";
+import Footer from "@/Partials/Footer";
 
 export default {
     name: "PrivacyPolicy",
-    components: {Nav, PublicLayout}
+    components: {Footer, Nav, PublicLayout}
 }
 </script>
 

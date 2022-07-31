@@ -24202,11 +24202,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Layouts_PublicLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/PublicLayout */ "./resources/js/Layouts/PublicLayout.vue");
 /* harmony import */ var _Partials_Nav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Partials/Nav */ "./resources/js/Partials/Nav.vue");
+/* harmony import */ var _Partials_Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Partials/Footer */ "./resources/js/Partials/Footer.vue");
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "PrivacyPolicy",
   components: {
+    Footer: _Partials_Footer__WEBPACK_IMPORTED_MODULE_2__["default"],
     Nav: _Partials_Nav__WEBPACK_IMPORTED_MODULE_1__["default"],
     PublicLayout: _Layouts_PublicLayout__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
@@ -32280,13 +32283,15 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Nav = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Nav");
 
+  var _component_Footer = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Footer");
+
   var _component_public_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("public-layout");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_public_layout, {
     title: "Datenschutz"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Nav), _hoisted_1, _hoisted_2];
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Nav), _hoisted_1, _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer)];
     }),
     _: 1
     /* STABLE */
@@ -33213,7 +33218,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, 8
   /* PROPS */
   , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-    href: _ctx.route('public.blog') + '#visitus',
+    href: _ctx.route('public.home') + '#visitus',
     "class": "flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-secondary hover:bg-brand-secondary-400 sm:px-8"
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_UserGroupIcon, {
     "class": "h-7 mr-3"

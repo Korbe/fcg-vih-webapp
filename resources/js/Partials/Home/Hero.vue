@@ -19,7 +19,7 @@
                     <div class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
                         <Link :href="route('public.blog')"
                               class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-primary hover:bg-brand-primary-400 sm:px-8"><PlayIcon class="h-7 mr-3"/> Predigten anhören </Link>
-                        <a :href="route('public.blog') + '#visitus'"
+                        <a :href="route('public.home') + '#visitus'"
                               class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-secondary hover:bg-brand-secondary-400 sm:px-8"><UserGroupIcon class="h-7 mr-3"/> Besuchen Sie uns </a>
                     </div>
                 </div>
