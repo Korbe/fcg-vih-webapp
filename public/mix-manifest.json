@@ -1,6 +1,6 @@
 {
-    "/js/app.js": "/js/app.js?id=84fd7f651ea45b1931e6ee5e4498b2b9",
-    "/css/app.css": "/css/app.css?id=5677250af4e28bcd3e6bc18c9a0d42e1",
+    "/js/app.js": "/js/app.js?id=a30240a8ba887f42c3eb1228ca9e3afa",
+    "/css/app.css": "/css/app.css?id=d0eb03462b39e2a4accd6d4bec86a528",
     "/android-chrome-192x192.png": "/android-chrome-192x192.png?id=1e48a4598f2380c878c83181cca37f1c",
     "/apple-touch-icon.png": "/apple-touch-icon.png?id=3b29920aaf9293e5e46a0cb3c93a4614",
     "/browserconfig.xml": "/browserconfig.xml?id=bb86fed7db56dfaefc64976040ed47b7",
@@ -17,6 +17,9 @@
     "/images/aboutus_prayers.jpg": "/images/aboutus_prayers.jpg?id=ecb616bdec4f7125136c8de7970df90f",
     "/images/fcg-villach-logo-minimal.png": "/images/fcg-villach-logo-minimal.png?id=893d0a52afecc8d403e15f7b1046c830",
     "/images/fcg-villach-logo.png": "/images/fcg-villach-logo.png?id=2c7e6bd7a363c0fb5331ea3a3071e12d",
+    "/images/gottesdienst.jpg": "/images/gottesdienst.jpg?id=9fd40c5c71ff496e53885cfc0f6e8bc0",
+    "/images/hero-lg.jpg": "/images/hero-lg.jpg?id=c75233607d27cc293a22da8163962b83",
     "/images/hero.jpg": "/images/hero.jpg?id=781f7113eb8b1694be7ab9dd58c44483",
-    "/images/predigt.jpg": "/images/predigt.jpg?id=993b8b36bec1ef0014c61e91bc29d0dd"
+    "/images/predigt.jpg": "/images/predigt.jpg?id=993b8b36bec1ef0014c61e91bc29d0dd",
+    "/images/testimonials_banner.jpg": "/images/testimonials_banner.jpg?id=9213b075b506419404d85253d94c6531"
 }
