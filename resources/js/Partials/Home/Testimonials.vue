@@ -9,7 +9,7 @@
                     <img
                         alt=""
                         class="w-full h-full object-cover"
-                        src="https://images.unsplash.com/photo-1476018040064-32e98fec7648?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80&sat=-100"/>
+                        src="images/testimonials_banner.jpg"/>
                 </div>
 
                 <div class="md:max-w-4xl lg:pl-24">

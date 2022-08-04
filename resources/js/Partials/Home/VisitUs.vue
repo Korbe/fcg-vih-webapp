@@ -3,7 +3,7 @@
     <div class="h-56 bg-brand-primary-300 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
 
       <img class="w-full h-full object-cover"
-           src="https://images.unsplash.com/photo-1582880159736-8bb57334d2f5?auto=format&fit=crop&w=1920"
+           src="/images/gottesdienst.jpg"
            alt=""/>
     </div>
     <div class="relative max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16">

@@ -1,16 +1,6 @@
 <template>
     <div class="bg-gradient-to-b from-white to-gray-100 bg-white py-16 sm:pb-32">
         <div class="relative">
-            <div aria-hidden="true" class="hidden sm:block">
-                <svg class="absolute top-8 left-1/2 -ml-3" width="404" height="392" fill="none" viewBox="0 0 404 392">
-                    <defs>
-                        <pattern id="8228f071-bcee-4ec8-905a-2a059a2cc4fb" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                            <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
-                        </pattern>
-                    </defs>
-                    <rect width="404" height="392" fill="url(#8228f071-bcee-4ec8-905a-2a059a2cc4fb)" />
-                </svg>
-            </div>
             <div class="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
                 <div class="relative rounded-2xl px-6 py-10 bg-brand-primary-600 overflow-hidden shadow-xl sm:px-12 sm:py-20">
                     <div aria-hidden="true" class="absolute inset-0 -mt-72 sm:-mt-32 md:mt-0">
