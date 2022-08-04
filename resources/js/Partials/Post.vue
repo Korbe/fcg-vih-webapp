@@ -1,13 +1,29 @@
 <template>
     <div id="songSlider"
-        class="relative flex flex-col md:flex-row text-center rounded-lg border border-gray-300 bg-white px-6 py-5  items-center justify-center
+        class="relative flex flex-col sm:flex-row text-center rounded-lg border border-gray-300 bg-white px-2 md:px-6 py-5  items-center justify-center
         md:text-left md:justify-between
         shadow-sm hover:border-brand-primary focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-brand-primary">
 
         <div id="trackProgress" class="rounded-l-lg h-full absolute w-0 inset-0 bg-brand-primary-100">
         </div>
 
-        <div class="flex">
+
+        <div class="pb-3 md:pb-0 flex-shrink-0">
+            <img :alt="post.author" :src="post.author_image" class="relative rounded-full h-16 w-16" />
+        </div>
+
+        <div class="basis-full w-full md:pl-4">
+            <p class="text-xl md:text-2xl font-medium text-gray-900">
+                {{ post.title }}
+            </p>
+            <p class="py-3 text-base text-gray-500">
+                <span class="font-medium hover:underline">{{ post.author }}</span>
+                <span class="text-gray-600"> · {{ post.published_at }}</span>
+            </p>
+        </div>
+
+
+<!--        <div class="flex">
             <div class="pb-3 md:pb-0 flex-shrink-0">
                 <img :alt="post.author" :src="post.author_image" class="relative rounded-full h-16 w-16"/>
             </div>
@@ -21,11 +37,11 @@
                     <span class="text-gray-600"> · {{ post.published_at }}</span>
                 </p>
             </div>
-        </div>
+        </div>-->
 
         <div class="z-10 w-full sm:flex flex-end md:justify-end sm:justify-center">
 
-            <div class="flex space-x-3">
+            <div class="flex space-x-2">
 
                 <a v-if="activeSong != null && activeSong.currentTime > 0"
                    class="p-2 flex items-center justify-center  border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-primary hover:bg-brand-secondary-400"
@@ -40,11 +56,11 @@
                    @click.prevent="playPause(audio_id)">
                     <template v-if="paused">
                         <PlayIcon class="h-7 mr-1"/>
-                        <span class="w-full inline-block">{{songTime ?? 'Abspielen'}}</span>
+                        <span class="inline-block">{{songTime ?? 'Abspielen'}}</span>
                     </template>
                     <template v-if="!paused">
                         <PauseIcon class="h-7 mr-1"/>
-                        <span class="w-full inline-block">{{songTime ?? 'Pause'}}</span>
+                        <span class="inline-block">{{songTime ?? 'Pause'}}</span>
                     </template>
                 </a>
 
