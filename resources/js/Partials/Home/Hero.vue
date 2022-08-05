@@ -45,12 +45,11 @@
 </template>
 
 <script>
-import LogoText from "@/Partials/LogoText";
 import {PlayIcon, UserGroupIcon} from "@heroicons/vue/outline";
 import Nav from "@/Partials/Nav";
 
 export default {
     name: 'Hero',
-    components: {Nav, LogoText, PlayIcon, UserGroupIcon},
+    components: {Nav, PlayIcon, UserGroupIcon},
 }
 </script>
