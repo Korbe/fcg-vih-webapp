@@ -9,7 +9,7 @@
                     <div aria-hidden="true" class="absolute inset-0 bg-brand-primary-1000 mix-blend-multiply"/>
                 </div>
 
-                <Nav hasBackground/>
+                <Navbar hasBackground/>
 
                 <div
                     class="relative mt-16 sm:mt-12 md:mt-16 lg:mt-20 xl:mt-28 max-w-md mx-auto px-4 pb-32 sm:max-w-3xl sm:px-6  lg:max-w-7xl lg:px-8">
@@ -89,7 +89,7 @@
 
 <script>
 import {LocationMarkerIcon, MailIcon, PhoneIcon} from "@heroicons/vue/outline";
-import Nav from "@/Partials/Nav";
+import Navbar from "@/Partials/Navbar";
 import Footer from "@/Partials/Footer";
 import PublicLayout from "../../Layouts/PublicLayout";
 import Faq from "@/Partials/Faq";
@@ -100,7 +100,7 @@ export default {
         Faq,
         PublicLayout,
         Footer,
-        Nav,
+        Navbar,
         LocationMarkerIcon,
         MailIcon,
         PhoneIcon,

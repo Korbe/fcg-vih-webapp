@@ -7,7 +7,7 @@
                 <img alt="" class="w-full h-full object-cover" src="/images/predigt.jpg"/>
             </div>
 
-            <Nav blueMobileButton hasBackground/>
+            <Navbar blueMobileButton hasBackground/>
 
             <div class="relative flex justify-center items-center flex-grow">
                 <header>
@@ -55,7 +55,7 @@
 <script>
 import BlogList from '../../Partials/BlogList'
 import PublicLayout from "@/Layouts/PublicLayout";
-import Nav from "@/Partials/Nav";
+import Navbar from "@/Partials/Navbar";
 import Footer from "@/Partials/Footer";
 import {CollectionIcon, PlayIcon} from "@heroicons/vue/outline";
 
@@ -67,7 +67,7 @@ export default {
     },
     components: {
         Footer,
-        Nav,
+        Navbar,
         PublicLayout,
         BlogList,
         PlayIcon,

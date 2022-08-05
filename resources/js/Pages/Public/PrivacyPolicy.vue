@@ -1,7 +1,7 @@
 <template>
     <public-layout title="Datenschutz">
 
-        <Nav />
+        <Navbar />
 
         <div class="bg-white">
             <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
@@ -42,12 +42,12 @@
 
 <script>
 import PublicLayout from "@/Layouts/PublicLayout";
-import Nav from "../../Partials/Nav";
+import Navbar from "../../Partials/Navbar";
 import Footer from "@/Partials/Footer";
 
 export default {
     name: "PrivacyPolicy",
-    components: {Footer, Nav, PublicLayout}
+    components: {Footer, Navbar, PublicLayout}
 }
 </script>
 

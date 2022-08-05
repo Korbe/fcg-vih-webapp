@@ -1,6 +1,6 @@
 <template>
     <public-layout title="404 - Seite konnte nicht gefunden werden">
-        <Nav />
+        <Navbar />
 
         <div class="min-h-full pt-16 pb-12 flex flex-col bg-white">
             <main class="flex-grow flex flex-col justify-center max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
@@ -30,14 +30,14 @@
 <script>
 import Footer from '../Partials/Footer.vue'
 import PublicLayout from "../Layouts/PublicLayout";
-import Nav from "../Partials/Nav";
+import Nav from "../Partials/Navbar";
 import LogoText from "../Partials/LogoText";
 
 export default {
     name: 'PageNotFound',
     components: {
         LogoText,
-        Nav,
+        Navbar,
         PublicLayout,
         Footer,
     },

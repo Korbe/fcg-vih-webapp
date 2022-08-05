@@ -1,6 +1,6 @@
 <template>
     <public-layout title="Events">
-        <Nav/>
+        <Navbar/>
 
         <div class="bg-gradient-to-b from-white to-gray-100">
             <div class="text-center mt-16 sm:mt-12 md:mt-16 lg:mt-20 xl:mt-28 pb-20 px-5">
@@ -70,12 +70,12 @@
 <script>
 import PublicLayout from "@/Layouts/PublicLayout";
 import {CalendarIcon, ClockIcon, MailIcon, PhoneIcon, UserCircleIcon, UserIcon, ArrowRightIcon} from "@heroicons/vue/outline";
-import Nav from "@/Partials/Nav";
+import Navbar from "@/Partials/Navbar";
 import Footer from "@/Partials/Footer";
 
 export default {
     name: "Events",
-    components: {Footer, Nav, PublicLayout, PhoneIcon, CalendarIcon, ClockIcon, MailIcon, UserIcon, UserCircleIcon, ArrowRightIcon},
+    components: {Footer, Navbar, PublicLayout, PhoneIcon, CalendarIcon, ClockIcon, MailIcon, UserIcon, UserCircleIcon, ArrowRightIcon},
     data() {
         return {
             events: [

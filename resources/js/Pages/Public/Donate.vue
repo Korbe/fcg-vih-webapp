@@ -5,7 +5,7 @@
 
         <div class="flex flex-col min-h-screen">
 
-            <Nav/>
+            <Navbar/>
 
             <div class="flex flex-grow bg-gradient-to-b from-white to-gray-100 justify-center items-center">
 
@@ -106,7 +106,7 @@
 <script>
 import {Popover, PopoverButton, PopoverPanel} from '@headlessui/vue'
 import {ClipboardIcon, CreditCardIcon, DocumentDuplicateIcon, UserCircleIcon} from "@heroicons/vue/outline";
-import Nav from "@/Partials/Nav";
+import Navbar from "@/Partials/Navbar";
 import Footer from "@/Partials/Footer";
 import PublicLayout from "../../Layouts/PublicLayout";
 
@@ -115,7 +115,7 @@ export default {
     components: {
         PublicLayout,
         Footer,
-        Nav,
+        Navbar,
         ClipboardIcon,
         UserCircleIcon, CreditCardIcon, DocumentDuplicateIcon, Popover, PopoverButton, PopoverPanel
     },

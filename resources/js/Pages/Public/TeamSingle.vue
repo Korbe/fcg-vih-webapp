@@ -1,7 +1,7 @@
 <template>
     <public-layout :title="person.name">
 
-        <Nav/>
+        <Navbar/>
 
         <div class="relative py-16 lg:py-28 bg-white lg:bg-gradient-to-b lg:from-white lg:to-gray-100">
             <div class="hidden absolute top-0 inset-x-0 h-1/2 bg-transparent lg:block" aria-hidden="true"/>
@@ -63,13 +63,13 @@
 <script>
 import PublicLayout from "@/Layouts/PublicLayout";
 import Footer from "@/Partials/Footer";
-import Nav from "@/Partials/Nav";
+import Navbar from "@/Partials/Navbar";
 import {MailIcon, PhoneIcon} from "@heroicons/vue/outline";
 
 
 export default {
     name: "TeamSingle",
-    components: {Nav, Footer, PublicLayout, MailIcon, PhoneIcon},
+    components: {Navbar, Footer, PublicLayout, MailIcon, PhoneIcon},
     props: {
         person: {
             name: String,

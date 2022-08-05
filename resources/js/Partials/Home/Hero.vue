@@ -6,7 +6,7 @@
             <img alt="" class="hidden lg:block w-full h-full object-cover" src="/images/hero-lg.jpg"/>
         </div>
 
-        <Nav blueMobileButton hasBackground/>
+        <Navbar blueMobileButton hasBackground/>
 
         <div class="relative flex justify-center items-center flex-grow">
             <header>
@@ -46,10 +46,10 @@
 
 <script>
 import {PlayIcon, UserGroupIcon} from "@heroicons/vue/outline";
-import Nav from "@/Partials/Nav";
+import Navbar from "@/Partials/Navbar";
 
 export default {
     name: 'Hero',
-    components: {Nav, PlayIcon, UserGroupIcon},
+    components: {Navbar, PlayIcon, UserGroupIcon},
 }
 </script>

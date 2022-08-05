@@ -201,7 +201,7 @@ import LogoText from "@/Partials/LogoText";
 import MobileMenu from "@/Partials/MobileMenu";
 
 export default {
-    name: "Nav",
+    name: "navbar",
     components: {
         MobileMenu,
         LogoText,
