@@ -1,20 +1,23 @@
 <template>
-    <section class="bg-gradient-to-b from-white to-gray-100 bg-white">
-        <div class="max-w-6xl mx-auto mt-10 sm:mt-12 md:mt-16 lg:mt-20 xl:mt-28 px-4 sm:px-6 lg:px-8">
+    <section class="py-16 bg-gradient-to-b from-white to-gray-100 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <div class="bg-white text-center mb-5">
+            <div class="text-center mb-5">
                 <h1 class="text-3xl sm:text-4xl leading-8 tracking-tight font-extrabold text-gray-900">
                     Besuchen Sie <span class="text-brand-primary">auch..</span>
                 </h1>
             </div>
 
-            <carousel :autoplay="4000" :items-to-show="1" wrap-around>
+            <carousel v-if="items.length > 0" :autoplay="4000" :items-to-show="1" wrap-around>
 
-                <slide v-for="(media,index) in items" :key="index" class="md:p-5 rounded-md">
+                <slide v-for="(media,index) in items" :key="index" >
 
-                    <img :alt="media.custom_properties.alt" :src="media.original_url"
-                         class="lg:h-5/6 object-contain w-full "/>
+                    <div class="md:m-5">
 
+
+                       <img :alt="media.custom_properties.alt" :src="media.original_url"
+                            class="lg:h-5/6 object-contain w-full rounded-md"/>
+                    </div>
                 </slide>
 
                 <template v-if="items.length > 1" #addons>

@@ -1,6 +1,6 @@
 <template>
 
-    <section class="bg-white py-16 lg:py-24">
+    <section>
 
         <div class="relative w-full mx-auto ">
             <div

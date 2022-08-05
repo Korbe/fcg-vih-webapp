@@ -4045,6 +4045,10 @@ select{
     grid-column: span 1 / span 1;
   }
 
+  .md\:m-5{
+    margin: 1.25rem;
+  }
+
   .md\:mt-0{
     margin-top: 0px;
   }
@@ -4674,6 +4678,11 @@ select{
   .lg\:py-24{
     padding-top: 6rem;
     padding-bottom: 6rem;
+  }
+
+  .lg\:py-20{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 
   .lg\:pl-8{
