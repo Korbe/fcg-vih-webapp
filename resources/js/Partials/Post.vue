@@ -1,18 +1,18 @@
 <template>
-    <div id="songSlider"
+    <div :id="wrapper_id"
         class="relative flex flex-col sm:flex-row text-center rounded-lg border border-gray-300 bg-white px-2 md:px-6 py-5  items-center justify-center
         md:text-left md:justify-between
         shadow-sm hover:border-brand-primary focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-brand-primary">
 
-        <div id="trackProgress" class="rounded-l-lg h-full absolute w-0 inset-0 bg-brand-primary-100">
+        <div :id="progress_id" class="rounded-l-lg h-full absolute w-0 inset-0 bg-brand-primary-100">
         </div>
 
 
-        <div class="pb-3 md:pb-0 flex-shrink-0">
+        <div class="z-10 pb-3 md:pb-0 flex-shrink-0">
             <img :alt="post.author" :src="post.author_image" class="relative rounded-full h-16 w-16" />
         </div>
 
-        <div class="basis-full w-full md:pl-4">
+        <div class="z-10  basis-full w-full md:pl-4">
             <p class="text-xl md:text-2xl font-medium text-gray-900">
                 {{ post.title }}
             </p>
@@ -21,23 +21,6 @@
                 <span class="text-gray-600"> · {{ post.published_at }}</span>
             </p>
         </div>
-
-
-<!--        <div class="flex">
-            <div class="pb-3 md:pb-0 flex-shrink-0">
-                <img :alt="post.author" :src="post.author_image" class="relative rounded-full h-16 w-16"/>
-            </div>
-
-            <div class="z-10  md:pl-4">
-                <p class="text-xl md:text-2xl font-medium text-gray-900">
-                    {{ post.title }}
-                </p>
-                <p class="pt-2 text-base text-gray-500">
-                    <span class="font-medium hover:underline">{{ post.author }}</span>
-                    <span class="text-gray-600"> · {{ post.published_at }}</span>
-                </p>
-            </div>
-        </div>-->
 
         <div class="z-10 w-full sm:flex flex-end md:justify-end sm:justify-center">
 
@@ -130,11 +113,15 @@ export default {
         }
     },
     mounted() {
+        this.wrapper_id = 'song-wrapper_' + this.index;
         this.audio_id = 'audio_' + this.index;
+        this.progress_id = 'taskprogress_' + this.index;
     },
     data() {
         return {
+            wrapper_id: '',
             audio_id: '',
+            progress_id: '',
             paused: true,
             activeSong: null,
             songTime: null,
@@ -209,10 +196,10 @@ export default {
 
             //Fills out the slider with the appropriate position.
             let percentageOfSong = (this.activeSong.currentTime / this.activeSong.duration);
-            let percentageOfSlider = Math.round(document.getElementById('songSlider' ).offsetWidth * percentageOfSong);
+            let percentageOfSlider = Math.round(document.getElementById(this.wrapper_id ).offsetWidth * percentageOfSong);
 
             //Updates the track progress div.
-            document.getElementById('trackProgress').style.width = percentageOfSlider + "px";
+            document.getElementById(this.progress_id).style.width = percentageOfSlider + "px";
         },
 
         volumeUpdate(number) {
