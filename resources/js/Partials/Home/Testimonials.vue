@@ -21,12 +21,12 @@
 
                                 <blockquote class="mt-6 text-white">
                                     <p class="text-xl font-medium sm:text-2xl">{{ testimonial.statement }}</p>
-                                    <footer class="mt-6">
+                                    <div class="mt-6">
                                         <p class="flex flex-col font-medium">
                                             <span>{{ testimonial.name }}</span>
                                             <span>{{ testimonial.role }}</span>
                                         </p>
-                                    </footer>
+                                    </div>
                                 </blockquote>
 
                             </div>
