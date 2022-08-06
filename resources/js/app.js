@@ -1,9 +1,10 @@
 require('./bootstrap');
 
 import { createApp, h } from 'vue';
-import { createInertiaApp, Link } from '@inertiajs/inertia-vue3';
+import { createInertiaApp, InertiaLink } from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';
 import VueClipboard from 'vue-clipboard2'
+import VueSmoothScroll from 'vue3-smooth-scroll'
 
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
@@ -15,7 +16,8 @@ createInertiaApp({
         return createApp({ render: () => h(app, props) })
             .use(plugin)
             .use(VueClipboard)
-            .component('Link', Link)
+            .use(VueSmoothScroll)
+            .component('inertia-link', InertiaLink)
             .mixin({ methods: { route } })
             .mount(el);
     },
