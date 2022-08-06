@@ -13,20 +13,20 @@
     <!--Pagination-->
     <nav class="py-5 border-t border-gray-200 flex items-center justify-between sm:px-0">
         <div class="-mt-px w-0 flex-1 flex">
-            <Link v-if="posts.current_page > 1" :href="posts.prev_page_url"
+            <inertia-link v-if="posts.current_page > 1" :href="posts.prev_page_url"
                   class="border-t-2 border-transparent pt-4 pr-1 inline-flex items-center  font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300"
                   preserve-scroll>
                 <ArrowNarrowLeftIcon aria-hidden="true" class="mr-3 h-5 w-5 text-gray-400"/>
                 Zurück
-            </Link>
+            </inertia-link>
         </div>
         <div v-if="posts.last_page > 1" class="hidden md:-mt-px md:flex">
 
-            <Link v-if="posts.current_page > 1" :href="posts.first_page_url"
+            <inertia-link v-if="posts.current_page > 1" :href="posts.first_page_url"
                   class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 border-t-2 pt-4 px-4 inline-flex items-center  font-medium"
                   preserve-scroll>
                 1
-            </Link>
+            </inertia-link>
 
             <span v-if="posts.current_page == posts.last_page"
                   class="text-gray-500 pt-4 px-4 inline-flex items-center font-medium">
@@ -44,21 +44,21 @@
                         ...
                     </span>
 
-            <Link v-if="posts.current_page < posts.last_page" :href="posts.last_page_url"
+            <inertia-link v-if="posts.current_page < posts.last_page" :href="posts.last_page_url"
                   class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 border-t-2 pt-4 px-4 inline-flex items-center  font-medium"
                   preserve-scroll>
                 {{
                     posts.last_page
                 }}
-            </Link>
+            </inertia-link>
         </div>
         <div class="-mt-px w-0 flex-1 flex justify-end">
-            <Link v-if="posts.current_page < posts.last_page" :href="posts.next_page_url"
+            <inertia-link v-if="posts.current_page < posts.last_page" :href="posts.next_page_url"
                   class="border-t-2 border-transparent pt-4 pl-1 inline-flex items-center text-base font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300"
                   preserve-scroll>
                 Weiter
                 <ArrowNarrowRightIcon aria-hidden="true" class="ml-3 h-5 w-5 text-gray-400"/>
-            </Link>
+            </inertia-link>
         </div>
     </nav>
 

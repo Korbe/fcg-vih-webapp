@@ -6,10 +6,10 @@
             <nav class="relative mx-auto flex items-center justify-between pt-6 pb-2 px-4 sm:px-6 lg:px-8" aria-label="Global">
             <div class="flex items-center flex-1">
                 <div class="flex items-center justify-around space-x-10 lg:justify-between w-full lg:w-auto">
-                    <Link href="/">
+                    <inertia-link href="/">
                         <span class="sr-only">FCG Villach</span>
                         <LogoText class="lg:block h-24 mx-auto w-auto lg:h-24"></LogoText>
-                    </Link>
+                    </inertia-link>
 
                     <div class="lg:hidden">
                         <PopoverButton
@@ -24,12 +24,12 @@
 
                 <div class="hidden space-x-10 lg:flex lg:ml-10">
 
-                    <Link v-for="item in navigation" :key="item.name" :href="item.href"
+                    <inertia-link v-for="item in navigation" :key="item.name" :href="item.href"
                           :class="[hasBackground ? 'text-white hover:text-brand-primary-300' : 'text-gray-500 hover:text-brand-primary-300',
                                currentRoute === item.href ? 'text-brand-primary-600' : '',
                                'text-base font-medium ']"
                     >{{ item.name }}
-                    </Link>
+                    </inertia-link>
                 </div>
             </div>
         </nav>
@@ -47,10 +47,10 @@
                     <div class="pt-6">
                         <div class="flex items-center flex-1">
                             <div class="flex items-center justify-center space-x-10 lg:justify-between w-full lg:w-auto">
-                                <Link href="/">
+                                <inertia-link href="/">
                                     <span class="sr-only">FCG Villach</span>
                                     <LogoText class="h-24 mx-auto w-auto lg:h-24"></LogoText>
-                                </Link>
+                                </inertia-link>
 
                                 <div class="shrink">
                                     <PopoverButton
@@ -64,7 +64,7 @@
 
                         <div class="py-3 px-4">
                             <nav class="grid gap-y-5">
-                                <Link href="/"
+                                <inertia-link href="/"
                                       :class="{ 'bg-gray-100': currentRoute === homeRoute }"
                                       class="-m-1 p-3 flex items-center rounded-md hover:bg-gray-50">
                                     <div
@@ -76,9 +76,9 @@
                                     >
                                     Home
                                 </span>
-                                </Link>
+                                </inertia-link>
 
-                                <Link v-for="item in navigation" :key="item.name" :href="item.href"
+                                <inertia-link v-for="item in navigation" :key="item.name" :href="item.href"
                                       :class="{ 'bg-gray-100': currentRoute === item.href }"
                                       class="-m-1 p-3 flex items-center rounded-md hover:bg-gray-50">
                                     <div
@@ -90,7 +90,7 @@
                                     >
                                     {{ item.name }}
                                 </span>
-                                </Link>
+                                </inertia-link>
                             </nav>
                         </div>
                     </div>
@@ -111,10 +111,10 @@
             <div class="relative max-w-7xl mx-auto text-center py-1 px-2 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
 
                 <div class="flex items-center justify-around lg:justify-center space-x-10 w-full">
-                    <Link href="/">
+                    <inertia-link href="/">
                         <span class="sr-only">FCG Villach</span>
                         <Logo class="h-12"></Logo>
-                    </Link>
+                    </inertia-link>
 
                     <div class="lg:hidden flex items-center justify-between space-x-4">
 
@@ -134,16 +134,16 @@
 
                     <div class="hidden space-x-10 lg:flex">
 
-                        <Link v-if="$page.props.user" :href="route('dashboard.home')"
+                        <inertia-link v-if="$page.props.user" :href="route('dashboard.home')"
                               class="text-gray-500 hover:text-brand-primary-300 text-base font-medium">Dashboard
-                        </Link>
+                        </inertia-link>
 
-                        <Link v-for="item in navigation" :key="item.name" :href="item.href"
+                        <inertia-link v-for="item in navigation" :key="item.name" :href="item.href"
                               :class="['text-gray-500 hover:text-brand-primary-300',
                                currentRoute === item.href ? 'text-brand-primary-600' : '',
                                'text-base font-medium ']"
                         >{{ item.name }}
-                        </Link>
+                        </inertia-link>
                     </div>
                 </div>
 
@@ -154,7 +154,7 @@
 
                 <div class="bg-white px-2 py-3">
                     <nav class="grid gap-y-5">
-                        <Link href="/"
+                        <inertia-link href="/"
                               :class="{ 'bg-gray-100': currentRoute === homeRoute }"
                               class="-m-1 p-3 flex items-center rounded-md hover:bg-gray-50">
                             <div
@@ -166,9 +166,9 @@
                             >
                                     Home
                                 </span>
-                        </Link>
+                        </inertia-link>
 
-                        <Link v-for="item in navigation" :key="item.name" :href="item.href"
+                        <inertia-link v-for="item in navigation" :key="item.name" :href="item.href"
                               :class="{ 'bg-gray-100': currentRoute === item.href }"
                               class="-m-1 p-3 flex items-center rounded-md hover:bg-gray-50">
                             <div
@@ -180,7 +180,7 @@
                             >
                                     {{ item.name }}
                                 </span>
-                        </Link>
+                        </inertia-link>
                     </nav>
                 </div>
 

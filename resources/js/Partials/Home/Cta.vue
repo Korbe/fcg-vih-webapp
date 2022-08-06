@@ -16,8 +16,8 @@
                             Fragen oder wollen einfach nur mehr erfahren. Wir sind jederzeit für Sie da!</p>
                         </div>
                         <div class="mt-14 mx-auto max-w-sm">
-                            <Link :href="route('public.contact')"
-                                          class="block text-center w-full rounded-md border border-transparent px-5 py-3 bg-brand-primary-500 text-base font-medium text-white shadow hover:bg-brand-primary-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-brand-primary-600 sm:px-10">Kontaktieren Sie uns</Link>
+                            <inertia-link :href="route('public.contact')"
+                                          class="block text-center w-full rounded-md border border-transparent px-5 py-3 bg-brand-primary-500 text-base font-medium text-white shadow hover:bg-brand-primary-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-brand-primary-600 sm:px-10">Kontaktieren Sie uns</inertia-link>
                         </div>
                     </div>
                 </div>

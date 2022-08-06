@@ -11,7 +11,7 @@
 
             <div class="flex space-x-4 justify-center">
                 <div>
-                    <Link :href="route('dashboard.home')" class="text-sm text-brand-primary-700 hover:text-brand-primary-500">Dashboard</Link>
+                    <inertia-link :href="route('dashboard.home')" class="text-sm text-brand-primary-700 hover:text-brand-primary-500">Dashboard</inertia-link>
                 </div>
 
                 <div>

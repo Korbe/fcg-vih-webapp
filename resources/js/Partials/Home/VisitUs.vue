@@ -30,10 +30,10 @@
 
         <div class="mt-8">
           <div class="inline-flex rounded-md shadow">
-            <Link :href="route('public.events')"
+            <inertia-link :href="route('public.events')"
                   class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50">
               Alle Events anschauen
-            </Link>
+            </inertia-link>
           </div>
         </div>
       </div>

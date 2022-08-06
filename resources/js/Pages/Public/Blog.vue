@@ -27,7 +27,7 @@
                                    @click.prevent="playFirstPost">
                                     <PlayIcon class="h-7 mr-3"/>
                                     Neueste Predigt anhören</a>
-                                <a id="all-posts" :href="route('public.blog') + '#posts'"
+                                <a id="all-posts" v-smooth-scroll href="#posts"
                                    class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-secondary hover:bg-brand-secondary-400 sm:px-8">
                                     <CollectionIcon class="h-7 mr-3"/>
                                     Alle Predigten </a>

@@ -12,7 +12,7 @@
 
         <!--Predigten-->
         <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-2">
-            <Link :href="route('dashboard.posts.create')">
+            <inertia-link :href="route('dashboard.posts.create')">
                 <div class="p-6">
                     <div class="flex items-center">
                         <BookOpenIcon class="w-8 h-8 text-gray-400"/>
@@ -30,9 +30,9 @@
                     </div>
 
                 </div>
-            </Link>
+            </inertia-link>
 
-            <Link :href="route('dashboard.posts.index')">
+            <inertia-link :href="route('dashboard.posts.index')">
                 <div class="p-6 border-t border-gray-200 md:border-t-0 md:border-l">
 
                     <div class="flex items-center">
@@ -57,12 +57,12 @@
 
                     </div>
                 </div>
-            </Link>
+            </inertia-link>
         </div>
 
         <!--News-->
         <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-2">
-            <Link :href="route('dashboard.news.create')">
+            <inertia-link :href="route('dashboard.news.create')">
                 <div class="p-6">
                     <div class="flex items-center">
                         <UploadIcon class="w-8 h-8 text-gray-400"/>
@@ -80,9 +80,9 @@
                     </div>
 
                 </div>
-            </Link>
+            </inertia-link>
 
-            <Link :href="route('dashboard.news.index')">
+            <inertia-link :href="route('dashboard.news.index')">
                 <div class="p-6 border-t border-gray-200 md:border-t-0 md:border-l">
 
                     <div class="flex items-center">
@@ -107,7 +107,7 @@
 
                     </div>
                 </div>
-            </Link>
+            </inertia-link>
         </div>
     </div>
 </template>

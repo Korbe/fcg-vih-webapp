@@ -1,7 +1,7 @@
 <template>
-    <Link :href="'/'">
+    <inertia-link :href="'/'">
         <img alt="FCG Villach" class="w-60" src="/images/fcg-villach-logo.png"/>
-    </Link>
+    </inertia-link>
 </template>
 
 <script>
