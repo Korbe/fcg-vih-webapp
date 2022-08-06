@@ -1,7 +1,7 @@
 <template>
 
     <div class="grid grid-cols-1 gap-6">
-        <Post v-for="(post, index) in posts.data" :key="index" :index=index :post="post"/>
+        <Post :ref="'post'+index" v-for="(post, index) in posts.data" :key="index" :index=index :post="post" @update-song="songUpdate"/>
 
         <!--empty state-->
         <div v-if="posts.total === 0 "
@@ -14,8 +14,8 @@
     <nav class="py-5 border-t border-gray-200 flex items-center justify-between sm:px-0">
         <div class="-mt-px w-0 flex-1 flex">
             <inertia-link v-if="posts.current_page > 1" :href="posts.prev_page_url"
-                  class="border-t-2 border-transparent pt-4 pr-1 inline-flex items-center  font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300"
-                  preserve-scroll>
+                          class="border-t-2 border-transparent pt-4 pr-1 inline-flex items-center  font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300"
+                          preserve-scroll>
                 <ArrowNarrowLeftIcon aria-hidden="true" class="mr-3 h-5 w-5 text-gray-400"/>
                 Zurück
             </inertia-link>
@@ -23,8 +23,8 @@
         <div v-if="posts.last_page > 1" class="hidden md:-mt-px md:flex">
 
             <inertia-link v-if="posts.current_page > 1" :href="posts.first_page_url"
-                  class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 border-t-2 pt-4 px-4 inline-flex items-center  font-medium"
-                  preserve-scroll>
+                          class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 border-t-2 pt-4 px-4 inline-flex items-center  font-medium"
+                          preserve-scroll>
                 1
             </inertia-link>
 
@@ -45,8 +45,8 @@
                     </span>
 
             <inertia-link v-if="posts.current_page < posts.last_page" :href="posts.last_page_url"
-                  class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 border-t-2 pt-4 px-4 inline-flex items-center  font-medium"
-                  preserve-scroll>
+                          class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 border-t-2 pt-4 px-4 inline-flex items-center  font-medium"
+                          preserve-scroll>
                 {{
                     posts.last_page
                 }}
@@ -54,8 +54,8 @@
         </div>
         <div class="-mt-px w-0 flex-1 flex justify-end">
             <inertia-link v-if="posts.current_page < posts.last_page" :href="posts.next_page_url"
-                  class="border-t-2 border-transparent pt-4 pl-1 inline-flex items-center text-base font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300"
-                  preserve-scroll>
+                          class="border-t-2 border-transparent pt-4 pl-1 inline-flex items-center text-base font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300"
+                          preserve-scroll>
                 Weiter
                 <ArrowNarrowRightIcon aria-hidden="true" class="ml-3 h-5 w-5 text-gray-400"/>
             </inertia-link>
@@ -78,5 +78,30 @@ export default {
         ArrowNarrowLeftIcon,
         ArrowNarrowRightIcon
     },
+    data() {
+        return {
+            currentSong: null
+        }
+    },
+    methods: {
+        songUpdate(index) {
+            console.log(index);
+            console.log(this.$refs.post[index]);
+
+
+
+  /*          this.currentSong = audio_id;
+
+
+            if(this.currentSong != null)
+                this.playPause(this.currentSong);
+            this.currentSong = song;
+
+            this.playPause(this.currentSong);*/
+        },
+        playPause(song) {
+            song.paused ? song.play() : song.pause();
+        }
+    }
 }
 </script>

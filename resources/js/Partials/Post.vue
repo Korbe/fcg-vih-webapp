@@ -137,42 +137,13 @@ export default {
         addSeconds(id, sec) {
             this.activeSong.currentTime = this.activeSong.currentTime + sec;
         },
-
-        //Plays the song. Just pass the id of the audio element.
-        play(id) {
-            //Sets the active song to the song being played.  All other functions depend on this.
-            this.activeSong = document.getElementById(id);
-            //Plays the song defined in the audio tag.
-            this.activeSong.play();
-            this.paused = false;
-
-            //Calculates the starting percentage of the song.
-            let percentageOfVolume = this.activeSong.volume / 1;
-            let percentageOfVolumeSlider = document.getElementById('volumeMeter').offsetWidth * percentageOfVolume;
-
-            //Fills out the volume status bar.
-            document.getElementById('volumeStatus').style.width = Math.round(percentageOfVolumeSlider * 100) / 100 + "px";
-        },
-
-        //Stop song by setting the current time to 0 and pausing the song.
-        stopSong() {
-            this.activeSong.currentTime = 0;
-            this.activeSong.pause();
-            this.paused = true;
-        },
-
-        //Pauses the active song.
-        pause() {
-            this.activeSong.pause();
-            this.paused = true;
-        },
-
-//Does a switch of the play/pause with one button.
+        //Does a switch of the play/pause with one button.
         playPause(id) {
             //Sets the active song since one of the functions could be play.
             this.activeSong = document.getElementById(id);
             //Checks to see if the song is paused, if it is, play it from where it left off otherwise pause it.
             if (this.activeSong.paused) {
+                this.sendSongUpdate();
                 this.activeSong.play();
                 this.paused = false;
             } else {
@@ -180,9 +151,8 @@ export default {
                 this.paused = true;
             }
         },
-
-//Updates the current time function so it reflects where the user is in the song.
-//This function is called whenever the time is updated.  This keeps the visual in sync with the actual time.
+        //Updates the current time function so it reflects where the user is in the song.
+        //This function is called whenever the time is updated.  This keeps the visual in sync with the actual time.
         updateTime() {
             if (!this.activeSong){
                 this.activeSong = document.getElementById(this.audio_id);
@@ -201,71 +171,9 @@ export default {
             //Updates the track progress div.
             document.getElementById(this.progress_id).style.width = percentageOfSlider + "px";
         },
-
-        volumeUpdate(number) {
-            //Updates the volume of the track to a certain number.
-            this.activeSong.volume = number / 100;
+        sendSongUpdate(){
+            //this.$emit('update-song', this.index);
         },
-
-//Changes the volume up or down a specific number
-        changeVolume(number, direction) {
-            //Checks to see if the volume is at zero, if so it doesn't go any further.
-            if (this.activeSong.volume >= 0 && direction === "down") {
-                this.activeSong.volume = this.activeSong.volume - (number / 100);
-            }
-            //Checks to see if the volume is at one, if so it doesn't go any higher.
-            if (this.activeSong.volume <= 1 && direction === "up") {
-                this.activeSong.volume = this.activeSong.volume + (number / 100);
-            }
-
-            //Finds the percentage of the volume and sets the volume meter accordingly.
-            let percentageOfVolume = this.activeSong.volume / 1;
-            let percentageOfVolumeSlider = document.getElementById('volumeMeter').offsetWidth * percentageOfVolume;
-
-            document.getElementById('volumeStatus').style.width = Math.round(percentageOfVolumeSlider) + "px";
-        },
-
-//Sets the location of the song based off of the percentage of the slider clicked.
-        setLocation(percentage) {
-            this.activeSong.currentTime = this.activeSong.duration * percentage;
-        },
-
-        /*
-        Gets the percentage of the click on the slider to set the song position accordingly.
-        Source for Object event and offset: http://website-engineering.blogspot.com/2011/04/get-x-y-coordinates-relative-to-div-on.html
-        */
-        setSongPosition(obj, e) {
-            //Gets the offset from the left so it gets the exact location.
-            let songSliderWidth = obj.offsetWidth;
-            let evtobj = window.event ? event : e;
-            clickLocation = evtobj.layerX - obj.offsetLeft;
-
-            let percentage = (clickLocation / songSliderWidth);
-            //Sets the song location with the percentage.
-            setLocation(percentage);
-        },
-
-//Set's volume as a percentage of total volume based off of user click.
-        setVolume(percentage) {
-            this.activeSong.volume = percentage;
-
-            let percentageOfVolume = this.activeSong.volume / 1;
-            let percentageOfVolumeSlider = document.getElementById('volumeMeter').offsetWidth * percentageOfVolume;
-
-            document.getElementById('volumeStatus').style.width = Math.round(percentageOfVolumeSlider) + "px";
-        },
-
-//Set's new volume id based off of the click on the volume bar.
-        setNewVolume(obj, e) {
-            let volumeSliderWidth = obj.offsetWidth;
-            let evtobj = window.event ? event : e;
-            clickLocation = evtobj.layerX - obj.offsetLeft;
-
-            let percentage = (clickLocation / volumeSliderWidth);
-            setVolume(percentage);
-        },
-
-
     }
 }
 </script>
