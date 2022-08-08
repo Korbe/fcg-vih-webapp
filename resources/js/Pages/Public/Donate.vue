@@ -134,7 +134,7 @@ export default {
                 {
                     name: 'impact-at',
                     logo: '/images/partner/impact-at.png',
-                    link: 'http://impact-austria.at',
+                    link: 'https://austria.impactgeneration.org',
                 },
                 {
                     name: 'sozialetagesstaetteraphael',
