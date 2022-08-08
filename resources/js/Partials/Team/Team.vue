@@ -6,7 +6,7 @@
                     <inertia-link :href="route('public.about.team', slugify(person.name))">
                         <div>
                             <div class="aspect-w-1 aspect-h-1">
-                                <img class="object-cover shadow-lg rounded-t-lg" :src="person.imageUrl" :alt="person.name"/>
+                                <img loading="lazy" class="object-cover shadow-lg rounded-t-lg" :src="person.imageUrl" :alt="person.name"/>
                             </div>
                             <div class="p-5 flex items-center justify-between">
                                 <div class="font-medium text-lg leading-6 space-y-1">

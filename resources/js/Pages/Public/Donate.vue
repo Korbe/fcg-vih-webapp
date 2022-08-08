@@ -87,7 +87,7 @@
                                     <div v-for="org in organizations" :key="org.name"
                                          class="col-span-1 flex justify-center py-8 px-8">
                                         <a :href="org.link" target="_blank">
-                                            <img :alt="org.name" :src="org.logo" class="max-h-12"/>
+                                            <img loading="lazy" :alt="org.name" :src="org.logo" class="max-h-12"/>
                                         </a>
                                     </div>
                                 </div>

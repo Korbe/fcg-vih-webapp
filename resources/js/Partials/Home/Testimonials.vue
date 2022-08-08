@@ -6,7 +6,7 @@
             <div
                 class="relative py-24 px-10 md:px-24 bg-brand-primary-500 overflow-hidden">
                 <div class="absolute inset-0 opacity-50 filter saturate-0 mix-blend-multiply">
-                    <img
+                    <img loading="lazy"
                         alt=""
                         class="w-full h-full object-cover"
                         src="images/testimonials_banner.jpg"/>

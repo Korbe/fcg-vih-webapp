@@ -9,7 +9,7 @@
 
 
         <div class="z-10 pb-3 md:pb-0 flex-shrink-0">
-            <img :alt="post.author" :src="post.author_image" class="relative rounded-full h-16 w-16" />
+            <img loading="lazy" :alt="post.author" :src="post.author_image" class="relative rounded-full h-16 w-16" />
         </div>
 
         <div class="z-10  basis-full w-full md:pl-4">

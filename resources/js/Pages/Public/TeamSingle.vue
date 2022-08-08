@@ -11,7 +11,7 @@
                         <div class="absolute inset-x-0 h-1/2 bg-white lg:hidden" aria-hidden="true"/>
                         <div class="max-w-md mx-auto px-4 sm:max-w-lg sm:px-6 lg:max-w-none lg:p-0">
                             <div class="aspect-w-1 aspect-h-1">
-                                <img class="object-cover object-center rounded-3xl shadow-2xl" :src="person.imageUrl" :alt="person.name"/>
+                                <img loading="lazy" class="object-cover object-center rounded-3xl shadow-2xl" :src="person.imageUrl" :alt="person.name"/>
                             </div>
                         </div>
                     </div>

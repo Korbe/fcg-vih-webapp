@@ -33,7 +33,7 @@
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             <div class="flex items-center">
                                                 <div class="flex-shrink-0 w-52">
-                                                    <img class="w-52 rounded" :src="item.original_url" :alt="item.custom_properties.alt"/>
+                                                    <img loading="lazy" class="w-52 rounded" :src="item.original_url" :alt="item.custom_properties.alt"/>
                                                 </div>
                                             </div>
                                         </td>

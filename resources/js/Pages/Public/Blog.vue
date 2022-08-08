@@ -4,7 +4,7 @@
         <div class="flex flex-col h-screen relative">
 
             <div class="absolute inset-0 ">
-                <img alt="" class="w-full h-full object-cover" src="/images/predigt.jpg"/>
+                <img loading="lazy" alt="" class="w-full h-full object-cover" src="/images/predigt.jpg"/>
             </div>
 
             <Navbar blueMobileButton hasBackground/>

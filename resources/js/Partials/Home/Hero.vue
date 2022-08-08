@@ -2,8 +2,8 @@
     <div class="flex flex-col h-screen relative">
 
         <div class="absolute inset-0 ">
-            <img alt="" class="w-full lg:hidden h-full object-cover" src="/images/hero.jpg"/>
-            <img alt="" class="hidden lg:block w-full h-full object-cover" src="/images/hero-lg.jpg"/>
+            <img loading="lazy" alt="" class="w-full lg:hidden h-full object-cover" src="/images/hero.jpg"/>
+            <img loading="lazy" alt="" class="hidden lg:block w-full h-full object-cover" src="/images/hero-lg.jpg"/>
         </div>
 
         <Navbar blueMobileButton hasBackground/>

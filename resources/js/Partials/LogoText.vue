@@ -1,5 +1,5 @@
 <template>
-    <img alt="FCG Villach" src="/images/fcg-villach-logo.png"/>
+    <img loading="lazy" alt="FCG Villach" src="/images/fcg-villach-logo.png"/>
 </template>
 
 <script>

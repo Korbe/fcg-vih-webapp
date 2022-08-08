@@ -15,7 +15,7 @@
                     <div class="md:m-5">
 
 
-                       <img :alt="media.custom_properties.alt" :src="media.original_url"
+                       <img loading="lazy" :alt="media.custom_properties.alt" :src="media.original_url"
                             class="lg:h-5/6 object-contain w-full rounded-md"/>
                     </div>
                 </slide>

@@ -3,9 +3,9 @@
         <div class="min-h-screen">
             <header class="relative pb-32">
                 <div class="absolute inset-0">
-                    <img alt=""
+                    <img loading="lazy" alt=""
                          class="w-full h-full object-cover"
-                         src="https://images.unsplash.com/photo-1497333558196-daaff02b56d0?auto=format&fit=crop&h=800&w=1920&q=60&sat=-100"/>
+                         src="/images/contact.jpg"/>
                     <div aria-hidden="true" class="absolute inset-0 bg-brand-primary-1000 mix-blend-multiply"/>
                 </div>
 

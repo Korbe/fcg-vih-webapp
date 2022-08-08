@@ -2,7 +2,7 @@
   <div class="relative bg-brand-secondary-500 mb-10">
     <div class="h-56 bg-brand-primary-300 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
 
-      <img class="w-full h-full object-cover"
+      <img loading="lazy" class="w-full h-full object-cover"
            src="/images/gottesdienst.jpg"
            alt=""/>
     </div>

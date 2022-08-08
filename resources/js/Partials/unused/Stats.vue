@@ -3,7 +3,7 @@
         <div class="h-80 w-full absolute bottom-0 xl:inset-0 xl:h-full">
             <div class="h-full w-full xl:grid xl:grid-cols-2">
                 <div class="h-full xl:relative xl:col-start-2">
-                    <img class="h-full w-full object-cover opacity-25 xl:absolute xl:inset-0" src="https://images.unsplash.com/photo-1593485589800-579b43749b15?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2148&q=80" alt="People working on laptops" />
+                    <img loading="lazy" class="h-full w-full object-cover opacity-25 xl:absolute xl:inset-0" src="https://images.unsplash.com/photo-1593485589800-579b43749b15?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2148&q=80" alt="People working on laptops" />
                     <div aria-hidden="true" class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-gray-900 xl:inset-y-0 xl:left-0 xl:h-full xl:w-32 xl:bg-gradient-to-r" />
                 </div>
             </div>
