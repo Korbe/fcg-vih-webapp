@@ -13,7 +13,7 @@
                 </div>
 
                 <div class="md:max-w-4xl lg:pl-24">
-                    <carousel :autoplay="6000" :items-to-show="1" class="mt-5" wrap-around>
+                    <carousel pauseAutoplayOnHover :autoplay="6000" :items-to-show="1" class="mt-5" wrap-around>
 
                         <slide v-for="testimonial in testimonials" :key="testimonial.name" class="md:p-5">
 
@@ -67,12 +67,12 @@ export default {
             testimonials: [
                 {
                     name: "Toni Bergmairer",
-                    statement: "Freundliches Ambiente, liebevoll gestaltete Räume, engagierte Mitarbeiterschaft  - die Liste ließe sich deutlich erweitern sollte alles genannt werden, warum ich freue, wenn ich zu Predigtdiensten eingeladen werde. Ich empfinde mich als Teil der Familie und freue mich über das, was Gott hier tut.",
+                    statement: "Freundliches Ambiente, liebevoll gestaltete Räume, engagierte Mitarbeiter - die Liste ließe sich noch deutlich erweitern sollte alles genannt werden. Deshalb freue ich mich jedesmal, wenn ich zu Predigtdiensten nach Villach eingeladen werde. Ich empfinde mich als Teil dieser Familie und freue mich über das, was Gott hier tut.",
                     role: "Pastor, Bad Reichenhall"
                 },
                 {
                     name: "Rita Dullinger",
-                    statement: "Das Herz der  FCG Villach ist es, dass Menschen aus allen Nationen Jesus Christus als Erlöser kennenlernen und erfahren, dass durch ihn sich ihr Leben zum Besseren wendet!",
+                    statement: "Das Herz der FCG Villach ist es, dass Menschen aus allen Nationen Jesus Christus als Erlöser kennenlernen und erfahren, dass sich ihr Leben durch ihn zum Besseren wendet!",
                     role: "Seelsorger, FCG Wels"
                 },
                 {

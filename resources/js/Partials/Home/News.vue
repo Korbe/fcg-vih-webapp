@@ -8,7 +8,7 @@
                 </h1>
             </div>
 
-            <carousel v-if="items.length > 0" :autoplay="4000" :items-to-show="1" wrap-around>
+            <carousel pauseAutoplayOnHover v-if="items.length > 0" :autoplay="4000" :items-to-show="1" wrap-around>
 
                 <slide v-for="(media,index) in items" :key="index" >
 
