@@ -66,7 +66,7 @@ export default {
             innerWidth: window.innerWidth,
             testimonials: [
                 {
-                    name: "Toni Bergmairer",
+                    name: "Toni Bergmair",
                     statement: "Freundliches Ambiente, liebevoll gestaltete Räume, engagierte Mitarbeiter - die Liste ließe sich noch deutlich erweitern sollte alles genannt werden. Deshalb freue ich mich jedesmal, wenn ich zu Predigtdiensten nach Villach eingeladen werde. Ich empfinde mich als Teil dieser Familie und freue mich über das, was Gott hier tut.",
                     role: "Pastor, Bad Reichenhall"
                 },
