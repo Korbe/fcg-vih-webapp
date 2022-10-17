@@ -55,7 +55,7 @@ export default {
                 },
                 {
                     name: 'Markus Kirisits',
-                    role: 'Kassier & Schriftführer',
+                    role: 'Ältester & Kassier',
                     imageUrl: 'images/portraits/Markus-Kirisits.jpeg',
                 },
                 {
