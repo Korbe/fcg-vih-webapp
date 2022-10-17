@@ -30,7 +30,7 @@ return [
     ],
     'markus-kirisits' => [
         'name' => 'Markus Kirisits',
-        'role' => 'Kassier & Schriftführer',
+        'role' => 'Ältester & Kassier',
         'imageUrl' => '/images/portraits/Markus-Kirisits.jpeg',
         'lead' => 'Als ich Andrea kennengelernt habe, kam mir an diesem hübschen Mädl irgendetwas anders vor. ',
         'bio' => 'Ich wollte unbedingt wissen warum. Die Antwort war: "Sie glaubte an Jesus!" Das wirkte auf mich sehr anziehend und binnen kurzer Zeit habe auch ich mich für ein Leben mit Jesus entschieden. Das war mein Glück, denn jetzt sind wir glücklich verheiratet und Eltern von zwei coolen Buben. In der Kirche spiele ich jetzt im Lobpreisteam und gebe mit dem Cajon den Takt an. Ich liebe es meinen himmlischen Vater mit meiner Musik zu loben und zu preisen. Meine weiteren Aufgaben erstrecken sich von der Buchhaltung über einem Hausmeisterjob bis zum Einspielen unserer Predigten auf unserer Homepage. Alle diese Tätigkeiten mache ich, weil ich Gott liebe, der mir so viel gegeben hat. Das Höchste und Beste ist, dass ich sein Kind sein darf.',
