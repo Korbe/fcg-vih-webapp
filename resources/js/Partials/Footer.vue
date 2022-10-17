@@ -107,7 +107,7 @@ export default {
                 links: [
                     {name: 'Pfingstbewegung Österreich', href: 'https://fcgoe.at/'},
                     {name: 'Freikirchen in Österreich', href: 'https://freikirchen.at/29082013Nr1.php'},
-                    {name: 'Impact Innenmission', href: 'https://austria.impactgeneration.org/'},
+                    {name: 'Impact Innenmission', href: 'http://impact-austria.at'},
                     {name: 'AmPuls Außenmission', href: 'https://ampuls.or.at/'},
                     {name: 'Soziale Tagesstätte Raphael', href: 'https://soziale-tagestaette-raphael.at/'},
                     {name: 'AVC „Aktion für verfolgte Christen und Notleidende“', href: 'https://avc-at.org/de/'},

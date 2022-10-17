@@ -132,12 +132,12 @@ export default {
                     link: 'https://ampuls.or.at',
                 },
                 {
-                    name: 'impact-at',
+                    name: 'Impact-Austria',
                     logo: '/images/partner/impact-at.png',
-                    link: 'https://austria.impactgeneration.org',
+                    link: 'http://impact-austria.at',
                 },
                 {
-                    name: 'sozialetagesstaetteraphael',
+                    name: 'Soziale Tagesstaette Raphael',
                     logo: '/images/partner/sozialetagesstaetteraphael.png',
                     link: 'http://soziale-tagestaette-raphael.at',
                 },
