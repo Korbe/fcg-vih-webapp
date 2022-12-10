@@ -23,14 +23,14 @@
 
                         <div class="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
                             <div class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
-                                <a class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-primary hover:bg-brand-primary-400 sm:px-8" href="#"
-                                   @click.prevent="playFirstPost">
+                                <a class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-primary hover:bg-brand-primary-400 sm:px-8"
+                                   v-smooth-scroll href="#posts">
                                     <PlayIcon class="h-7 mr-3"/>
-                                    Neueste Predigt anhören</a>
-                                <a id="all-posts" v-smooth-scroll href="#posts"
+                                    Neueste Predigten anhören</a>
+                                <inertia-link :href="route('public.blog.archive')"
                                    class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-secondary hover:bg-brand-secondary-400 sm:px-8">
                                     <CollectionIcon class="h-7 mr-3"/>
-                                    Alle Predigten </a>
+                                    Alle Predigten </inertia-link>
                             </div>
                         </div>
                     </div>
@@ -44,7 +44,24 @@
 
         <div id="posts" class="bg-gradient-to-b from-white to-gray-100">
             <div class="max-w-4xl mx-auto py-32 px-4">
-                <blog-list :posts="posts"/>
+
+                <div class="grid grid-cols-1 gap-6">
+                    <post-audio-player v-for="(post, index) in posts" :key="index" :index=index :post="post" />
+
+                    <!--empty state-->
+                    <div v-if="posts.length === 0"
+                        class="text-center rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm hover:border-brand-primary focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-brand-primary">
+                        Keine Öffentlichen Prediten
+                    </div>
+
+                </div>
+
+                <div class="mt-6 flex justify-center">
+                        <inertia-link :href="route('public.blog.archive')" class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-secondary hover:bg-brand-secondary-400 sm:px-8">
+                            <CollectionIcon class="h-7 mr-3"/> Alle Predigten
+                        </inertia-link>
+                </div>
+
             </div>
         </div>
 
@@ -58,27 +75,21 @@ import PublicLayout from "@/Layouts/PublicLayout";
 import Navbar from "@/Partials/Navbar";
 import Footer from "@/Partials/Footer";
 import {CollectionIcon, PlayIcon} from "@heroicons/vue/outline";
+import PostAudioPlayer from "@/Partials/PostAudioPlayer";
 
 export default {
     name: 'Blog',
-
     props: {
-        posts: Object,
+        posts: Array,
     },
     components: {
+        PostAudioPlayer,
         Footer,
         Navbar,
         PublicLayout,
         BlogList,
         PlayIcon,
-        CollectionIcon
+        CollectionIcon,
     },
-    methods: {
-        playFirstPost() {
-            document.getElementById('all-posts').click();
-            document.getElementById("play_button_0").click();
-            document.getElementById("play_button_0").focus();
-        }
-    }
 }
 </script>

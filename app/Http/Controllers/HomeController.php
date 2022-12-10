@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Inertia\Inertia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
@@ -38,12 +37,12 @@ class HomeController extends Controller
         return Inertia::render('Public/Contact');
     }
 
-    public function impressum(Request $request)
+    public function imprint(Request $request)
     {
         return Inertia::render('Public/Imprint');
     }
 
-    public function datenschutz(Request $request)
+    public function privacy(Request $request)
     {
         return Inertia::render('Public/PrivacyPolicy');
     }
@@ -53,9 +52,11 @@ class HomeController extends Controller
         return Inertia::render('Public/Blog', [
             'posts' => Post::where('published_at', '<=', Carbon::now())
                 ->orderBy('published_at','DESC')
-                ->paginate(4)
-                ->through(function ($post, $key) {
+                ->take(4)
+                ->get()
+                ->transform(function ($post, $key) {
                     return [
+                        'id' => $post->id,
                         'title' => $post->title,
                         'audio' => $post->getFirstMediaUrl('audio'),
                         'published_at' => $post->published_at->format('d.m.Y'),
@@ -64,5 +65,41 @@ class HomeController extends Controller
                     ];
                 })
         ]);
+    }
+
+    public function archive(Request $request)
+    {
+
+        $posts = Post::where('published_at', '<=', Carbon::now())
+        ->orderBy('published_at','DESC')
+        ->paginate(5)
+        ->through(function ($post, $key) {
+            return [
+                'id' => $post->id,
+                'title' => $post->title,
+                'audio' => $post->getFirstMediaUrl('audio'),
+                'published_at' => $post->published_at->format('d.m.Y'),
+                'author' => $post->author,
+                'author_image' => 'https://ui-avatars.com/api/?name=' . urlencode($post->author) . '&color=0DB3E9&background=edfbff'
+            ];
+        });
+
+        return Inertia::render('Public/BlogArchive', [
+            'posts' => $posts
+        ]);
+    }
+
+    public function postAudioViewed(Post $post){
+        $post->viewed = $post->viewed+1;
+        $post->save();
+
+        return redirect()->back();
+    }
+
+    public function postAudioCompleted(Post $post){
+        $post->completed = $post->completed+1;
+        $post->save();
+
+        return redirect()->back();
     }
 }

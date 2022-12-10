@@ -26,14 +26,18 @@ Route::name('public.')->group(function () {
     Route::get('/about', [HomeController::class, 'about'])->name('about');
     Route::get('/about/{name}', [TeamController::class, 'index'])->name('about.team');
 
+    Route::get('/veranstaltungen', [HomeController::class, 'events'])->name('events');
+    Route::get('/spenden', [HomeController::class, 'donate'])->name('donate');
+    Route::get('/kontakt', [HomeController::class, 'contact'])->name('contact');
+    Route::get('/predigten', [HomeController::class, 'blog'])->name('blog');
+    
+    Route::post('/predigten/stats/{post}/viewed', [HomeController::class, 'postAudioViewed'])->name('blog.post.viewed');
+    Route::post('/predigten/stats/{post}/completed', [HomeController::class, 'postAudioCompleted'])->name('blog.post.completed');
+    
+    Route::get('/predigten/archiv', [HomeController::class, 'archive'])->name('blog.archive');
 
-    Route::get('/events', [HomeController::class, 'events'])->name('events');
-    Route::get('/donate', [HomeController::class, 'donate'])->name('donate');
-    Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
-    Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
-
-    Route::get('/impressum', [HomeController::class, 'impressum'])->name('impressum');
-    Route::get('/datenschutz', [HomeController::class, 'datenschutz'])->name('datenschutz');
+    Route::get('/impressum', [HomeController::class, 'imprint'])->name('imprint');
+    Route::get('/datenschutz', [HomeController::class, 'privacy'])->name('privacy');
 
 });
 
