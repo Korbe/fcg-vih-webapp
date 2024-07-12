@@ -17,8 +17,8 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        if (User::whereEmail("office@fcg-villach.at")->doesntExist()) {
-            $user = User::create([
+        if (config('app.env') == 'local' && User::whereEmail("office@fcg-villach.at")->doesntExist()) {
+            User::create([
                 'name' => "FCG Villach",
                 'email' => "office@fcg-villach.at",
                 'password' => Hash::make("password")

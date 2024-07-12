@@ -43,7 +43,7 @@ return [
         'imageUrl' => '/images/portraits/Majid-Khosravian.jpeg',
         'lead' => 'Ich bin der "Andere" in unserer Gruppe. ',
         'bio' => 'Im Iran geboren kam ich nach Österreich um mein Studium abzuschließen. Als ich in die Freie Christengemeinde Villach eingeladen wurde, habe ich noch allen verkündigt: "Ich bin Moslem", aber mir gefiel die Gemeinschaft und ich besuchte die Gemeinde immer wieder. Durch die Predigten und Lehren kam ich immer mehr zur Überzeugung, dass ich Christ werden sollte. Heute bin ich in der Gemeinde das Bindeglied zwischen den Flüchtlingen aus dem Iran und Afghanistan und singe mit großer Freude in unserer Lobpreisgruppe.',
-        'phone' => '',
+        'phone' => '+4366565328462',
         'mail' => 'majid.khosravian@fcg-villach.at',
     ],
     'bettina-morgan' => [
@@ -52,7 +52,7 @@ return [
         'imageUrl' => '/images/portraits/Bettina-Morgan.jpeg',
         'lead' => 'Seit 39 Jahren folge ich nun Jesus nach, aber erst jetzt hat die Beziehung richtig Fahrt aufgenommen. ',
         'bio' => 'Im Laufe der letzten Jahre wurde ich immer aktiver, gründete einen Hauskreis, übernahm in der Gemeinde die Leitung der Gottesdienste und besuche jetzt auch noch die Rhema-Bibelschule. Ob durch die intensivere Beziehung die Aktivitäten gewachsen sind, oder umgekehrt weiß ich nicht. Ich weiß nur, dass ich Jesus liebe.',
-        'phone' => '+4365022200404',
+        'phone' => '+436502200404',
         'mail' => 'bettina.morgan@fcg-villach.at',
     ],
 ];

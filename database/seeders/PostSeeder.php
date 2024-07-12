@@ -15,15 +15,18 @@ class PostSeeder extends Seeder
     public function run()
     {
         if(config('app.env') == 'local'){
-            $posts = Post::factory()
+
+            if(Post::count() == 0){
+                $posts = Post::factory()
                 ->Count(50)
                 ->create();
 
-            /** @var Post $post */
-            foreach ($posts as $post){
-                $post->addMedia( storage_path('demo\demo_audio.mp3'))
-                    ->preservingOriginal()
-                    ->toMediaCollection('audio');
+                /** @var Post $post */
+                foreach ($posts as $post){
+                    $post->addMedia( storage_path('demo\soundtrack.mp3'))
+                        ->preservingOriginal()
+                        ->toMediaCollection('audio');
+                }
             }
         }
     }
