@@ -1,10 +1,12 @@
 @import url('https://rsms.me/inter/inter.css');
-
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
 @import url(carousel.css);
 @import "scrollDownAnimation.scss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 
 /*https://benborgers.com/posts/tailwind-h-screen*/
 @supports (-webkit-touch-callout: none) {
