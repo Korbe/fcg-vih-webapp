@@ -37,6 +37,11 @@ class HomeController extends Controller
         return Inertia::render('Public/Contact');
     }
 
+    public function heferlCafe(Request $request)
+    {
+        return Inertia::render('Public/HeferlCafe');
+    }
+
     public function imprint(Request $request)
     {
         return Inertia::render('Public/Imprint');

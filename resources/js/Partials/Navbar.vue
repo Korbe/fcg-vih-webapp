@@ -195,7 +195,7 @@ import {Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuIte
 import {XMarkIcon} from '@heroicons/vue/24/outline'
 
 import {Popover, PopoverButton, PopoverPanel} from '@headlessui/vue'
-import {CalendarIcon, BanknotesIcon, ChatBubbleLeftRightIcon, Bars3Icon, NewspaperIcon, UserGroupIcon, HomeIcon} from "@heroicons/vue/24/outline";
+import {CalendarIcon, BanknotesIcon, ChatBubbleLeftRightIcon, Bars3Icon, NewspaperIcon, UserGroupIcon, HomeIcon, CakeIcon} from "@heroicons/vue/24/outline";
 import Logo from "@/Partials/Logo.vue";
 import LogoText from "@/Partials/LogoText.vue";
 import MobileMenu from "@/Partials/MobileMenu.vue";
@@ -240,6 +240,7 @@ export default {
                 {name: 'Über uns', href: route('public.about'), icon: UserGroupIcon},
                 {name: 'Events', href: route('public.events'), icon: CalendarIcon},
                 {name: 'Predigten', href: route('public.blog'), icon: NewspaperIcon},
+                {name: 'Heferl Café', href: route('public.heferlCafe'), icon: CakeIcon},
                 {name: 'Kontakt', href: route('public.contact'), icon: ChatBubbleLeftRightIcon},
                 {name: 'Spenden', href: route('public.donate'), icon: BanknotesIcon},
             ]
