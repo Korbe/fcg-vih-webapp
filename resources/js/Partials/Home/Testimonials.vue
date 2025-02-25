@@ -13,9 +13,9 @@
                 </div>
 
                 <div class="md:max-w-4xl lg:pl-24">
-                    <carousel pauseAutoplayOnHover :autoplay="6000" :items-to-show="1" class="mt-5" wrap-around>
+                    <Carousel pauseAutoplayOnHover :autoplay="6000" :items-to-show="1" class="mt-5" >
 
-                        <slide v-for="testimonial in testimonials" :key="testimonial.name" class="md:p-5">
+                        <Slide v-for="testimonial in testimonials" :key="testimonial.name" class="md:p-5">
 
                             <div class="relative lg:col-span-1 text-left">
 
@@ -34,7 +34,7 @@
                         </slide>
 
                         <template #addons>
-                            <pagination class="text-left"/>
+                            <Pagination />
                         </template>
 
                     </carousel>

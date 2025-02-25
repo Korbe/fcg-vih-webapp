@@ -45,7 +45,7 @@
                                 </a>
                                 <a :href="`mailto:${person.mail}`"
                                    class="mt-3 sm:mt-0 border border-transparent bg-white text-gray-500 flex items-center justify-center px-5 py-3 text-base shadow-md font-medium rounded-md white hover:bg-gray-50 md:px-10">
-                                    <MailIcon class="w-5 h-5" aria-hidden="true"/>
+                                    <EnvelopeIcon class="w-5 h-5" aria-hidden="true"/>
                                     <span class="ml-3">Schreiben</span>
                                 </a>
                             </div>
@@ -61,15 +61,15 @@
 </template>
 
 <script>
-import PublicLayout from "@/Layouts/PublicLayout";
-import Footer from "@/Partials/Footer";
-import Navbar from "@/Partials/Navbar";
-import {MailIcon, PhoneIcon} from "@heroicons/vue/outline";
+import PublicLayout from "@/Layouts/PublicLayout.vue";
+import Footer from "@/Partials/Footer.vue";
+import Navbar from "@/Partials/Navbar.vue";
+import {EnvelopeIcon, PhoneIcon} from "@heroicons/vue/24/outline";
 
 
 export default {
     name: "TeamSingle",
-    components: {Navbar, Footer, PublicLayout, MailIcon, PhoneIcon},
+    components: {Navbar, Footer, PublicLayout, EnvelopeIcon, PhoneIcon},
     props: {
         person: {
             name: String,

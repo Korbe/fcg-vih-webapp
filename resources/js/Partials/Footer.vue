@@ -13,10 +13,10 @@
                         wenn ihr Liebe untereinander habt (Johannes 13,35)
                     </p>
                     <div class="flex space-x-6">
-                        <inertia-link v-for="item in navigation.social" :key="item.name" :href="item.href" class="text-gray-500 hover:text-gray-500">
+                        <Link v-for="item in navigation.social" :key="item.name" :href="item.href" class="text-gray-500 hover:text-gray-500">
                             <span class="sr-only">{{ item.name }}</span>
                             <component :is="item.icon" class="h-6 w-6" aria-hidden="true"/>
-                        </inertia-link>
+                        </Link>
                     </div>
                 </div>
                 <div class="mt-12 grid md:grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
@@ -27,9 +27,9 @@
                             </h3>
                             <ul role="list" class="mt-4 space-y-4">
                                 <li v-for="item in navigation.site" :key="item.name">
-                                    <inertia-link :href="item.href" class="text-base text-gray-500 hover:text-blue-gray-900">
+                                    <Link :href="item.href" class="text-base text-gray-500 hover:text-blue-gray-900">
                                         {{ item.name }}
-                                    </inertia-link>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -39,9 +39,9 @@
                             </h3>
                             <ul role="list" class="mt-4 space-y-4">
                                 <li v-for="item in navigation.legal" :key="item.name">
-                                    <inertia-link :href="item.href" class="text-base text-gray-500 hover:text-gray-900">
+                                    <Link :href="item.href" class="text-base text-gray-500 hover:text-gray-900">
                                         {{ item.name }}
-                                    </inertia-link>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -85,8 +85,8 @@
 
 <script>
 
-import LogoText from "@/Partials/LogoText";
-import {HeartIcon} from "@heroicons/vue/outline";
+import LogoText from "@/Partials/LogoText.vue";
+import {HeartIcon} from "@heroicons/vue/24/outline";
 export default {
     name: "Footer",
     components: {LogoText, HeartIcon},

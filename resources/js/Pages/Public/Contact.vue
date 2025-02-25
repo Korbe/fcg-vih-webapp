@@ -88,11 +88,11 @@
 </template>
 
 <script>
-import {LocationMarkerIcon, MailIcon, PhoneIcon} from "@heroicons/vue/outline";
-import Navbar from "@/Partials/Navbar";
-import Footer from "@/Partials/Footer";
-import PublicLayout from "../../Layouts/PublicLayout";
-import Faq from "@/Partials/Faq";
+import {MapPinIcon, EnvelopeIcon, PhoneIcon} from "@heroicons/vue/24/outline";
+import Navbar from "@/Partials/Navbar.vue";
+import Footer from "@/Partials/Footer.vue";
+import PublicLayout from "@/Layouts/PublicLayout.vue";
+import Faq from "@/Partials/Faq.vue";
 
 export default {
     name: "Contact",
@@ -101,8 +101,8 @@ export default {
         PublicLayout,
         Footer,
         Navbar,
-        LocationMarkerIcon,
-        MailIcon,
+        MapPinIcon,
+        EnvelopeIcon,
         PhoneIcon,
     },
     data() {
@@ -121,7 +121,7 @@ export default {
                     detail: 'office@fcg-villach.at',
                     href: 'mailto:office@fcg-villach.at',
                     description: 'Sollten Sie Fragen, Anliegen oder Wünsche haben, beantworten wir gern alle Ihre Fragen.',
-                    icon: MailIcon,
+                    icon: EnvelopeIcon,
                     ctaText: 'Schreiben',
                 },
                 {
@@ -129,7 +129,7 @@ export default {
                     detail: 'Vassacherstraße 28, 9500 Villach',
                     href: 'https://goo.gl/maps/fDxswRLhh9dfKHUZ8',
                     description: 'Wir freuen uns Sie kennenzulernen. Es entsteht keinerlei Verpflichtung. Sie können kommen, schauen, bleiben oder wieder gehen.',
-                    icon: LocationMarkerIcon,
+                    icon: MapPinIcon,
                     ctaText: 'Finden',
                 },
             ],

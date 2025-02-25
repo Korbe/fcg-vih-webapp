@@ -1,5 +1,5 @@
 <template>
-    <app-layout title="Neue Predigt">
+    <AppLayout title="Neue Predigt">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Neue Predigt
@@ -68,16 +68,16 @@
                 </div>
             </div>
         </div>
-    </app-layout>
+    </AppLayout>
 </template>
 
 <script>
-import AppLayout from "../../Layouts/AppLayout";
-import JetLabel from "../../Jetstream/Label";
-import JetInputError from "../../Jetstream/InputError";
-import JetInput from "../../Jetstream/Input";
-import JetButton from "../../Jetstream/Button";
-import FileInput from "../../Shared/FileInput";
+import AppLayout from "@/Layouts/AppLayout.vue";
+import JetLabel from "@/Jetstream/Label.vue";
+import JetInputError from "@/Jetstream/InputError.vue";
+import JetInput from "@/Jetstream/Input.vue";
+import JetButton from "@/Jetstream/Button.vue";
+import FileInput from "@/Shared/FileInput.vue";
 
 
 export default {

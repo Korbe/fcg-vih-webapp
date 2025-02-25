@@ -42,7 +42,7 @@
                                     <div class="w-0 flex-1 flex text-gray-700 hover:bg-gray-100">
                                         <a :href="`mailto:${event.mail}`"
                                         class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm font-medium border border-transparent rounded-bl-lg">
-                                            <MailIcon class="w-5 h-5 text-gray-400" aria-hidden="true"/>
+                                            <EnvelopeIcon class="w-5 h-5 text-gray-400" aria-hidden="true"/>
                                             <span class="ml-3">Schreiben</span>
                                         </a>
                                     </div>
@@ -65,14 +65,14 @@
 </template>
 
 <script>
-import PublicLayout from "@/Layouts/PublicLayout";
-import {CalendarIcon, ClockIcon, MailIcon, PhoneIcon, UserCircleIcon, UserIcon, ArrowRightIcon} from "@heroicons/vue/outline";
-import Navbar from "@/Partials/Navbar";
-import Footer from "@/Partials/Footer";
+import PublicLayout from "@/Layouts/PublicLayout.vue";
+import {CalendarIcon, ClockIcon, EnvelopeIcon, PhoneIcon, UserCircleIcon, UserIcon, ArrowRightIcon} from "@heroicons/vue/24/outline";
+import Navbar from "@/Partials/Navbar.vue";
+import Footer from "@/Partials/Footer.vue";
 
 export default {
     name: "Events",
-    components: {Footer, Navbar, PublicLayout, PhoneIcon, CalendarIcon, ClockIcon, MailIcon, UserIcon, UserCircleIcon, ArrowRightIcon},
+    components: {Footer, Navbar, PublicLayout, PhoneIcon, CalendarIcon, ClockIcon, EnvelopeIcon, UserIcon, UserCircleIcon, ArrowRightIcon},
     data() {
         return {
             events: [

@@ -12,23 +12,23 @@
                     Anliegen, den Menschen in unserem Land zu dienen, indem wir die gute
                     Nachricht von Jesus Christus gesellschaftsrelevant verkündigen und praktizieren.</p>
                 <div class="mt-8 flex justify-left md:justify-center ">
-                    <inertia-link :href="route('public.about')"
+                    <Link :href="route('public.about')"
                                   class="flex rounded-md shadow items-center justify-center px-10 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-primary hover:bg-brand-primary-400">
                         <span>Das sind wir</span>
-                        <ArrowSmRightIcon class="h-7 ml-3"></ArrowSmRightIcon>
-                    </inertia-link>
+                        <ArrowRightIcon class="h-7 ml-3" />
+                    </Link>
                 </div>
             </div>
         </div>
     </section>
 </template>
 <script>
-import {ArrowSmRightIcon} from "@heroicons/vue/outline";
+import {ArrowRightIcon} from "@heroicons/vue/24/outline";
 
 export default {
     name: 'welcome',
     components: {
-        ArrowSmRightIcon
+        ArrowRightIcon
     }
 }
 </script>

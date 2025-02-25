@@ -27,11 +27,11 @@
 
 <script>
 
-import PublicLayout from "@/Layouts/PublicLayout";
-import Navbar from "@/Partials/Navbar";
-import Footer from "@/Partials/Footer";
-import BlogList from '../../Partials/BlogList'
-import {CollectionIcon, PlayIcon} from "@heroicons/vue/outline";
+import PublicLayout from "@/Layouts/PublicLayout.vue";
+import Navbar from "@/Partials/Navbar.vue";
+import Footer from "@/Partials/Footer.vue";
+import BlogList from '@/Partials/BlogList.vue'
+import { ListBulletIcon, PlayIcon} from "@heroicons/vue/24/outline";
 
 export default {
     name: 'BlogArchive',
@@ -44,7 +44,7 @@ export default {
         PublicLayout,
         BlogList,
         PlayIcon,
-        CollectionIcon
+        ListBulletIcon
     },
 }
 </script>

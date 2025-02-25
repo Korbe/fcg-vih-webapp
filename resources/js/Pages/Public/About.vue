@@ -154,11 +154,11 @@
 </template>
 
 <script>
-import PublicLayout from "@/Layouts/PublicLayout";
-import Team from "@/Partials/Team/Team";
-import Footer from "@/Partials/Footer";
-import Navbar from "@/Partials/Navbar";
-import Tasks from "@/Partials/About/Tasks";
+import PublicLayout from "@/Layouts/PublicLayout.vue";
+import Team from "@/Partials/Team/Team.vue";
+import Footer from "@/Partials/Footer.vue";
+import Navbar from "@/Partials/Navbar.vue";
+import Tasks from "@/Partials/About/Tasks.vue";
 
 export default {
     name: "About",

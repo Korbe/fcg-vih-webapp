@@ -1,5 +1,5 @@
 <template>
-    <app-layout title="News">
+    <AppLayout title="News">
         <template #header>
             <div class="flex flex items-center">
                 <h2 class="flex-1 font-semibold text-xl text-gray-800 leading-tight">
@@ -60,22 +60,19 @@
                 </div>
             </div>
         </div>
-    </app-layout>
+    </AppLayout>
 </template>
 
 <script>
-import AppLayout from "../../Layouts/AppLayout";
-import InertiaButton from "../../Shared/InertiaButton";
-import {ArrowSmRightIcon} from "@heroicons/vue/outline";
-import {ChevronLeftIcon, ChevronRightIcon, TrashIcon} from '@heroicons/vue/solid'
-import Button from "@/Jetstream/Button";
+import AppLayout from "@/Layouts/AppLayout.vue";
+import InertiaButton from "@/Shared/InertiaButton.vue";
+import { TrashIcon } from '@heroicons/vue/24/solid'
+import Button from "@/Jetstream/Button.vue";
 
 export default {
     components: {
         Button,
-        InertiaButton, AppLayout, ArrowSmRightIcon,
-        ChevronLeftIcon,
-        ChevronRightIcon,
+        InertiaButton, AppLayout,
         TrashIcon
     },
     props: {

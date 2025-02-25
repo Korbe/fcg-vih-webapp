@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import {PaperClipIcon} from "@heroicons/vue/outline";
+import {PaperClipIcon} from "@heroicons/vue/24/outline";
 
 export default {
     name: "FileInput",

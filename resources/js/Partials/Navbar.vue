@@ -6,10 +6,10 @@
             <nav class="relative mx-auto flex items-center justify-between pt-6 pb-2 px-4 sm:px-6 lg:px-8" aria-label="Global">
             <div class="flex items-center flex-1">
                 <div class="flex items-center justify-around space-x-10 lg:justify-between w-full lg:w-auto">
-                    <inertia-link href="/">
+                    <Link href="/">
                         <span class="sr-only">FCG Villach</span>
                         <LogoText class="lg:block h-24 mx-auto w-auto lg:h-24"></LogoText>
-                    </inertia-link>
+                    </Link>
 
                     <div class="lg:hidden">
                         <PopoverButton
@@ -17,19 +17,19 @@
                             'bg-opacity-0 rounded-md p-2 inline-flex items-center justify-center hover:text-white hover:bg-opacity-100 focus:outline-none']"
                             class="">
                             <span class="sr-only">Open main menu</span>
-                            <MenuAlt3Icon :class="[blueMobileButton ? 'text-brand-primary' : '', 'h-6 w-6']" class="h-6 w-6" aria-hidden="true"/>
+                            <Bars3Icon :class="[blueMobileButton ? 'text-brand-primary' : '', 'h-6 w-6']" class="h-6 w-6" aria-hidden="true"/>
                         </PopoverButton>
                     </div>
                 </div>
 
                 <div class="hidden space-x-10 lg:flex lg:ml-10">
 
-                    <inertia-link v-for="item in navigation" :key="item.name" :href="item.href"
+                    <Link v-for="item in navigation" :key="item.name" :href="item.href"
                           :class="[hasBackground ? 'text-white hover:text-brand-primary-300' : 'text-gray-500 hover:text-brand-primary-300',
                                currentRoute === item.href ? 'text-brand-primary-600' : '',
                                'text-base font-medium ']"
                     >{{ item.name }}
-                    </inertia-link>
+                    </Link>
                 </div>
             </div>
         </nav>
@@ -47,16 +47,16 @@
                     <div class="pt-6">
                         <div class="flex items-center flex-1">
                             <div class="flex items-center justify-center space-x-10 lg:justify-between w-full lg:w-auto">
-                                <inertia-link href="/">
+                                <Link href="/">
                                     <span class="sr-only">FCG Villach</span>
                                     <LogoText class="h-24 mx-auto w-auto lg:h-24"></LogoText>
-                                </inertia-link>
+                                </Link>
 
                                 <div class="shrink">
                                     <PopoverButton
                                         class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-primary">
                                         <span class="sr-only">Close menu</span>
-                                        <XIcon class="h-6 w-6" aria-hidden="true"/>
+                                        <XMarkIcon class="h-6 w-6" aria-hidden="true"/>
                                     </PopoverButton>
                                 </div>
                             </div>
@@ -64,7 +64,7 @@
 
                         <div class="py-3 px-4">
                             <nav class="grid gap-y-5">
-                                <inertia-link href="/"
+                                <Link href="/"
                                       :class="{ 'bg-gray-100': currentRoute === homeRoute }"
                                       class="-m-1 p-3 flex items-center rounded-md hover:bg-gray-50">
                                     <div
@@ -76,9 +76,9 @@
                                     >
                                     Home
                                 </span>
-                                </inertia-link>
+                                </Link>
 
-                                <inertia-link v-for="item in navigation" :key="item.name" :href="item.href"
+                                <Link v-for="item in navigation" :key="item.name" :href="item.href"
                                       :class="{ 'bg-gray-100': currentRoute === item.href }"
                                       class="-m-1 p-3 flex items-center rounded-md hover:bg-gray-50">
                                     <div
@@ -90,7 +90,7 @@
                                     >
                                     {{ item.name }}
                                 </span>
-                                </inertia-link>
+                                </Link>
                             </nav>
                         </div>
                     </div>
@@ -111,10 +111,10 @@
             <div class="relative max-w-7xl mx-auto text-center py-1 px-2 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
 
                 <div class="flex items-center justify-around lg:justify-center space-x-10 w-full">
-                    <inertia-link href="/">
+                    <Link href="/">
                         <span class="sr-only">FCG Villach</span>
                         <Logo class="h-12"></Logo>
-                    </inertia-link>
+                    </Link>
 
                     <div class="lg:hidden flex items-center justify-between space-x-4">
 
@@ -122,28 +122,28 @@
 
                         <DisclosureButton v-if="!open" class="text-gray-500 rounded-md p-2 inline-flex items-center justify-center">
                             <span class="sr-only">Open main menu</span>
-                            <MenuAlt3Icon class="h-6 w-6" aria-hidden="true"/>
+                            <Bars3Icon class="h-6 w-6" aria-hidden="true"/>
                         </DisclosureButton>
 
                         <DisclosureButton v-if="open" class="text-gray-500 rounded-md p-2 inline-flex items-center justify-center">
                             <span class="sr-only">Close main menu</span>
-                            <XIcon class="h-6 w-6" aria-hidden="true"/>
+                            <XMarkIcon class="h-6 w-6" aria-hidden="true"/>
                         </DisclosureButton>
 
                     </div>
 
                     <div class="hidden space-x-10 lg:flex">
 
-                        <inertia-link v-if="$page.props.user" :href="route('dashboard.home')"
+                        <Link v-if="$page.props.user" :href="route('dashboard.home')"
                               class="text-gray-500 hover:text-brand-primary-300 text-base font-medium">Dashboard
-                        </inertia-link>
+                        </Link>
 
-                        <inertia-link v-for="item in navigation" :key="item.name" :href="item.href"
+                        <Link v-for="item in navigation" :key="item.name" :href="item.href"
                               :class="['text-gray-500 hover:text-brand-primary-300',
                                currentRoute === item.href ? 'text-brand-primary-600' : '',
                                'text-base font-medium ']"
                         >{{ item.name }}
-                        </inertia-link>
+                        </Link>
                     </div>
                 </div>
 
@@ -154,7 +154,7 @@
 
                 <div class="bg-white px-2 py-3">
                     <nav class="grid gap-y-5">
-                        <inertia-link href="/"
+                        <Link href="/"
                               :class="{ 'bg-gray-100': currentRoute === homeRoute }"
                               class="-m-1 p-3 flex items-center rounded-md hover:bg-gray-50">
                             <div
@@ -166,9 +166,9 @@
                             >
                                     Home
                                 </span>
-                        </inertia-link>
+                        </Link>
 
-                        <inertia-link v-for="item in navigation" :key="item.name" :href="item.href"
+                        <Link v-for="item in navigation" :key="item.name" :href="item.href"
                               :class="{ 'bg-gray-100': currentRoute === item.href }"
                               class="-m-1 p-3 flex items-center rounded-md hover:bg-gray-50">
                             <div
@@ -180,7 +180,7 @@
                             >
                                     {{ item.name }}
                                 </span>
-                        </inertia-link>
+                        </Link>
                     </nav>
                 </div>
 
@@ -192,13 +192,13 @@
 <script>
 
 import {Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems} from '@headlessui/vue'
-import {XIcon} from '@heroicons/vue/outline'
+import {XMarkIcon} from '@heroicons/vue/24/outline'
 
 import {Popover, PopoverButton, PopoverPanel} from '@headlessui/vue'
-import {CalendarIcon, CashIcon, ChatAlt2Icon, MenuAlt3Icon, NewspaperIcon, UserGroupIcon, HomeIcon} from "@heroicons/vue/outline";
-import Logo from "@/Partials/Logo";
-import LogoText from "@/Partials/LogoText";
-import MobileMenu from "@/Partials/MobileMenu";
+import {CalendarIcon, BanknotesIcon, ChatBubbleLeftRightIcon, Bars3Icon, NewspaperIcon, UserGroupIcon, HomeIcon} from "@heroicons/vue/24/outline";
+import Logo from "@/Partials/Logo.vue";
+import LogoText from "@/Partials/LogoText.vue";
+import MobileMenu from "@/Partials/MobileMenu.vue";
 
 export default {
     name: "navbar",
@@ -206,7 +206,7 @@ export default {
         MobileMenu,
         LogoText,
         Logo,
-        Popover, PopoverButton, MenuAlt3Icon, PopoverPanel,
+        Popover, PopoverButton, Bars3Icon, PopoverPanel,
         HomeIcon,
         Disclosure,
         DisclosureButton,
@@ -215,7 +215,8 @@ export default {
         MenuButton,
         MenuItem,
         MenuItems,
-        XIcon,
+        XMarkIcon,
+        BanknotesIcon
     },
     props: {
         hasBackground: {
@@ -239,8 +240,8 @@ export default {
                 {name: 'Über uns', href: route('public.about'), icon: UserGroupIcon},
                 {name: 'Events', href: route('public.events'), icon: CalendarIcon},
                 {name: 'Predigten', href: route('public.blog'), icon: NewspaperIcon},
-                {name: 'Kontakt', href: route('public.contact'), icon: ChatAlt2Icon},
-                {name: 'Spenden', href: route('public.donate'), icon: CashIcon},
+                {name: 'Kontakt', href: route('public.contact'), icon: ChatBubbleLeftRightIcon},
+                {name: 'Spenden', href: route('public.donate'), icon: BanknotesIcon},
             ]
         }
     },

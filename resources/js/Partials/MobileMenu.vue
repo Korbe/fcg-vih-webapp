@@ -2,10 +2,10 @@
 
 </template>
 <script>
-import LogoText from "@/Partials/LogoText"
+import LogoText from "@/Partials/LogoText.vue"
 import {Popover, PopoverPanel, PopoverButton} from '@headlessui/vue'
-import {CalendarIcon, CashIcon, ChatAlt2Icon, MenuAlt3Icon, NewspaperIcon, UserGroupIcon, HomeIcon, XIcon} from "@heroicons/vue/outline";
-import Logo from "@/Partials/Logo";
+import {CalendarIcon, BanknotesIcon, ChatBubbleLeftRightIcon, Bars3Icon, NewspaperIcon, UserGroupIcon, HomeIcon, XMarkIcon} from "@heroicons/vue/24/outline";
+import Logo from "@/Partials/Logo.vue";
 
 export default {
   name: 'mobile-menu',
@@ -13,7 +13,7 @@ export default {
         LogoText,
         Logo,
         Popover, PopoverPanel, PopoverButton,
-        CalendarIcon, CashIcon, ChatAlt2Icon, MenuAlt3Icon, NewspaperIcon, UserGroupIcon, HomeIcon, XIcon
+        CalendarIcon, BanknotesIcon, ChatBubbleLeftRightIcon, Bars3Icon, NewspaperIcon, UserGroupIcon, HomeIcon, XMarkIcon
     },
   props: {
     currentRoute: {},

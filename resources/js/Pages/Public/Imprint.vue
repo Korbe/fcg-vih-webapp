@@ -27,9 +27,9 @@
 </template>
 
 <script>
-import PublicLayout from "@/Layouts/PublicLayout";
-import Navbar from "../../Partials/Navbar";
-import Footer from "../../Partials/Footer";
+import PublicLayout from "@/Layouts/PublicLayout.vue";
+import Navbar from "@/Partials/Navbar.vue";
+import Footer from "@/Partials/Footer.vue";
 
 export default {
     name: "Imprint",

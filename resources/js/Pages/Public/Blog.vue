@@ -27,10 +27,10 @@
                                    v-smooth-scroll href="#posts">
                                     <PlayIcon class="h-7 mr-3"/>
                                     Neueste Predigten anhören</a>
-                                <inertia-link :href="route('public.blog.archive')"
+                                <Link :href="route('public.blog.archive')"
                                    class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-secondary hover:bg-brand-secondary-400 sm:px-8">
-                                    <CollectionIcon class="h-7 mr-3"/>
-                                    Alle Predigten </inertia-link>
+                                    <ListBulletIcon class="h-7 mr-3"/>
+                                    Alle Predigten </Link>
                             </div>
                         </div>
                     </div>
@@ -57,9 +57,9 @@
                 </div>
 
                 <div class="mt-6 flex justify-center">
-                        <inertia-link :href="route('public.blog.archive')" class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-secondary hover:bg-brand-secondary-400 sm:px-8">
-                            <CollectionIcon class="h-7 mr-3"/> Alle Predigten
-                        </inertia-link>
+                        <Link :href="route('public.blog.archive')" class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-secondary hover:bg-brand-secondary-400 sm:px-8">
+                            <ListBulletIcon class="h-7 mr-3"/> Alle Predigten
+                        </Link>
                 </div>
 
             </div>
@@ -70,12 +70,12 @@
 </template>
 
 <script>
-import BlogList from '../../Partials/BlogList'
-import PublicLayout from "@/Layouts/PublicLayout";
-import Navbar from "@/Partials/Navbar";
-import Footer from "@/Partials/Footer";
-import {CollectionIcon, PlayIcon} from "@heroicons/vue/outline";
-import PostAudioPlayer from "@/Partials/PostAudioPlayer";
+import BlogList from '@/Partials/BlogList.vue'
+import PublicLayout from "@/Layouts/PublicLayout.vue";
+import Navbar from "@/Partials/Navbar.vue";
+import Footer from "@/Partials/Footer.vue";
+import {ListBulletIcon, PlayIcon} from "@heroicons/vue/24/outline";
+import PostAudioPlayer from "@/Partials/PostAudioPlayer.vue";
 
 export default {
     name: 'Blog',
@@ -89,7 +89,7 @@ export default {
         PublicLayout,
         BlogList,
         PlayIcon,
-        CollectionIcon,
+        ListBulletIcon,
     },
 }
 </script>

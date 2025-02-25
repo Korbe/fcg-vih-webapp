@@ -1,5 +1,5 @@
 <template>
-    <app-layout title="Predigten">
+    <AppLayout title="Predigten">
         <template #header>
             <div class="flex flex items-center">
                 <h2 class="flex-1 font-semibold text-xl text-gray-800 leading-tight">
@@ -61,10 +61,10 @@
                                             {{ post.published_at ?? 'kein Datum festgelegt' }}
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                            <inertia-link :href="route('dashboard.posts.edit', post.id)" class="flex text-brand-primary-600 hover:text-brand-primary-900">
+                                            <Link :href="route('dashboard.posts.edit', post.id)" class="flex text-brand-primary-600 hover:text-brand-primary-900">
                                                 Bearbeiten
-                                                <ArrowSmRightIcon class="h-5 w-5"/>
-                                            </inertia-link>
+                                                <ArrowRightIcon class="h-5 w-5"/>
+                                            </Link>
                                         </td>
                                     </tr>
                                     <tr v-if="unpublished.length === 0">
@@ -135,9 +135,9 @@
                                             {{ post.published_at }}
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                            <inertia-link :href="route('dashboard.posts.edit', post.id)" class="flex text-brand-primary-600 hover:text-brand-primary-900">Bearbeiten
-                                                <ArrowSmRightIcon class="h-5 w-5"></ArrowSmRightIcon>
-                                            </inertia-link>
+                                            <Link :href="route('dashboard.posts.edit', post.id)" class="flex text-brand-primary-600 hover:text-brand-primary-900">Bearbeiten
+                                                <ArrowRightIcon class="h-5 w-5" />
+                                            </Link>
                                         </td>
                                     </tr>
                                     <tr v-if="posts.total === 0">
@@ -154,14 +154,14 @@
                     </div>
                     <div v-if="posts.total > 0" class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
                         <div class="flex-1 flex justify-between sm:hidden">
-                            <inertia-link preserve-scroll :disabled="posts.prev_page_url" :href="posts.prev_page_url"
+                            <Link preserve-scroll :disabled="posts.prev_page_url" :href="posts.prev_page_url"
                                   class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
                                 Zurück
-                            </inertia-link>
-                            <inertia-link preserve-scroll :disabled="posts.next_page_url" :href="posts.next_page_url"
+                            </Link>
+                            <Link preserve-scroll :disabled="posts.next_page_url" :href="posts.next_page_url"
                                   class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
                                 Weiter
-                            </inertia-link>
+                            </Link>
                         </div>
                         <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
                             <div>
@@ -184,26 +184,26 @@
                                 <div>
                                     <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
 
-                                        <inertia-link preserve-scroll :disabled="posts.prev_page_url" :href="posts.prev_page_url"
+                                        <Link preserve-scroll :disabled="posts.prev_page_url" :href="posts.prev_page_url"
                                               class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
                                             <span class="sr-only">Zurück</span>
                                             <ChevronLeftIcon class="h-5 w-5" aria-hidden="true"/>
-                                        </inertia-link>
+                                        </Link>
 
                                         <template v-for="link in posts.links">
-                                            <inertia-link preserve-scroll :disabled="!link.url" :href="link.url" v-if="!isNaN(link.label)" :key="link.url + link.label"
+                                            <Link preserve-scroll :disabled="!link.url" :href="link.url" v-if="!isNaN(link.label)" :key="link.url + link.label"
                                                   :class="[link.active ? 'z-10 bg-brand-primary-50 border-brand-primary-500 text-brand-primary-600' : 'bg-white border-gray-300 text-gray-500 hover:bg-gray-50', 'text-base font-medium ']"
 
                                                   class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50  relative items-center px-4 py-2 border text-sm font-medium">
                                                 {{ link.label }}
-                                            </inertia-link>
+                                            </Link>
                                         </template>
 
-                                        <inertia-link preserve-scroll :disabled="posts.next_page_url" :href="posts.next_page_url"
+                                        <Link preserve-scroll :disabled="posts.next_page_url" :href="posts.next_page_url"
                                               class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
                                             <span class="sr-only">Weiter</span>
                                             <ChevronRightIcon class="h-5 w-5" aria-hidden="true"/>
-                                        </inertia-link>
+                                        </Link>
                                     </nav>
                                 </div>
                             </div>
@@ -212,24 +212,18 @@
                 </div>
             </div>
         </div>
-    </app-layout>
+    </AppLayout>
 </template>
 
-<script>
-import AppLayout from "../../Layouts/AppLayout";
-import InertiaButton from "../../Shared/InertiaButton";
-import {ArrowSmRightIcon} from "@heroicons/vue/outline";
-import {ChevronLeftIcon, ChevronRightIcon} from '@heroicons/vue/solid'
+<script setup>
+import AppLayout from '@/Layouts/AppLayout.vue';
+import InertiaButton from "@/Shared/InertiaButton.vue";
 
-export default {
-    components: {
-        InertiaButton, AppLayout, ArrowSmRightIcon,
-        ChevronLeftIcon,
-        ChevronRightIcon
-    },
-    props: {
-        unpublished: Array,
-        posts: Object,
-    },
-}
+import {ArrowRightIcon} from "@heroicons/vue/24/outline";
+import {ChevronLeftIcon, ChevronRightIcon} from '@heroicons/vue/24/solid'
+
+defineProps({
+    unpublished: Array,
+    posts: Object,
+})
 </script>

@@ -22,11 +22,11 @@
 
                     <div class="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
                         <div class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
-                            <inertia-link :href="route('public.blog')"
+                            <Link :href="route('public.blog')"
                                   class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-primary hover:bg-brand-primary-400 sm:px-8">
                                 <PlayIcon class="h-7 mr-3"/>
                                 Predigten anhören
-                            </inertia-link>
+                            </Link>
                             <a href="#visitus" v-smooth-scroll
                                class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-secondary hover:bg-brand-secondary-400 sm:px-8">
                                 <UserGroupIcon class="h-7 mr-3"/>
@@ -45,8 +45,8 @@
 </template>
 
 <script>
-import {PlayIcon, UserGroupIcon} from "@heroicons/vue/outline";
-import Navbar from "@/Partials/Navbar";
+import {PlayIcon, UserGroupIcon} from "@heroicons/vue/24/outline";
+import Navbar from "@/Partials/Navbar.vue";
 
 export default {
     name: 'Hero',

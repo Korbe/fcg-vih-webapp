@@ -25,10 +25,10 @@
 import {
     ShieldCheckIcon,
     CakeIcon,
-    SpeakerphoneIcon,
+    MegaphoneIcon,
     SparklesIcon,
     UserGroupIcon
-} from '@heroicons/vue/outline'
+} from '@heroicons/vue/24/outline'
 
 export default {
     name: "Tasks",
@@ -36,7 +36,7 @@ export default {
         ShieldCheckIcon,
         CakeIcon,
         UserGroupIcon,
-        SpeakerphoneIcon
+        MegaphoneIcon
     },
     data(){
         return {
@@ -44,7 +44,7 @@ export default {
                 {
                     name: 'Jesus Christus als Retter der Welt verkündigen',
                     description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-                    icon: SpeakerphoneIcon,
+                    icon: MegaphoneIcon,
                 },
                 {
                     name: 'Gemeinschaft miteinander pflegen',

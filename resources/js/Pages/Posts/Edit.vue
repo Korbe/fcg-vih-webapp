@@ -1,5 +1,5 @@
 <template>
-    <app-layout title="Predigt bearbeiten">
+    <AppLayout title="Predigt bearbeiten">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Predigt ändern
@@ -113,18 +113,18 @@
                 </div>
             </div>
         </div>
-    </app-layout>
+    </AppLayout>
 </template>
 
 <script>
-import AppLayout from "../../Layouts/AppLayout";
-import JetLabel from "../../Jetstream/Label";
-import JetInputError from "../../Jetstream/InputError";
-import JetInput from "../../Jetstream/Input";
-import JetButton from "../../Jetstream/Button";
-import JetDangerButton from "../../Jetstream/DangerButton";
-import FileInput from "../../Shared/FileInput";
-import {PaperClipIcon} from "@heroicons/vue/outline";
+import AppLayout from "@/Layouts/AppLayout.vue";
+import JetLabel from "@/Jetstream/Label.vue";
+import JetInputError from "@/Jetstream/InputError.vue";
+import JetInput from "@/Jetstream/Input.vue";
+import JetButton from "@/Jetstream/Button.vue";
+import JetDangerButton from "@/Jetstream/DangerButton.vue";
+import FileInput from "@/Shared/FileInput.vue";
+import {PaperClipIcon} from "@heroicons/vue/24/outline";
 
 
 export default {

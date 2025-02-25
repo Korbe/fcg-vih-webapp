@@ -1,5 +1,5 @@
 <template>
-    <app-layout title="Neue Predigt">
+    <AppLayout title="Neue Predigt">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 News hochladen
@@ -48,15 +48,15 @@
                 </div>
             </div>
         </div>
-    </app-layout>
+    </AppLayout>
 </template>
 
 <script>
-import AppLayout from "../../Layouts/AppLayout";
-import JetInputError from "../../Jetstream/InputError";
-import JetButton from "../../Jetstream/Button";
-import FileInput from "../../Shared/FileInput";
-import VInput from "@/Shared/VInput";
+import AppLayout from "@/Layouts/AppLayout.vue";
+import JetInputError from "@/Jetstream/InputError.vue";
+import JetButton from "@/Jetstream/Button.vue";
+import FileInput from "@/Shared/FileInput.vue";
+import VInput from "@/Shared/VInput.vue";
 
 export default {
     metaInfo: {title: 'Create News'},

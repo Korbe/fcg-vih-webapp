@@ -21,15 +21,15 @@
 </template>
 
 <script>
-import PublicLayout from "@/Layouts/PublicLayout";
-import Hero from '../../Partials/Home/Hero.vue'
-import Testimonials from "@/Partials/Home/Testimonials";
-import Cta from "@/Partials/Home/Cta";
-import Footer from "@/Partials/Footer";
-import Faq from "@/Partials/Faq";
-import News from "@/Partials/Home/News";
-import VisitUs from "@/Partials/Home/VisitUs";
-import Welcome from "@/Partials/Home/Welcome";
+import PublicLayout from "@/Layouts/PublicLayout.vue";
+import Hero from '@/Partials/Home/Hero.vue'
+import Testimonials from "@/Partials/Home/Testimonials.vue";
+import Cta from "@/Partials/Home/Cta.vue";
+import Footer from "@/Partials/Footer.vue";
+import Faq from "@/Partials/Faq.vue";
+import News from "@/Partials/Home/News.vue";
+import VisitUs from "@/Partials/Home/VisitUs.vue";
+import Welcome from "@/Partials/Home/Welcome.vue";
 
 export default {
     name: 'Home',

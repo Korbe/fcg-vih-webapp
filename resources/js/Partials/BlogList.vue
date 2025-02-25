@@ -16,7 +16,7 @@
 
 <script>
 
-import PostAudioPlayer from "@/Partials/PostAudioPlayer";
+import PostAudioPlayer from "@/Partials/PostAudioPlayer.vue";
 import Pagination from './Pagination.vue';
 
 export default {

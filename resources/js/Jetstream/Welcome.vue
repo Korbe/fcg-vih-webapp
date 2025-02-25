@@ -2,7 +2,7 @@
     <div>
         <div class="p-6 sm:px-20 bg-white border-b border-gray-200 ">
             <div class="">
-                <jet-application-logo class="h-32 w-auto"/>
+                <ApplicationLogo class="h-32 w-auto"/>
             </div>
 
             <div class="mt-8 text-2xl">
@@ -12,7 +12,7 @@
 
         <!--Predigten-->
         <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-2">
-            <inertia-link :href="route('dashboard.posts.create')">
+            <Link :href="route('dashboard.posts.create')">
                 <div class="p-6">
                     <div class="flex items-center">
                         <BookOpenIcon class="w-8 h-8 text-gray-400"/>
@@ -30,13 +30,13 @@
                     </div>
 
                 </div>
-            </inertia-link>
+            </Link>
 
-            <inertia-link :href="route('dashboard.posts.index')">
+            <Link :href="route('dashboard.posts.index')">
                 <div class="p-6 border-t border-gray-200 md:border-t-0 md:border-l">
 
                     <div class="flex items-center">
-                        <CollectionIcon class="w-8 h-8 text-gray-400"/>
+                        <ListBulletIcon class="w-8 h-8 text-gray-400"/>
                         <div class="ml-4 text-lg text-gray-600 leading-7 font-semibold">Alle Predigten</div>
                     </div>
 
@@ -57,15 +57,15 @@
 
                     </div>
                 </div>
-            </inertia-link>
+            </Link>
         </div>
 
         <!--News-->
         <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-2">
-            <inertia-link :href="route('dashboard.news.create')">
+            <Link :href="route('dashboard.news.create')">
                 <div class="p-6">
                     <div class="flex items-center">
-                        <UploadIcon class="w-8 h-8 text-gray-400"/>
+                        <ArrowUpOnSquareIcon class="w-8 h-8 text-gray-400"/>
                         <div class="ml-4 text-lg text-gray-600 leading-7 font-semibold">Neuigkeiten hochladen</div>
                     </div>
 
@@ -80,13 +80,13 @@
                     </div>
 
                 </div>
-            </inertia-link>
+            </Link>
 
-            <inertia-link :href="route('dashboard.news.index')">
+            <Link :href="route('dashboard.news.index')">
                 <div class="p-6 border-t border-gray-200 md:border-t-0 md:border-l">
 
                     <div class="flex items-center">
-                        <ArchiveIcon class="w-8 h-8 text-gray-400"/>
+                        <ArchiveBoxIcon class="w-8 h-8 text-gray-400"/>
                         <div class="ml-4 text-lg text-gray-600 leading-7 font-semibold">Alle Neuigkeiten</div>
                     </div>
 
@@ -107,19 +107,19 @@
 
                     </div>
                 </div>
-            </inertia-link>
+            </Link>
         </div>
     </div>
 </template>
 
 <script>
 import {defineComponent} from 'vue'
-import JetApplicationLogo from '@/Jetstream/ApplicationLogo.vue'
-import {ArchiveIcon, BookOpenIcon, CollectionIcon, PlusIcon, UploadIcon} from "@heroicons/vue/outline";
+import ApplicationLogo from '@/Jetstream/ApplicationLogo.vue'
+import {ArchiveBoxIcon, BookOpenIcon, ListBulletIcon, PlusIcon, ArrowUpOnSquareIcon} from "@heroicons/vue/24/outline";
 
 export default defineComponent({
     components: {
-        JetApplicationLogo, PlusIcon, CollectionIcon, BookOpenIcon, UploadIcon, ArchiveIcon
+        ApplicationLogo, PlusIcon, ListBulletIcon, BookOpenIcon, ArrowUpOnSquareIcon, ArchiveBoxIcon
     },
 })
 </script>

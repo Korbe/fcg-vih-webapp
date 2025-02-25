@@ -29,7 +29,7 @@
 
 <script>
 import {Disclosure, DisclosureButton, DisclosurePanel} from '@headlessui/vue';
-import {ChevronDownIcon} from "@heroicons/vue/outline";
+import {ChevronDownIcon} from "@heroicons/vue/24/outline";
 
 export default {
     name: "faq",

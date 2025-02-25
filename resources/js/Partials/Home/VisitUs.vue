@@ -24,16 +24,16 @@
         </div>
 
         <div class="mt-3 flex text-lg text-white">
-          <LocationMarkerIcon class="text-brand-secondary-700 h-6 w-6 mr-2"/>
+          <MapPinIcon class="text-brand-secondary-700 h-6 w-6 mr-2"/>
           <p class="ml-2">Vassacherstraße 28, 9500 Villach</p>
         </div>
 
         <div class="mt-8">
           <div class="inline-flex rounded-md shadow">
-            <inertia-link :href="route('public.events')"
+            <Link :href="route('public.events')"
                   class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50">
               Alle Events anschauen
-            </inertia-link>
+            </Link>
           </div>
         </div>
       </div>
@@ -45,13 +45,13 @@
 import {
 
     ClockIcon,
-    LocationMarkerIcon,
+    MapPinIcon,
 
-} from "@heroicons/vue/outline";
+} from "@heroicons/vue/24/outline";
 
 
 export default {
   name: 'visit-uss',
-    components: {ClockIcon, LocationMarkerIcon},
+    components: {ClockIcon, MapPinIcon},
 }
 </script>

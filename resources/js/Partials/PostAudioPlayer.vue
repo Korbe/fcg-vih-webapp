@@ -13,7 +13,7 @@
         <div class="z-10 basis-full w-full md:pl-4">
 
             <p v-if="completed" class="text-brand-primary flex">
-                <BadgeCheckIcon class="h-7 mr-1"/>
+                <CheckBadgeIcon class="h-7 mr-1"/>
                 <span class="inline-block">{{'Angehört'}}</span>
             </p>
 
@@ -33,7 +33,7 @@
                    class="p-2 flex items-center justify-center  border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-primary hover:bg-brand-secondary-400"
                    href="#"
                    @click.prevent="addSeconds(-10)">
-                    <RewindIcon class="h-7 mr-1"/>
+                    <BackwardIcon class="h-7 mr-1"/>
                     10s
                 </a>
 
@@ -55,7 +55,7 @@
                    href="#"
                    @click.prevent="addSeconds(60)">
                     1min
-                    <RewindIcon class="rotate-180 h-7 ml-1"/>
+                    <BackwardIcon class="rotate-180 h-7 ml-1"/>
                 </a>
 
             </div>
@@ -67,15 +67,15 @@
     </div>
 </template>
 <script>
-import {PauseIcon, PlayIcon} from "@heroicons/vue/solid";
-import {RewindIcon, BadgeCheckIcon} from "@heroicons/vue/outline";
+import {PauseIcon, PlayIcon} from "@heroicons/vue/24/solid";
+import { BackwardIcon, CheckBadgeIcon} from "@heroicons/vue/24/outline";
 
 import { hashIt } from "@/Shared/HashIt"
-import { Inertia } from '@inertiajs/inertia';
+import { router } from '@inertiajs/vue3'
 
 export default {
     components: {
-        PlayIcon, PauseIcon, RewindIcon,BadgeCheckIcon
+        PlayIcon, PauseIcon, BackwardIcon, CheckBadgeIcon
     },
     name: 'PostAudioPlayer',
     props: {
@@ -156,12 +156,12 @@ export default {
         },
         SetPostViewed(){
             if(!this.viewStatRecorded){
-                Inertia.post(route('public.blog.post.viewed', this.post.id), null, { preserveScroll: true });
+                router.post(route('public.blog.post.viewed', this.post.id), null, { preserveScroll: true });
                 this.viewStatRecorded = true;
             }
         },
         SetPostCompleted(){
-            Inertia.post(route('public.blog.post.completed', this.post.id), null, { preserveScroll: true });
+            router.post(route('public.blog.post.completed', this.post.id), null, { preserveScroll: true });
         }
     }
 }

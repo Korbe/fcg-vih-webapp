@@ -105,10 +105,10 @@
 
 <script>
 import {Popover, PopoverButton, PopoverPanel} from '@headlessui/vue'
-import {ClipboardIcon, CreditCardIcon, DocumentDuplicateIcon, UserCircleIcon} from "@heroicons/vue/outline";
-import Navbar from "@/Partials/Navbar";
-import Footer from "@/Partials/Footer";
-import PublicLayout from "../../Layouts/PublicLayout";
+import {ClipboardIcon, CreditCardIcon, DocumentDuplicateIcon, UserCircleIcon} from "@heroicons/vue/24/outline";
+import Navbar from "@/Partials/Navbar.vue";
+import Footer from "@/Partials/Footer.vue";
+import PublicLayout from "@/Layouts/PublicLayout.vue";
 
 export default {
     name: "Donate",
