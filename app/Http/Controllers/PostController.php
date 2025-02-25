@@ -35,7 +35,7 @@ class PostController extends Controller
             $media = $post->getFirstMedia('audio');
             if ($media) {
                 $post['audio_name'] = $media->file_name;
-                $post['audio_size'] = $media->getHumanReadableSizeAttribute();
+                $post['audio_size'] = $media->human_readable_size;
             }
         }
 
@@ -44,7 +44,7 @@ class PostController extends Controller
             $media = $post->getFirstMedia('audio');
             if ($media) {
                 $post['audio_name'] = $media->file_name;
-                $post['audio_size'] = $media->getHumanReadableSizeAttribute();
+                $post['audio_size'] = $media->human_readable_size;
             }
         }
 
