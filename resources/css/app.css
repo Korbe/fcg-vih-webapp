@@ -1,6 +1,6 @@
 @import url('https://rsms.me/inter/inter.css');
 @import url(carousel.css);
-@import "scrollDownAnimation.scss";
+@import "scrollDownAnimation.css";
 
 @tailwind base;
 @tailwind components;
