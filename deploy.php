@@ -8,6 +8,7 @@ require 'recipe/laravel.php';
 set('repository', 'https://github.com/Korbe/fcg-vih-webapp.git');
 set('composer', '/home/u599789838/bin/composer');
 set('http_user', 'u599789838'); 
+set('branch', 'develop');
 
 add('shared_files', []);
 add('shared_dirs', []);
