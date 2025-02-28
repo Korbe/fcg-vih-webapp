@@ -240,7 +240,7 @@ export default {
                 {name: 'Über uns', href: route('public.about'), icon: UserGroupIcon},
                 {name: 'Events', href: route('public.events'), icon: CalendarIcon},
                 {name: 'Predigten', href: route('public.blog'), icon: NewspaperIcon},
-                {name: 'Heferl Café', href: route('public.heferlCafe'), icon: CakeIcon},
+                //{name: 'Heferl Café', href: route('public.heferlCafe'), icon: CakeIcon},
                 {name: 'Kontakt', href: route('public.contact'), icon: ChatBubbleLeftRightIcon},
                 {name: 'Spenden', href: route('public.donate'), icon: BanknotesIcon},
             ]

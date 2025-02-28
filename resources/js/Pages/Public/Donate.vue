@@ -127,14 +127,14 @@ export default {
             copyIbanText: null,
             organizations: [
                 {
+                    name: 'Gospelvan',
+                    logo: '/images/partner/gospelvan.png',
+                    link: 'https://www.gospelvan.at',
+                },
+                {
                     name: 'ampuls',
                     logo: '/images/partner/ampuls.png',
                     link: 'https://ampuls.or.at',
-                },
-                {
-                    name: 'Impact-Austria',
-                    logo: '/images/partner/impact-at.png',
-                    link: 'http://impact-austria.at',
                 },
                 {
                     name: 'Soziale Tagesstaette Raphael',

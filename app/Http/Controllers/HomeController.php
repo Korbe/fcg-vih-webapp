@@ -13,7 +13,7 @@ class HomeController extends Controller
     public function home(Request $request)
     {
         return Inertia::render('Public/Home', [
-            'news' => Media::where(['collection_name' => 'news'])->latest()->take(5)->get(),
+            'news' => Media::where(['collection_name' => 'news'])->latest()->take(10)->get(),
         ]);
     }
 
