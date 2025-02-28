@@ -28,13 +28,32 @@ task('composer-install', function () {
     run('/home/u599789838/bin/composer install');
 });
 
-task('deploy:symlink', function () {
+task('deploy:storageSymlink', function () {
     run('ln -sfn {{deploy_path}}/../storage/app/public {{release_path}}/public/storage');
 });
 
+task('deploy:envSymlink', function () {
+    run('ln -sfn {{deploy_path}}/../.env {{release_path}}/.env');
+});
+
+task('deploy:restart_caches', function () {
+    run('php {{release_path}}/artisan cache:clear');
+    run('php {{release_path}}/artisan config:clear');
+    run('php {{release_path}}/artisan route:clear');
+    run('php {{release_path}}/artisan view:clear');
+
+    run('php {{release_path}}/artisan config:cache');
+    run('php {{release_path}}/artisan route:cache');
+    run('php {{release_path}}/artisan view:cache');
+    run('php {{release_path}}/artisan optimize'); 
+});
+
+
 // Hooks
 after('deploy:update_code', 'composer-install');
-after('composer-install', 'deploy:symlink');
+after('composer-install', 'deploy:storageSymlink');
+after('deploy:shared', 'deploy:envSymlink');
+after('deploy:envSymlink', 'deploy:restart_caches');
 
-//after('deploy:setup', 'deploy:unlock');
+after('deploy:setup', 'deploy:unlock');
 after('deploy:failed', 'deploy:unlock');
