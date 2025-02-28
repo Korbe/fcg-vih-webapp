@@ -39,7 +39,7 @@ class HomeController extends Controller
 
     public function heferlcafe(Request $request)
     {
-        return "heferlcafe";//Inertia::render('Public/HeferlCafe');
+        return Inertia::render('Public/HeferlCafe');
     }
 
     public function imprint(Request $request)
