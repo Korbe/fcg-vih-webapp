@@ -16,12 +16,12 @@ class PostSeeder extends Seeder
     {
         if(config('app.env') == 'local'){
             $posts = Post::factory()
-                ->Count(50)
+                ->Count(20)
                 ->create();
 
             /** @var Post $post */
             foreach ($posts as $post){
-                $post->addMedia( storage_path('demo\demo_audio.mp3'))
+                $post->addMedia(resource_path('mp3\demo_audio.mp3'))
                     ->preservingOriginal()
                     ->toMediaCollection('audio');
             }
