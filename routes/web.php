@@ -30,7 +30,7 @@ Route::name('public.')->group(function () {
     Route::get('/spenden', [HomeController::class, 'donate'])->name('donate');
     Route::get('/kontakt', [HomeController::class, 'contact'])->name('contact');
     Route::get('/predigten', [HomeController::class, 'blog'])->name('blog');
-    Route::get('/heferlCafe', [HomeController::class, 'heferlCafe'])->name('heferlCafe');
+    Route::get('/heferlcafe', [HomeController::class, 'heferlcafe'])->name('heferlCafe');
     
     Route::post('/predigten/stats/{post}/viewed', [HomeController::class, 'postAudioViewed'])->name('blog.post.viewed');
     Route::post('/predigten/stats/{post}/completed', [HomeController::class, 'postAudioCompleted'])->name('blog.post.completed');
