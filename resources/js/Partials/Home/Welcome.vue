@@ -18,9 +18,17 @@
 
             </div>
         </div>
+
+        <div class="my-8 flex justify-left md:justify-center ">
+        <Link :href="route('public.about')"
+            class="flex rounded-md shadow items-center justify-center px-10 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-primary hover:bg-brand-primary-400">
+        <span>Das sind wir</span>
+        <ArrowRightIcon class="h-7 ml-3" />
+        </Link>
+    </div>
     </section>
 
-    <section class="text-gray-600 body-font">
+    <!-- <section class="text-gray-600 body-font">
         <div class="container px-5 py-24 mx-auto">
             <div class="flex flex-wrap -m-4">
                 <div class="xl:w-1/4 md:w-1/2 p-3">
@@ -57,15 +65,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    <div class="mt-8 flex justify-left md:justify-center ">
-        <Link :href="route('public.about')"
-            class="flex rounded-md shadow items-center justify-center px-10 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-primary hover:bg-brand-primary-400">
-        <span>Das sind wir</span>
-        <ArrowRightIcon class="h-7 ml-3" />
-        </Link>
-    </div>
+
 </template>
 <script setup>
 import { ArrowRightIcon, BookOpenIcon, BuildingLibraryIcon, HandRaisedIcon, HeartIcon } from "@heroicons/vue/24/outline";
