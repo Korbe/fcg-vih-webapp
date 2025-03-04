@@ -29,7 +29,8 @@ task('composer-install', function () {
 });
 
 task('deploy:storageSymlink', function () {
-    run('ln -sfn {{deploy_path}}/../storage/app/public {{release_path}}/public/storage');
+    run('ln -sfn {{deploy_path}}/../storage {{release_path}}/storage');
+    run('ln -sfn {{release_path}}/storage/app/public {{release_path}}/public/storage');
 });
 
 task('deploy:envSymlink', function () {
@@ -51,9 +52,9 @@ task('deploy:restart_caches', function () {
 
 // Hooks
 after('deploy:update_code', 'composer-install');
-after('composer-install', 'deploy:storageSymlink');
 after('deploy:shared', 'deploy:envSymlink');
-after('deploy:envSymlink', 'deploy:restart_caches');
+after('deploy:envSymlink', 'deploy:storageSymlink');
+after('deploy:storageSymlink', 'deploy:restart_caches');
 
 after('deploy:setup', 'deploy:unlock');
 after('deploy:failed', 'deploy:unlock');
