@@ -49,39 +49,33 @@
 
 </template>
 
-<script>
-
+<script setup>
 import {Carousel, Navigation, Pagination, Slide} from 'vue3-carousel';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Autoplay } from 'swiper/modules';
 
-export default {
-    name: "Testimonials",
-    components: {
-        Carousel,
-        Slide,
-        Pagination,
-        Navigation,
-    },
-    data() {
-        return {
-            innerWidth: window.innerWidth,
-            testimonials: [
-                {
-                    name: "Toni Bergmair",
-                    statement: "Freundliches Ambiente, liebevoll gestaltete Räume, engagierte Mitarbeiter - die Liste ließe sich noch deutlich erweitern sollte alles genannt werden. Deshalb freue ich mich jedesmal, wenn ich zu Predigtdiensten nach Villach eingeladen werde. Ich empfinde mich als Teil dieser Familie und freue mich über das, was Gott hier tut.",
-                    role: "Pastor, Bad Reichenhall"
-                },
-                {
-                    name: "Rita Dullinger",
-                    statement: "Das Herz der FCG Villach ist es, dass Menschen aus allen Nationen Jesus Christus als Erlöser kennenlernen und erfahren, dass sich ihr Leben durch ihn zum Besseren wendet!",
-                    role: "Seelsorger, FCG Wels"
-                },
-                {
-                    name: "Gottfried Knirsch",
-                    statement: "Die FCG Villach ist ein Zuhause bunter Geschwister: Hier teilt man das Leben, hier singt und betet man gemeinsam, hier hilft einer dem anderen, hier hört man die Gute Botschaft von Jesus, um den sich alles dreht. Jeder ist hier willkommen!",
-                    role: "Pastor, Gospelhaus Klagenfurt"
-                },
-            ]
-        }
-    }
-}
+const modules = [Autoplay];
+
+import { ref } from "vue";
+
+const testimonials = ref([
+  {
+    name: "Toni Bergmair",
+    statement:
+      "Freundliches Ambiente, liebevoll gestaltete Räume, engagierte Mitarbeiter - die Liste ließe sich noch deutlich erweitern sollte alles genannt werden. Deshalb freue ich mich jedesmal, wenn ich zu Predigtdiensten nach Villach eingeladen werde. Ich empfinde mich als Teil dieser Familie und freue mich über das, was Gott hier tut.",
+    role: "Pastor, Bad Reichenhall",
+  },
+  {
+    name: "Rita Dullinger",
+    statement:
+      "Das Herz der FCG Villach ist es, dass Menschen aus allen Nationen Jesus Christus als Erlöser kennenlernen und erfahren, dass sich ihr Leben durch ihn zum Besseren wendet!",
+    role: "Seelsorger, FCG Wels",
+  },
+  {
+    name: "Gottfried Knirsch",
+    statement:
+      "Die FCG Villach ist ein Zuhause bunter Geschwister: Hier teilt man das Leben, hier singt und betet man gemeinsam, hier hilft einer dem anderen, hier hört man die Gute Botschaft von Jesus, um den sich alles dreht. Jeder ist hier willkommen!",
+    role: "Pastor, Gospelhaus Klagenfurt",
+  },
+]);
 </script>

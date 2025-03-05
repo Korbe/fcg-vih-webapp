@@ -8,7 +8,7 @@
                 </h1>
             </div>
 
-            <Swiper :modules="modules" navigation :space-between="50" class="fcgswiper" :slides-per-view="1">
+            <Swiper :modules="modules" navigation :space-between="50" class="fcgswiper" :slides-per-view="1" :autoplay="{ delay: 5000, disableOnInteraction: false }">
                 <SwiperSlide v-for="(media, index) in items" :key="index">
                     <img loading="lazy" :alt="media.custom_properties.alt" :src="media.original_url"
                         class="lg:h-5/6 object-contain w-full rounded-md" />
@@ -22,15 +22,13 @@
 <script setup>
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 
 defineProps({
     items: Array,
 });
 
-const modules = [Navigation];
+const modules = [Navigation, Autoplay];
 
 </script>
 <style scoped>
