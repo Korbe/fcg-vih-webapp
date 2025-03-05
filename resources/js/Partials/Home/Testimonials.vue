@@ -50,12 +50,7 @@
 </template>
 
 <script setup>
-import {Carousel, Navigation, Pagination, Slide} from 'vue3-carousel';
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Autoplay } from 'swiper/modules';
-
-const modules = [Autoplay];
-
+import {Carousel, Pagination, Slide} from 'vue3-carousel';
 import { ref } from "vue";
 
 const testimonials = ref([
