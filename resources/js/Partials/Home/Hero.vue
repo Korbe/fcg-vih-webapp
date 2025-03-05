@@ -11,7 +11,7 @@
         <div class="relative flex justify-center items-center flex-grow">
             <header>
                 <div class="px-4 sm:px-6 lg:px-8">
-                    <h1 class="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-7xl">
+                    <h1 class="text-center text-5xl font-extrabold tracking-tight lg:text-7xl">
                         <span class="block text-white">Freie Christengemeinde</span>
                         {{ ' ' }}
                         <span class="block text-brand-primary">Villach</span>

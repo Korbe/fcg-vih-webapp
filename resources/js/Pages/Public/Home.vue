@@ -1,26 +1,28 @@
 <template>
     <public-layout title="Home">
 
-        <hero/>
+        <hero />
 
-        <welcome/>
+        <welcome />
 
-        <visit-us/>
+        <visit-us />
+
+        <Events />
 
         <news :items="news" />
 
-        <testimonials/>
+        <testimonials />
 
-        <faq/>
+        <faq />
 
-        <cta/>
+        <cta />
 
-        <Footer/>
+        <Footer />
 
     </public-layout>
 </template>
 
-<script>
+<script setup>
 import PublicLayout from "@/Layouts/PublicLayout.vue";
 import Hero from '@/Partials/Home/Hero.vue'
 import Testimonials from "@/Partials/Home/Testimonials.vue";
@@ -30,22 +32,8 @@ import Faq from "@/Partials/Faq.vue";
 import News from "@/Partials/Home/News.vue";
 import VisitUs from "@/Partials/Home/VisitUs.vue";
 import Welcome from "@/Partials/Home/Welcome.vue";
+import Events from "@/Partials/Home/Events.vue";
 
-export default {
-    name: 'Home',
-    components: {
-        Welcome,
-        VisitUs,
-        News,
-        Faq,
-        Footer,
-        Cta,
-        Testimonials,
-        PublicLayout,
-        Hero
-    },
-    props: {
-        news: Array,
-    },
-}
+defineProps({ news: Array })
+
 </script>
