@@ -3,53 +3,41 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div class="text-center mb-5">
-                <h1 class="text-3xl sm:text-4xl leading-8 tracking-tight font-extrabold text-gray-900">
+                <h1 class="fcgswiper text-3xl sm:text-4xl leading-8 tracking-tight font-extrabold">
+                    Besuchen Sie
+                </h1>
+                <h1 class="fcgswiper text-3xl sm:text-4xl leading-8 tracking-tight font-extrabold text-gray-900">
                     Besuchen Sie <span class="text-brand-primary">auch..</span>
                 </h1>
             </div>
 
-            <carousel pauseAutoplayOnHover v-if="items.length > 0" :autoplay="4000" :items-to-show="1" wrap-around>
-
-                <slide v-for="(media,index) in items" :key="index" >
-
-                    <div class="md:m-5">
-
-
-                       <img loading="lazy" :alt="media.custom_properties.alt" :src="media.original_url"
-                            class="lg:h-5/6 object-contain w-full rounded-md"/>
-                    </div>
-                </slide>
-
-                <template v-if="items.length > 1" #addons>
-                    <navigation v-if="innerWidth >= 640"/>
-                    <pagination/>
-                </template>
-
-            </carousel>
+            <Swiper :modules="modules" navigation :space-between="50" class="fcgswiper" :slides-per-view="1">
+                <SwiperSlide v-for="(media, index) in items" :key="index">
+                    <img loading="lazy" :alt="media.custom_properties.alt" :src="media.original_url"
+                        class="lg:h-5/6 object-contain w-full rounded-md" />
+                </SwiperSlide>
+            </Swiper>
 
         </div>
     </section>
 </template>
 
-<script>
+<script setup>
 
-import {Carousel, Navigation, Pagination, Slide} from 'vue3-carousel';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { Navigation } from 'swiper/modules';
 
-export default {
-    name: "News",
-    components: {
-        Carousel,
-        Slide,
-        Pagination,
-        Navigation,
-    },
-    props: {
-        items: Array,
-    },
-    data() {
-        return {
-            innerWidth: window.innerWidth,
-        };
-    },
-}
+defineProps({
+    items: Array,
+});
+
+const modules = [Navigation];
+
 </script>
+<style scoped>
+.fcgswiper {
+    --swiper-theme-color: theme('colors.brand-primary.500');
+}
+</style>
