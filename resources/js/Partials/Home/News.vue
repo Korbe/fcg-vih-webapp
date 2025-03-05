@@ -3,10 +3,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div class="text-center mb-5">
-                <h1 class="fcgswiper text-3xl sm:text-4xl leading-8 tracking-tight font-extrabold">
-                    Besuchen Sie
-                </h1>
-                <h1 class="fcgswiper text-3xl sm:text-4xl leading-8 tracking-tight font-extrabold text-gray-900">
+                <h1 class="text-3xl sm:text-4xl leading-8 tracking-tight font-extrabold text-gray-900">
                     Besuchen Sie <span class="text-brand-primary">auch..</span>
                 </h1>
             </div>
