@@ -114,7 +114,7 @@ export default {
                 },
                 {
                     name: "Hauskreis",
-                    interval: "Ungerade Wochen, Freitag",
+                    interval: "Jeden Freitag außer den ersten im Monat",
                     time: "9 Uhr",
                     description: "",
                     responsible: "Bettina Morgan",

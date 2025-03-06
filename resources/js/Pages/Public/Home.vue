@@ -7,9 +7,9 @@
 
         <visit-us />
 
-        <Events />
-
         <news :items="news" />
+
+        <Events />
 
         <testimonials />
 
