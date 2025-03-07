@@ -17,8 +17,16 @@ class NewsController extends Controller
 
     public function create()
     {
-        return Inertia::render('News/Create');
+        return Inertia::render('News/EditCreate');
     }
+
+    public function edit(News $news)
+    {
+        return Inertia::render('News/EditCreate', [
+            'news' => $news
+        ]);
+    }
+
 
     public function store(Request $request)
     {
@@ -36,6 +44,30 @@ class NewsController extends Controller
         }
 
         if ($request->hasFile('support_image')) {
+            $news->addMedia($request->file('support_image'))->toMediaCollection('support_image');
+        }
+
+        return redirect()->route('dashboard.news.index');
+    }
+
+    public function update(Request $request, News $news)
+    {
+        $request->validate([
+            'title' => 'required|string|max:75',
+            'description' => 'required|string|max:255',
+            'title_image' => 'nullable|image',
+            'support_image' => 'nullable|image',
+        ]);
+
+        $news->update($request->only(['title', 'description']));
+
+        if ($request->hasFile('title_image')) {
+            $news->clearMediaCollection('title_image');
+            $news->addMedia($request->file('title_image'))->toMediaCollection('title_image');
+        }
+
+        if ($request->hasFile('support_image')) {
+            $news->clearMediaCollection('support_image');
             $news->addMedia($request->file('support_image'))->toMediaCollection('support_image');
         }
 

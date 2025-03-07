@@ -42,7 +42,7 @@
                                             <td class="px-6 py-4 whitespace-nowrap">
                                                 <div class="flex items-center">
                                                     <div class="flex-shrink-0 w-52">
-                                                        <span>{{ item.title }}</span>
+                                                        <span class="text-gray-800">{{ item.title }}</span>
                                                     </div>
                                                 </div>
                                             </td>
@@ -68,9 +68,15 @@
                                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                                 <button @click="deleteItem(item.id)"
                                                     :href="route('dashboard.news.destroy', item.id)"
-                                                    class="flex text-brand-primary-600 hover:text-brand-primary-900">
-                                                    <TrashIcon class="h-5 w-5 mr-2" />Löschen
+                                                    class="flex :text-brand-primary-900">
+                                                    <TrashIcon class="text-gray-800 h-5 w-5" />
                                                 </button>
+                                            </td>
+
+                                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                <Link :href="route('dashboard.news.edit', item.id)" tag="button">
+                                                    <ArrowPathIcon class="text-gray-800 h-5 w-5" />
+                                                </Link>
                                             </td>
                                         </tr>
                                         <tr v-if="news.length === 0">
@@ -96,6 +102,7 @@ import InertiaButton from "@/Shared/InertiaButton.vue";
 import { TrashIcon } from '@heroicons/vue/24/solid'
 import { onMounted } from "vue";
 import { router } from '@inertiajs/vue3'
+import { ArrowPathIcon } from "@heroicons/vue/24/outline";
 
 
 const props = defineProps({

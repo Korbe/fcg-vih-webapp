@@ -18,7 +18,7 @@
         <div className="max-w-7xl mx-auto py-16 px-5">
 
             <swiper :modules="modules" :slides-per-view="1" :scrollbar="{ draggable: true }" :spaceBetween="20"
-                :autoplay="{ delay: 3000, disableOnInteraction: false }">
+                :autoplay="{ delay: 6000, disableOnInteraction: false }">
                 <swiper-slide v-for="(news, index) in items" :key="index">
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 py-5">
