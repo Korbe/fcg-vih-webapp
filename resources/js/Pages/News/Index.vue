@@ -41,7 +41,7 @@
 
                                             <td class="px-6 py-4 whitespace-nowrap">
                                                 <div class="flex items-center">
-                                                    <div class="flex-shrink-0 w-52">
+                                                    <div class="flex-shrink-0 truncate w-64">
                                                         <span class="text-gray-800">{{ item.title }}</span>
                                                     </div>
                                                 </div>
@@ -66,17 +66,17 @@
                                             </td>
 
                                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                <Link :href="route('dashboard.news.edit', item.id)" tag="button">
+                                                    <ArrowPathIcon class="text-gray-800 h-5 w-5" />
+                                                </Link>
+                                            </td>
+
+                                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                                 <button @click="deleteItem(item.id)"
                                                     :href="route('dashboard.news.destroy', item.id)"
                                                     class="flex :text-brand-primary-900">
                                                     <TrashIcon class="text-gray-800 h-5 w-5" />
                                                 </button>
-                                            </td>
-
-                                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                <Link :href="route('dashboard.news.edit', item.id)" tag="button">
-                                                    <ArrowPathIcon class="text-gray-800 h-5 w-5" />
-                                                </Link>
                                             </td>
                                         </tr>
                                         <tr v-if="news.length === 0">
