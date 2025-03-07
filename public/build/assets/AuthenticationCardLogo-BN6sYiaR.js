@@ -1,0 +1,2 @@
+import{_ as a}from"./_plugin-vue_export-helper-DlAUqK2U.js";import{q as e,c as n,o as s,w as r,a as c}from"./app-CUEKo-19.js";const i={};function l(p,o,_,f,m,d){const t=e("Link");return s(),n(t,{href:"/"},{default:r(()=>o[0]||(o[0]=[c("img",{loading:"lazy",alt:"FCG Villach",class:"w-60",src:"/images/fcg-villach-logo.png"},null,-1)])),_:1})}const h=a(i,[["render",l]]);export{h as A};
+//# sourceMappingURL=AuthenticationCardLogo-BN6sYiaR.js.map
