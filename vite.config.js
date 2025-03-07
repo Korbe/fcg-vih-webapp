@@ -6,14 +6,14 @@ import path from 'path';
 export default defineConfig({
     resolve: {
         alias: {
-          // Aliases für das Node-Modul 'crypto', das auf den Polyfill verweist
-          crypto: 'crypto-browserify',
+            // Aliases für das Node-Modul 'crypto', das auf den Polyfill verweist
+            crypto: 'crypto-browserify',
         },
-      },
-      optimizeDeps: {
+    },
+    optimizeDeps: {
         // Wenn du das Modul explizit vorab optimieren möchtest, füge es hier hinzu
         include: ['crypto-browserify'],
-      },
+    },
     plugins: [
         laravel({
             input: 'resources/js/app.js',
@@ -28,4 +28,10 @@ export default defineConfig({
             },
         }),
     ],
+    server: {
+        port: 3000
+    },
+    build: {
+        sourcemap: true,
+    }
 });
