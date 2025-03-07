@@ -30,6 +30,11 @@
                                'text-base font-medium ']"
                     >{{ item.name }}
                     </Link>
+                    <!-- <Link :href="route('login')"
+                                  class="flex items-center justify-center sm:px-1 px-1 py-1 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-primary hover:bg-brand-primary-400 ">
+                                <PlayIcon class="h-7"/>
+                                Intern
+                    </Link> -->
                 </div>
             </div>
         </nav>

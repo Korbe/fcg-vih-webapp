@@ -44,12 +44,7 @@
 
 </template>
 
-<script>
+<script setup>
 import {PlayIcon, UserGroupIcon} from "@heroicons/vue/24/outline";
 import Navbar from "@/Partials/Navbar.vue";
-
-export default {
-    name: 'Hero',
-    components: {Navbar, PlayIcon, UserGroupIcon},
-}
 </script>
