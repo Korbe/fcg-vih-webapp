@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\News;
-use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
+use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
@@ -22,11 +22,13 @@ class NewsController extends Controller
 
     public function edit(News $news)
     {
+        // Lade die News mit den zugehörigen Medien
+        $news->load('media');
+
         return Inertia::render('News/EditCreate', [
             'news' => $news
         ]);
     }
-
 
     public function store(Request $request)
     {
@@ -47,7 +49,7 @@ class NewsController extends Controller
             $news->addMedia($request->file('support_image'))->toMediaCollection('support_image');
         }
 
-        return redirect()->route('dashboard.news.index');
+        return redirect()->route('dashboard.news.index')->with('success', 'News wurde erfolgreich angelegt!');
     }
 
     public function update(Request $request, News $news)
@@ -59,7 +61,10 @@ class NewsController extends Controller
             'support_image' => 'nullable|image',
         ]);
 
-        $news->update($request->only(['title', 'description']));
+        $news->update([
+            'title' => $request->input('title'),
+            'description' => $request->input('description'),
+        ]);
 
         if ($request->hasFile('title_image')) {
             $news->clearMediaCollection('title_image');
@@ -71,7 +76,7 @@ class NewsController extends Controller
             $news->addMedia($request->file('support_image'))->toMediaCollection('support_image');
         }
 
-        return redirect()->route('dashboard.news.index');
+        return redirect()->route('dashboard.news.index')->with('flash', [ 'message' => 'Die Nachricht wurde erfolgreich gespeichert!' ]);
     }
 
     public function destroy(News $news)
@@ -80,6 +85,6 @@ class NewsController extends Controller
         $news->clearMediaCollection('support_image');
 
         $news->delete();
-        return redirect()->route('dashboard.news.index');
+        return redirect()->route('dashboard.news.index')->with('success', 'News wurde erfolgreich gelöscht!');;
     }
 }

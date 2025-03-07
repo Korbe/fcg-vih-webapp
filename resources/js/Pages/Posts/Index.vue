@@ -62,8 +62,7 @@
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                             <Link :href="route('dashboard.posts.edit', post.id)" class="flex text-brand-primary-600 hover:text-brand-primary-900">
-                                                Bearbeiten
-                                                <ArrowRightIcon class="h-5 w-5"/>
+                                                <ArrowPathIcon class="h-5 w-5"/>
                                             </Link>
                                         </td>
                                     </tr>
@@ -135,8 +134,8 @@
                                             {{ post.published_at }}
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                            <Link :href="route('dashboard.posts.edit', post.id)" class="flex text-brand-primary-600 hover:text-brand-primary-900">Bearbeiten
-                                                <ArrowRightIcon class="h-5 w-5" />
+                                            <Link :href="route('dashboard.posts.edit', post.id)" class="flex text-brand-primary-600 hover:text-brand-primary-900">
+                                                <ArrowPathIcon class="h-5 w-5" />
                                             </Link>
                                         </td>
                                     </tr>
@@ -219,7 +218,7 @@
 import AppLayout from '@/Layouts/AppLayout.vue';
 import InertiaButton from "@/Shared/InertiaButton.vue";
 
-import {ArrowRightIcon} from "@heroicons/vue/24/outline";
+import {ArrowPathIcon, ArrowRightIcon} from "@heroicons/vue/24/outline";
 import {ChevronLeftIcon, ChevronRightIcon} from '@heroicons/vue/24/solid'
 
 defineProps({

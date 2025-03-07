@@ -27,9 +27,12 @@
                                             <th scope="col"
                                                 class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
                                                 Titelbild</th>
-                                                <th scope="col"
+                                            <th scope="col"
                                                 class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
                                                 Unterstützungsbild</th>
+                                            <th scope="col" class="relative px-6 py-3">
+                                                <span class="sr-only">Bearbeiten</span>
+                                            </th>
                                             <th scope="col" class="relative px-6 py-3">
                                                 <span class="sr-only">Löschen</span>
                                             </th>
@@ -51,7 +54,7 @@
                                                 <div class="flex items-center">
                                                     <div class="flex-shrink-0 w-32">
                                                         <img loading="lazy" class="rounded"
-                                                            :src="item.media[0].original_url"/>
+                                                            :src="item.media[0].original_url" />
                                                     </div>
                                                 </div>
                                             </td>
@@ -60,14 +63,15 @@
                                                 <div class="flex items-center">
                                                     <div class="flex-shrink-0 w-32">
                                                         <img loading="lazy" class="rounded"
-                                                            :src="item.media[1].original_url"/>
+                                                            :src="item.media[1].original_url" />
                                                     </div>
                                                 </div>
                                             </td>
 
-                                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium ">
                                                 <Link :href="route('dashboard.news.edit', item.id)" tag="button">
-                                                    <ArrowPathIcon class="text-gray-800 h-5 w-5" />
+                                                <ArrowPathIcon
+                                                    class="h-5 w-5 text-brand-primary-600 hover:text-brand-primary-900" />
                                                 </Link>
                                             </td>
 
@@ -75,7 +79,8 @@
                                                 <button @click="deleteItem(item.id)"
                                                     :href="route('dashboard.news.destroy', item.id)"
                                                     class="flex :text-brand-primary-900">
-                                                    <TrashIcon class="text-gray-800 h-5 w-5" />
+                                                    <TrashIcon
+                                                        class="h-5 w-5 text-gray-700 hover:text-brand-primary-900" />
                                                 </button>
                                             </td>
                                         </tr>
@@ -100,17 +105,11 @@
 import AppLayout from "@/Layouts/AppLayout.vue";
 import InertiaButton from "@/Shared/InertiaButton.vue";
 import { TrashIcon } from '@heroicons/vue/24/solid'
-import { onMounted } from "vue";
 import { router } from '@inertiajs/vue3'
 import { ArrowPathIcon } from "@heroicons/vue/24/outline";
 
-
 const props = defineProps({
     news: Array,
-});
-
-onMounted(() => {
-    console.log(props.news);
 });
 
 const deleteItem = (id) => {
