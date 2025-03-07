@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\News;
 use App\Models\Post;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -13,7 +14,7 @@ class HomeController extends Controller
     public function home(Request $request)
     {
         return Inertia::render('Public/Home', [
-            'news' => Media::where(['collection_name' => 'news'])->latest()->take(10)->get(),
+            'news' => News::with(['media'])->latest()->take(10)->get(),
         ]);
     }
 

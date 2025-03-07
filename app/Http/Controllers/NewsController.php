@@ -2,28 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\News;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
-use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Inertia\Response;
 
 class NewsController extends Controller
 {
-    public function index()
+    public function index(): Response
     {
-        /** @var User $user */
-        $user = Auth::user();
-
-        $media = $user->getMedia('news')
-            ->sortByDesc('updated_at')
-            ->values()
-            ->all();
-
-        return Inertia::render('News/Index', [
-            'news' => $media,
-        ]);
-
+        $news = News::with(['media'])->latest()->get();
+        return Inertia::render('News/Index', ['news' => $news]);
     }
 
     public function create()
@@ -33,34 +22,32 @@ class NewsController extends Controller
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'image' => ['required', 'image'],
-            'alt' => ['string', 'nullable']
+        $request->validate([
+            'title' => 'required|string|max:75',
+            'description' => 'required|string|max:255',
+            'title_image' => 'required|image',
+            'support_image' => 'required|image',
         ]);
 
-        Auth::user()
-            ->addMedia($validated['image'])
-            ->withCustomProperties(['alt' => $validated['alt']])
-            ->toMediaCollection('news');
+        $news = News::create($request->only(['title', 'description']));
 
-        return redirect()->route('dashboard.news.index')->with('flash', [
-            'bannerStyle' => 'success',
-            'banner' => 'Erfolgreich hinzugefügt',
-        ]);
+        if ($request->hasFile('title_image')) {
+            $news->addMedia($request->file('title_image'))->toMediaCollection('title_image');
+        }
+
+        if ($request->hasFile('support_image')) {
+            $news->addMedia($request->file('support_image'))->toMediaCollection('support_image');
+        }
+
+        return redirect()->route('dashboard.news.index');
     }
 
-    public function destroy($id)
+    public function destroy(News $news)
     {
-        $media = Auth::user()
-            ->getMedia('news')
-            ->where('id', $id)
-            ->first();
+        $news->clearMediaCollection('title_image');
+        $news->clearMediaCollection('support_image');
 
-        $media->delete();
-
-        return redirect()->route('dashboard.news.index')->with('flash', [
-            'bannerStyle' => 'success',
-            'banner' => 'Erfolgreich gelöscht',
-        ]);
+        $news->delete();
+        return redirect()->route('dashboard.news.index');
     }
 }
