@@ -54,9 +54,6 @@
                 </div>
             </div>
         </div>
-
-        <Footer/>
-
     </public-layout>
 </template>
 

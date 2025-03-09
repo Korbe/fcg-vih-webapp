@@ -35,8 +35,6 @@
 
         </section>
 
-        <Footer></Footer>
-
     </public-layout>
 </template>
 

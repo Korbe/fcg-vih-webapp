@@ -21,8 +21,6 @@
 
 
         </section>
-
-        <Footer />
     </public-layout>
 </template>
 
