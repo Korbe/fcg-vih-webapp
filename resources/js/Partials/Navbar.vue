@@ -9,7 +9,7 @@
                     <div class="flex items-center justify-around space-x-10 lg:justify-between w-full lg:w-auto">
                         <Link href="/">
                         <span class="sr-only">FCG Villach</span>
-                        <LogoText class="lg:block h-24 mx-auto w-auto lg:h-24"></LogoText>
+                        <Logo class="lg:block h-20 mx-auto w-auto lg:h-20" />
                         </Link>
 
                         <div class="lg:hidden">
@@ -55,12 +55,12 @@
             <PopoverPanel focus class="absolute top-0 inset-x-0 transition transform origin-top lg:hidden">
                 <div class="shadow-lg bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
                     <div class="pt-6">
-                        <div class="flex items-center flex-1">
+                        <div class="flex items-center flex-1 mb-5">
                             <div
                                 class="flex items-center justify-center space-x-10 lg:justify-between w-full lg:w-auto">
                                 <Link href="/">
                                 <span class="sr-only">FCG Villach</span>
-                                <LogoText class="h-24 mx-auto w-auto lg:h-24"></LogoText>
+                                <Logo class="h-20 mx-auto w-auto lg:h-20" />
                                 </Link>
 
                                 <div class="shrink">
