@@ -34,7 +34,7 @@
 
                         <Link :href="route('dashboard.home')"
                             class="flex items-center justify-center px-6 py-1 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-primary hover:bg-brand-primary-400">
-                        <ArrowLeftOnRectangleIcon class="h-7" /> Intern
+                            <UserCircleIcon class="h-5 w-5 mr-2" /> Intern
                         </Link>
 
                         <button v-if="$page.props.auth.user" @click="logout"
@@ -104,7 +104,7 @@
                                     class="-m-1 p-3 flex items-center rounded-md hover:bg-gray-50">
                                 <div
                                     class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-brand-primary text-white sm:h-12 sm:w-12">
-                                    <ArrowLeftEndOnRectangleIcon class="h-7" />
+                                    <UserCircleIcon class="h-7" />
                                 </div>
                                 <span class="ml-3 text-base font-medium text-gray-500">
                                     Intern
@@ -169,8 +169,8 @@
                         </Link>
 
                         <Link :href="route('dashboard.home')"
-                            class="flex items-center justify-center px-6 py-1 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-primary hover:bg-brand-primary-400">
-                        <ArrowLeftOnRectangleIcon class="h-7" /> Intern
+                            class="flex items-center justify-center px-4 py-1 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-primary hover:bg-brand-primary-400">
+                        <UserCircleIcon class="h-5 w-5 mr-2" /> Intern
                         </Link>
 
                         <button v-if="$page.props.auth.user" @click="logout"
@@ -223,7 +223,7 @@
 import { ref, computed, onBeforeMount, onBeforeUnmount } from 'vue';
 
 import { Disclosure, DisclosureButton, DisclosurePanel, Popover, PopoverButton, PopoverPanel } from '@headlessui/vue';
-import { ArrowLeftEndOnRectangleIcon, XMarkIcon, CalendarIcon, BanknotesIcon, ChatBubbleLeftRightIcon, Bars3Icon, NewspaperIcon, UserGroupIcon, HomeIcon, ArrowLeftStartOnRectangleIcon } from '@heroicons/vue/24/outline';
+import { ArrowLeftEndOnRectangleIcon, XMarkIcon, CalendarIcon, BanknotesIcon, ChatBubbleLeftRightIcon, Bars3Icon, NewspaperIcon, UserGroupIcon, HomeIcon, ArrowLeftStartOnRectangleIcon, UserCircleIcon } from '@heroicons/vue/24/outline';
 
 import Logo from "@/Partials/Logo.vue";
 import LogoText from "@/Partials/LogoText.vue";
