@@ -25,6 +25,7 @@
 
 
     <slot/>
+    <Footer/>
 
 </template>
 

@@ -64,8 +64,6 @@
 
             </div>
         </div>
-
-        <Footer/>
     </public-layout>
 </template>
 
@@ -73,7 +71,6 @@
 import BlogList from '@/Partials/BlogList.vue'
 import PublicLayout from "@/Layouts/PublicLayout.vue";
 import Navbar from "@/Partials/Navbar.vue";
-import Footer from "@/Partials/Footer.vue";
 import {ListBulletIcon, PlayIcon} from "@heroicons/vue/24/outline";
 import PostAudioPlayer from "@/Partials/PostAudioPlayer.vue";
 
@@ -84,7 +81,6 @@ export default {
     },
     components: {
         PostAudioPlayer,
-        Footer,
         Navbar,
         PublicLayout,
         BlogList,

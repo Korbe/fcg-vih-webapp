@@ -148,24 +148,12 @@
                 </div>
             </div>
         </div>
-
-        <Footer/>
     </public-layout>
 </template>
 
-<script>
+<script setup>
 import PublicLayout from "@/Layouts/PublicLayout.vue";
 import Team from "@/Partials/Team/Team.vue";
-import Footer from "@/Partials/Footer.vue";
 import Navbar from "@/Partials/Navbar.vue";
 import Tasks from "@/Partials/About/Tasks.vue";
-
-export default {
-    name: "About",
-    components: {Tasks, Navbar, Footer, Team, PublicLayout}
-}
 </script>
-
-<style scoped>
-
-</style>

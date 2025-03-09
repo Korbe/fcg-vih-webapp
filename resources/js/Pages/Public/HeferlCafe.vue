@@ -220,15 +220,12 @@
                     </div>
                 </div>
             </div>
-
-        <Footer/>
     </public-layout>
 </template>
 
 <script setup>
 import PublicLayout from "@/Layouts/PublicLayout.vue";
 import Navbar from "@/Partials/Navbar.vue";
-import Footer from "@/Partials/Footer.vue";
 
 const people = [
   {

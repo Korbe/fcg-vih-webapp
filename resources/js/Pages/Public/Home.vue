@@ -17,8 +17,6 @@
 
         <cta />
 
-        <Footer />
-
     </public-layout>
 </template>
 
@@ -27,7 +25,6 @@ import PublicLayout from "@/Layouts/PublicLayout.vue";
 import Hero from '@/Partials/Home/Hero.vue'
 import Testimonials from "@/Partials/Home/Testimonials.vue";
 import Cta from "@/Partials/Home/Cta.vue";
-import Footer from "@/Partials/Footer.vue";
 import Faq from "@/Partials/Faq.vue";
 import News from "@/Partials/Home/News.vue";
 import VisitUs from "@/Partials/Home/VisitUs.vue";

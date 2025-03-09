@@ -98,8 +98,6 @@
             </div>
 
         </div>
-
-        <Footer/>
     </public-layout>
 </template>
 
@@ -107,14 +105,12 @@
 import {Popover, PopoverButton, PopoverPanel} from '@headlessui/vue'
 import {ClipboardIcon, CreditCardIcon, DocumentDuplicateIcon, UserCircleIcon} from "@heroicons/vue/24/outline";
 import Navbar from "@/Partials/Navbar.vue";
-import Footer from "@/Partials/Footer.vue";
 import PublicLayout from "@/Layouts/PublicLayout.vue";
 
 export default {
     name: "Donate",
     components: {
         PublicLayout,
-        Footer,
         Navbar,
         ClipboardIcon,
         UserCircleIcon, CreditCardIcon, DocumentDuplicateIcon, Popover, PopoverButton, PopoverPanel

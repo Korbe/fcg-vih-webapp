@@ -82,15 +82,12 @@
             </main>
         </div>
 
-        <Footer></Footer>
-
     </public-layout>
 </template>
 
 <script>
 import {MapPinIcon, EnvelopeIcon, PhoneIcon} from "@heroicons/vue/24/outline";
 import Navbar from "@/Partials/Navbar.vue";
-import Footer from "@/Partials/Footer.vue";
 import PublicLayout from "@/Layouts/PublicLayout.vue";
 import Faq from "@/Partials/Faq.vue";
 
@@ -99,7 +96,6 @@ export default {
     components: {
         Faq,
         PublicLayout,
-        Footer,
         Navbar,
         MapPinIcon,
         EnvelopeIcon,

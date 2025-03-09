@@ -20,8 +20,6 @@
             </div>
         </div>
 
-        <Footer></Footer>
-
     </public-layout>
 </template>
 
@@ -29,7 +27,6 @@
 
 import PublicLayout from "@/Layouts/PublicLayout.vue";
 import Navbar from "@/Partials/Navbar.vue";
-import Footer from "@/Partials/Footer.vue";
 import BlogList from '@/Partials/BlogList.vue'
 import { ListBulletIcon, PlayIcon} from "@heroicons/vue/24/outline";
 
@@ -39,7 +36,6 @@ export default {
         posts: Object,
     },
     components: {
-        Footer,
         Navbar,
         PublicLayout,
         BlogList,

@@ -59,8 +59,6 @@
                     </ul>
             </div>
         </div>
-
-        <Footer/>
     </public-layout>
 </template>
 
@@ -68,11 +66,10 @@
 import PublicLayout from "@/Layouts/PublicLayout.vue";
 import {CalendarIcon, ClockIcon, EnvelopeIcon, PhoneIcon, UserCircleIcon, UserIcon, ArrowRightIcon} from "@heroicons/vue/24/outline";
 import Navbar from "@/Partials/Navbar.vue";
-import Footer from "@/Partials/Footer.vue";
 
 export default {
     name: "Events",
-    components: {Footer, Navbar, PublicLayout, PhoneIcon, CalendarIcon, ClockIcon, EnvelopeIcon, UserIcon, UserCircleIcon, ArrowRightIcon},
+    components: {Navbar, PublicLayout, PhoneIcon, CalendarIcon, ClockIcon, EnvelopeIcon, UserIcon, UserCircleIcon, ArrowRightIcon},
     data() {
         return {
             events: [
