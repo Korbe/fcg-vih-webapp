@@ -6,6 +6,7 @@ import InputError from '@/Jetstream/InputError.vue';
 import InputLabel from '@/Jetstream/InputLabel.vue';
 import PrimaryButton from '@/Jetstream/PrimaryButton.vue';
 import TextInput from '@/Jetstream/TextInput.vue';
+import { ArrowLeftIcon } from '@heroicons/vue/24/outline';
 
 defineProps({
     status: String,
@@ -21,41 +22,57 @@ const submit = () => {
 </script>
 
 <template>
+
     <Head title="Forgot Password" />
 
-    <AuthenticationCard>
-        <template #logo>
-            <AuthenticationCardLogo />
-        </template>
-
-        <div class="mb-4 text-sm text-gray-600">
-            Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.
+    <div class="min-h-screen flex flex-col md:flex-row">
+        <!-- Left side: Image -->
+        <div class="w-full h-40 md:w-1/3 md:h-screen">
+            <img src="https://images.pexels.com/photos/220147/pexels-photo-220147.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt="Bildbeschreibung" class="object-cover w-full h-full" />
         </div>
 
-        <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
-            {{ status }}
+        <!-- Right side: Form -->
+        <div class="w-full h-screen md:w-2/3 bg-white flex flex-col relative">
+            <Link :href="'/'" class="absolute top-4 left-4 flex items-center text-gray-900">
+            <ArrowLeftIcon class="h-5 w-5 mr-2" /> Zurück
+            </Link>
+
+            <!-- Reset-Formular zentriert -->
+            <div class="p-5 flex-grow flex justify-center items-center">
+                <div class="w-full max-w-md">
+                    <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
+                        {{ status }}
+                    </div>
+
+                    <!-- Logo -->
+                    <div class="flex justify-center mb-10">
+                        <Link :href="'/'" class="text-center">
+                        <img loading="lazy" alt="FCG Villach" class="h-20" src="/images/fcg-villach-logo-minimal.png" />
+                        </Link>
+                    </div>
+
+                    <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
+                        {{ status }}
+                    </div>
+
+                    <form @submit.prevent="submit">
+                        <div>
+                            <InputLabel for="email" value="Email" />
+                            <TextInput id="email" v-model="form.email" type="email" class="mt-1 block w-full" required
+                                autofocus autocomplete="username" />
+                            <InputError class="mt-2" :message="form.errors.email" />
+                        </div>
+
+                        <div class="flex items-center justify-end mt-4">
+                            <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                                Passwort zurücksetzen
+                            </PrimaryButton>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
 
-        <form @submit.prevent="submit">
-            <div>
-                <InputLabel for="email" value="Email" />
-                <TextInput
-                    id="email"
-                    v-model="form.email"
-                    type="email"
-                    class="mt-1 block w-full"
-                    required
-                    autofocus
-                    autocomplete="username"
-                />
-                <InputError class="mt-2" :message="form.errors.email" />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Email Password Reset Link
-                </PrimaryButton>
-            </div>
-        </form>
-    </AuthenticationCard>
+    </div>
 </template>

@@ -1,12 +1,11 @@
 <script setup>
 import { Head, Link, useForm } from '@inertiajs/vue3';
-import AuthenticationCard from '@/Jetstream/AuthenticationCard.vue';
-import AuthenticationCardLogo from '@/Jetstream/AuthenticationCardLogo.vue';
 import Checkbox from '@/Jetstream/Checkbox.vue';
 import InputError from '@/Jetstream/InputError.vue';
 import InputLabel from '@/Jetstream/InputLabel.vue';
 import PrimaryButton from '@/Jetstream/PrimaryButton.vue';
 import TextInput from '@/Jetstream/TextInput.vue';
+import { ArrowLeftIcon } from '@heroicons/vue/24/outline';
 
 defineProps({
     canResetPassword: Boolean,
@@ -30,61 +29,74 @@ const submit = () => {
 </script>
 
 <template>
+
     <Head title="Log in" />
 
-    <AuthenticationCard>
-        <template #logo>
-            <AuthenticationCardLogo />
-        </template>
-
-        <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
-            {{ status }}
+    <div class="min-h-screen flex flex-col md:flex-row">
+        <!-- Left side: Image -->
+        <div class="w-full h-40 md:w-1/3 md:h-screen">
+            <img src="https://images.pexels.com/photos/30133216/pexels-photo-30133216/free-photo-of-notre-dame-und-kirschbluten-im-fruhling.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt="Bildbeschreibung" class="object-cover w-full h-full" />
         </div>
 
-        <form @submit.prevent="submit">
-            <div>
-                <InputLabel for="email" value="Email" />
-                <TextInput
-                    id="email"
-                    v-model="form.email"
-                    type="email"
-                    class="mt-1 block w-full"
-                    required
-                    autofocus
-                    autocomplete="username"
-                />
-                <InputError class="mt-2" :message="form.errors.email" />
-            </div>
+        <!-- Right side: Form -->
+        <div class="w-full h-screen md:w-2/3 bg-white flex flex-col relative">
+            <Link :href="'/'" class="absolute top-4 left-4 flex items-center text-gray-900">
+            <ArrowLeftIcon class="h-5 w-5 mr-2" /> Zurück
+            </Link>
 
-            <div class="mt-4">
-                <InputLabel for="password" value="Password" />
-                <TextInput
-                    id="password"
-                    v-model="form.password"
-                    type="password"
-                    class="mt-1 block w-full"
-                    required
-                    autocomplete="current-password"
-                />
-                <InputError class="mt-2" :message="form.errors.password" />
-            </div>
+            <!-- Login-Formular zentriert -->
+            <div class="flex-grow flex justify-center items-center">
+                <div class="w-full max-w-md">
+                    <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
+                        {{ status }}
+                    </div>
 
-            <div class="block mt-4">
-                <label class="flex items-center">
-                    <Checkbox v-model:checked="form.remember" name="remember" />
-                    <span class="ms-2 text-sm text-gray-600">Remember me</span>
-                </label>
-            </div>
+                    <!-- Logo -->
+                    <div class="flex justify-center mb-10">
+                        <Link :href="'/'" class="text-center">
+                        <img loading="lazy" alt="FCG Villach" class="h-20" src="/images/fcg-villach-logo-minimal.png" />
+                        </Link>
+                    </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <Link v-if="canResetPassword" :href="route('password.request')" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary-500">
-                    Forgot your password?
-                </Link>
+                    <!-- Login-Formular -->
+                    <form @submit.prevent="submit" class="p-5">
+                        <div>
+                            <InputLabel for="email" value="Email" />
+                            <TextInput id="email" v-model="form.email" type="email" class="mt-1 block w-full" required
+                                autofocus autocomplete="username" />
+                            <InputError class="mt-2" :message="form.errors.email" />
+                        </div>
 
-                <PrimaryButton class="ms-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Log in
-                </PrimaryButton>
+                        <div class="mt-4">
+                            <InputLabel for="password" value="Passwort" />
+                            <TextInput id="password" v-model="form.password" type="password" class="mt-1 block w-full"
+                                required autocomplete="current-password" />
+                            <InputError class="mt-2" :message="form.errors.password" />
+                        </div>
+
+                        <div class="block mt-4">
+                            <label class="flex items-center">
+                                <Checkbox v-model:checked="form.remember" name="remember" />
+                                <span class="ms-2 text-sm text-gray-600">Angemeldet bleiben</span>
+                            </label>
+                        </div>
+
+                        <div class="flex items-center justify-end mt-4">
+                            <Link v-if="canResetPassword" :href="route('password.request')"
+                                class="text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary-500">
+                            Passwort vergessen?
+                            </Link>
+
+                            <PrimaryButton class="ms-4" :class="{ 'opacity-25': form.processing }"
+                                :disabled="form.processing">
+                                Anmelden
+                            </PrimaryButton>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </form>
-    </AuthenticationCard>
+        </div>
+
+    </div>
 </template>
