@@ -72,7 +72,7 @@ const events = [
         time: "14 - 18 Uhr",
         responsible: "Erika Korbitsch",
         icon: CakeIcon,
-        image: "https://images.pexels.com/photos/140831/pexels-photo-140831.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        image: "/images/events/cake.jpeg",
     },
     {
         name: "Gebet & Seelsorge",
@@ -80,7 +80,7 @@ const events = [
         time: "Jederzeit",
         responsible: "Erika Korbitsch",
         icon: UserCircleIcon,
-        image: "https://images.pexels.com/photos/5875069/pexels-photo-5875069.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        image: "/images/events/pray.webp",
     },
     {
         name: "Bibelstunde",
@@ -88,7 +88,7 @@ const events = [
         time: "17 Uhr",
         responsible: "Christian Korbitsch",
         icon: NewspaperIcon,
-        image: "https://images.pexels.com/photos/7925558/pexels-photo-7925558.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        image: "/images/events/togehter.webp",
     },
 ];
 

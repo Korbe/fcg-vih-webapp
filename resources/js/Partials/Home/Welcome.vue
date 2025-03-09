@@ -75,25 +75,25 @@ export default {
                     icon: BookOpenIcon,
                     title: 'Folge der Bibel',
                     description: 'Wir folgen und leben nach den Lehren der Bibel',
-                    image: "https://images.pexels.com/photos/1682559/pexels-photo-1682559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                    image: "/images/welcome/bible.jpeg",
                 },
                 {
                     icon: BuildingLibraryIcon,
                     title: 'Christliche Kirche',
                     description: 'Wir sind eine anerkannte Österreichische Kirche',
-                    image: "https://images.pexels.com/photos/53959/summit-cross-peak-happiness-hochlantsch-mountain-53959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                    image: "/images/welcome/kreuz.webp",
                 },
                 {
                     icon: HandRaisedIcon,
                     title: 'Suche Gott',
                     description: 'Streck deine Arme aus und er wird dich finden',
-                    image: "https://images.pexels.com/photos/2330141/pexels-photo-2330141.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                    image: "/images/welcome/search.webp",
                 },
                 {
                     icon: HeartIcon,
                     title: 'Liebe und Fürsorge',
                     description: 'Wir leben Gemeinschaft und sind füreinander da',
-                    image: "https://images.pexels.com/photos/339620/pexels-photo-339620.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                    image: "/images/welcome/care.webp",
                 }
             ]
         }
