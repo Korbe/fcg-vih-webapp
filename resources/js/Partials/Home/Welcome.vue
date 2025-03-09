@@ -21,44 +21,34 @@
 
         <div class="container px-5 py-16 mx-auto">
             <div class="flex flex-wrap">
-                <div class="xl:w-1/4 md:w-1/2 p-3">
+                <!-- v-for Schleife für das Array von welcomeItems -->
+                <div v-for="(item, index) in welcomeItems" :key="index" class="xl:w-1/4 md:w-1/2 p-3">
+
                     <div
-                        class="px-5 py-14 border bg-white border-gray-200 p-6 rounded-lg flex items-center flex-col group shadow hover:shadow-lg">
-                        <BookOpenIcon
-                            class="h-14 mb-3 text-brand-primary-500 transition-transform duration-300 group-hover:-translate-y-2" />
-                        <h2 class="text-xl text-gray-900 font-medium mb-2">Folge der Bibel</h2>
-                        <p class="leading-relaxed text-base text-center">Wir folgen und leben nach den Lehren der Bibel
-                        </p>
-                    </div>
-                </div>
-                <div class="xl:w-1/4 md:w-1/2 p-3">
-                    <div
-                        class="px-5 py-14 border bg-white border-gray-200 p-6 rounded-lg flex items-center flex-col group shadow hover:shadow-lg">
-                        <BuildingLibraryIcon
-                            class="h-14 mb-3 text-brand-primary-500 transition-transform duration-300 group-hover:-translate-y-2" />
-                        <h2 class="text-xl text-gray-900 font-medium mb-2">Christliche Kirche</h2>
-                        <p class="leading-relaxed text-base text-center">Wir sind eine anerkannte Österreichische Kirche
-                        </p>
-                    </div>
-                </div>
-                <div class="xl:w-1/4 md:w-1/2 p-3">
-                    <div
-                        class="px-5 py-14 border bg-white border-gray-200 p-6 rounded-lg flex items-center flex-col group shadow hover:shadow-lg">
-                        <HandRaisedIcon
-                            class="h-14 mb-3 text-brand-secondary-500 transition-transform duration-300 group-hover:-translate-y-2" />
-                        <h2 class="text-xl text-gray-900 font-medium mb-2">Suche Gott</h2>
-                        <p class="leading-relaxed text-base text-center">Streck deine Arme aus und er wird dich finden
-                        </p>
-                    </div>
-                </div>
-                <div class="xl:w-1/4 md:w-1/2 p-3">
-                    <div
-                        class="px-5 py-14 border bg-white border-gray-200 p-6 rounded-lg flex items-center flex-col group shadow hover:shadow-lg">
-                        <HeartIcon
-                            class="h-14 mb-3 text-brand-primary-500 transition-transform duration-300 group-hover:-translate-y-2" />
-                        <h2 class="text-xl text-gray-900 font-medium mb-2">Liebe und Fürsorge</h2>
-                        <p class="leading-relaxed text-base text-center">Wir leben Gemeinschaft und sind füreinander da
-                        </p>
+                        class="border bg-white border-gray-200 rounded-lg flex items-center flex-col group shadow hover:shadow-lg">
+
+
+                        <div class="w-full h-56 overflow-hidden rounded-t-lg">
+                            <img :src="item.image" alt="Event Image" class="w-full h-full object-cover">
+                        </div>
+
+
+                        <div class="flex items-center px-5">
+
+                            <component :is="item.icon"
+                                class="h-14 mb-3 text-brand-primary-500 transition-transform duration-300 group-hover:-translate-y-2" />
+
+                            <div class="p-6 text-left">
+                                <h2 class="text-xl text-gray-900 font-medium mb-2">{{ item.title }}</h2>
+                                <p class="leading-relaxed text-base">{{ item.description }}</p>
+                            </div>
+
+                        </div>
+
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -74,6 +64,39 @@
         </div>
     </section>
 </template>
-<script setup>
-import { ArrowRightCircleIcon, BookOpenIcon, BuildingLibraryIcon, HandRaisedIcon, HeartIcon } from "@heroicons/vue/24/outline";
+<script>
+import { ArrowRightCircleIcon, BookOpenIcon, BuildingLibraryIcon, HandRaisedIcon, HeartIcon } from '@heroicons/vue/24/outline'
+
+export default {
+    data() {
+        return {
+            welcomeItems: [
+                {
+                    icon: BookOpenIcon,
+                    title: 'Folge der Bibel',
+                    description: 'Wir folgen und leben nach den Lehren der Bibel',
+                    image: "https://images.pexels.com/photos/1682559/pexels-photo-1682559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                },
+                {
+                    icon: BuildingLibraryIcon,
+                    title: 'Christliche Kirche',
+                    description: 'Wir sind eine anerkannte Österreichische Kirche',
+                    image: "https://images.pexels.com/photos/53959/summit-cross-peak-happiness-hochlantsch-mountain-53959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                },
+                {
+                    icon: HandRaisedIcon,
+                    title: 'Suche Gott',
+                    description: 'Streck deine Arme aus und er wird dich finden',
+                    image: "https://images.pexels.com/photos/2330141/pexels-photo-2330141.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                },
+                {
+                    icon: HeartIcon,
+                    title: 'Liebe und Fürsorge',
+                    description: 'Wir leben Gemeinschaft und sind füreinander da',
+                    image: "https://images.pexels.com/photos/339620/pexels-photo-339620.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                }
+            ]
+        }
+    }
+}
 </script>

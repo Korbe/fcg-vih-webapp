@@ -24,7 +24,7 @@
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 py-5">
                         <!-- Linke Karte (Textbereich) -->
                         <div
-                            className="flex flex-col rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden">
+                            className="flex flex-col rounded-lg border bg-white  text-card-foreground shadow-sm overflow-hidden">
                             <div className="h-96 overflow-hidden">
                                 <img :src="news.media[0].original_url" className="w-full h-full object-cover" />
                             </div>
@@ -42,7 +42,7 @@
 
                         <!-- Rechte Karte (Bildbereich) -->
                         <div
-                            className="hidden lg:flex flex-col rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden">
+                            className="hidden lg:flex flex-col rounded-lg border bg-white text-card-foreground shadow-sm overflow-hidden">
                             <div className="h-full max-h-[600px] flex-grow">
                                 <img :src="news.media[1].original_url" className="w-full h-full object-cover" />
                             </div>

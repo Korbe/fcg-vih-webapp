@@ -19,27 +19,34 @@
             <div class="flex flex-wrap">
                 <div v-for="event in events" :key="event.name" class="w-full xl:w-1/3 md:w-1/2 p-3">
                     <div
-                        class=" px-5 py-14 border bg-white border-gray-200 p-6 rounded-lg flex items-center flex-col group shadow hover:shadow-lg">
-                        <component :is="event.icon"
-                            class="h-14 mb-3 text-brand-primary-500 transition-transform duration-300 group-hover:-translate-y-2" />
-                        <h2 class="text-xl text-gray-900 font-medium mb-2">{{ event.name }}</h2>
+                        class="border bg-white border-gray-200 rounded-lg flex flex-col items-center group shadow hover:shadow-lg">
+                        <!-- Bildbereich (1/3 der Karte) -->
+                        <div class="w-full h-56 overflow-hidden rounded-t-lg">
+                            <img :src="event.image" alt="Event Image"
+                                class="w-full h-full object-cover">
+                        </div>
 
+                        <!-- Textbereich -->
+                        <div class="w-full flex flex-col items-center my-4 p-6">
+                            <h2 class="text-xl text-gray-900 font-medium mb-2">{{ event.name }}</h2>
 
-                        <div class="mt-4 space-y-2 align-items-center">
-                            <div class="flex">
-                                <CalendarIcon class="h-6 w-6 text-brand-primary-500" />
-                                <p class="ml-2">{{ event.interval }}</p>
-                            </div>
-                            <div class="flex">
-                                <ClockIcon class="h-6 w-6 text-brand-secondary" />
-                                <p class="ml-2">{{ event.time }}</p>
-                            </div>
-                            <div class="flex">
-                                <UserCircleIcon class="h-6 w-6 text-gray-500" />
-                                <p class="ml-2">{{ event.responsible }}</p>
+                            <div class="mt-4 space-y-2 text-center">
+                                <div class="flex items-center">
+                                    <CalendarIcon class="h-6 w-6 text-brand-primary-500" />
+                                    <p class="ml-2">{{ event.interval }}</p>
+                                </div>
+                                <div class="flex items-center">
+                                    <ClockIcon class="h-6 w-6 text-brand-secondary" />
+                                    <p class="ml-2">{{ event.time }}</p>
+                                </div>
+                                <div class="flex items-center">
+                                    <UserCircleIcon class="h-6 w-6 text-gray-500" />
+                                    <p class="ml-2">{{ event.responsible }}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
             </div>
@@ -65,20 +72,23 @@ const events = [
         time: "14 - 18 Uhr",
         responsible: "Erika Korbitsch",
         icon: CakeIcon,
+        image: "https://images.pexels.com/photos/140831/pexels-photo-140831.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     },
     {
         name: "Gebet & Seelsorge",
         interval: "Auf Anfrage",
         time: "Jederzeit",
         responsible: "Erika Korbitsch",
-        icon: UserCircleIcon
+        icon: UserCircleIcon,
+        image: "https://images.pexels.com/photos/5875069/pexels-photo-5875069.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     },
     {
         name: "Bibelstunde",
         interval: "Gerade Wochen, Mittwochs",
         time: "17 Uhr",
         responsible: "Christian Korbitsch",
-        icon: NewspaperIcon
+        icon: NewspaperIcon,
+        image: "https://images.pexels.com/photos/7925558/pexels-photo-7925558.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     },
 ];
 
