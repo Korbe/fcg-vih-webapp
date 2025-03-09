@@ -32,10 +32,15 @@
                         {{ item.name }}
                         </Link>
 
-                        <Link :href="route('login')"
+                        <Link :href="route('dashboard.home')"
                             class="flex items-center justify-center px-6 py-1 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-primary hover:bg-brand-primary-400">
                         <ArrowLeftOnRectangleIcon class="h-7" /> Intern
                         </Link>
+
+                        <button v-if="$page.props.auth.user" @click="logout"
+                            class="flex items-center justify-center px-6 py-1 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-secondary hover:bg-brand-secondary-400">
+                            <ArrowLeftOnRectangleIcon class="h-7" /> Abmelden
+                        </button>
                     </div>
 
                 </div>
@@ -43,6 +48,7 @@
 
         </div>
 
+        <!-- Mobile Menu -->
         <transition enter-active-class="duration-150 ease-out" enter-from-class="opacity-0 scale-95"
             enter-to-class="opacity-100 scale-100" leave-active-class="duration-100 ease-in"
             leave-from-class="opacity-100 scale-100" leave-to-class="opacity-0 scale-95">
@@ -104,6 +110,11 @@
                                     Intern
                                 </span>
                                 </Link>
+
+                                <button v-if="$page.props.auth.user" @click="logout"
+                                    class="flex items-center justify-center px-6 py-1 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-secondary hover:bg-brand-secondary-400">
+                                    <ArrowLeftStartOnRectangleIcon class="h-7" /> Abmelden
+                                </button>
                             </nav>
                         </div>
                     </div>
@@ -113,6 +124,7 @@
     </Popover>
 
 
+    <!-- Menu when scrolled down -->
     <transition enter-active-class="duration-150 ease-out" enter-from-class="opacity-0 scale-95"
         enter-to-class="opacity-100 scale-100" leave-active-class="duration-100 ease-in"
         leave-from-class="opacity-100 scale-100" leave-to-class="opacity-0 scale-95">
@@ -145,7 +157,7 @@
 
                     </div>
 
-                    <div class="hidden space-x-10 lg:flex">
+                    <div class="hidden space-x-10 lg:flex items-center justify-center">
 
                         <Link v-if="$page.props.user" :href="route('dashboard.home')"
                             class="text-gray-500 hover:text-brand-primary-300 text-base font-medium">Dashboard
@@ -153,8 +165,18 @@
 
                         <Link v-for="item in navigation" :key="item.name" :href="item.href" :class="['text-gray-500 hover:text-brand-primary-300',
                             currentRoute === item.href ? 'text-brand-primary-600' : '',
-                            'text-base font-medium ']">{{ item.name }} asdasd
+                            'text-base font-medium ']">{{ item.name }}
                         </Link>
+
+                        <Link :href="route('dashboard.home')"
+                            class="flex items-center justify-center px-6 py-1 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-primary hover:bg-brand-primary-400">
+                        <ArrowLeftOnRectangleIcon class="h-7" /> Intern
+                        </Link>
+
+                        <button v-if="$page.props.auth.user" @click="logout"
+                            class="flex items-center justify-center px-6 py-1 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-secondary hover:bg-brand-secondary-400">
+                            <ArrowLeftOnRectangleIcon class="h-7" /> Abmelden
+                        </button>
                     </div>
                 </div>
 
@@ -197,88 +219,61 @@
     </transition>
 </template>
 
-<script>
+<script setup>
+import { ref, computed, onBeforeMount, onBeforeUnmount } from 'vue';
 
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
-import { ArrowLeftEndOnRectangleIcon, XMarkIcon } from '@heroicons/vue/24/outline'
+import { Disclosure, DisclosureButton, DisclosurePanel, Popover, PopoverButton, PopoverPanel } from '@headlessui/vue';
+import { ArrowLeftEndOnRectangleIcon, XMarkIcon, CalendarIcon, BanknotesIcon, ChatBubbleLeftRightIcon, Bars3Icon, NewspaperIcon, UserGroupIcon, HomeIcon, ArrowLeftStartOnRectangleIcon } from '@heroicons/vue/24/outline';
 
-import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
-import { CalendarIcon, BanknotesIcon, ChatBubbleLeftRightIcon, Bars3Icon, NewspaperIcon, UserGroupIcon, HomeIcon, CakeIcon } from "@heroicons/vue/24/outline";
 import Logo from "@/Partials/Logo.vue";
 import LogoText from "@/Partials/LogoText.vue";
-import MobileMenu from "@/Partials/MobileMenu.vue";
 
-export default {
-    name: "navbar",
-    components: {
-        MobileMenu,
-        LogoText,
-        Logo,
-        Popover, PopoverButton, Bars3Icon, PopoverPanel,
-        HomeIcon,
-        Disclosure,
-        DisclosureButton,
-        DisclosurePanel,
-        Menu,
-        MenuButton,
-        MenuItem,
-        MenuItems,
-        XMarkIcon,
-        BanknotesIcon,
-        ArrowLeftEndOnRectangleIcon
-    },
-    props: {
-        hasBackground: {
-            type: Boolean,
-        },
-        blueMobileButton: {
-            type: Boolean,
-        },
-    },
-    beforeMount() {
-        window.addEventListener('scroll', this.handleScroll);
-    },
-    beforeUnmount() {
-        window.removeEventListener('scroll', this.handleScroll);
-    },
-    data() {
-        return {
-            homeRoute: route('public.home') + '/',
-            atTopOfPage: true,
-            navigation: [
-                { name: 'Über uns', href: route('public.about'), icon: UserGroupIcon },
-                { name: 'Events', href: route('public.events'), icon: CalendarIcon },
-                { name: 'Predigten', href: route('public.blog'), icon: NewspaperIcon },
-                //{name: 'Heferl Café', href: route('public.heferlCafe'), icon: CakeIcon},
-                { name: 'Kontakt', href: route('public.contact'), icon: ChatBubbleLeftRightIcon },
-                { name: 'Spenden', href: route('public.donate'), icon: BanknotesIcon },
-            ]
-        }
-    },
-    methods: {
-        /*:class="{ 'fixed top-0 left-0 right-0 bg-white': !atTopOfPage }"*/
-        handleScroll() {
-            // when the user scrolls, check the pageYOffset
-            if (window.pageYOffset > 130) {
-                // user is scrolled
-                if (this.atTopOfPage) this.atTopOfPage = false
-            } else {
-                // user is at top of page
-                if (!this.atTopOfPage) this.atTopOfPage = true
-            }
-        },
-    },
-    computed: {
-        currentPageName() {
-            if (this.currentRoute === this.homeRoute) {
-                return "Home"
-            }
+import { router } from '@inertiajs/vue3';
 
-            return this.navigation.find(item => item.href === this.currentRoute)?.name;
-        },
-        currentRoute() {
-            return window.location.href;
-        }
+
+
+// Props
+defineProps({
+    hasBackground: Boolean,
+    blueMobileButton: Boolean,
+});
+
+// Reactive State
+const atTopOfPage = ref(true);
+const homeRoute = route('public.home') + '/';
+
+const navigation = [
+    { name: 'Über uns', href: route('public.about'), icon: UserGroupIcon },
+    { name: 'Events', href: route('public.events'), icon: CalendarIcon },
+    { name: 'Predigten', href: route('public.blog'), icon: NewspaperIcon },
+    { name: 'Kontakt', href: route('public.contact'), icon: ChatBubbleLeftRightIcon },
+    { name: 'Spenden', href: route('public.donate'), icon: BanknotesIcon },
+];
+
+// Computed Properties
+const currentRoute = computed(() => window.location.href);
+const currentPageName = computed(() => {
+    if (currentRoute.value === homeRoute) {
+        return "Home";
     }
-}
+    return navigation.find(item => item.href === currentRoute.value)?.name;
+});
+
+const logout = () => {
+    router.post(route('logout'));
+};
+
+// Scroll Event Handler
+const handleScroll = () => {
+    atTopOfPage.value = window.pageYOffset <= 130;
+};
+
+// Lifecycle Hooks
+onBeforeMount(() => {
+    window.addEventListener('scroll', handleScroll);
+});
+
+onBeforeUnmount(() => {
+    window.removeEventListener('scroll', handleScroll);
+});
 </script>
