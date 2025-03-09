@@ -35,7 +35,7 @@ const submit = () => {
     <div class="min-h-screen flex flex-col md:flex-row">
         <!-- Left side: Image -->
         <div class="w-full h-40 md:w-1/3 md:h-screen">
-            <img src="https://images.pexels.com/photos/30133216/pexels-photo-30133216/free-photo-of-notre-dame-und-kirschbluten-im-fruhling.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            <img src="/images/auth/church.jpeg"
                 alt="Bildbeschreibung" class="object-cover w-full h-full" />
         </div>
 
