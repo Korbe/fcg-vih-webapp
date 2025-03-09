@@ -61,111 +61,106 @@
             </div>
         </div>
 
-        <audio :id="audio_id" ref="audioRef" @timeupdate="onTimeUdate" @ended="onEnded">
+        <audio :id="audio_id" ref="audioRef" @timeupdate="onTimeUpdate" @ended="onEnded">
                 <source :src="post.audio" type="audio/mp3"/> Your browser does not support the audio tag.
         </audio>
     </div>
 </template>
-<script>
-import {PauseIcon, PlayIcon} from "@heroicons/vue/24/solid";
-import { BackwardIcon, CheckBadgeIcon} from "@heroicons/vue/24/outline";
+<script setup>
+import { ref, onMounted, computed } from 'vue';
+import { PauseIcon, PlayIcon } from "@heroicons/vue/24/solid";
+import { BackwardIcon, CheckBadgeIcon } from "@heroicons/vue/24/outline";
+import { hashIt } from "@/Shared/HashIt";
+import { router } from '@inertiajs/vue3';
 
-import { hashIt } from "@/Shared/HashIt"
-import { router } from '@inertiajs/vue3'
+const props = defineProps({
+    post: Object,
+    index: Number
+});
 
-export default {
-    components: {
-        PlayIcon, PauseIcon, BackwardIcon, CheckBadgeIcon
-    },
-    name: 'PostAudioPlayer',
-    props: {
-        post: {
-            type: Object
-        },
-        index: {
-            type: Number
+// Reaktive Variablen
+const audioRef = ref(null);
+const songTime = ref(null);
+const completed = ref(false);
+const viewStatRecorded = ref(false);
+const wrapper = ref(null);
+const progressBox = ref(null);
+const audio_id = computed(() => `audio_${props.index}`);
+
+onMounted(() => {
+    audioRef.value = document.getElementById(audio_id.value);
+
+    let completedHistory = JSON.parse(localStorage.getItem("completion-hist")) ?? [];
+    if (completedHistory.includes(getHash())) {
+        completed.value = true;
+    }
+});
+
+const songActive = () => {
+    // Event kann hier bei Bedarf emittiert werden
+};
+
+const addSeconds = (sec) => {
+    if (audioRef.value) {
+        audioRef.value.currentTime += sec;
+    }
+};
+
+const playPause = () => {
+    if (audioRef.value.paused) {
+        songActive();
+        completed.value = false;
+        audioRef.value.play();
+        SetPostViewed();
+    } else {
+        audioRef.value.pause();
+    }
+};
+
+const onTimeUpdate = () => {
+    if (!audioRef.value) return;
+
+    let { currentTime, duration } = audioRef.value;
+
+    let currentSeconds = (Math.floor(currentTime % 60) < 10 ? '0' : '') + Math.floor(currentTime % 60);
+    let currentMinutes = Math.floor(currentTime / 60);
+    songTime.value = `${currentMinutes}:${currentSeconds} / ${Math.floor(duration / 60)}:${Math.floor(duration % 60).toString().padStart(2, '0')}`;
+
+    let percentageOfSong = (currentTime / duration);
+    progressBox.value.style.width = `${Math.round(wrapper.value.offsetWidth * percentageOfSong)}px`;
+};
+
+const getHash = () => {
+    return hashIt(`${props.post.author}.${props.post.title}`);
+};
+
+const onEnded = () => {
+    if (audioRef.value) {
+        audioRef.value.pause();
+        audioRef.value.currentTime = 0;
+        completed.value = true;
+
+        if (progressBox.value) {
+            progressBox.value.style.width = "0px";
         }
-    },
-    mounted() {
-        this.audio_id = 'audio_' + this.index;
-        this.audioRef = this.$refs.audioRef;
+
+        SetPostCompleted();
 
         let completedHistory = JSON.parse(localStorage.getItem("completion-hist")) ?? [];
-        if(completedHistory && completedHistory.includes(this.getHash()))
-            this.completed = true;
-    },
-    data() {
-        return {
-            audioRef: null,
-            songTime: null,
-            completed: false,
-            audio_id: '',
-            viewStatRecorded: false,
-        }
-    },
-    methods: {
-        songActive(){
-            //this.$emit('active', this.index);
-        },
-        addSeconds(sec) {
-            this.audioRef.currentTime += sec;
-        },
-        //Does a switch of the play/pause with one button.
-        playPause() {
-            //Checks to see if the song is paused, if it is, play it from where it left off otherwise pause it.
-            if (this.audioRef.paused) {
-                this.songActive();
-                this.completed = false;
-                this.audioRef.play();
-                this.SetPostViewed();
-            } else
-                this.audioRef.pause();
-        },
-        //Updates the current time function so it reflects where the user is in the song.
-        //This function is called whenever the time is updated.  This keeps the visual in sync with the actual time.
-        onTimeUdate() {
-            let { currentTime, duration } = this.audioRef;
-
-            let currentSeconds = (Math.floor(currentTime % 60) < 10 ? '0' : '') + Math.floor(currentTime % 60);
-            let currentMinutes = Math.floor(currentTime / 60);
-            //Sets the current song location compared to the song duration.
-            this.songTime = currentMinutes + ":" + currentSeconds + ' / ' + Math.floor(duration / 60) + ":" + (Math.floor(duration % 60) < 10 ? '0' : '') + Math.floor(duration % 60);
-
-            //Fills out the slider with the appropriate position.
-            let percentageOfSong = (currentTime / duration);
-            let percentageOfSlider = Math.round(this.$refs.wrapper.offsetWidth * percentageOfSong);
-
-            //Updates the track progress div.
-            this.$refs.progressBox.style.width = percentageOfSlider + "px";
-        },
-        getHash(){
-           return hashIt(this.post.author + "." + this.post.title);
-        },
-        onEnded(){
-            this.audioRef.pause();
-            this.audioRef.currentTime = 0;
-            this.completed = true;
-            this.$refs.progressBox.style.width = "0px";
-
-            this.SetPostCompleted();
-
-            let completedHistory = JSON.parse(localStorage.getItem("completion-hist") ) ?? [];
-
-            if(!completedHistory.includes(this.getHash()))
-                localStorage.setItem("completion-hist", JSON.stringify([...completedHistory, this.getHash()]));
-        },
-        SetPostViewed(){
-            if(!this.viewStatRecorded){
-                router.post(route('public.blog.post.viewed', this.post.id), null, { preserveScroll: true });
-                this.viewStatRecorded = true;
-            }
-        },
-        SetPostCompleted(){
-            router.post(route('public.blog.post.completed', this.post.id), null, { preserveScroll: true });
+        if (!completedHistory.includes(getHash())) {
+            localStorage.setItem("completion-hist", JSON.stringify([...completedHistory, getHash()]));
         }
     }
-}
+};
+
+const SetPostViewed = () => {
+    if (!viewStatRecorded.value) {
+        router.post(route('public.blog.post.viewed', props.post.id), null, { preserveScroll: true });
+        viewStatRecorded.value = true;
+    }
+};
+
+const SetPostCompleted = () => {
+    router.post(route('public.blog.post.completed', props.post.id), null, { preserveScroll: true });
+};
 </script>
-
-
-

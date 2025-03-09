@@ -60,27 +60,26 @@
     </public-layout>
 </template>
 
-<script>
+<script setup>
 import PublicLayout from "@/Layouts/PublicLayout.vue";
 import Footer from "@/Partials/Footer.vue";
 import Navbar from "@/Partials/Navbar.vue";
-import {EnvelopeIcon, PhoneIcon} from "@heroicons/vue/24/outline";
+import { EnvelopeIcon, PhoneIcon } from "@heroicons/vue/24/outline";
 
-
-export default {
-    name: "TeamSingle",
-    components: {Navbar, Footer, PublicLayout, EnvelopeIcon, PhoneIcon},
-    props: {
-        person: {
-            name: String,
-            role: String,
-            imageUrl: String,
-            lead: String,
-            bio: String,
-            phone: String,
-            mail: String
-        },
-
+defineProps({
+    person: {
+        type: Object,
+        required: true,
+        default: () => ({
+            name: "",
+            role: "",
+            imageUrl: "",
+            lead: "",
+            bio: "",
+            phone: "",
+            mail: ""
+        })
     }
-}
+});
 </script>
+

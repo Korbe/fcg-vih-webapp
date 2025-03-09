@@ -21,48 +21,35 @@
     </div>
 </template>
 
-<script>
+<script setup>
 import {
     ShieldCheckIcon,
-    CakeIcon,
     MegaphoneIcon,
     SparklesIcon,
     UserGroupIcon
-} from '@heroicons/vue/24/outline'
+} from '@heroicons/vue/24/outline';
 
-export default {
-    name: "Tasks",
-    components: {
-        ShieldCheckIcon,
-        CakeIcon,
-        UserGroupIcon,
-        MegaphoneIcon
+const tasks = [
+    {
+        name: 'Jesus Christus als Retter der Welt verkündigen',
+        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+        icon: MegaphoneIcon,
     },
-    data(){
-        return {
-            tasks: [
-                {
-                    name: 'Jesus Christus als Retter der Welt verkündigen',
-                    description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-                    icon: MegaphoneIcon,
-                },
-                {
-                    name: 'Gemeinschaft miteinander pflegen',
-                    description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-                    icon: UserGroupIcon,
-                },
-                {
-                    name: 'Uns gegenseitig unterstützen',
-                    description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-                    icon: ShieldCheckIcon,
-                },
-                {
-                    name: 'Unseren Glauben gemeinsam feiern',
-                    description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-                    icon: SparklesIcon,
-                },
-            ]
-        }
-    }
-}
+    {
+        name: 'Gemeinschaft miteinander pflegen',
+        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+        icon: UserGroupIcon,
+    },
+    {
+        name: 'Uns gegenseitig unterstützen',
+        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+        icon: ShieldCheckIcon,
+    },
+    {
+        name: 'Unseren Glauben gemeinsam feiern',
+        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+        icon: SparklesIcon,
+    },
+];
 </script>
+

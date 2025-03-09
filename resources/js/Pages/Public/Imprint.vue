@@ -26,17 +26,8 @@
     </public-layout>
 </template>
 
-<script>
+<script setup>
 import PublicLayout from "@/Layouts/PublicLayout.vue";
 import Navbar from "@/Partials/Navbar.vue";
 import Footer from "@/Partials/Footer.vue";
-
-export default {
-    name: "Imprint",
-    components: {Footer, Navbar, PublicLayout}
-}
 </script>
-
-<style scoped>
-
-</style>

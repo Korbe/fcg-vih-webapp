@@ -37,10 +37,8 @@
                             <Pagination />
                         </template>
 
-                    </carousel>
+                    </Carousel>
                 </div>
-
-
 
             </div>
         </div>
@@ -51,9 +49,8 @@
 
 <script setup>
 import {Carousel, Pagination, Slide} from 'vue3-carousel';
-import { ref } from "vue";
 
-const testimonials = ref([
+const testimonials = [
   {
     name: "Toni Bergmair",
     statement:
@@ -72,5 +69,5 @@ const testimonials = ref([
       "Die FCG Villach ist ein Zuhause bunter Geschwister: Hier teilt man das Leben, hier singt und betet man gemeinsam, hier hilft einer dem anderen, hier hört man die Gute Botschaft von Jesus, um den sich alles dreht. Jeder ist hier willkommen!",
     role: "Pastor, Gospelhaus Klagenfurt",
   },
-]);
+];
 </script>

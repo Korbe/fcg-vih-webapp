@@ -4,10 +4,10 @@
         <div class="flex flex-col h-screen relative">
 
             <div class="absolute inset-0 ">
-                <img loading="lazy" alt="" class="w-full h-full object-cover" src="/images/predigt.jpg"/>
+                <img loading="lazy" alt="" class="w-full h-full object-cover" src="/images/predigt.jpg" />
             </div>
 
-            <Navbar blueMobileButton hasBackground/>
+            <Navbar blueMobileButton hasBackground />
 
             <div class="relative flex justify-center items-center flex-grow">
                 <header>
@@ -24,13 +24,14 @@
                         <div class="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
                             <div class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
                                 <a class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-primary hover:bg-brand-primary-400 sm:px-8"
-                                   v-smooth-scroll href="#posts">
-                                    <PlayIcon class="h-7 mr-3"/>
-                                    Neueste Predigten anhören</a>
+                                    v-smooth-scroll href="#posts">
+                                    <PlayIcon class="h-7 mr-3" />
+                                    Neueste Predigten anhören
+                                </a>
                                 <Link :href="route('public.blog.archive')"
-                                   class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-secondary hover:bg-brand-secondary-400 sm:px-8">
-                                    <ListBulletIcon class="h-7 mr-3"/>
-                                    Alle Predigten </Link>
+                                    class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-secondary hover:bg-brand-secondary-400 sm:px-8">
+                                <ListBulletIcon class="h-7 mr-3" />
+                                Alle Predigten </Link>
                             </div>
                         </div>
                     </div>
@@ -57,9 +58,10 @@
                 </div>
 
                 <div class="mt-6 flex justify-center">
-                        <Link :href="route('public.blog.archive')" class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-secondary hover:bg-brand-secondary-400 sm:px-8">
-                            <ListBulletIcon class="h-7 mr-3"/> Alle Predigten
-                        </Link>
+                    <Link :href="route('public.blog.archive')"
+                        class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-secondary hover:bg-brand-secondary-400 sm:px-8">
+                    <ListBulletIcon class="h-7 mr-3" /> Alle Predigten
+                    </Link>
                 </div>
 
             </div>
@@ -67,25 +69,13 @@
     </public-layout>
 </template>
 
-<script>
-import BlogList from '@/Partials/BlogList.vue'
+<script setup>
 import PublicLayout from "@/Layouts/PublicLayout.vue";
 import Navbar from "@/Partials/Navbar.vue";
-import {ListBulletIcon, PlayIcon} from "@heroicons/vue/24/outline";
+import { ListBulletIcon, PlayIcon } from "@heroicons/vue/24/outline";
 import PostAudioPlayer from "@/Partials/PostAudioPlayer.vue";
 
-export default {
-    name: 'Blog',
-    props: {
-        posts: Array,
-    },
-    components: {
-        PostAudioPlayer,
-        Navbar,
-        PublicLayout,
-        BlogList,
-        PlayIcon,
-        ListBulletIcon,
-    },
-}
+defineProps({
+    posts: Array,
+});
 </script>

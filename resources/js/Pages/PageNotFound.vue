@@ -27,19 +27,9 @@
     </public-layout>
 </template>
 
-<script>
+<script setup>
 import Footer from '@/Partials/Footer.vue'
 import PublicLayout from "@/Layouts/PublicLayout.vue";
 import Navbar from "@/Partials/Navbar.vue";
 import LogoText from "@/Partials/LogoText.vue";
-
-export default {
-    name: 'PageNotFound',
-    components: {
-        LogoText,
-        Navbar,
-        PublicLayout,
-        Footer,
-    },
-}
 </script>

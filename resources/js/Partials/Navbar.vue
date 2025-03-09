@@ -230,15 +230,11 @@ import LogoText from "@/Partials/LogoText.vue";
 
 import { router } from '@inertiajs/vue3';
 
-
-
-// Props
 defineProps({
     hasBackground: Boolean,
     blueMobileButton: Boolean,
 });
 
-// Reactive State
 const atTopOfPage = ref(true);
 const homeRoute = route('public.home') + '/';
 
@@ -250,7 +246,6 @@ const navigation = [
     { name: 'Spenden', href: route('public.donate'), icon: BanknotesIcon },
 ];
 
-// Computed Properties
 const currentRoute = computed(() => window.location.href);
 const currentPageName = computed(() => {
     if (currentRoute.value === homeRoute) {
@@ -268,7 +263,6 @@ const handleScroll = () => {
     atTopOfPage.value = window.pageYOffset <= 130;
 };
 
-// Lifecycle Hooks
 onBeforeMount(() => {
     window.addEventListener('scroll', handleScroll);
 });

@@ -57,9 +57,8 @@
 
 <script setup>
 import { ArrowRightCircleIcon, CakeIcon, CalendarIcon, ClockIcon, NewspaperIcon, UserCircleIcon } from '@heroicons/vue/24/outline';
-import { ref } from 'vue';
 
-const events = ref([
+const events = [
     {
         name: "Heferl Café",
         interval: "Jeden ersten Freitag im Monat",
@@ -81,14 +80,6 @@ const events = ref([
         responsible: "Christian Korbitsch",
         icon: NewspaperIcon
     },
-    // {
-    //     name: "Hauskreis",
-    //     interval: "Ungerade Wochen, Freitags",
-    //     time: "9 Uhr",
-    //     description: "",
-    //     responsible: "Bettina Morgan",
-    //     icon: HomeIcon
-    // },
-]);
+];
 
 </script>

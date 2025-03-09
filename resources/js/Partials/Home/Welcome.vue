@@ -22,35 +22,43 @@
         <div class="container px-5 py-16 mx-auto">
             <div class="flex flex-wrap">
                 <div class="xl:w-1/4 md:w-1/2 p-3">
-                    <div class="px-5 py-14 border bg-white border-gray-200 p-6 rounded-lg flex items-center flex-col group shadow hover:shadow-lg">
+                    <div
+                        class="px-5 py-14 border bg-white border-gray-200 p-6 rounded-lg flex items-center flex-col group shadow hover:shadow-lg">
                         <BookOpenIcon
                             class="h-14 mb-3 text-brand-primary-500 transition-transform duration-300 group-hover:-translate-y-2" />
                         <h2 class="text-xl text-gray-900 font-medium mb-2">Folge der Bibel</h2>
-                        <p class="leading-relaxed text-base text-center">Wir folgen und leben nach den Lehren der Bibel</p>
+                        <p class="leading-relaxed text-base text-center">Wir folgen und leben nach den Lehren der Bibel
+                        </p>
                     </div>
                 </div>
                 <div class="xl:w-1/4 md:w-1/2 p-3">
-                    <div class="px-5 py-14 border bg-white border-gray-200 p-6 rounded-lg flex items-center flex-col group shadow hover:shadow-lg">
+                    <div
+                        class="px-5 py-14 border bg-white border-gray-200 p-6 rounded-lg flex items-center flex-col group shadow hover:shadow-lg">
                         <BuildingLibraryIcon
                             class="h-14 mb-3 text-brand-primary-500 transition-transform duration-300 group-hover:-translate-y-2" />
                         <h2 class="text-xl text-gray-900 font-medium mb-2">Christliche Kirche</h2>
-                        <p class="leading-relaxed text-base text-center">Wir sind eine anerkannte Österreichische Kirche</p>
+                        <p class="leading-relaxed text-base text-center">Wir sind eine anerkannte Österreichische Kirche
+                        </p>
                     </div>
                 </div>
                 <div class="xl:w-1/4 md:w-1/2 p-3">
-                    <div class="px-5 py-14 border bg-white border-gray-200 p-6 rounded-lg flex items-center flex-col group shadow hover:shadow-lg">
+                    <div
+                        class="px-5 py-14 border bg-white border-gray-200 p-6 rounded-lg flex items-center flex-col group shadow hover:shadow-lg">
                         <HandRaisedIcon
                             class="h-14 mb-3 text-brand-secondary-500 transition-transform duration-300 group-hover:-translate-y-2" />
                         <h2 class="text-xl text-gray-900 font-medium mb-2">Suche Gott</h2>
-                        <p class="leading-relaxed text-base text-center">Streck deine Arme aus und er wird dich finden</p>
+                        <p class="leading-relaxed text-base text-center">Streck deine Arme aus und er wird dich finden
+                        </p>
                     </div>
                 </div>
                 <div class="xl:w-1/4 md:w-1/2 p-3">
-                    <div class="px-5 py-14 border bg-white border-gray-200 p-6 rounded-lg flex items-center flex-col group shadow hover:shadow-lg">
+                    <div
+                        class="px-5 py-14 border bg-white border-gray-200 p-6 rounded-lg flex items-center flex-col group shadow hover:shadow-lg">
                         <HeartIcon
                             class="h-14 mb-3 text-brand-primary-500 transition-transform duration-300 group-hover:-translate-y-2" />
                         <h2 class="text-xl text-gray-900 font-medium mb-2">Liebe und Fürsorge</h2>
-                        <p class="leading-relaxed text-base text-center">Wir leben Gemeinschaft und sind füreinander da</p>
+                        <p class="leading-relaxed text-base text-center">Wir leben Gemeinschaft und sind füreinander da
+                        </p>
                     </div>
                 </div>
             </div>

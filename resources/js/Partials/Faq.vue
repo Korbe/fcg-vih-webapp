@@ -27,21 +27,11 @@
     </div>
 </template>
 
-<script>
+<script setup>
 import {Disclosure, DisclosureButton, DisclosurePanel} from '@headlessui/vue';
 import {ChevronDownIcon} from "@heroicons/vue/24/outline";
 
-export default {
-    name: "faq",
-    components: {
-        Disclosure,
-        DisclosureButton,
-        DisclosurePanel,
-        ChevronDownIcon,
-    },
-    data() {
-        return {
-            faqs: [
+const faqs = [
                 {
                     question: "Wie lange dauert ein Gottesdienst?",
                     answer: "Der Gottesdienst dauert durchschnittlich 90 Minuten.",
@@ -66,8 +56,5 @@ export default {
                     question: "Was läuft unter der Woche?",
                     answer: "Unter der Woche finden Gebetsstunden, Hauskreise und Bibelstunden in Raum Villach statt. Dort liest man gemeinsam in der Bibel, tauscht sich über das Gelesene aus, betet miteinander und unterstützt sich gegenseitig.",
                 },
-            ],
-        }
-    }
-}
+            ];
 </script>

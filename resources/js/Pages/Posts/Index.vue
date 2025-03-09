@@ -1,11 +1,11 @@
 <template>
     <AppLayout title="Predigten">
         <template #header>
-            <div class="flex flex items-center">
+            <div class="flex items-center">
                 <h2 class="flex-1 font-semibold text-xl text-gray-800 leading-tight">
                     Predigten
                 </h2>
-                <inertia-button :to="route('dashboard.posts.create')">Neue Predigt</inertia-button>
+                <Link :href="route('dashboard.posts.create')" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition">Neue Predigt</Link>
             </div>
         </template>
 
@@ -216,8 +216,6 @@
 
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
-import InertiaButton from "@/Shared/InertiaButton.vue";
-
 import {ArrowPathIcon, ArrowRightIcon} from "@heroicons/vue/24/outline";
 import {ChevronLeftIcon, ChevronRightIcon} from '@heroicons/vue/24/solid'
 

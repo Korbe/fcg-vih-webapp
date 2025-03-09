@@ -14,19 +14,12 @@
 
 </template>
 
-<script>
+<script setup>
 
 import PostAudioPlayer from "@/Partials/PostAudioPlayer.vue";
 import Pagination from './Pagination.vue';
 
-export default {
-    name: 'BlogList',
-    props: {
+defineProps({
         posts: Object,
-    },
-    components: {
-        PostAudioPlayer,
-        Pagination
-    },
-}
+    });
 </script>

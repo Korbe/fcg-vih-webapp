@@ -40,17 +40,8 @@
     </public-layout>
 </template>
 
-<script>
+<script setup>
 import PublicLayout from "@/Layouts/PublicLayout.vue";
 import Navbar from "@/Partials/Navbar.vue";
 import Footer from "@/Partials/Footer.vue";
-
-export default {
-    name: "PrivacyPolicy",
-    components: {Footer, Navbar, PublicLayout}
-}
 </script>
-
-<style scoped>
-
-</style>

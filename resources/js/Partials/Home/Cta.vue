@@ -26,8 +26,5 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: "cta"
-}
+<script setup>
 </script>

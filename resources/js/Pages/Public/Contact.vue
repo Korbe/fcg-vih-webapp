@@ -3,13 +3,11 @@
         <div class="min-h-screen">
             <header class="relative pb-32">
                 <div class="absolute inset-0">
-                    <img loading="lazy" alt=""
-                         class="w-full h-full object-cover"
-                         src="/images/contact.jpg"/>
-                    <div aria-hidden="true" class="absolute inset-0 bg-brand-primary-1000 mix-blend-multiply"/>
+                    <img loading="lazy" alt="" class="w-full h-full object-cover" src="/images/contact.jpg" />
+                    <div aria-hidden="true" class="absolute inset-0 bg-brand-primary-1000 mix-blend-multiply" />
                 </div>
 
-                <Navbar hasBackground/>
+                <Navbar hasBackground />
 
                 <div
                     class="relative mt-16 sm:mt-12 md:mt-16 lg:mt-20 xl:mt-28 max-w-md mx-auto px-4 pb-32 sm:max-w-3xl sm:px-6  lg:max-w-7xl lg:px-8">
@@ -29,17 +27,17 @@
                 <div class="flex flex-grow ">
                     <!-- Cards -->
                     <section aria-labelledby="contact-heading"
-                             class="-mt-32 max-w-md mx-auto relative z-10 sm:max-w-3xl lg:max-w-7xl">
+                        class="-mt-32 max-w-md mx-auto relative z-10 sm:max-w-3xl lg:max-w-7xl">
 
                         <h2 class="sr-only">Kontaktieren Sie uns</h2>
                         <div class="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8">
                             <div v-for="contactDetail in contactDetails" :key="contactDetail.name"
-                                 class="flex flex-col bg-white rounded-2xl shadow-xl">
+                                class="flex flex-col bg-white rounded-2xl shadow-xl">
                                 <div class="flex-1 relative pt-16 px-6 pb-8 md:px-8">
                                     <div
                                         class="absolute top-0 p-5 inline-block bg-brand-primary-600 rounded-xl shadow-lg transform -translate-y-1/2">
                                         <component :is="contactDetail.icon" aria-hidden="true"
-                                                   class="h-6 w-6 text-white"/>
+                                            class="h-6 w-6 text-white" />
                                     </div>
                                     <h3 class="text-xl font-medium text-gray-900">{{ contactDetail.name }}</h3>
                                     <p class="mt-2 text-base text-brand-primary-700">{{ contactDetail.detail }}</p>
@@ -47,9 +45,8 @@
                                 </div>
                                 <div class="p-6 bg-gray-50 rounded-bl-2xl rounded-br-2xl md:px-8">
                                     <a :href="contactDetail.href"
-                                       class="text-base font-medium text-brand-primary-700 hover:text-brand-primary-600"
-                                       rel="noopener noreferrer"
-                                       target="_blank">{{
+                                        class="text-base font-medium text-brand-primary-700 hover:text-brand-primary-600"
+                                        rel="noopener noreferrer" target="_blank">{{
                                             contactDetail.ctaText
                                         }}<span aria-hidden="true"> &rarr;</span></a>
                                 </div>
@@ -58,20 +55,19 @@
 
                         <!--Gmaps Card-->
                         <div class="w-full shadow-xl mt-4 sm:mt-6 lg:mt-8 mb-8 rounded-2xl">
-                            <div class="flex-1 w-full h-full relative map-responsive pb-[120%] sm:pb-[50%] md:pb-[50%] lg:pb-[30%] xl:pb-[30%] 2xl:pb-[30%]">
+                            <div
+                                class="flex-1 w-full h-full relative map-responsive pb-[120%] sm:pb-[50%] md:pb-[50%] lg:pb-[30%] xl:pb-[30%] 2xl:pb-[30%]">
 
 
-                                <iframe allowfullscreen class="rounded-tl-2xl rounded-tr-2xl"
-                                        height="100%"
-                                        loading="lazy"
-                                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2740.0343905297646!2d13.8433933!3d46.6260827!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477081c082b8e4f7%3A0xce20ee88b28b7a1!2sFreie%20Christengemeinde%20%2F%20Pfingstgemeinde!5e0!3m2!1sde!2sat!4v1658674190571!5m2!1sde!2sat"
-                                        style="border: 0"
-                                        width="100%"></iframe>
+                                <iframe allowfullscreen class="rounded-tl-2xl rounded-tr-2xl" height="100%"
+                                    loading="lazy"
+                                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2740.0343905297646!2d13.8433933!3d46.6260827!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477081c082b8e4f7%3A0xce20ee88b28b7a1!2sFreie%20Christengemeinde%20%2F%20Pfingstgemeinde!5e0!3m2!1sde!2sat!4v1658674190571!5m2!1sde!2sat"
+                                    style="border: 0" width="100%"></iframe>
                             </div>
                             <div class="p-6 bg-gray-50 rounded-bl-2xl rounded-br-2xl md:px-8">
                                 <a class="text-base font-medium text-brand-primary-700 hover:text-brand-primary-600"
-                                   href="#" rel="noopener noreferrer"
-                                   target="_blank">Google Maps<span aria-hidden="true"> &rarr;</span></a>
+                                    href="#" rel="noopener noreferrer" target="_blank">Google Maps<span
+                                        aria-hidden="true"> &rarr;</span></a>
                             </div>
 
                         </div>
@@ -85,79 +81,37 @@
     </public-layout>
 </template>
 
-<script>
-import {MapPinIcon, EnvelopeIcon, PhoneIcon} from "@heroicons/vue/24/outline";
+<script setup>
+import { MapPinIcon, EnvelopeIcon, PhoneIcon } from "@heroicons/vue/24/outline";
 import Navbar from "@/Partials/Navbar.vue";
 import PublicLayout from "@/Layouts/PublicLayout.vue";
-import Faq from "@/Partials/Faq.vue";
 
-export default {
-    name: "Contact",
-    components: {
-        Faq,
-        PublicLayout,
-        Navbar,
-        MapPinIcon,
-        EnvelopeIcon,
-        PhoneIcon,
+const contactDetails = [
+    {
+        name: 'Rufen Sie uns an',
+        detail: '+43 650 5893093',
+        href: 'tel:+436505893093',
+        description: 'Wir freuen uns auf Ihren Anruf und nehmen uns Zeit für Sie.',
+        icon: PhoneIcon,
+        ctaText: 'Anrufen',
     },
-    data() {
-        return {
-            contactDetails: [
-                {
-                    name: 'Rufen Sie uns an',
-                    detail: '+43 650 5893093',
-                    href: 'tel:+436505893093',
-                    description: 'Wir freuen uns auf Ihren Anruf und nehmen uns Zeit für Sie.',
-                    icon: PhoneIcon,
-                    ctaText: 'Anrufen',
-                },
-                {
-                    name: 'Schreiben Sie uns',
-                    detail: 'office@fcg-villach.at',
-                    href: 'mailto:office@fcg-villach.at',
-                    description: 'Sollten Sie Fragen, Anliegen oder Wünsche haben, beantworten wir gern alle Ihre Fragen.',
-                    icon: EnvelopeIcon,
-                    ctaText: 'Schreiben',
-                },
-                {
-                    name: 'Besuchen Sie uns',
-                    detail: 'Vassacherstraße 28, 9500 Villach',
-                    href: 'https://goo.gl/maps/fDxswRLhh9dfKHUZ8',
-                    description: 'Wir freuen uns Sie kennenzulernen. Es entsteht keinerlei Verpflichtung. Sie können kommen, schauen, bleiben oder wieder gehen.',
-                    icon: MapPinIcon,
-                    ctaText: 'Finden',
-                },
-            ],
-            faqs: [
-                {
-                    question: "Wie lange dauert ein Gottesdienst?",
-                    answer: "Der Gottesdienst dauert durchschnittlich 90 Minuten.",
-                },
-                {
-                    question: "Muss ich für den Gottesdienst etwas bezahlen oder werde ich während des Gottesdienstes nach Geld gefragt?",
-                    answer: "Jeder ist willkommen, den Gottesdienst zu besuchen und es ist absolut kostenlos. Wir sammeln eine Kollekte ein, das Teil des Gottesdienstes ist. Jedoch ist niemand gezwungen, etwas zu geben und du darfst es gerne an dir vorbeigehen lassen.",
-                },
-                {
-                    question: "Was soll ich anziehen bzw. gibt es einen Dress Code?",
-                    answer: "Jeder kann so kommen, wie er sich wohl fühlt und es für angemessen hält.",
-                },
-                {
-                    question: "Gibt es ein extra Kinderprogramm?",
-                    answer: "Ja, bei jedem Gottesdienst gibt es parallel eine Kinderstunde und einen Raum für Eltern mit kleinen Kindern, wo sie auch den Gottesdienst mithören können.",
-                },
-                {
-                    question: "Muss ich Mitglied werden?",
-                    answer: "Nein. Zu unseren Gottesdiensten kommen die verschiedensten Menschen. Wir sehen es als unsere Aufgabe, ein Segen für alle Menschen zu sein, auch für die, die nicht aktiv in unserer Gemeinde involviert sind!",
-                },
-                {
-                    question: "Was läuft unter der Woche?",
-                    answer: "Unter der Woche finden Gebetsstunden, Hauskreise und Bibelstunden in Raum Villach statt. Dort liest man gemeinsam in der Bibel, tauscht sich über das Gelesene aus, betet miteinander und unterstützt sich gegenseitig.",
-                },
-            ],
-        }
-    }
-}
+    {
+        name: 'Schreiben Sie uns',
+        detail: 'office@fcg-villach.at',
+        href: 'mailto:office@fcg-villach.at',
+        description: 'Sollten Sie Fragen, Anliegen oder Wünsche haben, beantworten wir gern alle Ihre Fragen.',
+        icon: EnvelopeIcon,
+        ctaText: 'Schreiben',
+    },
+    {
+        name: 'Besuchen Sie uns',
+        detail: 'Vassacherstraße 28, 9500 Villach',
+        href: 'https://goo.gl/maps/fDxswRLhh9dfKHUZ8',
+        description: 'Wir freuen uns Sie kennenzulernen. Es entsteht keinerlei Verpflichtung. Sie können kommen, schauen, bleiben oder wieder gehen.',
+        icon: MapPinIcon,
+        ctaText: 'Finden',
+    },
+];
 </script>
 
 <style scoped>
