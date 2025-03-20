@@ -23,7 +23,7 @@ host('153.92.220.242')
     ->set('remote_user', 'u599789838')
     ->set('deploy_path', '/home/u599789838/domains/fcg-villach.at/deployment');
     
-task('composer-install', function () {
+task('composer:install', function () {
     cd('{{release_path}}');
     run('/home/u599789838/bin/composer install');
 });
@@ -51,7 +51,7 @@ task('deploy:restart_caches', function () {
 
 
 // Hooks
-after('deploy:update_code', 'composer-install');
+after('deploy:update_code', 'composer:install');
 after('deploy:shared', 'deploy:envSymlink');
 after('deploy:envSymlink', 'deploy:storageSymlink');
 after('deploy:storageSymlink', 'deploy:restart_caches');
