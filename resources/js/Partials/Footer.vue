@@ -78,7 +78,7 @@
                 <p class="text-base text-gray-500 xl:text-center">
                     Designed and Developed with<span class="inline-block align-top">
                         <HeartIcon class="text-red-500 h-5 px-1" />
-                    </span>by <a href="mailto:korbitschl@gmail.com">Ing. Lukas Korbitsch</a>
+                    </span>by <a href="https://korbitsch.at" target="_blank">Ing. Lukas Korbitsch</a>
                 </p>
                 <p class="pt-4 text-base text-gray-500 xl:text-center">
                     &copy; {{ new Date().getFullYear() }} FCG-Villach. Alle Rechte vorbehalten
