@@ -3,6 +3,10 @@ namespace Deployer;
 
 require 'recipe/laravel.php';
 
+
+//Before deployment!!!
+//Build the project and commit it
+
 // Config
 
 set('repository', 'https://github.com/Korbe/fcg-vih-webapp.git');
