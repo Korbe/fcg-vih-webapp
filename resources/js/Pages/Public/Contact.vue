@@ -72,6 +72,10 @@
 
                         </div>
 
+                        <div class="bg-white p-5 mb-10 rounded-2xl shadow-xl text-gray-800">
+                            <p>Sollte unser Parkplatz bereits voll sein, finden Sie einen Ausweichparkplatz gegenüber dem Supermarkt T&G.</p>
+                        </div>
+
                     </section>
 
                 </div>

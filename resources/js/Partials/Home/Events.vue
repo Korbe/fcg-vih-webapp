@@ -72,7 +72,7 @@ const events = [
         time: "14 - 18 Uhr",
         responsible: "Erika Korbitsch",
         icon: CakeIcon,
-        image: "/images/events/cake.jpeg",
+        image: "/images/events/cake.jpg",
     },
     {
         name: "Gebet & Seelsorge",

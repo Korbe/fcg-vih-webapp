@@ -100,26 +100,35 @@ const events = [
     },
     {
         name: "Bibelstunde",
-        interval: "Gerade Wochen, Mittwoch",
-        time: "17 Uhr",
+        interval: "14-tägig, Mittwochs",
+        time: "16:30 Uhr",
         description: "",
         responsible: "Christian Korbitsch",
         phone: "+436505893093",
         mail: "chritian.korbitsch@fcg-villach.at"
     },
     {
-        name: "Hauskreis",
+        name: "Hauskreis Bettina",
         interval: "Jeden Freitag außer den ersten im Monat",
         time: "9 Uhr",
         description: "",
         responsible: "Bettina Morgan",
-        phone: "+4365022200404",
+        phone: "+436502200404",
         mail: "bettina.morgan@fcg-villach.at"
     },
     {
         name: "Gebet & Seelsorge",
         interval: "Auf Anfrage",
         time: "Jederzeit",
+        description: "",
+        responsible: "Erika Korbitsch",
+        phone: "+4369911848920",
+        mail: "erika.korbitsch@fcg-villach.at"
+    },
+        {
+        name: "Hauskreis Erika",
+        interval: "14-tägig, Mittwochs",
+        time: "15 Uhr",
         description: "",
         responsible: "Erika Korbitsch",
         phone: "+4369911848920",

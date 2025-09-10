@@ -39,32 +39,42 @@ const team = [
     {
         name: 'Christian Korbitsch',
         role: 'Pastor',
-        imageUrl: 'images/portraits/Christian-Korbitsch.jpeg',
+        imageUrl: 'images/portraits/Christian-Korbitsch.jpg',
     },
     {
         name: 'Erika Korbitsch',
-        role: 'Lobpreisleitung',
-        imageUrl: 'images/portraits/Erika-Korbitsch.jpeg',
-    },
-    {
-        name: 'Andrea Kirisits',
-        role: 'Kindergottesdienste',
-        imageUrl: 'images/portraits/Andrea-Kirisits.jpeg',
+        role: 'Lobpreisleitung & Kinderdienstleitung',
+        imageUrl: 'images/portraits/Erika-Korbitsch.jpg',
     },
     {
         name: 'Markus Kirisits',
         role: 'Ältester & Kassier',
-        imageUrl: 'images/portraits/Markus-Kirisits.jpeg',
+        imageUrl: 'images/portraits/Markus-Kirisits.jpg',
     },
     {
-        name: 'Majid Khosravian',
-        role: 'Übersetzer',
-        imageUrl: 'images/portraits/Majid-Khosravian.jpeg',
+        name: 'Andrea Kirisits',
+        role: 'Kulinarische Leitung',
+        imageUrl: 'images/portraits/Andrea-Kirisits.jpg',
+    },
+    {
+        name: 'Tochukwu Udeh',
+        role: 'Ältester',
+        imageUrl: '/images/portraits/Tochukwu-Udeh.jpg',
     },
     {
         name: 'Bettina Morgan',
         role: 'Moderation',
-        imageUrl: '/images/portraits/Bettina-Morgan.jpeg',
+        imageUrl: '/images/portraits/Bettina-Morgan.jpg',
+    },
+    {
+        name: 'Majid Khosravian',
+        role: 'Übersetzer',
+        imageUrl: 'images/portraits/Majid-Khosravian.jpg',
+    },
+    {
+        name: 'Maedeh Danialfar',
+        role: 'Babydienstleitung',
+        imageUrl: '/images/portraits/Maedeh-Danialfar.jpg',
     },
 ];
 

@@ -9,9 +9,13 @@
             <p class="mt-3 text-xl text-gray-500 max-w-5xl lg:max-w-4xl mx-auto sm:text-lg md:mt-5 md:text-xl">
                 Wir sind das Leiterteam der Freien Christengmeinde Villach. Wir freuen uns auf Sie.
             </p>
+
+            <div class="flex justify-center mt-10">
+                <img src="/images/team.jpg" class="shadow-xl rounded-xl object-cover h-60 sm:h-96 md:h-[36rem]" />
+            </div>
         </div>
 
-        <team/>
+        
 
         <div class="bg-white sm:text-center mt-10 sm:mt-12 md:mt-16 lg:mt-20 xl:mt-28 px-5">
             <h1 class="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-4xl">
@@ -23,6 +27,8 @@
         </div>
 
         <tasks />
+
+        <team/>
 
 
         <div class="relative bg-white">

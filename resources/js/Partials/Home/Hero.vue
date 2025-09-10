@@ -27,7 +27,7 @@
                                 <PlayIcon class="h-7 mr-3"/>
                                 Predigten anhören
                             </Link>
-                            <a href="#visitus" v-smooth-scroll
+                            <a :href="route('public.contact')"
                                class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-secondary hover:bg-brand-secondary-400 sm:px-8">
                                 <UserGroupIcon class="h-7 mr-3"/>
                                 Besuchen Sie uns </a>
