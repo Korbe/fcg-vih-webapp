@@ -10,9 +10,14 @@ require 'recipe/laravel.php';
 // Config
 
 set('repository', 'https://github.com/Korbe/fcg-vih-webapp.git');
-set('composer', '/home/u599789838/bin/composer');
+set('bin/composer', '/home/u599789838/bin/composer');
 set('http_user', 'u599789838'); 
 
+set('writable_mode', 'chmod');
+set('writable_dirs', [
+    'storage',
+    'bootstrap/cache',
+]);
 add('shared_files', []);
 add('shared_dirs', []);
 add('writable_dirs', []);
