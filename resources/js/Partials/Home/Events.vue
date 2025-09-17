@@ -84,7 +84,7 @@ const events = [
     },
     {
         name: "Bibelstunde",
-        interval: "Gerade Wochen, Mittwochs",
+        interval: "14-tägig, Mittwochs",
         time: "17 Uhr",
         responsible: "Christian Korbitsch",
         icon: NewspaperIcon,
