@@ -85,7 +85,7 @@ const events = [
     {
         name: "Bibelstunde",
         interval: "14-tägig, Mittwochs",
-        time: "17 Uhr",
+        time: "16:30 Uhr",
         responsible: "Christian Korbitsch",
         icon: NewspaperIcon,
         image: "/images/events/togehter.webp",
