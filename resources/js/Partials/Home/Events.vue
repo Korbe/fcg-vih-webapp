@@ -80,7 +80,7 @@ const events = [
         time: "Jederzeit",
         responsible: "Erika Korbitsch",
         icon: UserCircleIcon,
-        image: "/images/events/pray.webp",
+        image: "/images/events/pray.jpg",
     },
     {
         name: "Bibelstunde",
