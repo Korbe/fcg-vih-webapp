@@ -39,7 +39,7 @@
 
                         <button v-if="$page.props.auth.user" @click="logout"
                             class="flex items-center justify-center px-6 py-1 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-secondary hover:bg-brand-secondary-400">
-                            <ArrowLeftOnRectangleIcon class="h-7" /> Abmelden
+                            <ArrowLeftStartOnRectangleIcon class="h-7" /> Abmelden
                         </button>
                     </div>
 
@@ -175,7 +175,7 @@
 
                         <button v-if="$page.props.auth.user" @click="logout"
                             class="flex items-center justify-center px-6 py-1 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-secondary hover:bg-brand-secondary-400">
-                            <ArrowLeftOnRectangleIcon class="h-7" /> Abmelden
+                            <ArrowLeftStartOnRectangleIcon class="h-5" /> Abmelden
                         </button>
                     </div>
                 </div>

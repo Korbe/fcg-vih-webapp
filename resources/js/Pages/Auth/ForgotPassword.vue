@@ -28,8 +28,7 @@ const submit = () => {
     <div class="min-h-screen flex flex-col md:flex-row">
         <!-- Left side: Image -->
         <div class="w-full h-40 md:w-1/3 md:h-screen">
-            <img src="/images/auth/compass.jpg"
-                alt="Bildbeschreibung" class="object-cover w-full h-full" />
+            <img src="/images/auth/compass.jpg" alt="Bildbeschreibung" class="object-cover w-full h-full" />
         </div>
 
         <!-- Right side: Form -->
@@ -41,10 +40,6 @@ const submit = () => {
             <!-- Reset-Formular zentriert -->
             <div class="p-5 flex-grow flex justify-center items-center">
                 <div class="w-full max-w-md">
-                    <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
-                        {{ status }}
-                    </div>
-
                     <!-- Logo -->
                     <div class="flex justify-center mb-10">
                         <Link :href="'/'" class="text-center">

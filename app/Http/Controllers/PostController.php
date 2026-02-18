@@ -4,48 +4,49 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Carbon\Carbon;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Inertia\Inertia;
-use Inertia\Response;
-use Spatie\MediaLibrary\MediaCollections\Exceptions\MediaCannotBeDeleted;
-use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class PostController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
     public function index()
     {
-        $posts = Post::where('published_at', '<=', Carbon::now())->orderBy('published_at', 'DESC')->paginate(8);
+        $posts = Post::where('published_at', '<=', Carbon::now())
+            ->orderBy('published_at', 'DESC')
+            ->paginate(8);
 
         $unpublishedPosts = Post::where(function ($query) {
             $query->where('published_at', '>=', Carbon::now())
                 ->orWhereNull('published_at');
         })->orderBy('published_at', 'ASC')->get();
 
+        // Helper-Funktion, um Foto oder Avatar zu bekommen
+        $getPhotoUrl = function ($post) {
+            $photo = $post->getFirstMedia('photo');
+            return $photo ? $photo->getUrl() : 'https://ui-avatars.com/api/?name=' . urlencode($post->author) . '&color=0DB3E9&background=edfbff';
+        };
 
-        /** @var Post $post */
+        // Mapping für veröffentlichte Posts
         foreach ($posts->getCollection() as $post) {
-
-            $media = $post->getFirstMedia('audio');
-            if ($media) {
-                $post['audio_name'] = $media->file_name;
-                $post['audio_size'] = $media->human_readable_size;
+            $audio = $post->getFirstMedia('audio');
+            if ($audio) {
+                $post['audio_name'] = $audio->file_name;
+                $post['audio_size'] = $audio->human_readable_size;
             }
+
+            $post['photo'] = $getPhotoUrl($post);
         }
 
-        /** @var Post $post */
+        // Mapping für unveröffentlichte Posts
         foreach ($unpublishedPosts as $post) {
-            $media = $post->getFirstMedia('audio');
-            if ($media) {
-                $post['audio_name'] = $media->file_name;
-                $post['audio_size'] = $media->human_readable_size;
+            $audio = $post->getFirstMedia('audio');
+            if ($audio) {
+                $post['audio_name'] = $audio->file_name;
+                $post['audio_size'] = $audio->human_readable_size;
             }
+
+            $post['photo'] = $getPhotoUrl($post);
         }
 
         return Inertia::render('Posts/Index', [
@@ -54,22 +55,12 @@ class PostController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
+
     public function create()
     {
         return Inertia::render('Posts/Create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param Request $request
-     * @return RedirectResponse
-     */
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -77,13 +68,17 @@ class PostController extends Controller
             'author' => ['required', 'string'],
             'published_at' => ['nullable', 'date'],
             'audio' => ['nullable', 'mimes:application/octet-stream,audio/mpeg,mpga,mp3,wav'],
+            'photo' => ['nullable', 'image', 'max:2048'], // Profilfoto validieren
         ]);
 
-        /** @var Post $post */
-        $post = Post::create(Arr::except($validated, 'audio'));
+        $post = Post::create(Arr::except($validated, ['audio', 'photo']));
 
-        if ($validated['audio']) {
+        if ($validated['audio'] ?? false) {
             $post->addMedia($validated['audio'])->toMediaCollection('audio');
+        }
+
+        if ($validated['photo'] ?? false) {
+            $post->addMedia($validated['photo'])->toMediaCollection('photo');
         }
 
         return redirect()->route('dashboard.posts.index')->with('flash', [
@@ -92,37 +87,25 @@ class PostController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param Post $post
-     * @return Response
-     */
     public function edit(Post $post)
     {
-        /** @var Media $media */
-        $media = $post->getFirstMedia('audio');
+        $audio = $post->getFirstMedia('audio');
+        $photo = $post->getFirstMedia('photo');
 
         return Inertia::render('Posts/Edit', [
-            "post" => [
+            'post' => [
                 'id' => $post->id,
                 'title' => $post->title,
                 'author' => $post->author,
                 'published_at' => $post->published_at?->format('Y-m-d\TH:i'),
-                'audio' => $media,
+                'audio' => $audio,
+                'photo_url' => $photo?->getUrl(),
                 'created_at' => $post->created_at?->format('Y-m-d\TH:i'),
                 'updated_at' => $post->updated_at?->format('Y-m-d\TH:i'),
             ]
         ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param Request $request
-     * @param Post $post
-     * @return RedirectResponse
-     */
     public function update(Request $request, Post $post)
     {
         $validated = $request->validate([
@@ -139,13 +122,6 @@ class PostController extends Controller
         ]);
     }
 
-    /**
-     * Update or Deletes the resource audio in storage.
-     * @param Request $request
-     * @param Post $post
-     * @return RedirectResponse
-     * @throws MediaCannotBeDeleted
-     */
     public function updateAudio(Request $request, Post $post)
     {
         $validated = $request->validate([
@@ -153,11 +129,9 @@ class PostController extends Controller
         ]);
 
         $media = $post->getFirstMedia('audio');
+        if ($media) $media->delete();
 
-        if ($media)
-            $media->delete();
-
-        if ($validated['audio']) {
+        if ($validated['audio'] ?? false) {
             $post->addMedia($validated['audio'])->toMediaCollection('audio');
             $message = "Aufnahme aktualisiert";
         } else {
@@ -170,18 +144,35 @@ class PostController extends Controller
         ]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param Post $post
-     * @return RedirectResponse
-     */
+    public function updatePhoto(Request $request, Post $post)
+    {
+        $validated = $request->validate([
+            'photo' => ['nullable', 'image', 'max:2048'],
+        ]);
+
+        $media = $post->getFirstMedia('photo');
+        if ($media) $media->delete();
+
+        if ($validated['photo'] ?? false) {
+            $post->addMedia($validated['photo'])->toMediaCollection('photo');
+            $message = "Profilfoto aktualisiert";
+        } else {
+            $message = 'Profilfoto gelöscht.';
+        }
+
+        return back()->with('flash', [
+            'bannerStyle' => 'success',
+            'banner' => $message,
+        ]);
+    }
+
     public function destroy(Post $post)
     {
-        $media = $post->getFirstMedia('audio');
+        $audio = $post->getFirstMedia('audio');
+        if ($audio) $audio->delete();
 
-        if ($media)
-            $media->delete();
+        $photo = $post->getFirstMedia('photo');
+        if ($photo) $photo->delete();
 
         $post->delete();
 

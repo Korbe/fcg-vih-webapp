@@ -1,20 +1,21 @@
 <template>
-    <div ref="wrapper"
-        class="relative flex flex-col sm:flex-row text-center rounded-lg border border-gray-300 bg-white px-2 md:px-6 py-5  items-center justify-center
-        md:text-left md:justify-between
-        shadow-sm hover:border-brand-primary focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-brand-primary">
+    <div ref="wrapper" class="relative flex flex-col sm:flex-row text-center rounded-lg border border-gray-300 bg-white px-2 md:px-6 py-5 items-center justify-center
+               md:text-left md:justify-between shadow-sm hover:border-brand-primary focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-brand-primary
+               transform transition-transform duration-300 ease-in-out hover:scale-105 overflow-hidden group">
 
-        <div ref="progressBox"  class="rounded-l-lg h-full absolute w-0 inset-0 bg-brand-primary-100"></div>
+        <div ref="progressBox" class="rounded-l-lg h-full absolute w-0 inset-0 bg-brand-primary-100"></div>
 
         <div class="z-10 pb-3 md:pb-0 flex-shrink-0">
-            <img loading="lazy" :alt="post.author" :src="post.author_image" class="relative rounded-full h-16 w-16" />
+            <img loading="lazy" :alt="post.author"
+                :src="post.photo ?? 'https://ui-avatars.com/api/?name=' + encodeURIComponent(post.author) + '&color=0DB3E9&background=edfbff'"
+                class="relative rounded-full h-24 w-24 transition-transform duration-300 ease-in-out group-hover:scale-125" />
         </div>
 
         <div class="z-10 basis-full w-full md:pl-4">
 
             <p v-if="completed" class="text-brand-primary flex">
-                <CheckBadgeIcon class="h-7 mr-1"/>
-                <span class="inline-block">{{'Angehört'}}</span>
+                <CheckBadgeIcon class="h-7 mr-1" />
+                <span class="inline-block">{{ 'Angehört' }}</span>
             </p>
 
             <p class="text-xl md:text-2xl font-medium text-gray-900">
@@ -30,39 +31,37 @@
             <div class="flex space-x-2">
 
                 <a v-if="audioRef.currentTime > 0"
-                   class="p-2 flex items-center justify-center  border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-primary hover:bg-brand-secondary-400"
-                   href="#"
-                   @click.prevent="addSeconds(-10)">
-                    <BackwardIcon class="h-7 mr-1"/>
+                    class="p-2 flex items-center justify-center  border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-primary hover:bg-brand-secondary-400"
+                    href="#" @click.prevent="addSeconds(-10)">
+                    <BackwardIcon class="h-7 mr-1" />
                     10s
                 </a>
 
-                <a :id="'play_button_' + index" class="p-2 flex items-center justify-center w-full  border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-primary hover:bg-brand-secondary-400"
-                   href="#"
-                   @click.prevent="playPause()">
+                <a :id="'play_button_' + index"
+                    class="p-2 flex items-center justify-center w-full  border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-primary hover:bg-brand-secondary-400"
+                    href="#" @click.prevent="playPause()">
                     <template v-if="audioRef.paused">
-                        <PlayIcon class="h-7 mr-1"/>
-                        <span class="inline-block">{{songTime ?? 'Abspielen'}}</span>
+                        <PlayIcon class="h-7 mr-1" />
+                        <span class="inline-block">{{ songTime ?? 'Abspielen' }}</span>
                     </template>
                     <template v-else>
-                        <PauseIcon class="h-7 mr-1"/>
-                        <span class="inline-block">{{songTime ?? 'Pause'}}</span>
+                        <PauseIcon class="h-7 mr-1" />
+                        <span class="inline-block">{{ songTime ?? 'Pause' }}</span>
                     </template>
                 </a>
 
                 <a v-if="audioRef.currentTime > 0"
-                   class="p-2 flex items-center justify-center border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-primary hover:bg-brand-secondary-400"
-                   href="#"
-                   @click.prevent="addSeconds(60)">
+                    class="p-2 flex items-center justify-center border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-primary hover:bg-brand-secondary-400"
+                    href="#" @click.prevent="addSeconds(60)">
                     1min
-                    <BackwardIcon class="rotate-180 h-7 ml-1"/>
+                    <BackwardIcon class="rotate-180 h-7 ml-1" />
                 </a>
 
             </div>
         </div>
 
         <audio :id="audio_id" ref="audioRef" @timeupdate="onTimeUpdate" @ended="onEnded">
-                <source :src="post.audio" type="audio/mp3"/> Your browser does not support the audio tag.
+            <source :src="post.audio" type="audio/mp3" /> Your browser does not support the audio tag.
         </audio>
     </div>
 </template>

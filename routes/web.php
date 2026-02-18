@@ -51,9 +51,9 @@ Route::name('dashboard.')->middleware(['auth:sanctum', 'verified'])->group(funct
 
     Route::resource("posts", PostController::class)->except("show");
     Route::post("posts/{post}/audio", [PostController::class, 'updateAudio'])->name('posts.audio');
+    Route::post("posts/{post}/photo", [PostController::class, 'updatePhoto'])->name('posts.photo');
 
     Route::resource("news", NewsController::class)->except("show");
-
 });
 
 

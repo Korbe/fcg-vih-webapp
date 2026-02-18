@@ -47,7 +47,7 @@
             <div class="max-w-4xl mx-auto py-32 px-4">
 
                 <div class="grid grid-cols-1 gap-6">
-                    <post-audio-player v-for="(post, index) in posts" :key="index" :index=index :post="post" />
+                    <post-audio-player v-for="(post, index) in posts" :key="index" :index="index" :post="post" />
 
                     <!--empty state-->
                     <div v-if="posts.length === 0"

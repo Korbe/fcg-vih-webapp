@@ -57,17 +57,18 @@ class HomeController extends Controller
     {
         return Inertia::render('Public/Blog', [
             'posts' => Post::where('published_at', '<=', Carbon::now())
-                ->orderBy('published_at','DESC')
+                ->orderBy('published_at', 'DESC')
                 ->take(4)
                 ->get()
-                ->transform(function ($post, $key) {
+                ->transform(function ($post) {
                     return [
                         'id' => $post->id,
                         'title' => $post->title,
                         'audio' => $post->getFirstMediaUrl('audio'),
                         'published_at' => $post->published_at->format('d.m.Y'),
                         'author' => $post->author,
-                        'author_image' => 'https://ui-avatars.com/api/?name=' . urlencode($post->author) . '&color=0DB3E9&background=edfbff'
+                        'photo' => $post->getFirstMediaUrl('photo')
+                            ?: 'https://ui-avatars.com/api/?name=' . urlencode($post->author) . '&color=0DB3E9&background=edfbff',
                     ];
                 })
         ]);
@@ -77,33 +78,36 @@ class HomeController extends Controller
     {
 
         $posts = Post::where('published_at', '<=', Carbon::now())
-        ->orderBy('published_at','DESC')
-        ->paginate(5)
-        ->through(function ($post, $key) {
-            return [
-                'id' => $post->id,
-                'title' => $post->title,
-                'audio' => $post->getFirstMediaUrl('audio'),
-                'published_at' => $post->published_at->format('d.m.Y'),
-                'author' => $post->author,
-                'author_image' => 'https://ui-avatars.com/api/?name=' . urlencode($post->author) . '&color=0DB3E9&background=edfbff'
-            ];
-        });
+            ->orderBy('published_at', 'DESC')
+            ->paginate(5)
+            ->through(function ($post, $key) {
+                return [
+                    'id' => $post->id,
+                    'title' => $post->title,
+                    'audio' => $post->getFirstMediaUrl('audio'),
+                    'published_at' => $post->published_at->format('d.m.Y'),
+                    'author' => $post->author,
+                    'photo' => $post->getFirstMediaUrl('photo')
+                        ?: 'https://ui-avatars.com/api/?name=' . urlencode($post->author) . '&color=0DB3E9&background=edfbff',
+                ];
+            });
 
         return Inertia::render('Public/BlogArchive', [
             'posts' => $posts
         ]);
     }
 
-    public function postAudioViewed(Post $post){
-        $post->viewed = $post->viewed+1;
+    public function postAudioViewed(Post $post)
+    {
+        $post->viewed = $post->viewed + 1;
         $post->save();
 
         return redirect()->back();
     }
 
-    public function postAudioCompleted(Post $post){
-        $post->completed = $post->completed+1;
+    public function postAudioCompleted(Post $post)
+    {
+        $post->completed = $post->completed + 1;
         $post->save();
 
         return redirect()->back();

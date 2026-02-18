@@ -33,4 +33,10 @@ class Post extends Model implements HasMedia
         'created_at' => 'datetime:d.m.Y H:i:s',
         'updated_at' => 'datetime:d.m.Y H:i:s',
     ];
+
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('photos');
+        $this->addMediaCollection('audio');
+    }
 }
